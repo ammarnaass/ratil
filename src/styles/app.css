@@ -1,0 +1,1167 @@
+/**
+ * رتل - Ratil
+ * الأنماط والواجهات التفاعلية الكاملة
+ * src/styles/app.css
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: var(--font-ui);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  direction: rtl;
+  text-align: right;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding-bottom: 96px; /* مسافة أمان فوق المشغل السفلي */
+}
+
+/* تقليل الحركة عند تفعيل prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* الحاوية الأساسية */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* ==========================================================================
+   الترويسة العلوية (Navbar)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform var(--transition-fast), border-color var(--transition-normal);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo-badge {
+  font-size: 11px;
+  font-weight: 500;
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.icon-btn:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.icon-btn:active {
+  background-color: var(--color-surface);
+  transform: scale(0.96);
+}
+
+/* ==========================================================================
+   البطاقة الاستئنافية للمستخدم العائد (Resume Card)
+   ========================================================================== */
+.resume-card {
+  margin-top: 20px;
+  margin-bottom: 24px;
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-right: 4px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+}
+
+.resume-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.resume-info-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.resume-info-meta {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.resume-play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  color: #111318;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--color-accent-glow);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.resume-play-btn:hover {
+  background-color: var(--color-accent-dim);
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   حقل البحث الموحد (Unified Search)
+   ========================================================================== */
+.search-section {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-inside {
+  position: absolute;
+  right: 16px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 52px;
+  padding: 12px 48px 12px 48px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+
+.search-clear-btn {
+  position: absolute;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-clear-btn:hover {
+  color: var(--color-text-primary);
+}
+
+/* نتائج البحث المنسدلة */
+.search-results-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sheet);
+  max-height: 380px;
+  overflow-y: auto;
+  display: none;
+}
+
+.search-results-dropdown.active {
+  display: block;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.result-item-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-num-badge {
+  font-size: 13px;
+  color: var(--color-accent);
+  font-weight: 600;
+  background-color: var(--color-highlight);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.result-surah-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.result-snippet {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   الشرائح السريعة (Quick Shortcuts)
+   ========================================================================== */
+.shortcuts-section {
+  margin-bottom: 28px;
+}
+
+.section-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shortcuts-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+}
+
+.shortcuts-row::-webkit-scrollbar {
+  display: none;
+}
+
+.shortcut-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: var(--touch-target-min);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.shortcut-chip:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface-hover);
+}
+
+.shortcut-chip:active {
+  transform: scale(0.96);
+}
+
+/* ==========================================================================
+   فهرس السور (Surah List)
+   ========================================================================== */
+.surah-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .surah-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .surah-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.surah-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.surah-card:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface-hover);
+  transform: translateY(-1px);
+}
+
+.surah-card:active {
+  transform: scale(0.98);
+}
+
+.surah-card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.surah-index {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.surah-card:hover .surah-index {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.surah-names-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.surah-ar-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.surah-en-name {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.surah-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.surah-meta-badge {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.surah-ayahs-count {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   نافذة اختيار القارئ (Reciter Bottom Sheet)
+   ========================================================================== */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.sheet-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bottom-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  padding: 24px 20px 32px 20px;
+  box-shadow: var(--shadow-sheet);
+  transform: translateY(100%);
+  transition: transform var(--transition-player);
+}
+
+.bottom-sheet.active {
+  transform: translateY(0);
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+
+.sheet-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sheet-subtitle {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.reciter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.reciter-option-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background-color: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.reciter-option-card:hover {
+  border-color: var(--color-text-muted);
+}
+
+.reciter-option-card.selected {
+  border-color: var(--color-accent);
+  background-color: var(--color-highlight);
+}
+
+.reciter-option-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.radio-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast);
+}
+
+.reciter-option-card.selected .radio-indicator {
+  border-color: var(--color-accent);
+}
+
+.radio-indicator::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.reciter-option-card.selected .radio-indicator::after {
+  opacity: 1;
+}
+
+.reciter-name-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.reciter-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.reciter-narration-badge {
+  font-size: 12px;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.preview-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.sheet-start-btn {
+  width: 100%;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  color: #111318;
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--color-accent-glow);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.sheet-start-btn:hover {
+  background-color: var(--color-accent-dim);
+}
+
+.sheet-start-btn:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   شاشة السورة والقراءة (Surah Reading View)
+   ========================================================================== */
+.surah-view-page {
+  display: none;
+  animation: fadeIn var(--transition-normal);
+}
+
+.surah-view-page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.surah-view-header {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity var(--transition-normal);
+}
+
+.surah-view-header.hidden-mode {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.surah-view-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
+
+.surah-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.surah-header-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.surah-header-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.surah-header-sub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.surah-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.font-size-btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.font-size-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.reading-mode-btn.active {
+  background-color: var(--color-highlight);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* متن السورة والآيات */
+.quran-text-container {
+  padding-top: 32px;
+  padding-bottom: 64px;
+  line-height: var(--line-height-quran);
+  text-align: justify;
+  text-align-last: center;
+}
+
+.basmalah-box {
+  text-align: center;
+  margin-bottom: 32px;
+  font-family: var(--font-quran);
+  font-size: calc(var(--font-size-quran) * 1.15);
+  color: var(--color-quran);
+  letter-spacing: 0.5px;
+}
+
+.quran-verse {
+  display: inline;
+  font-family: var(--font-quran);
+  font-size: var(--font-size-quran);
+  color: var(--color-quran);
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.quran-verse:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* تمييز الآية الجارية */
+.quran-verse.active-verse {
+  background-color: var(--color-highlight);
+  border-right: 3px solid var(--color-highlight-border);
+  border-left: 3px solid var(--color-highlight-border);
+  border-radius: var(--radius-sm);
+}
+
+/* وميض المشاركة */
+.quran-verse.shared-flash {
+  animation: flashHighlight 3000ms ease-out forwards;
+}
+
+@keyframes flashHighlight {
+  0% { background-color: rgba(62, 207, 178, 0.4); }
+  50% { background-color: rgba(62, 207, 178, 0.25); }
+  100% { background-color: var(--color-highlight); }
+}
+
+.aya-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0 4px;
+  font-family: var(--font-quran);
+  font-size: var(--font-size-aya-num);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+  vertical-align: middle;
+  background-color: var(--color-surface);
+  user-select: none;
+}
+
+/* نافذة إجراءات الآية المنبثقة */
+.verse-popup {
+  position: fixed;
+  z-index: 85;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  display: none;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.verse-popup.active {
+  display: flex;
+}
+
+.verse-popup-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.verse-popup-btn:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   المشغّل الصوتي التكيفي (Adaptive Audio Player)
+   ========================================================================== */
+.audio-player-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25);
+  transition: var(--transition-player);
+  height: var(--player-height-full);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* وضع التمرير للأسفل: مشغل مضغوط نحيف (44px) */
+.audio-player-bar.collapsed {
+  height: var(--player-height-collapsed);
+}
+
+.player-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.player-collapsed-view {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.audio-player-bar.collapsed .player-full-view {
+  display: none;
+}
+
+.audio-player-bar.collapsed .player-collapsed-view {
+  display: flex;
+}
+
+.collapsed-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.collapsed-pill {
+  font-size: 11px;
+  color: var(--color-accent);
+  background-color: var(--color-highlight);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* المشغل الكامل */
+.player-full-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+/* شريط التقدم */
+.scrubber-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.time-label {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  min-width: 38px;
+}
+
+.scrubber-track {
+  position: relative;
+  flex-grow: 1;
+  height: 6px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+.scrubber-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  width: 0%;
+  transition: width 100ms linear;
+}
+
+.scrubber-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  right: 0%;
+}
+
+/* أزرار التحكم الرئيسية */
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.player-track-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 180px;
+}
+
+.track-surah-title {
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-reciter-name {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  color: #111318;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--color-accent-glow);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.main-play-btn:hover {
+  background-color: var(--color-accent-dim);
+  transform: scale(1.05);
+}
+
+.seek-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+.seek-btn:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.player-secondary-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   نافذة مؤقت النوم (Sleep Timer Modal)
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.sleep-timer-modal {
+  width: 100%;
+  max-width: 380px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sheet);
+  animation: modalScale var(--transition-normal);
+}
+
+@keyframes modalScale {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.sleep-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sleep-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.sleep-option-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.sleep-option-btn.selected {
+  border-color: var(--color-accent);
+  background-color: var(--color-highlight);
+  color: var(--color-accent);
+}
+
+/* إشعار Toast المنبثق للنسخ والمشاركة */
+.toast-notice {
+  position: fixed;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 120;
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.toast-notice.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

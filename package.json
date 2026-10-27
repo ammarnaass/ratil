@@ -4,6 +4,8 @@
   "description": "رتل - مشغّل تلاوات القرآن الكريم مع تتبع الآية وعرض النص القرآني المعتمد",
   "type": "module",
   "scripts": {
+    "dev": "node scripts/serve.js",
+    "start": "node scripts/serve.js",
     "verify-text": "node scripts/verify-text",
     "build-data": "node scripts/build-data",
     "test": "node tests/test-suite.js",
