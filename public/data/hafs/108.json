@@ -1,0 +1,34 @@
+{
+  "id": 108,
+  "name_ar": "الكوثر",
+  "name_en": "Al-Kawthar",
+  "type": "مكية",
+  "ayahs_hafs": 3,
+  "ayahs_warsh": 3,
+  "page": 602,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 108,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ",
+      "text_normalized": "بسم الله الرحمن الرحيم انا اعطيناك الكوثر",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 108,
+      "aya": 2,
+      "text_uthmani": "فَصَلِّ لِرَبِّكَ وَٱنْحَرْ",
+      "text_normalized": "فصل لربك وانحر",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 108,
+      "aya": 3,
+      "text_uthmani": "إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ",
+      "text_normalized": "ان شانيك هو الابتر",
+      "aya_indic": "٣"
+    }
+  ]
+}

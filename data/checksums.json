@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "last_verified": "2026-10-27T08:15:00Z",
+  "project": "ratil",
+  "sources": {
+    "hafs": {
+      "file": "data/source/quran-uthmani-hafs.txt",
+      "sha256": "18c719bb3ba26d32ef457f40dad77cd28c4c5a34156833e26a8e5fcfdd246fb1",
+      "authority": "Tanzil Project (v1.1, 2021)",
+      "narration": "Hafs 'an 'Asim (حفص عن عاصم)",
+      "total_ayahs": 6236,
+      "total_surahs": 114,
+      "counting_tradition": "Kufi (العد الكوفي)"
+    },
+    "warsh": {
+      "file": "data/source/quran-uthmani-warsh.json",
+      "sha256": "f05d0dc652fd46b38563cacb13242f76f80db4cc64d25873da0bce157253872f",
+      "authority": "King Fahd Glorious Quran Printing Complex (KFGQPC v10)",
+      "narration": "Warsh 'an Nafi' (ورش عن نافع من طريق الأزرق)",
+      "total_ayahs": 6214,
+      "total_surahs": 114,
+      "counting_tradition": "Madani Al-Akhir (العد المدني الأخير)"
+    }
+  },
+  "fonts": {
+    "hafs": {
+      "file": "public/fonts/hafs.woff2",
+      "sha256": "8c00e7a7d5f773bcfb1642fdcfba505dbd81975fef39f14718827a32d075020c",
+      "authority": "King Fahd Glorious Quran Printing Complex (KFGQPC v18)"
+    },
+    "warsh": {
+      "file": "public/fonts/warsh.woff2",
+      "sha256": "d6e21b46de4bc42dae9218749830cb4cb54ff815e67c66002001219a175b71d7",
+      "authority": "King Fahd Glorious Quran Printing Complex (KFGQPC v10)"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": 111,
+  "name_ar": "المسد",
+  "name_en": "Al-Masad",
+  "type": "مكية",
+  "ayahs_hafs": 5,
+  "ayahs_warsh": 5,
+  "page": 603,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 111,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ تَبَّتْ يَدَآ أَبِى لَهَبٍ وَتَبَّ",
+      "text_normalized": "بسم الله الرحمن الرحيم تبت يدا ابي لهب وتب",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 111,
+      "aya": 2,
+      "text_uthmani": "مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ",
+      "text_normalized": "ما اغنيا عنه ماله وما كسب",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 111,
+      "aya": 3,
+      "text_uthmani": "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
+      "text_normalized": "سيصليا نارا ذات لهب",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 111,
+      "aya": 4,
+      "text_uthmani": "وَٱمْرَأَتُهُۥ حَمَّالَةَ ٱلْحَطَبِ",
+      "text_normalized": "وامراته حماله الحطب",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 111,
+      "aya": 5,
+      "text_uthmani": "فِى جِيدِهَا حَبْلٌ مِّن مَّسَدٍۭ",
+      "text_normalized": "في جيدها حبل من مسد",
+      "aya_indic": "٥"
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "id": 92,
+  "name_ar": "الليل",
+  "name_en": "Al-Layl",
+  "type": "مكية",
+  "ayahs_hafs": 21,
+  "ayahs_warsh": 21,
+  "page": 595,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 92,
+      "aya": 1,
+      "text_uthmani": "وَاليْلِ إِذَا يَغْش۪ىٰ",
+      "text_normalized": "واليل اذا يغشيا",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 2,
+      "text_uthmani": "وَالنَّه۪ارِ إِذَا تَجَلّ۪ىٰ",
+      "text_normalized": "والنهار اذا تجليا",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 3,
+      "text_uthmani": "وَمَا خَلَقَ اَ۬لذَّكَرَ وَالُانث۪ىٰٓ",
+      "text_normalized": "وما خلق الذكر والانثيا",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 4,
+      "text_uthmani": "إِنَّ سَعْيَكُمْ لَشَتّ۪ىٰۖ",
+      "text_normalized": "ان سعيكم لشتيا",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 5,
+      "text_uthmani": "فَأَمَّا مَنَ اَعْط۪ىٰ وَاتَّق۪ىٰ",
+      "text_normalized": "فاما من اعطيا واتقيا",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 6,
+      "text_uthmani": "وَصَدَّقَ بِالْحُسْن۪ىٰ",
+      "text_normalized": "وصدق بالحسنيا",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 7,
+      "text_uthmani": "فَسَنُيَسِّرُهُۥ لِلْيُسْر۪ىٰۖ",
+      "text_normalized": "فسنيسره لليسريا",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 8,
+      "text_uthmani": "وَأَمَّا مَنۢ بَخِلَ وَاسْتَغْن۪ىٰ",
+      "text_normalized": "واما من بخل واستغنيا",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 9,
+      "text_uthmani": "وَكَذَّبَ بِالْحُسْن۪ىٰ",
+      "text_normalized": "وكذب بالحسنيا",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 92,
+      "aya": 10,
+      "text_uthmani": "فَسَنُيَسِّرُهُۥ لِلْعُسْر۪ىٰۖ",
+      "text_normalized": "فسنيسره للعسريا",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 11,
+      "text_uthmani": "وَمَا يُغْنِے عَنْهُ مَالُهُۥٓ إِذَا تَرَدّ۪ىٰٓۖ",
+      "text_normalized": "وما يغنے عنه ماله اذا ترديا",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 12,
+      "text_uthmani": "إِنَّ عَلَيْنَا لَلْهُد۪ىٰ",
+      "text_normalized": "ان علينا للهديا",
+      "aya_indic": "١٢",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 13,
+      "text_uthmani": "وَإِنَّ لَنَا لَلَاخِرَةَ وَالُاول۪ىٰۖ",
+      "text_normalized": "وان لنا للاخره والاوليا",
+      "aya_indic": "١٣",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 14,
+      "text_uthmani": "فَأَنذَرْتُكُمْ نَاراٗ تَلَظّ۪ىٰ",
+      "text_normalized": "فانذرتكم نارا تلظيا",
+      "aya_indic": "١٤",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 15,
+      "text_uthmani": "لَا يَصْلَيٰهَآ إِلَّا اَ۬لَاشْقَي",
+      "text_normalized": "لا يصلياها الا الاشقي",
+      "aya_indic": "١٥",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 16,
+      "text_uthmani": "اَ۬لذِے كَذَّبَ وَتَوَلّ۪ىٰۖ",
+      "text_normalized": "الذے كذب وتوليا",
+      "aya_indic": "١٦",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 17,
+      "text_uthmani": "وَسَيُجَنَّبُهَا اَ۬لَاتْقَي",
+      "text_normalized": "وسيجنبها الاتقي",
+      "aya_indic": "١٧",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 18,
+      "text_uthmani": "اَ۬لذِے يُوتِے مَالَهُۥ يَتَزَكّ۪ىٰۖ",
+      "text_normalized": "الذے يوتے ماله يتزكيا",
+      "aya_indic": "١٨",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 19,
+      "text_uthmani": "وَمَا لِأَحَدٍ عِندَهُۥ مِن نِّعْمَةٖ تُجْز۪ىٰٓ",
+      "text_normalized": "وما لاحد عنده من نعمه تجزيا",
+      "aya_indic": "١٩",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 20,
+      "text_uthmani": "إِلَّا اَ۪بْتِغَآءَ وَجْهِ رَبِّهِ اِ۬لَاعْل۪ىٰۖ",
+      "text_normalized": "الا ابتغاء وجه ربه الاعليا",
+      "aya_indic": "٢٠",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 92,
+      "aya": 21,
+      "text_uthmani": "وَلَسَوْفَ يَرْض۪ىٰۖ",
+      "text_normalized": "ولسوف يرضيا",
+      "aya_indic": "٢١",
+      "jozz": 30,
+      "page": 596
+    }
+  ]
+}

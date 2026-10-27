@@ -1,0 +1,85 @@
+{
+  "id": 94,
+  "name_ar": "الشرح",
+  "name_en": "Ash-Sharh",
+  "type": "مكية",
+  "ayahs_hafs": 8,
+  "ayahs_warsh": 8,
+  "page": 596,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 94,
+      "aya": 1,
+      "text_uthmani": "اَلَمْ نَشْرَحْ لَكَ صَدْرَكَ",
+      "text_normalized": "الم نشرح لك صدرك",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 94,
+      "aya": 2,
+      "text_uthmani": "وَوَضَعْنَا عَنكَ وِزْرَكَ",
+      "text_normalized": "ووضعنا عنك وزرك",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 94,
+      "aya": 3,
+      "text_uthmani": "اَ۬لذِےٓ أَنقَضَ ظَهْرَكَ",
+      "text_normalized": "الذے انقض ظهرك",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 94,
+      "aya": 4,
+      "text_uthmani": "وَرَفَعْنَا لَكَ ذِكْرَكَۖ",
+      "text_normalized": "ورفعنا لك ذكرك",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 94,
+      "aya": 5,
+      "text_uthmani": "فَإِنَّ مَعَ اَ۬لْعُسْرِ يُسْراً",
+      "text_normalized": "فان مع العسر يسرا",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 94,
+      "aya": 6,
+      "text_uthmani": "اِنَّ مَعَ اَ۬لْعُسْرِ يُسْراٗۖ",
+      "text_normalized": "ان مع العسر يسرا",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 94,
+      "aya": 7,
+      "text_uthmani": "فَإِذَا فَرَغْتَ فَانصَبْ",
+      "text_normalized": "فاذا فرغت فانصب",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 94,
+      "aya": 8,
+      "text_uthmani": "وَإِلَىٰ رَبِّكَ فَارْغَبْۖ",
+      "text_normalized": "واليا ربك فارغب",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 597
+    }
+  ]
+}

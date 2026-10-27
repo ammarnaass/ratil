@@ -1,0 +1,184 @@
+{
+  "id": 87,
+  "name_ar": "الأعلى",
+  "name_en": "Al-A'la",
+  "type": "مكية",
+  "ayahs_hafs": 19,
+  "ayahs_warsh": 19,
+  "page": 591,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 87,
+      "aya": 1,
+      "text_uthmani": "سَبِّحِ اِ۪سْمَ رَبِّكَ اَ۬لَاعْلَي",
+      "text_normalized": "سبح اسم ربك الاعلي",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 2,
+      "text_uthmani": "اَ۬لذِے خَلَقَ فَسَوّ۪ىٰ",
+      "text_normalized": "الذے خلق فسويا",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 3,
+      "text_uthmani": "وَالذِے قَدَّرَ فَهَد۪ىٰ",
+      "text_normalized": "والذے قدر فهديا",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 4,
+      "text_uthmani": "وَالذِےٓ أَخْرَجَ اَ۬لْمَرْع۪ىٰ",
+      "text_normalized": "والذے اخرج المرعيا",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 5,
+      "text_uthmani": "فَجَعَلَهُۥ غُثَآءً اَحْو۪ىٰۖ",
+      "text_normalized": "فجعله غثاء احويا",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 6,
+      "text_uthmani": "سَنُقْرِئُكَ فَلَا تَنس۪ىٰٓ",
+      "text_normalized": "سنقريك فلا تنسيا",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 7,
+      "text_uthmani": "إِلَّا مَا شَآءَ اَ۬للَّهُۖ إِنَّهُۥ يَعْلَمُ اُ۬لْجَهْرَ وَمَا يَخْف۪ىٰۖ",
+      "text_normalized": "الا ما شاء الله انه يعلم الجهر وما يخفيا",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 8,
+      "text_uthmani": "وَنُيَسِّرُكَ لِلْيُسْر۪ىٰۖ",
+      "text_normalized": "ونيسرك لليسريا",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 9,
+      "text_uthmani": "فَذَكِّرِ اِن نَّفَعَتِ اِ۬لذِّكْر۪ىٰۖ",
+      "text_normalized": "فذكر ان نفعت الذكريا",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 10,
+      "text_uthmani": "سَيَذَّكَّرُ مَنْ يَّخْش۪ىٰ",
+      "text_normalized": "سيذكر من يخشيا",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 591
+    },
+    {
+      "sura": 87,
+      "aya": 11,
+      "text_uthmani": "وَيَتَجَنَّبُهَا اَ۬لَاشْقَي",
+      "text_normalized": "ويتجنبها الاشقي",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 12,
+      "text_uthmani": "اَ۬لذِے يَصْلَى اَ۬لنَّارَ اَ۬لْكُبْر۪ىٰ",
+      "text_normalized": "الذے يصلي النار الكبريا",
+      "aya_indic": "١٢",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 13,
+      "text_uthmani": "ثُمَّ لَا يَمُوتُ فِيهَا وَلَا يَحْي۪ىٰۖ",
+      "text_normalized": "ثم لا يموت فيها ولا يحييا",
+      "aya_indic": "١٣",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 14,
+      "text_uthmani": "قَدَ اَفْلَحَ مَن تَزَكّ۪ىٰ",
+      "text_normalized": "قد افلح من تزكيا",
+      "aya_indic": "١٤",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 15,
+      "text_uthmani": "وَذَكَرَ اَ۪سْمَ رَبِّهِۦ فَصَلّ۪ىٰۖ",
+      "text_normalized": "وذكر اسم ربه فصليا",
+      "aya_indic": "١٥",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 16,
+      "text_uthmani": "بَلْ تُوثِرُونَ اَ۬لْحَيَوٰةَ اَ۬لدُّنْي۪ا",
+      "text_normalized": "بل توثرون الحياه الدنيا",
+      "aya_indic": "١٦",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 17,
+      "text_uthmani": "وَالَاخِرَةُ خَيْرٞ وَأَبْق۪ىٰٓۖ",
+      "text_normalized": "والاخره خير وابقيا",
+      "aya_indic": "١٧",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 18,
+      "text_uthmani": "إِنَّ هَٰذَا لَفِے اِ۬لصُّحُفِ اِ۬لُاول۪ىٰ",
+      "text_normalized": "ان هذا لفے الصحف الاوليا",
+      "aya_indic": "١٨",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 87,
+      "aya": 19,
+      "text_uthmani": "صُحُفِ إِبْرَٰهِيمَ وَمُوس۪ىٰۖ",
+      "text_normalized": "صحف ابراهيم وموسيا",
+      "aya_indic": "١٩",
+      "jozz": 30,
+      "page": 592
+    }
+  ]
+}

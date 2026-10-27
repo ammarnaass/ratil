@@ -1,0 +1,49 @@
+{
+  "id": 112,
+  "name_ar": "الإخلاص",
+  "name_en": "Al-Ikhlas",
+  "type": "مكية",
+  "ayahs_hafs": 4,
+  "ayahs_warsh": 4,
+  "page": 604,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 112,
+      "aya": 1,
+      "text_uthmani": "قُلْ هُوَ اَ۬للَّهُ أَحَدٌۖ",
+      "text_normalized": "قل هو الله احد",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 112,
+      "aya": 2,
+      "text_uthmani": "اِ۬للَّهُ اُ۬لصَّمَدُۖ",
+      "text_normalized": "الله الصمد",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 112,
+      "aya": 3,
+      "text_uthmani": "لَمْ يَلِدْ وَلَمْ يُولَدْۖ",
+      "text_normalized": "لم يلد ولم يولد",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 112,
+      "aya": 4,
+      "text_uthmani": "وَلَمْ يَكُن لَّهُۥ كُفُؤاً اَحَدٞۖ",
+      "text_normalized": "ولم يكن له كفوا احد",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 604
+    }
+  ]
+}

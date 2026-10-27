@@ -1,0 +1,48 @@
+{
+  "id": 113,
+  "name_ar": "الفلق",
+  "name_en": "Al-Falaq",
+  "type": "مكية",
+  "ayahs_hafs": 5,
+  "ayahs_warsh": 5,
+  "page": 604,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 113,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+      "text_normalized": "بسم الله الرحمن الرحيم قل اعوذ برب الفلق",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 113,
+      "aya": 2,
+      "text_uthmani": "مِن شَرِّ مَا خَلَقَ",
+      "text_normalized": "من شر ما خلق",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 113,
+      "aya": 3,
+      "text_uthmani": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+      "text_normalized": "ومن شر غاسق اذا وقب",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 113,
+      "aya": 4,
+      "text_uthmani": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ",
+      "text_normalized": "ومن شر النفاثات في العقد",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 113,
+      "aya": 5,
+      "text_uthmani": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+      "text_normalized": "ومن شر حاسد اذا حسد",
+      "aya_indic": "٥"
+    }
+  ]
+}

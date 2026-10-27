@@ -1,0 +1,247 @@
+{
+  "id": 88,
+  "name_ar": "الغاشية",
+  "name_en": "Al-Ghashiyah",
+  "type": "مكية",
+  "ayahs_hafs": 26,
+  "ayahs_warsh": 26,
+  "page": 592,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 88,
+      "aya": 1,
+      "text_uthmani": "هَلَ اَت۪يٰكَ حَدِيثُ اُ۬لْغَٰشِيَةِۖ",
+      "text_normalized": "هل اتياك حديث الغاشيه",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 2,
+      "text_uthmani": "وُجُوهٞ يَوْمَئِذٍ خَٰشِعَةٌ",
+      "text_normalized": "وجوه يوميذ خاشعه",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 3,
+      "text_uthmani": "عَامِلَةٞ نَّاصِبَةٞ",
+      "text_normalized": "عامله ناصبه",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 4,
+      "text_uthmani": "تَصْلَىٰ نَاراً حَامِيَةٗ",
+      "text_normalized": "تصليا نارا حاميه",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 5,
+      "text_uthmani": "تُسْق۪ىٰ مِنْ عَيْنٍ اٰنِيَةٖۖ",
+      "text_normalized": "تسقيا من عين اانيه",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 6,
+      "text_uthmani": "لَّيْسَ لَهُمْ طَعَامٌ اِلَّا مِن ضَرِيعٖ",
+      "text_normalized": "ليس لهم طعام الا من ضريع",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 7,
+      "text_uthmani": "لَّا يُسْمِنُ وَلَا يُغْنِے مِن جُوعٖۖ",
+      "text_normalized": "لا يسمن ولا يغنے من جوع",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 8,
+      "text_uthmani": "وُجُوهٞ يَوْمَئِذٖ نَّاعِمَةٞ",
+      "text_normalized": "وجوه يوميذ ناعمه",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 9,
+      "text_uthmani": "لِّسَعْيِهَا رَاضِيَةٞ",
+      "text_normalized": "لسعيها راضيه",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 10,
+      "text_uthmani": "فِے جَنَّةٍ عَالِيَةٖ",
+      "text_normalized": "فے جنه عاليه",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 11,
+      "text_uthmani": "لَّا تُسْمَعُ فِيهَا لَٰغِيَةٞۖ",
+      "text_normalized": "لا تسمع فيها لاغيه",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 12,
+      "text_uthmani": "فِيهَا عَيْنٞ جَارِيَةٞۖ",
+      "text_normalized": "فيها عين جاريه",
+      "aya_indic": "١٢",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 13,
+      "text_uthmani": "فِيهَا سُرُرٞ مَّرْفُوعَةٞ",
+      "text_normalized": "فيها سرر مرفوعه",
+      "aya_indic": "١٣",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 14,
+      "text_uthmani": "وَأَكْوَابٞ مَّوْضُوعَةٞ",
+      "text_normalized": "واكواب موضوعه",
+      "aya_indic": "١٤",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 15,
+      "text_uthmani": "وَنَمَارِقُ مَصْفُوفَةٞ",
+      "text_normalized": "ونمارق مصفوفه",
+      "aya_indic": "١٥",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 16,
+      "text_uthmani": "وَزَرَابِيُّ مَبْثُوثَةٌۖ",
+      "text_normalized": "وزرابي مبثوثه",
+      "aya_indic": "١٦",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 17,
+      "text_uthmani": "۞ اَفَلَا يَنظُرُونَ إِلَى اَ۬لِابِلِ كَيْفَ خُلِقَتْ",
+      "text_normalized": "افلا ينظرون الي الابل كيف خلقت",
+      "aya_indic": "١٧",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 18,
+      "text_uthmani": "وَإِلَى اَ۬لسَّمَآءِ كَيْفَ رُفِعَتْ",
+      "text_normalized": "والي السماء كيف رفعت",
+      "aya_indic": "١٨",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 19,
+      "text_uthmani": "وَإِلَى اَ۬لْجِبَالِ كَيْفَ نُصِبَتْ",
+      "text_normalized": "والي الجبال كيف نصبت",
+      "aya_indic": "١٩",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 20,
+      "text_uthmani": "وَإِلَى اَ۬لَارْضِ كَيْفَ سُطِحَتْۖ",
+      "text_normalized": "والي الارض كيف سطحت",
+      "aya_indic": "٢٠",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 21,
+      "text_uthmani": "فَذَكِّرِ اِنَّمَآ أَنتَ مُذَكِّرٞۖ",
+      "text_normalized": "فذكر انما انت مذكر",
+      "aya_indic": "٢١",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 22,
+      "text_uthmani": "لَّسْتَ عَلَيْهِم بِمُصَيْطِرٍۖ",
+      "text_normalized": "لست عليهم بمصيطر",
+      "aya_indic": "٢٢",
+      "jozz": 30,
+      "page": 592
+    },
+    {
+      "sura": 88,
+      "aya": 23,
+      "text_uthmani": "اِلَّا مَن تَوَلّ۪ىٰ وَكَفَرَ",
+      "text_normalized": "الا من توليا وكفر",
+      "aya_indic": "٢٣",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 88,
+      "aya": 24,
+      "text_uthmani": "فَيُعَذِّبُهُ اُ۬للَّهُ اُ۬لْعَذَابَ اَ۬لَاكْبَرَۖ",
+      "text_normalized": "فيعذبه الله العذاب الاكبر",
+      "aya_indic": "٢٤",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 88,
+      "aya": 25,
+      "text_uthmani": "إِنَّ إِلَيْنَآ إِيَابَهُمْ",
+      "text_normalized": "ان الينا ايابهم",
+      "aya_indic": "٢٥",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 88,
+      "aya": 26,
+      "text_uthmani": "ثُمَّ إِنَّ عَلَيْنَا حِسَابَهُمْۖ",
+      "text_normalized": "ثم ان علينا حسابهم",
+      "aya_indic": "٢٦",
+      "jozz": 30,
+      "page": 593
+    }
+  ]
+}

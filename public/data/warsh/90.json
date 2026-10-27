@@ -1,0 +1,193 @@
+{
+  "id": 90,
+  "name_ar": "البلد",
+  "name_en": "Al-Balad",
+  "type": "مكية",
+  "ayahs_hafs": 20,
+  "ayahs_warsh": 20,
+  "page": 594,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 90,
+      "aya": 1,
+      "text_uthmani": "لَآ أُقْسِمُ بِهَٰذَا اَ۬لْبَلَدِ",
+      "text_normalized": "لا اقسم بهاذا البلد",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 2,
+      "text_uthmani": "وَأَنتَ حِلُّۢ بِهَٰذَا اَ۬لْبَلَدِ",
+      "text_normalized": "وانت حل بهاذا البلد",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 3,
+      "text_uthmani": "وَوَالِدٖ وَمَا وَلَدَ",
+      "text_normalized": "ووالد وما ولد",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 4,
+      "text_uthmani": "لَقَدْ خَلَقْنَا اَ۬لِانسَٰنَ فِے كَبَدٍۖ",
+      "text_normalized": "لقد خلقنا الانسان فے كبد",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 5,
+      "text_uthmani": "اَيَحْسِبُ أَن لَّنْ يَّقْدِرَ عَلَيْهِ أَحَدٞ",
+      "text_normalized": "ايحسب ان لن يقدر عليه احد",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 6,
+      "text_uthmani": "يَقُولُ أَهْلَكْتُ مَالاٗ لُّبَداًۖ",
+      "text_normalized": "يقول اهلكت مالا لبدا",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 7,
+      "text_uthmani": "اَيَحْسِبُ أَن لَّمْ يَرَهُۥٓ أَحَدٌۖ",
+      "text_normalized": "ايحسب ان لم يره احد",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 8,
+      "text_uthmani": "اَلَمْ نَجْعَل لَّهُۥ عَيْنَيْنِ",
+      "text_normalized": "الم نجعل له عينين",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 9,
+      "text_uthmani": "وَلِسَاناٗ وَشَفَتَيْنِ",
+      "text_normalized": "ولسانا وشفتين",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 10,
+      "text_uthmani": "وَهَدَيْنَٰهُ اُ۬لنَّجْدَيْنِۖ",
+      "text_normalized": "وهديناه النجدين",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 11,
+      "text_uthmani": "فَلَا اَ۪قْتَحَمَ اَ۬لْعَقَبَةَۖ",
+      "text_normalized": "فلا اقتحم العقبه",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 12,
+      "text_uthmani": "وَمَآ أَدْر۪يٰكَ مَا اَ۬لْعَقَبَةُۖ",
+      "text_normalized": "وما ادرياك ما العقبه",
+      "aya_indic": "١٢",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 13,
+      "text_uthmani": "فَكُّ رَقَبَةٍ",
+      "text_normalized": "فك رقبه",
+      "aya_indic": "١٣",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 14,
+      "text_uthmani": "اَوِ اِطْعَامٞ فِے يَوْمٖ ذِے مَسْغَبَةٖ",
+      "text_normalized": "او اطعام فے يوم ذے مسغبه",
+      "aya_indic": "١٤",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 15,
+      "text_uthmani": "يَتِيماٗ ذَا مَقْرَبَةٍ",
+      "text_normalized": "يتيما ذا مقربه",
+      "aya_indic": "١٥",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 16,
+      "text_uthmani": "اَوْ مِسْكِيناٗ ذَا مَتْرَبَةٖۖ",
+      "text_normalized": "او مسكينا ذا متربه",
+      "aya_indic": "١٦",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 17,
+      "text_uthmani": "ثُمَّ كَانَ مِنَ اَ۬لذِينَ ءَامَنُواْ وَتَوَاصَوْاْ بِالصَّبْرِ وَتَوَاصَوْاْ بِالْمَرْحَمَةِۖ",
+      "text_normalized": "ثم كان من الذين ءامنوا وتواصوا بالصبر وتواصوا بالمرحمه",
+      "aya_indic": "١٧",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 18,
+      "text_uthmani": "أُوْلَٰٓئِكَ أَصْحَٰبُ اُ۬لْمَيْمَنَةِۖ",
+      "text_normalized": "اولايك اصحاب الميمنه",
+      "aya_indic": "١٨",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 90,
+      "aya": 19,
+      "text_uthmani": "وَالذِينَ كَفَرُواْ بِـَٔايَٰتِنَا هُمُۥٓ أَصْحَٰبُ اُ۬لْمَشْـَٔمَةِۖ",
+      "text_normalized": "والذين كفروا باياتنا هم اصحاب المشمه",
+      "aya_indic": "١٩",
+      "jozz": 30,
+      "page": 595
+    },
+    {
+      "sura": 90,
+      "aya": 20,
+      "text_uthmani": "عَلَيْهِمْ نَارٞ مُّوصَدَةٞۖ",
+      "text_normalized": "عليهم نار موصده",
+      "aya_indic": "٢٠",
+      "jozz": 30,
+      "page": 595
+    }
+  ]
+}

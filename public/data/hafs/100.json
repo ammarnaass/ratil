@@ -1,0 +1,90 @@
+{
+  "id": 100,
+  "name_ar": "العاديات",
+  "name_en": "Al-'Adiyat",
+  "type": "مكية",
+  "ayahs_hafs": 11,
+  "ayahs_warsh": 11,
+  "page": 599,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 100,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ وَٱلْعَٰدِيَٰتِ ضَبْحًا",
+      "text_normalized": "بسم الله الرحمن الرحيم والعاديات ضبحا",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 100,
+      "aya": 2,
+      "text_uthmani": "فَٱلْمُورِيَٰتِ قَدْحًا",
+      "text_normalized": "فالموريات قدحا",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 100,
+      "aya": 3,
+      "text_uthmani": "فَٱلْمُغِيرَٰتِ صُبْحًا",
+      "text_normalized": "فالمغيرات صبحا",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 100,
+      "aya": 4,
+      "text_uthmani": "فَأَثَرْنَ بِهِۦ نَقْعًا",
+      "text_normalized": "فاثرن به نقعا",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 100,
+      "aya": 5,
+      "text_uthmani": "فَوَسَطْنَ بِهِۦ جَمْعًا",
+      "text_normalized": "فوسطن به جمعا",
+      "aya_indic": "٥"
+    },
+    {
+      "sura": 100,
+      "aya": 6,
+      "text_uthmani": "إِنَّ ٱلْإِنسَٰنَ لِرَبِّهِۦ لَكَنُودٌ",
+      "text_normalized": "ان الانسان لربه لكنود",
+      "aya_indic": "٦"
+    },
+    {
+      "sura": 100,
+      "aya": 7,
+      "text_uthmani": "وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ",
+      "text_normalized": "وانه عليا ذلك لشهيد",
+      "aya_indic": "٧"
+    },
+    {
+      "sura": 100,
+      "aya": 8,
+      "text_uthmani": "وَإِنَّهُۥ لِحُبِّ ٱلْخَيْرِ لَشَدِيدٌ",
+      "text_normalized": "وانه لحب الخير لشديد",
+      "aya_indic": "٨"
+    },
+    {
+      "sura": 100,
+      "aya": 9,
+      "text_uthmani": "أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِى ٱلْقُبُورِ",
+      "text_normalized": "افلا يعلم اذا بعثر ما في القبور",
+      "aya_indic": "٩"
+    },
+    {
+      "sura": 100,
+      "aya": 10,
+      "text_uthmani": "وَحُصِّلَ مَا فِى ٱلصُّدُورِ",
+      "text_normalized": "وحصل ما في الصدور",
+      "aya_indic": "١٠"
+    },
+    {
+      "sura": 100,
+      "aya": 11,
+      "text_uthmani": "إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٍ لَّخَبِيرٌۢ",
+      "text_normalized": "ان ربهم بهم يوميذ لخبير",
+      "aya_indic": "١١"
+    }
+  ]
+}

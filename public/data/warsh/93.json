@@ -1,0 +1,112 @@
+{
+  "id": 93,
+  "name_ar": "الضحى",
+  "name_en": "Ad-Duha",
+  "type": "مكية",
+  "ayahs_hafs": 11,
+  "ayahs_warsh": 11,
+  "page": 596,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 93,
+      "aya": 1,
+      "text_uthmani": "وَالضُّح۪ىٰ",
+      "text_normalized": "والضحيا",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 2,
+      "text_uthmani": "وَاليْلِ إِذَا سَج۪ىٰ",
+      "text_normalized": "واليل اذا سجيا",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 3,
+      "text_uthmani": "مَا وَدَّعَكَ رَبُّكَ وَمَا قَل۪ىٰۖ",
+      "text_normalized": "ما ودعك ربك وما قليا",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 4,
+      "text_uthmani": "وَلَلَاخِرَةُ خَيْرٞ لَّكَ مِنَ اَ۬لُاول۪ىٰۖ",
+      "text_normalized": "وللاخره خير لك من الاوليا",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 5,
+      "text_uthmani": "وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْض۪ىٰٓۖ",
+      "text_normalized": "ولسوف يعطيك ربك فترضيا",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 6,
+      "text_uthmani": "أَلَمْ يَجِدْكَ يَتِيماٗ فَـَٔاو۪ىٰ",
+      "text_normalized": "الم يجدك يتيما فاويا",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 7,
+      "text_uthmani": "وَوَجَدَكَ ضَآلّاٗ فَهَد۪ىٰ",
+      "text_normalized": "ووجدك ضالا فهديا",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 8,
+      "text_uthmani": "وَوَجَدَكَ عَآئِلاٗ فَأَغْن۪ىٰۖ",
+      "text_normalized": "ووجدك عايلا فاغنيا",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 9,
+      "text_uthmani": "فَأَمَّا اَ۬لْيَتِيمَ فَلَا تَقْهَرْۖ",
+      "text_normalized": "فاما اليتيم فلا تقهر",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 10,
+      "text_uthmani": "وَأَمَّا اَ۬لسَّآئِلَ فَلَا تَنْهَرْۖ",
+      "text_normalized": "واما السايل فلا تنهر",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 596
+    },
+    {
+      "sura": 93,
+      "aya": 11,
+      "text_uthmani": "وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثَۖ",
+      "text_normalized": "واما بنعمه ربك فحدث",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 596
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": 99,
+  "name_ar": "الزلزلة",
+  "name_en": "Az-Zalzalah",
+  "type": "مدنية",
+  "ayahs_hafs": 8,
+  "ayahs_warsh": 9,
+  "page": 599,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 99,
+      "aya": 1,
+      "text_uthmani": "إِذَا زُلْزِلَتِ اِ۬لَارْضُ زِلْزَالَهَا",
+      "text_normalized": "اذا زلزلت الارض زلزالها",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 2,
+      "text_uthmani": "وَأَخْرَجَتِ اِ۬لَارْضُ أَثْقَالَهَا",
+      "text_normalized": "واخرجت الارض اثقالها",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 3,
+      "text_uthmani": "وَقَالَ اَ۬لِانسَٰنُ مَا لَهَا",
+      "text_normalized": "وقال الانسان ما لها",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 4,
+      "text_uthmani": "يَوْمَئِذٖ تُحَدِّثُ أَخْبَارَهَا",
+      "text_normalized": "يوميذ تحدث اخبارها",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 5,
+      "text_uthmani": "بِأَنَّ رَبَّكَ أَوْح۪ىٰ لَهَاۖ",
+      "text_normalized": "بان ربك اوحيا لها",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 6,
+      "text_uthmani": "يَوْمَئِذٖ يَصْدُرُ اُ۬لنَّاسُ أَشْتَاتاٗ",
+      "text_normalized": "يوميذ يصدر الناس اشتاتا",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 7,
+      "text_uthmani": "لِّيُرَوَاْ اَعْمَٰلَهُمْۖ",
+      "text_normalized": "ليروا اعمالهم",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 8,
+      "text_uthmani": "فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْراٗ يَرَهُۥۖ",
+      "text_normalized": "فمن يعمل مثقال ذره خيرا يره",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 99,
+      "aya": 9,
+      "text_uthmani": "وَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٖ شَرّاٗ يَرَهُۥۖ",
+      "text_normalized": "ومن يعمل مثقال ذره شرا يره",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 599
+    }
+  ]
+}

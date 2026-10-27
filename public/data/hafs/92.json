@@ -1,0 +1,160 @@
+{
+  "id": 92,
+  "name_ar": "الليل",
+  "name_en": "Al-Layl",
+  "type": "مكية",
+  "ayahs_hafs": 21,
+  "ayahs_warsh": 21,
+  "page": 595,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 92,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ وَٱلَّيْلِ إِذَا يَغْشَىٰ",
+      "text_normalized": "بسم الله الرحمن الرحيم واليل اذا يغشيا",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 92,
+      "aya": 2,
+      "text_uthmani": "وَٱلنَّهَارِ إِذَا تَجَلَّىٰ",
+      "text_normalized": "والنهار اذا تجليا",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 92,
+      "aya": 3,
+      "text_uthmani": "وَمَا خَلَقَ ٱلذَّكَرَ وَٱلْأُنثَىٰٓ",
+      "text_normalized": "وما خلق الذكر والانثيا",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 92,
+      "aya": 4,
+      "text_uthmani": "إِنَّ سَعْيَكُمْ لَشَتَّىٰ",
+      "text_normalized": "ان سعيكم لشتيا",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 92,
+      "aya": 5,
+      "text_uthmani": "فَأَمَّا مَنْ أَعْطَىٰ وَٱتَّقَىٰ",
+      "text_normalized": "فاما من اعطيا واتقيا",
+      "aya_indic": "٥"
+    },
+    {
+      "sura": 92,
+      "aya": 6,
+      "text_uthmani": "وَصَدَّقَ بِٱلْحُسْنَىٰ",
+      "text_normalized": "وصدق بالحسنيا",
+      "aya_indic": "٦"
+    },
+    {
+      "sura": 92,
+      "aya": 7,
+      "text_uthmani": "فَسَنُيَسِّرُهُۥ لِلْيُسْرَىٰ",
+      "text_normalized": "فسنيسره لليسريا",
+      "aya_indic": "٧"
+    },
+    {
+      "sura": 92,
+      "aya": 8,
+      "text_uthmani": "وَأَمَّا مَنۢ بَخِلَ وَٱسْتَغْنَىٰ",
+      "text_normalized": "واما من بخل واستغنيا",
+      "aya_indic": "٨"
+    },
+    {
+      "sura": 92,
+      "aya": 9,
+      "text_uthmani": "وَكَذَّبَ بِٱلْحُسْنَىٰ",
+      "text_normalized": "وكذب بالحسنيا",
+      "aya_indic": "٩"
+    },
+    {
+      "sura": 92,
+      "aya": 10,
+      "text_uthmani": "فَسَنُيَسِّرُهُۥ لِلْعُسْرَىٰ",
+      "text_normalized": "فسنيسره للعسريا",
+      "aya_indic": "١٠"
+    },
+    {
+      "sura": 92,
+      "aya": 11,
+      "text_uthmani": "وَمَا يُغْنِى عَنْهُ مَالُهُۥٓ إِذَا تَرَدَّىٰٓ",
+      "text_normalized": "وما يغني عنه ماله اذا ترديا",
+      "aya_indic": "١١"
+    },
+    {
+      "sura": 92,
+      "aya": 12,
+      "text_uthmani": "إِنَّ عَلَيْنَا لَلْهُدَىٰ",
+      "text_normalized": "ان علينا للهديا",
+      "aya_indic": "١٢"
+    },
+    {
+      "sura": 92,
+      "aya": 13,
+      "text_uthmani": "وَإِنَّ لَنَا لَلْـَٔاخِرَةَ وَٱلْأُولَىٰ",
+      "text_normalized": "وان لنا للاخره والاوليا",
+      "aya_indic": "١٣"
+    },
+    {
+      "sura": 92,
+      "aya": 14,
+      "text_uthmani": "فَأَنذَرْتُكُمْ نَارًا تَلَظَّىٰ",
+      "text_normalized": "فانذرتكم نارا تلظيا",
+      "aya_indic": "١٤"
+    },
+    {
+      "sura": 92,
+      "aya": 15,
+      "text_uthmani": "لَا يَصْلَىٰهَآ إِلَّا ٱلْأَشْقَى",
+      "text_normalized": "لا يصلياها الا الاشقي",
+      "aya_indic": "١٥"
+    },
+    {
+      "sura": 92,
+      "aya": 16,
+      "text_uthmani": "ٱلَّذِى كَذَّبَ وَتَوَلَّىٰ",
+      "text_normalized": "الذي كذب وتوليا",
+      "aya_indic": "١٦"
+    },
+    {
+      "sura": 92,
+      "aya": 17,
+      "text_uthmani": "وَسَيُجَنَّبُهَا ٱلْأَتْقَى",
+      "text_normalized": "وسيجنبها الاتقي",
+      "aya_indic": "١٧"
+    },
+    {
+      "sura": 92,
+      "aya": 18,
+      "text_uthmani": "ٱلَّذِى يُؤْتِى مَالَهُۥ يَتَزَكَّىٰ",
+      "text_normalized": "الذي يوتي ماله يتزكيا",
+      "aya_indic": "١٨"
+    },
+    {
+      "sura": 92,
+      "aya": 19,
+      "text_uthmani": "وَمَا لِأَحَدٍ عِندَهُۥ مِن نِّعْمَةٍ تُجْزَىٰٓ",
+      "text_normalized": "وما لاحد عنده من نعمه تجزيا",
+      "aya_indic": "١٩"
+    },
+    {
+      "sura": 92,
+      "aya": 20,
+      "text_uthmani": "إِلَّا ٱبْتِغَآءَ وَجْهِ رَبِّهِ ٱلْأَعْلَىٰ",
+      "text_normalized": "الا ابتغاء وجه ربه الاعليا",
+      "aya_indic": "٢٠"
+    },
+    {
+      "sura": 92,
+      "aya": 21,
+      "text_uthmani": "وَلَسَوْفَ يَرْضَىٰ",
+      "text_normalized": "ولسوف يرضيا",
+      "aya_indic": "٢١"
+    }
+  ]
+}

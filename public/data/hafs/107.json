@@ -1,0 +1,62 @@
+{
+  "id": 107,
+  "name_ar": "الماعون",
+  "name_en": "Al-Ma'un",
+  "type": "مكية",
+  "ayahs_hafs": 7,
+  "ayahs_warsh": 7,
+  "page": 602,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 107,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ",
+      "text_normalized": "بسم الله الرحمن الرحيم ارءيت الذي يكذب بالدين",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 107,
+      "aya": 2,
+      "text_uthmani": "فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ",
+      "text_normalized": "فذالك الذي يدع اليتيم",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 107,
+      "aya": 3,
+      "text_uthmani": "وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ",
+      "text_normalized": "ولا يحض عليا طعام المسكين",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 107,
+      "aya": 4,
+      "text_uthmani": "فَوَيْلٌ لِّلْمُصَلِّينَ",
+      "text_normalized": "فويل للمصلين",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 107,
+      "aya": 5,
+      "text_uthmani": "ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ",
+      "text_normalized": "الذين هم عن صلاتهم ساهون",
+      "aya_indic": "٥"
+    },
+    {
+      "sura": 107,
+      "aya": 6,
+      "text_uthmani": "ٱلَّذِينَ هُمْ يُرَآءُونَ",
+      "text_normalized": "الذين هم يراءون",
+      "aya_indic": "٦"
+    },
+    {
+      "sura": 107,
+      "aya": 7,
+      "text_uthmani": "وَيَمْنَعُونَ ٱلْمَاعُونَ",
+      "text_normalized": "ويمنعون الماعون",
+      "aya_indic": "٧"
+    }
+  ]
+}

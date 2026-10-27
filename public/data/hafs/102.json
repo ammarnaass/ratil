@@ -1,0 +1,69 @@
+{
+  "id": 102,
+  "name_ar": "التكاثر",
+  "name_en": "At-Takathur",
+  "type": "مكية",
+  "ayahs_hafs": 8,
+  "ayahs_warsh": 8,
+  "page": 600,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 102,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ أَلْهَىٰكُمُ ٱلتَّكَاثُرُ",
+      "text_normalized": "بسم الله الرحمن الرحيم الهياكم التكاثر",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 102,
+      "aya": 2,
+      "text_uthmani": "حَتَّىٰ زُرْتُمُ ٱلْمَقَابِرَ",
+      "text_normalized": "حتيا زرتم المقابر",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 102,
+      "aya": 3,
+      "text_uthmani": "كَلَّا سَوْفَ تَعْلَمُونَ",
+      "text_normalized": "كلا سوف تعلمون",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 102,
+      "aya": 4,
+      "text_uthmani": "ثُمَّ كَلَّا سَوْفَ تَعْلَمُونَ",
+      "text_normalized": "ثم كلا سوف تعلمون",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 102,
+      "aya": 5,
+      "text_uthmani": "كَلَّا لَوْ تَعْلَمُونَ عِلْمَ ٱلْيَقِينِ",
+      "text_normalized": "كلا لو تعلمون علم اليقين",
+      "aya_indic": "٥"
+    },
+    {
+      "sura": 102,
+      "aya": 6,
+      "text_uthmani": "لَتَرَوُنَّ ٱلْجَحِيمَ",
+      "text_normalized": "لترون الجحيم",
+      "aya_indic": "٦"
+    },
+    {
+      "sura": 102,
+      "aya": 7,
+      "text_uthmani": "ثُمَّ لَتَرَوُنَّهَا عَيْنَ ٱلْيَقِينِ",
+      "text_normalized": "ثم لترونها عين اليقين",
+      "aya_indic": "٧"
+    },
+    {
+      "sura": 102,
+      "aya": 8,
+      "text_uthmani": "ثُمَّ لَتُسْـَٔلُنَّ يَوْمَئِذٍ عَنِ ٱلنَّعِيمِ",
+      "text_normalized": "ثم لتسلن يوميذ عن النعيم",
+      "aya_indic": "٨"
+    }
+  ]
+}

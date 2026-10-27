@@ -1,0 +1,132 @@
+{
+  "id": 86,
+  "name_ar": "الطارق",
+  "name_en": "At-Tariq",
+  "type": "مكية",
+  "ayahs_hafs": 17,
+  "ayahs_warsh": 17,
+  "page": 591,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 86,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ وَٱلسَّمَآءِ وَٱلطَّارِقِ",
+      "text_normalized": "بسم الله الرحمن الرحيم والسماء والطارق",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 86,
+      "aya": 2,
+      "text_uthmani": "وَمَآ أَدْرَىٰكَ مَا ٱلطَّارِقُ",
+      "text_normalized": "وما ادرياك ما الطارق",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 86,
+      "aya": 3,
+      "text_uthmani": "ٱلنَّجْمُ ٱلثَّاقِبُ",
+      "text_normalized": "النجم الثاقب",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 86,
+      "aya": 4,
+      "text_uthmani": "إِن كُلُّ نَفْسٍ لَّمَّا عَلَيْهَا حَافِظٌ",
+      "text_normalized": "ان كل نفس لما عليها حافظ",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 86,
+      "aya": 5,
+      "text_uthmani": "فَلْيَنظُرِ ٱلْإِنسَٰنُ مِمَّ خُلِقَ",
+      "text_normalized": "فلينظر الانسان مم خلق",
+      "aya_indic": "٥"
+    },
+    {
+      "sura": 86,
+      "aya": 6,
+      "text_uthmani": "خُلِقَ مِن مَّآءٍ دَافِقٍ",
+      "text_normalized": "خلق من ماء دافق",
+      "aya_indic": "٦"
+    },
+    {
+      "sura": 86,
+      "aya": 7,
+      "text_uthmani": "يَخْرُجُ مِنۢ بَيْنِ ٱلصُّلْبِ وَٱلتَّرَآئِبِ",
+      "text_normalized": "يخرج من بين الصلب والترايب",
+      "aya_indic": "٧"
+    },
+    {
+      "sura": 86,
+      "aya": 8,
+      "text_uthmani": "إِنَّهُۥ عَلَىٰ رَجْعِهِۦ لَقَادِرٌ",
+      "text_normalized": "انه عليا رجعه لقادر",
+      "aya_indic": "٨"
+    },
+    {
+      "sura": 86,
+      "aya": 9,
+      "text_uthmani": "يَوْمَ تُبْلَى ٱلسَّرَآئِرُ",
+      "text_normalized": "يوم تبلي السراير",
+      "aya_indic": "٩"
+    },
+    {
+      "sura": 86,
+      "aya": 10,
+      "text_uthmani": "فَمَا لَهُۥ مِن قُوَّةٍ وَلَا نَاصِرٍ",
+      "text_normalized": "فما له من قوه ولا ناصر",
+      "aya_indic": "١٠"
+    },
+    {
+      "sura": 86,
+      "aya": 11,
+      "text_uthmani": "وَٱلسَّمَآءِ ذَاتِ ٱلرَّجْعِ",
+      "text_normalized": "والسماء ذات الرجع",
+      "aya_indic": "١١"
+    },
+    {
+      "sura": 86,
+      "aya": 12,
+      "text_uthmani": "وَٱلْأَرْضِ ذَاتِ ٱلصَّدْعِ",
+      "text_normalized": "والارض ذات الصدع",
+      "aya_indic": "١٢"
+    },
+    {
+      "sura": 86,
+      "aya": 13,
+      "text_uthmani": "إِنَّهُۥ لَقَوْلٌ فَصْلٌ",
+      "text_normalized": "انه لقول فصل",
+      "aya_indic": "١٣"
+    },
+    {
+      "sura": 86,
+      "aya": 14,
+      "text_uthmani": "وَمَا هُوَ بِٱلْهَزْلِ",
+      "text_normalized": "وما هو بالهزل",
+      "aya_indic": "١٤"
+    },
+    {
+      "sura": 86,
+      "aya": 15,
+      "text_uthmani": "إِنَّهُمْ يَكِيدُونَ كَيْدًا",
+      "text_normalized": "انهم يكيدون كيدا",
+      "aya_indic": "١٥"
+    },
+    {
+      "sura": 86,
+      "aya": 16,
+      "text_uthmani": "وَأَكِيدُ كَيْدًا",
+      "text_normalized": "واكيد كيدا",
+      "aya_indic": "١٦"
+    },
+    {
+      "sura": 86,
+      "aya": 17,
+      "text_uthmani": "فَمَهِّلِ ٱلْكَٰفِرِينَ أَمْهِلْهُمْ رُوَيْدًۢا",
+      "text_normalized": "فمهل الكافرين امهلهم رويدا",
+      "aya_indic": "١٧"
+    }
+  ]
+}

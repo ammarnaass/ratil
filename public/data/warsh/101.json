@@ -1,0 +1,103 @@
+{
+  "id": 101,
+  "name_ar": "القارعة",
+  "name_en": "Al-Qari'ah",
+  "type": "مكية",
+  "ayahs_hafs": 11,
+  "ayahs_warsh": 10,
+  "page": 600,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 101,
+      "aya": 1,
+      "text_uthmani": "اِ۬لْقَارِعَةُ مَا اَ۬لْقَارِعَةُۖ",
+      "text_normalized": "القارعه ما القارعه",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 2,
+      "text_uthmani": "وَمَآ أَدْر۪يٰكَ مَا اَ۬لْقَارِعَةُۖ",
+      "text_normalized": "وما ادرياك ما القارعه",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 3,
+      "text_uthmani": "يَوْمَ يَكُونُ اُ۬لنَّاسُ كَالْفَرَاشِ اِ۬لْمَبْثُوثِ",
+      "text_normalized": "يوم يكون الناس كالفراش المبثوث",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 4,
+      "text_uthmani": "وَتَكُونُ اُ۬لْجِبَالُ كَالْعِهْنِ اِ۬لْمَنفُوشِۖ",
+      "text_normalized": "وتكون الجبال كالعهن المنفوش",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 5,
+      "text_uthmani": "فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ",
+      "text_normalized": "فاما من ثقلت موازينه",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 6,
+      "text_uthmani": "فَهُوَ فِے عِيشَةٖ رَّاضِيَةٖۖ",
+      "text_normalized": "فهو فے عيشه راضيه",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 7,
+      "text_uthmani": "وَأَمَّا مَنْ خَفَّتْ مَوَٰزِينُهُۥ",
+      "text_normalized": "واما من خفت موازينه",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 8,
+      "text_uthmani": "فَأُمُّهُۥ هَاوِيَةٞۖ",
+      "text_normalized": "فامه هاويه",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 9,
+      "text_uthmani": "وَمَآ أَدْر۪يٰكَ مَا هِيَهْۖ",
+      "text_normalized": "وما ادرياك ما هيه",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 101,
+      "aya": 10,
+      "text_uthmani": "نَارٌ حَامِيَةٌۖ",
+      "text_normalized": "نار حاميه",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 600
+    }
+  ]
+}

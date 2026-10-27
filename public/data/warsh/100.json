@@ -1,0 +1,112 @@
+{
+  "id": 100,
+  "name_ar": "العاديات",
+  "name_en": "Al-'Adiyat",
+  "type": "مكية",
+  "ayahs_hafs": 11,
+  "ayahs_warsh": 11,
+  "page": 599,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 100,
+      "aya": 1,
+      "text_uthmani": "وَالْعَٰدِيَٰتِ ضَبْحاٗ",
+      "text_normalized": "والعاديات ضبحا",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 100,
+      "aya": 2,
+      "text_uthmani": "فَالْمُورِيَٰتِ قَدْحاٗ",
+      "text_normalized": "فالموريات قدحا",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 100,
+      "aya": 3,
+      "text_uthmani": "فَالْمُغِيرَٰتِ صُبْحاٗ",
+      "text_normalized": "فالمغيرات صبحا",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 100,
+      "aya": 4,
+      "text_uthmani": "فَأَثَرْنَ بِهِۦ نَقْعاٗ",
+      "text_normalized": "فاثرن به نقعا",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 100,
+      "aya": 5,
+      "text_uthmani": "فَوَسَطْنَ بِهِۦ جَمْعاً",
+      "text_normalized": "فوسطن به جمعا",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 599
+    },
+    {
+      "sura": 100,
+      "aya": 6,
+      "text_uthmani": "اِنَّ اَ۬لِانسَٰنَ لِرَبِّهِۦ لَكَنُودٞ",
+      "text_normalized": "ان الانسان لربه لكنود",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 100,
+      "aya": 7,
+      "text_uthmani": "وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٞ",
+      "text_normalized": "وانه عليا ذلك لشهيد",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 100,
+      "aya": 8,
+      "text_uthmani": "وَإِنَّهُۥ لِحُبِّ اِ۬لْخَيْرِ لَشَدِيدٌۖ",
+      "text_normalized": "وانه لحب الخير لشديد",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 100,
+      "aya": 9,
+      "text_uthmani": "۞ اَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِے اِ۬لْقُبُورِ",
+      "text_normalized": "افلا يعلم اذا بعثر ما فے القبور",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 100,
+      "aya": 10,
+      "text_uthmani": "وَحُصِّلَ مَا فِے اِ۬لصُّدُورِ",
+      "text_normalized": "وحصل ما فے الصدور",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 600
+    },
+    {
+      "sura": 100,
+      "aya": 11,
+      "text_uthmani": "إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٖ لَّخَبِيرٌۖ",
+      "text_normalized": "ان ربهم بهم يوميذ لخبير",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 600
+    }
+  ]
+}

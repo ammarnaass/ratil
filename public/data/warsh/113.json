@@ -1,0 +1,58 @@
+{
+  "id": 113,
+  "name_ar": "الفلق",
+  "name_en": "Al-Falaq",
+  "type": "مكية",
+  "ayahs_hafs": 5,
+  "ayahs_warsh": 5,
+  "page": 604,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 113,
+      "aya": 1,
+      "text_uthmani": "قُلَ اَعُوذُ بِرَبِّ اِ۬لْفَلَقِ",
+      "text_normalized": "قل اعوذ برب الفلق",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 113,
+      "aya": 2,
+      "text_uthmani": "مِن شَرِّ مَا خَلَقَ",
+      "text_normalized": "من شر ما خلق",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 113,
+      "aya": 3,
+      "text_uthmani": "وَمِن شَرِّ غَاسِقٍ اِذَا وَقَبَ",
+      "text_normalized": "ومن شر غاسق اذا وقب",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 113,
+      "aya": 4,
+      "text_uthmani": "وَمِن شَرِّ اِ۬لنَّفَّٰثَٰتِ فِے اِ۬لْعُقَدِ",
+      "text_normalized": "ومن شر النفاثات فے العقد",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 113,
+      "aya": 5,
+      "text_uthmani": "وَمِن شَرِّ حَاسِدٍ اِذَا حَسَدَۖ",
+      "text_normalized": "ومن شر حاسد اذا حسد",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 604
+    }
+  ]
+}

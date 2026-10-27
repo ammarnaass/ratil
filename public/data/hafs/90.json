@@ -1,0 +1,153 @@
+{
+  "id": 90,
+  "name_ar": "البلد",
+  "name_en": "Al-Balad",
+  "type": "مكية",
+  "ayahs_hafs": 20,
+  "ayahs_warsh": 20,
+  "page": 594,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 90,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ لَآ أُقْسِمُ بِهَٰذَا ٱلْبَلَدِ",
+      "text_normalized": "بسم الله الرحمن الرحيم لا اقسم بهاذا البلد",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 90,
+      "aya": 2,
+      "text_uthmani": "وَأَنتَ حِلٌّۢ بِهَٰذَا ٱلْبَلَدِ",
+      "text_normalized": "وانت حل بهاذا البلد",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 90,
+      "aya": 3,
+      "text_uthmani": "وَوَالِدٍ وَمَا وَلَدَ",
+      "text_normalized": "ووالد وما ولد",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 90,
+      "aya": 4,
+      "text_uthmani": "لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِى كَبَدٍ",
+      "text_normalized": "لقد خلقنا الانسان في كبد",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 90,
+      "aya": 5,
+      "text_uthmani": "أَيَحْسَبُ أَن لَّن يَقْدِرَ عَلَيْهِ أَحَدٌ",
+      "text_normalized": "ايحسب ان لن يقدر عليه احد",
+      "aya_indic": "٥"
+    },
+    {
+      "sura": 90,
+      "aya": 6,
+      "text_uthmani": "يَقُولُ أَهْلَكْتُ مَالًا لُّبَدًا",
+      "text_normalized": "يقول اهلكت مالا لبدا",
+      "aya_indic": "٦"
+    },
+    {
+      "sura": 90,
+      "aya": 7,
+      "text_uthmani": "أَيَحْسَبُ أَن لَّمْ يَرَهُۥٓ أَحَدٌ",
+      "text_normalized": "ايحسب ان لم يره احد",
+      "aya_indic": "٧"
+    },
+    {
+      "sura": 90,
+      "aya": 8,
+      "text_uthmani": "أَلَمْ نَجْعَل لَّهُۥ عَيْنَيْنِ",
+      "text_normalized": "الم نجعل له عينين",
+      "aya_indic": "٨"
+    },
+    {
+      "sura": 90,
+      "aya": 9,
+      "text_uthmani": "وَلِسَانًا وَشَفَتَيْنِ",
+      "text_normalized": "ولسانا وشفتين",
+      "aya_indic": "٩"
+    },
+    {
+      "sura": 90,
+      "aya": 10,
+      "text_uthmani": "وَهَدَيْنَٰهُ ٱلنَّجْدَيْنِ",
+      "text_normalized": "وهديناه النجدين",
+      "aya_indic": "١٠"
+    },
+    {
+      "sura": 90,
+      "aya": 11,
+      "text_uthmani": "فَلَا ٱقْتَحَمَ ٱلْعَقَبَةَ",
+      "text_normalized": "فلا اقتحم العقبه",
+      "aya_indic": "١١"
+    },
+    {
+      "sura": 90,
+      "aya": 12,
+      "text_uthmani": "وَمَآ أَدْرَىٰكَ مَا ٱلْعَقَبَةُ",
+      "text_normalized": "وما ادرياك ما العقبه",
+      "aya_indic": "١٢"
+    },
+    {
+      "sura": 90,
+      "aya": 13,
+      "text_uthmani": "فَكُّ رَقَبَةٍ",
+      "text_normalized": "فك رقبه",
+      "aya_indic": "١٣"
+    },
+    {
+      "sura": 90,
+      "aya": 14,
+      "text_uthmani": "أَوْ إِطْعَٰمٌ فِى يَوْمٍ ذِى مَسْغَبَةٍ",
+      "text_normalized": "او اطعام في يوم ذي مسغبه",
+      "aya_indic": "١٤"
+    },
+    {
+      "sura": 90,
+      "aya": 15,
+      "text_uthmani": "يَتِيمًا ذَا مَقْرَبَةٍ",
+      "text_normalized": "يتيما ذا مقربه",
+      "aya_indic": "١٥"
+    },
+    {
+      "sura": 90,
+      "aya": 16,
+      "text_uthmani": "أَوْ مِسْكِينًا ذَا مَتْرَبَةٍ",
+      "text_normalized": "او مسكينا ذا متربه",
+      "aya_indic": "١٦"
+    },
+    {
+      "sura": 90,
+      "aya": 17,
+      "text_uthmani": "ثُمَّ كَانَ مِنَ ٱلَّذِينَ ءَامَنُوا۟ وَتَوَاصَوْا۟ بِٱلصَّبْرِ وَتَوَاصَوْا۟ بِٱلْمَرْحَمَةِ",
+      "text_normalized": "ثم كان من الذين ءامنوا وتواصوا بالصبر وتواصوا بالمرحمه",
+      "aya_indic": "١٧"
+    },
+    {
+      "sura": 90,
+      "aya": 18,
+      "text_uthmani": "أُو۟لَٰٓئِكَ أَصْحَٰبُ ٱلْمَيْمَنَةِ",
+      "text_normalized": "اولايك اصحاب الميمنه",
+      "aya_indic": "١٨"
+    },
+    {
+      "sura": 90,
+      "aya": 19,
+      "text_uthmani": "وَٱلَّذِينَ كَفَرُوا۟ بِـَٔايَٰتِنَا هُمْ أَصْحَٰبُ ٱلْمَشْـَٔمَةِ",
+      "text_normalized": "والذين كفروا باياتنا هم اصحاب المشمه",
+      "aya_indic": "١٩"
+    },
+    {
+      "sura": 90,
+      "aya": 20,
+      "text_uthmani": "عَلَيْهِمْ نَارٌ مُّؤْصَدَةٌۢ",
+      "text_normalized": "عليهم نار موصده",
+      "aya_indic": "٢٠"
+    }
+  ]
+}

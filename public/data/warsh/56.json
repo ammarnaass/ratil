@@ -1,0 +1,904 @@
+{
+  "id": 56,
+  "name_ar": "الواقعة",
+  "name_en": "Al-Waqi'ah",
+  "type": "مكية",
+  "ayahs_hafs": 96,
+  "ayahs_warsh": 97,
+  "page": 534,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 56,
+      "aya": 1,
+      "text_uthmani": "إِذَا وَقَعَتِ اِ۬لْوَاقِعَةُ",
+      "text_normalized": "اذا وقعت الواقعه",
+      "aya_indic": "١",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 2,
+      "text_uthmani": "لَيْسَ لِوَقْعَتِهَا كَٰذِبَةٌۖ",
+      "text_normalized": "ليس لوقعتها كاذبه",
+      "aya_indic": "٢",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 3,
+      "text_uthmani": "خَافِضَةٞ رَّافِعَةٌ",
+      "text_normalized": "خافضه رافعه",
+      "aya_indic": "٣",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 4,
+      "text_uthmani": "اِذَا رُجَّتِ اِ۬لَارْضُ رَجّاٗ",
+      "text_normalized": "اذا رجت الارض رجا",
+      "aya_indic": "٤",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 5,
+      "text_uthmani": "وَبُسَّتِ اِ۬لْجِبَالُ بَسّاٗ",
+      "text_normalized": "وبست الجبال بسا",
+      "aya_indic": "٥",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 6,
+      "text_uthmani": "فَكَانَتْ هَبَآءٗ مُّنۢبَثّاٗ",
+      "text_normalized": "فكانت هباء منبثا",
+      "aya_indic": "٦",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 7,
+      "text_uthmani": "وَكُنتُمُۥٓ أَزْوَٰجاٗ ثَلَٰثَةٗۖ",
+      "text_normalized": "وكنتم ازواجا ثلاثه",
+      "aya_indic": "٧",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 8,
+      "text_uthmani": "فَأَصْحَٰبُ اُ۬لْمَيْمَنَةِ",
+      "text_normalized": "فاصحاب الميمنه",
+      "aya_indic": "٨",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 9,
+      "text_uthmani": "مَآ أَصْحَٰبُ اُ۬لْمَيْمَنَةِۖ",
+      "text_normalized": "ما اصحاب الميمنه",
+      "aya_indic": "٩",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 10,
+      "text_uthmani": "وَأَصْحَٰبُ اُ۬لْمَشْـَٔمَةِ",
+      "text_normalized": "واصحاب المشمه",
+      "aya_indic": "١٠",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 11,
+      "text_uthmani": "مَآ أَصْحَٰبُ اُ۬لْمَشْـَٔمَةِۖ",
+      "text_normalized": "ما اصحاب المشمه",
+      "aya_indic": "١١",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 12,
+      "text_uthmani": "وَالسَّٰبِقُونَ اَ۬لسَّٰبِقُونَۖ",
+      "text_normalized": "والسابقون السابقون",
+      "aya_indic": "١٢",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 13,
+      "text_uthmani": "أُوْلَٰٓئِكَ اَ۬لْمُقَرَّبُونَ",
+      "text_normalized": "اولايك المقربون",
+      "aya_indic": "١٣",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 14,
+      "text_uthmani": "فِے جَنَّٰتِ اِ۬لنَّعِيمِۖ",
+      "text_normalized": "فے جنات النعيم",
+      "aya_indic": "١٤",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 15,
+      "text_uthmani": "ثُلَّةٞ مِّنَ اَ۬لَاوَّلِينَ",
+      "text_normalized": "ثله من الاولين",
+      "aya_indic": "١٥",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 16,
+      "text_uthmani": "وَقَلِيلٞ مِّنَ اَ۬لَاخِرِينَ",
+      "text_normalized": "وقليل من الاخرين",
+      "aya_indic": "١٦",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 17,
+      "text_uthmani": "عَلَىٰ سُرُرٖ مَّوْضُونَةٖ",
+      "text_normalized": "عليا سرر موضونه",
+      "aya_indic": "١٧",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 18,
+      "text_uthmani": "مُّتَّكِـِٕينَ عَلَيْهَا مُتَقَٰبِلِينَۖ",
+      "text_normalized": "متكين عليها متقابلين",
+      "aya_indic": "١٨",
+      "jozz": 27,
+      "page": 534
+    },
+    {
+      "sura": 56,
+      "aya": 19,
+      "text_uthmani": "يَطُوفُ عَلَيْهِمْ وِلْدَٰنٞ مُّخَلَّدُونَ",
+      "text_normalized": "يطوف عليهم ولدان مخلدون",
+      "aya_indic": "١٩",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 20,
+      "text_uthmani": "بِأَكْوَابٖ وَأَبَارِيقَ",
+      "text_normalized": "باكواب واباريق",
+      "aya_indic": "٢٠",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 21,
+      "text_uthmani": "وَكَأْسٖ مِّن مَّعِينٖ",
+      "text_normalized": "وكاس من معين",
+      "aya_indic": "٢١",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 22,
+      "text_uthmani": "لَّا يُصَدَّعُونَ عَنْهَا وَلَا يُنزَفُونَ",
+      "text_normalized": "لا يصدعون عنها ولا ينزفون",
+      "aya_indic": "٢٢",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 23,
+      "text_uthmani": "وَفَٰكِهَةٖ مِّمَّا يَتَخَيَّرُونَ",
+      "text_normalized": "وفاكهه مما يتخيرون",
+      "aya_indic": "٢٣",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 24,
+      "text_uthmani": "وَلَحْمِ طَيْرٖ مِّمَّا يَشْتَهُونَۖ",
+      "text_normalized": "ولحم طير مما يشتهون",
+      "aya_indic": "٢٤",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 25,
+      "text_uthmani": "وَحُورٌ عِينٞ كَأَمْثَٰلِ اِ۬للُّؤْلُوِٕ اِ۬لْمَكْنُونِ",
+      "text_normalized": "وحور عين كامثال اللولو المكنون",
+      "aya_indic": "٢٥",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 26,
+      "text_uthmani": "جَزَآءَۢ بِمَا كَانُواْ يَعْمَلُونَۖ",
+      "text_normalized": "جزاء بما كانوا يعملون",
+      "aya_indic": "٢٦",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 27,
+      "text_uthmani": "لَا يَسْمَعُونَ فِيهَا لَغْواٗ وَلَا تَاثِيماًۖ",
+      "text_normalized": "لا يسمعون فيها لغوا ولا تاثيما",
+      "aya_indic": "٢٧",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 28,
+      "text_uthmani": "اِلَّا قِيلاٗ سَلَٰماٗ سَلَٰماٗۖ",
+      "text_normalized": "الا قيلا سلاما سلاما",
+      "aya_indic": "٢٨",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 29,
+      "text_uthmani": "وَأَصْحَٰبُ اُ۬لْيَمِينِ مَآ أَصْحَٰبُ اُ۬لْيَمِينِۖ",
+      "text_normalized": "واصحاب اليمين ما اصحاب اليمين",
+      "aya_indic": "٢٩",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 30,
+      "text_uthmani": "فِے سِدْرٖ مَّخْضُودٖ",
+      "text_normalized": "فے سدر مخضود",
+      "aya_indic": "٣٠",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 31,
+      "text_uthmani": "وَطَلْحٖ مَّنضُودٖ",
+      "text_normalized": "وطلح منضود",
+      "aya_indic": "٣١",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 32,
+      "text_uthmani": "وَظِلّٖ مَّمْدُودٖ",
+      "text_normalized": "وظل ممدود",
+      "aya_indic": "٣٢",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 33,
+      "text_uthmani": "وَمَآءٖ مَّسْكُوبٖ",
+      "text_normalized": "وماء مسكوب",
+      "aya_indic": "٣٣",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 34,
+      "text_uthmani": "وَفَٰكِهَةٖ كَثِيرَةٖ",
+      "text_normalized": "وفاكهه كثيره",
+      "aya_indic": "٣٤",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 35,
+      "text_uthmani": "لَّا مَقْطُوعَةٖ وَلَا مَمْنُوعَةٖ",
+      "text_normalized": "لا مقطوعه ولا ممنوعه",
+      "aya_indic": "٣٥",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 36,
+      "text_uthmani": "وَفُرُشٖ مَّرْفُوعَةٍۖ",
+      "text_normalized": "وفرش مرفوعه",
+      "aya_indic": "٣٦",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 37,
+      "text_uthmani": "اِنَّآ أَنشَأْنَٰهُنَّ إِنشَآءٗ",
+      "text_normalized": "انا انشاناهن انشاء",
+      "aya_indic": "٣٧",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 38,
+      "text_uthmani": "فَجَعَلْنَٰهُنَّ أَبْكَاراً",
+      "text_normalized": "فجعلناهن ابكارا",
+      "aya_indic": "٣٨",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 39,
+      "text_uthmani": "عُرُباً اَتْرَاباٗ",
+      "text_normalized": "عربا اترابا",
+      "aya_indic": "٣٩",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 40,
+      "text_uthmani": "لِّأَصْحَٰبِ اِ۬لْيَمِينِۖ",
+      "text_normalized": "لاصحاب اليمين",
+      "aya_indic": "٤٠",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 41,
+      "text_uthmani": "ثُلَّةٞ مِّنَ اَ۬لَاوَّلِينَ",
+      "text_normalized": "ثله من الاولين",
+      "aya_indic": "٤١",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 42,
+      "text_uthmani": "وَثُلَّةٞ مِّنَ اَ۬لَاخِرِينَۖ",
+      "text_normalized": "وثله من الاخرين",
+      "aya_indic": "٤٢",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 43,
+      "text_uthmani": "وَأَصْحَٰبُ اُ۬لشِّمَالِ",
+      "text_normalized": "واصحاب الشمال",
+      "aya_indic": "٤٣",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 44,
+      "text_uthmani": "مَآ أَصْحَٰبُ اُ۬لشِّمَالِۖ",
+      "text_normalized": "ما اصحاب الشمال",
+      "aya_indic": "٤٤",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 45,
+      "text_uthmani": "فِے سَمُومٖ وَحَمِيمٖ",
+      "text_normalized": "فے سموم وحميم",
+      "aya_indic": "٤٥",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 46,
+      "text_uthmani": "وَظِلّٖ مِّنْ يَّحْمُومٖ",
+      "text_normalized": "وظل من يحموم",
+      "aya_indic": "٤٦",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 47,
+      "text_uthmani": "لَّا بَارِدٖ وَلَا كَرِيمٍۖ",
+      "text_normalized": "لا بارد ولا كريم",
+      "aya_indic": "٤٧",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 48,
+      "text_uthmani": "اِنَّهُمْ كَانُواْ قَبْلَ ذَٰلِكَ مُتْرَفِينَۖ",
+      "text_normalized": "انهم كانوا قبل ذلك مترفين",
+      "aya_indic": "٤٨",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 49,
+      "text_uthmani": "وَكَانُواْ يُصِرُّونَ عَلَى اَ۬لْحِنثِ اِ۬لْعَظِيمِۖ",
+      "text_normalized": "وكانوا يصرون علي الحنث العظيم",
+      "aya_indic": "٤٩",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 50,
+      "text_uthmani": "وَكَانُواْ يَقُولُونَ أَئِذَا مِتْنَا وَكُنَّا تُرَاباٗ وَعِظَٰماً اِنَّا لَمَبْعُوثُونَ",
+      "text_normalized": "وكانوا يقولون ايذا متنا وكنا ترابا وعظاما انا لمبعوثون",
+      "aya_indic": "٥٠",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 51,
+      "text_uthmani": "أَوَءَابَآؤُنَا اَ۬لَاوَّلُونَۖ",
+      "text_normalized": "اوءاباونا الاولون",
+      "aya_indic": "٥١",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 52,
+      "text_uthmani": "۞ قُلِ اِنَّ اَ۬لَاوَّلِينَ وَالَاخِرِينَ لَمَجْمُوعُونَ",
+      "text_normalized": "قل ان الاولين والاخرين لمجموعون",
+      "aya_indic": "٥٢",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 53,
+      "text_uthmani": "إِلَىٰ مِيقَٰتِ يَوْمٖ مَّعْلُومٖۖ",
+      "text_normalized": "اليا ميقات يوم معلوم",
+      "aya_indic": "٥٣",
+      "jozz": 27,
+      "page": 535
+    },
+    {
+      "sura": 56,
+      "aya": 54,
+      "text_uthmani": "ثُمَّ إِنَّكُمُۥٓ أَيُّهَا اَ۬لضَّآلُّونَ اَ۬لْمُكَذِّبُونَ",
+      "text_normalized": "ثم انكم ايها الضالون المكذبون",
+      "aya_indic": "٥٤",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 55,
+      "text_uthmani": "لَأٓكِلُونَ مِن شَجَرٖ مِّن زَقُّومٖ",
+      "text_normalized": "لاكلون من شجر من زقوم",
+      "aya_indic": "٥٥",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 56,
+      "text_uthmani": "فَمَالِـُٔونَ مِنْهَا اَ۬لْبُطُونَ",
+      "text_normalized": "فمالون منها البطون",
+      "aya_indic": "٥٦",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 57,
+      "text_uthmani": "فَشَٰرِبُونَ عَلَيْهِ مِنَ اَ۬لْحَمِيمِ",
+      "text_normalized": "فشاربون عليه من الحميم",
+      "aya_indic": "٥٧",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 58,
+      "text_uthmani": "فَشَٰرِبُونَ شُرْبَ اَ۬لْهِيمِۖ",
+      "text_normalized": "فشاربون شرب الهيم",
+      "aya_indic": "٥٨",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 59,
+      "text_uthmani": "هَٰذَا نُزُلُهُمْ يَوْمَ اَ۬لدِّينِۖ",
+      "text_normalized": "هذا نزلهم يوم الدين",
+      "aya_indic": "٥٩",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 60,
+      "text_uthmani": "نَحْنُ خَلَقْنَٰكُمْۖ فَلَوْلَا تُصَدِّقُونَۖ",
+      "text_normalized": "نحن خلقناكم فلولا تصدقون",
+      "aya_indic": "٦٠",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 61,
+      "text_uthmani": "أَفَرَٰٓيْتُم مَّا تُمْنُونَ",
+      "text_normalized": "افرايتم ما تمنون",
+      "aya_indic": "٦١",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 62,
+      "text_uthmani": "ءَآنتُمْ تَخْلُقُونَهُۥٓ أَمْ نَحْنُ اُ۬لْخَٰلِقُونَۖ",
+      "text_normalized": "ءانتم تخلقونه ام نحن الخالقون",
+      "aya_indic": "٦٢",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 63,
+      "text_uthmani": "نَحْنُ قَدَّرْنَا بَيْنَكُمُ اُ۬لْمَوْتَ وَمَا نَحْنُ بِمَسْبُوقِينَ",
+      "text_normalized": "نحن قدرنا بينكم الموت وما نحن بمسبوقين",
+      "aya_indic": "٦٣",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 64,
+      "text_uthmani": "عَلَىٰٓ أَن نُّبَدِّلَ أَمْثَٰلَكُمْ وَنُنشِئَكُمْ فِے مَا لَا تَعْلَمُونَۖ",
+      "text_normalized": "عليا ان نبدل امثالكم وننشيكم فے ما لا تعلمون",
+      "aya_indic": "٦٤",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 65,
+      "text_uthmani": "وَلَقَدْ عَلِمْتُمُ اُ۬لنَّشْأَةَ اَ۬لُاول۪ىٰۖ فَلَوْلَا تَذَّكَّرُونَۖ",
+      "text_normalized": "ولقد علمتم النشاه الاوليا فلولا تذكرون",
+      "aya_indic": "٦٥",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 66,
+      "text_uthmani": "أَفَرَٰٓيْتُم مَّا تَحْرُثُونَ",
+      "text_normalized": "افرايتم ما تحرثون",
+      "aya_indic": "٦٦",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 67,
+      "text_uthmani": "ءَآنتُمْ تَزْرَعُونَهُۥٓ أَمْ نَحْنُ اُ۬لزَّٰرِعُونَۖ",
+      "text_normalized": "ءانتم تزرعونه ام نحن الزارعون",
+      "aya_indic": "٦٧",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 68,
+      "text_uthmani": "لَوْ نَشَآءُ لَجَعَلْنَٰهُ حُطَٰماٗ فَظَلْتُمْ تَفَكَّهُونَ",
+      "text_normalized": "لو نشاء لجعلناه حطاما فظلتم تفكهون",
+      "aya_indic": "٦٨",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 69,
+      "text_uthmani": "إِنَّا لَمُغْرَمُونَ",
+      "text_normalized": "انا لمغرمون",
+      "aya_indic": "٦٩",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 70,
+      "text_uthmani": "بَلْ نَحْنُ مَحْرُومُونَۖ",
+      "text_normalized": "بل نحن محرومون",
+      "aya_indic": "٧٠",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 71,
+      "text_uthmani": "أَفَرَٰٓيْتُمُ اُ۬لْمَآءَ اَ۬لذِے تَشْرَبُونَ",
+      "text_normalized": "افرايتم الماء الذے تشربون",
+      "aya_indic": "٧١",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 72,
+      "text_uthmani": "ءَآنتُمُۥٓ أَنزَلْتُمُوهُ مِنَ اَ۬لْمُزْنِ أَمْ نَحْنُ اُ۬لْمُنزِلُونَۖ",
+      "text_normalized": "ءانتم انزلتموه من المزن ام نحن المنزلون",
+      "aya_indic": "٧٢",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 73,
+      "text_uthmani": "لَوْ نَشَآءُ جَعَلْنَٰهُ أُجَاجاٗۖ فَلَوْلَا تَشْكُرُونَۖ",
+      "text_normalized": "لو نشاء جعلناه اجاجا فلولا تشكرون",
+      "aya_indic": "٧٣",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 74,
+      "text_uthmani": "أَفَرَٰٓيْتُمُ اُ۬لنَّارَ اَ۬لتِے تُورُونَ",
+      "text_normalized": "افرايتم النار التے تورون",
+      "aya_indic": "٧٤",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 75,
+      "text_uthmani": "ءَآنتُمُۥٓ أَنشَأْتُمْ شَجَرَتَهَآ أَمْ نَحْنُ اُ۬لْمُنشِـُٔونَۖ",
+      "text_normalized": "ءانتم انشاتم شجرتها ام نحن المنشون",
+      "aya_indic": "٧٥",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 76,
+      "text_uthmani": "نَحْنُ جَعَلْنَٰهَا تَذْكِرَةٗ وَمَتَٰعاٗ لِّلْمُقْوِينَۖ",
+      "text_normalized": "نحن جعلناها تذكره ومتاعا للمقوين",
+      "aya_indic": "٧٦",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 77,
+      "text_uthmani": "فَسَبِّحْ بِاسْمِ رَبِّكَ اَ۬لْعَظِيمِۖ",
+      "text_normalized": "فسبح باسم ربك العظيم",
+      "aya_indic": "٧٧",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 78,
+      "text_uthmani": "۞ فَلَآ أُقْسِمُ بِمَوَٰقِعِ اِ۬لنُّجُومِ",
+      "text_normalized": "فلا اقسم بمواقع النجوم",
+      "aya_indic": "٧٨",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 79,
+      "text_uthmani": "وَإِنَّهُۥ لَقَسَمٞ لَّوْ تَعْلَمُونَ عَظِيمٌ",
+      "text_normalized": "وانه لقسم لو تعلمون عظيم",
+      "aya_indic": "٧٩",
+      "jozz": 27,
+      "page": 536
+    },
+    {
+      "sura": 56,
+      "aya": 80,
+      "text_uthmani": "اِنَّهُۥ لَقُرْءَانٞ كَرِيمٞ",
+      "text_normalized": "انه لقرءان كريم",
+      "aya_indic": "٨٠",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 81,
+      "text_uthmani": "فِے كِتَٰبٖ مَّكْنُونٖ",
+      "text_normalized": "فے كتاب مكنون",
+      "aya_indic": "٨١",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 82,
+      "text_uthmani": "لَّا يَمَسُّهُۥٓ إِلَّا اَ۬لْمُطَهَّرُونَۖ",
+      "text_normalized": "لا يمسه الا المطهرون",
+      "aya_indic": "٨٢",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 83,
+      "text_uthmani": "تَنزِيلٞ مِّن رَّبِّ اِ۬لْعَٰلَمِينَۖ",
+      "text_normalized": "تنزيل من رب العالمين",
+      "aya_indic": "٨٣",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 84,
+      "text_uthmani": "أَفَبِهَٰذَا اَ۬لْحَدِيثِ أَنتُم مُّدْهِنُونَ",
+      "text_normalized": "افبهاذا الحديث انتم مدهنون",
+      "aya_indic": "٨٤",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 85,
+      "text_uthmani": "وَتَجْعَلُونَ رِزْقَكُمُۥٓ أَنَّكُمْ تُكَذِّبُونَۖ",
+      "text_normalized": "وتجعلون رزقكم انكم تكذبون",
+      "aya_indic": "٨٥",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 86,
+      "text_uthmani": "فَلَوْلَآ إِذَا بَلَغَتِ اِ۬لْحُلْقُومَ",
+      "text_normalized": "فلولا اذا بلغت الحلقوم",
+      "aya_indic": "٨٦",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 87,
+      "text_uthmani": "وَأَنتُمْ حِينَئِذٖ تَنظُرُونَ",
+      "text_normalized": "وانتم حينيذ تنظرون",
+      "aya_indic": "٨٧",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 88,
+      "text_uthmani": "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنكُمْ وَلَٰكِن لَّا تُبْصِرُونَ",
+      "text_normalized": "ونحن اقرب اليه منكم ولاكن لا تبصرون",
+      "aya_indic": "٨٨",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 89,
+      "text_uthmani": "فَلَوْلَآ إِن كُنتُمْ غَيْرَ مَدِينِينَ",
+      "text_normalized": "فلولا ان كنتم غير مدينين",
+      "aya_indic": "٨٩",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 90,
+      "text_uthmani": "تَرْجِعُونَهَآ إِن كُنتُمْ صَٰدِقِينَۖ",
+      "text_normalized": "ترجعونها ان كنتم صادقين",
+      "aya_indic": "٩٠",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 91,
+      "text_uthmani": "فَأَمَّآ إِن كَانَ مِنَ اَ۬لْمُقَرَّبِينَ",
+      "text_normalized": "فاما ان كان من المقربين",
+      "aya_indic": "٩١",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 92,
+      "text_uthmani": "فَرَوْحٞ وَرَيْحَانٞ وَجَنَّتُ نَعِيمٖۖ",
+      "text_normalized": "فروح وريحان وجنت نعيم",
+      "aya_indic": "٩٢",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 93,
+      "text_uthmani": "وَأَمَّآ إِن كَانَ مِنَ اَصْحَٰبِ اِ۬لْيَمِينِ",
+      "text_normalized": "واما ان كان من اصحاب اليمين",
+      "aya_indic": "٩٣",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 94,
+      "text_uthmani": "فَسَلَٰمٞ لَّكَ مِنَ اَصْحَٰبِ اِ۬لْيَمِينِۖ",
+      "text_normalized": "فسلام لك من اصحاب اليمين",
+      "aya_indic": "٩٤",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 95,
+      "text_uthmani": "وَأَمَّآ إِن كَانَ مِنَ اَ۬لْمُكَذِّبِينَ اَ۬لضَّآلِّينَ",
+      "text_normalized": "واما ان كان من المكذبين الضالين",
+      "aya_indic": "٩٥",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 96,
+      "text_uthmani": "فَنُزُلٞ مِّنْ حَمِيمٖ",
+      "text_normalized": "فنزل من حميم",
+      "aya_indic": "٩٦",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 97,
+      "text_uthmani": "وَتَصْلِيَةُ جَحِيمٍۖ",
+      "text_normalized": "وتصليه جحيم",
+      "aya_indic": "٩٧",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 98,
+      "text_uthmani": "اِنَّ هَٰذَا لَهُوَ حَقُّ اُ۬لْيَقِينِۖ",
+      "text_normalized": "ان هذا لهو حق اليقين",
+      "aya_indic": "٩٨",
+      "jozz": 27,
+      "page": 537
+    },
+    {
+      "sura": 56,
+      "aya": 99,
+      "text_uthmani": "فَسَبِّحْ بِاسْمِ رَبِّكَ اَ۬لْعَظِيمِۖ",
+      "text_normalized": "فسبح باسم ربك العظيم",
+      "aya_indic": "٩٩",
+      "jozz": 27,
+      "page": 537
+    }
+  ]
+}

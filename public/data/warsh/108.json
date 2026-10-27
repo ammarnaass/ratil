@@ -1,0 +1,40 @@
+{
+  "id": 108,
+  "name_ar": "الكوثر",
+  "name_en": "Al-Kawthar",
+  "type": "مكية",
+  "ayahs_hafs": 3,
+  "ayahs_warsh": 3,
+  "page": 602,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 108,
+      "aya": 1,
+      "text_uthmani": "إِنَّآ أَعْطَيْنَٰكَ اَ۬لْكَوْثَرَ",
+      "text_normalized": "انا اعطيناك الكوثر",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 602
+    },
+    {
+      "sura": 108,
+      "aya": 2,
+      "text_uthmani": "فَصَلِّ لِرَبِّكَ وَانْحَرِۖ",
+      "text_normalized": "فصل لربك وانحر",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 602
+    },
+    {
+      "sura": 108,
+      "aya": 3,
+      "text_uthmani": "اِنَّ شَانِئَكَ هُوَ اَ۬لَابْتَرُۖ",
+      "text_normalized": "ان شانيك هو الابتر",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 602
+    }
+  ]
+}

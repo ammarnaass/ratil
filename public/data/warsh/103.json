@@ -1,0 +1,40 @@
+{
+  "id": 103,
+  "name_ar": "العصر",
+  "name_en": "Al-'Asr",
+  "type": "مكية",
+  "ayahs_hafs": 3,
+  "ayahs_warsh": 3,
+  "page": 601,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 103,
+      "aya": 1,
+      "text_uthmani": "وَالْعَصْرِ إِنَّ اَ۬لِانسَٰنَ لَفِے خُسْرٍ",
+      "text_normalized": "والعصر ان الانسان لفے خسر",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 601
+    },
+    {
+      "sura": 103,
+      "aya": 2,
+      "text_uthmani": "اِلَّا اَ۬لذِينَ ءَامَنُواْ وَعَمِلُواْ اُ۬لصَّٰلِحَٰتِ وَتَوَاصَوْاْ بِالْحَقِّ",
+      "text_normalized": "الا الذين ءامنوا وعملوا الصالحات وتواصوا بالحق",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 601
+    },
+    {
+      "sura": 103,
+      "aya": 3,
+      "text_uthmani": "وَتَوَاصَوْاْ بِالصَّبْرِۖ",
+      "text_normalized": "وتواصوا بالصبر",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 601
+    }
+  ]
+}

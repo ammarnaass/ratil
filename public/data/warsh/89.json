@@ -1,0 +1,301 @@
+{
+  "id": 89,
+  "name_ar": "الفجر",
+  "name_en": "Al-Fajr",
+  "type": "مكية",
+  "ayahs_hafs": 30,
+  "ayahs_warsh": 32,
+  "page": 593,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 89,
+      "aya": 1,
+      "text_uthmani": "وَالْفَجْرِ",
+      "text_normalized": "والفجر",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 2,
+      "text_uthmani": "وَلَيَالٍ عَشْرٖ",
+      "text_normalized": "وليال عشر",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 3,
+      "text_uthmani": "وَالشَّفْعِ وَالْوَتْرِ",
+      "text_normalized": "والشفع والوتر",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 4,
+      "text_uthmani": "وَاليْلِ إِذَا يَسْرِۦ",
+      "text_normalized": "واليل اذا يسر",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 5,
+      "text_uthmani": "هَلْ فِے ذَٰلِكَ قَسَمٞ لِّذِے حِجْرٍۖ",
+      "text_normalized": "هل فے ذلك قسم لذے حجر",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 6,
+      "text_uthmani": "اَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِعَادٍ",
+      "text_normalized": "الم تر كيف فعل ربك بعاد",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 7,
+      "text_uthmani": "اِرَمَ ذَاتِ اِ۬لْعِمَادِ",
+      "text_normalized": "ارم ذات العماد",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 8,
+      "text_uthmani": "اِ۬لتِے لَمْ يُخْلَقْ مِثْلُهَا فِے اِ۬لْبِلَٰدِ",
+      "text_normalized": "التے لم يخلق مثلها فے البلاد",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 9,
+      "text_uthmani": "وَثَمُودَ اَ۬لذِينَ جَابُواْ اُ۬لصَّخْرَ بِالْوَادِۦ",
+      "text_normalized": "وثمود الذين جابوا الصخر بالواد",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 10,
+      "text_uthmani": "وَفِرْعَوْنَ ذِے اِ۬لَاوْتَادِ",
+      "text_normalized": "وفرعون ذے الاوتاد",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 11,
+      "text_uthmani": "اِ۬لذِينَ طَغَوْاْ فِے اِ۬لْبِلَٰدِ",
+      "text_normalized": "الذين طغوا فے البلاد",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 12,
+      "text_uthmani": "فَأَكْثَرُواْ فِيهَا اَ۬لْفَسَادَ",
+      "text_normalized": "فاكثروا فيها الفساد",
+      "aya_indic": "١٢",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 13,
+      "text_uthmani": "فَصَبَّ عَلَيْهِمْ رَبُّكَ سَوْطَ عَذَابٍۖ",
+      "text_normalized": "فصب عليهم ربك سوط عذاب",
+      "aya_indic": "١٣",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 14,
+      "text_uthmani": "اِنَّ رَبَّكَ لَبِالْمِرْصَادِۖ",
+      "text_normalized": "ان ربك لبالمرصاد",
+      "aya_indic": "١٤",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 15,
+      "text_uthmani": "فَأَمَّا اَ۬لِانسَٰنُ إِذَا مَا اَ۪بْتَل۪يٰهُ رَبُّهُۥ فَأَكْرَمَهُۥ وَنَعَّمَهُۥ",
+      "text_normalized": "فاما الانسان اذا ما ابتلياه ربه فاكرمه ونعمه",
+      "aya_indic": "١٥",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 16,
+      "text_uthmani": "فَيَقُولُ رَبِّيَ أَكْرَمَنِۦۖ",
+      "text_normalized": "فيقول ربي اكرمن",
+      "aya_indic": "١٦",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 17,
+      "text_uthmani": "وَأَمَّآ إِذَا مَا اَ۪بْتَل۪يٰهُ فَقَدَرَ عَلَيْهِ رِزْقَهُۥ",
+      "text_normalized": "واما اذا ما ابتلياه فقدر عليه رزقه",
+      "aya_indic": "١٧",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 18,
+      "text_uthmani": "فَيَقُولُ رَبِّيَ أَهَٰنَنِۦ",
+      "text_normalized": "فيقول ربي اهانن",
+      "aya_indic": "١٨",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 19,
+      "text_uthmani": "كَلَّاۖ بَل لَّا تُكْرِمُونَ اَ۬لْيَتِيمَ",
+      "text_normalized": "كلا بل لا تكرمون اليتيم",
+      "aya_indic": "١٩",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 20,
+      "text_uthmani": "وَلَا تَحُضُّونَ عَلَىٰ طَعَامِ اِ۬لْمِسْكِينِ",
+      "text_normalized": "ولا تحضون عليا طعام المسكين",
+      "aya_indic": "٢٠",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 21,
+      "text_uthmani": "وَتَاكُلُونَ اَ۬لتُّرَاثَ أَكْلاٗ لَّمّاٗ",
+      "text_normalized": "وتاكلون التراث اكلا لما",
+      "aya_indic": "٢١",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 22,
+      "text_uthmani": "وَتُحِبُّونَ اَ۬لْمَالَ حُبّاٗ جَمّاٗ",
+      "text_normalized": "وتحبون المال حبا جما",
+      "aya_indic": "٢٢",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 23,
+      "text_uthmani": "كَلَّآۖ إِذَا دُكَّتِ اِ۬لَارْضُ دَكّاٗ دَكّاٗ",
+      "text_normalized": "كلا اذا دكت الارض دكا دكا",
+      "aya_indic": "٢٣",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 24,
+      "text_uthmani": "وَجَآءَ رَبُّكَ وَالْمَلَكُ صَفّاٗ صَفّاٗ",
+      "text_normalized": "وجاء ربك والملك صفا صفا",
+      "aya_indic": "٢٤",
+      "jozz": 30,
+      "page": 593
+    },
+    {
+      "sura": 89,
+      "aya": 25,
+      "text_uthmani": "وَجِےٓءَ يَوْمَئِذِۢ بِجَهَنَّمَ",
+      "text_normalized": "وجےء يوميذ بجهنم",
+      "aya_indic": "٢٥",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 89,
+      "aya": 26,
+      "text_uthmani": "يَوْمَئِذٖ يَتَذَكَّرُ اُ۬لِانسَٰنُ وَأَنّ۪ىٰ لَهُ اُ۬لذِّكْر۪ىٰۖ",
+      "text_normalized": "يوميذ يتذكر الانسان وانيا له الذكريا",
+      "aya_indic": "٢٦",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 89,
+      "aya": 27,
+      "text_uthmani": "يَقُولُ يَٰلَيْتَنِے قَدَّمْتُ لِحَيَاتِےۖ",
+      "text_normalized": "يقول ياليتنے قدمت لحياتے",
+      "aya_indic": "٢٧",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 89,
+      "aya": 28,
+      "text_uthmani": "فَيَوْمَئِذٖ لَّا يُعَذِّبُ عَذَابَهُۥٓ أَحَدٞ",
+      "text_normalized": "فيوميذ لا يعذب عذابه احد",
+      "aya_indic": "٢٨",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 89,
+      "aya": 29,
+      "text_uthmani": "وَلَا يُوثِقُ وَثَاقَهُۥٓ أَحَدٞۖ",
+      "text_normalized": "ولا يوثق وثاقه احد",
+      "aya_indic": "٢٩",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 89,
+      "aya": 30,
+      "text_uthmani": "يَٰٓأَيَّتُهَا اَ۬لنَّفْسُ اُ۬لْمُطْمَئِنَّةُ",
+      "text_normalized": "ياايتها النفس المطمينه",
+      "aya_indic": "٣٠",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 89,
+      "aya": 31,
+      "text_uthmani": "اُ۪رْجِعِےٓ إِلَىٰ رَبِّكِ رَاضِيَةٗ مَّرْضِيَّةٗ",
+      "text_normalized": "ارجعے اليا ربك راضيه مرضيه",
+      "aya_indic": "٣١",
+      "jozz": 30,
+      "page": 594
+    },
+    {
+      "sura": 89,
+      "aya": 32,
+      "text_uthmani": "فَادْخُلِے فِے عِبَٰدِے وَادْخُلِے جَنَّتِےۖ",
+      "text_normalized": "فادخلے فے عبادے وادخلے جنتے",
+      "aya_indic": "٣٢",
+      "jozz": 30,
+      "page": 594
+    }
+  ]
+}

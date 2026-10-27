@@ -1,0 +1,67 @@
+{
+  "id": 114,
+  "name_ar": "الناس",
+  "name_en": "An-Nas",
+  "type": "مكية",
+  "ayahs_hafs": 6,
+  "ayahs_warsh": 6,
+  "page": 604,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 114,
+      "aya": 1,
+      "text_uthmani": "قُلَ اَعُوذُ بِرَبِّ اِ۬لنَّاسِ",
+      "text_normalized": "قل اعوذ برب الناس",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 114,
+      "aya": 2,
+      "text_uthmani": "مَلِكِ اِ۬لنَّاسِ",
+      "text_normalized": "ملك الناس",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 114,
+      "aya": 3,
+      "text_uthmani": "إِلَٰهِ اِ۬لنَّاسِ",
+      "text_normalized": "اله الناس",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 114,
+      "aya": 4,
+      "text_uthmani": "مِن شَرِّ اِ۬لْوَسْوَاسِ اِ۬لْخَنَّاسِ",
+      "text_normalized": "من شر الوسواس الخناس",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 114,
+      "aya": 5,
+      "text_uthmani": "اِ۬لذِے يُوَسْوِسُ فِے صُدُورِ اِ۬لنَّاسِ",
+      "text_normalized": "الذے يوسوس فے صدور الناس",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 604
+    },
+    {
+      "sura": 114,
+      "aya": 6,
+      "text_uthmani": "مِنَ اَ۬لْجِنَّةِ وَالنَّاسِۖ",
+      "text_normalized": "من الجنه والناس",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 604
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": 95,
+  "name_ar": "التين",
+  "name_en": "At-Tin",
+  "type": "مكية",
+  "ayahs_hafs": 8,
+  "ayahs_warsh": 8,
+  "page": 597,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 95,
+      "aya": 1,
+      "text_uthmani": "وَالتِّينِ وَالزَّيْتُونِ",
+      "text_normalized": "والتين والزيتون",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 95,
+      "aya": 2,
+      "text_uthmani": "وَطُورِ سِينِينَ",
+      "text_normalized": "وطور سينين",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 95,
+      "aya": 3,
+      "text_uthmani": "وَهَٰذَا اَ۬لْبَلَدِ اِ۬لَامِينِ",
+      "text_normalized": "وهاذا البلد الامين",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 95,
+      "aya": 4,
+      "text_uthmani": "لَقَدْ خَلَقْنَا اَ۬لِانسَٰنَ فِےٓ أَحْسَنِ تَقْوِيمٖ",
+      "text_normalized": "لقد خلقنا الانسان فے احسن تقويم",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 95,
+      "aya": 5,
+      "text_uthmani": "ثُمَّ رَدَدْنَٰهُ أَسْفَلَ سَٰفِلِينَ",
+      "text_normalized": "ثم رددناه اسفل سافلين",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 95,
+      "aya": 6,
+      "text_uthmani": "إِلَّا اَ۬لذِينَ ءَامَنُواْ وَعَمِلُواْ اُ۬لصَّٰلِحَٰتِ فَلَهُمُۥٓ أَجْرٌ غَيْرُ مَمْنُونٖۖ",
+      "text_normalized": "الا الذين ءامنوا وعملوا الصالحات فلهم اجر غير ممنون",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 95,
+      "aya": 7,
+      "text_uthmani": "فَمَا يُكَذِّبُكَ بَعْدُ بِالدِّينِۖ",
+      "text_normalized": "فما يكذبك بعد بالدين",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 597
+    },
+    {
+      "sura": 95,
+      "aya": 8,
+      "text_uthmani": "أَلَيْسَ اَ۬للَّهُ بِأَحْكَمِ اِ۬لْحَٰكِمِينَۖ",
+      "text_normalized": "اليس الله باحكم الحاكمين",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 597
+    }
+  ]
+}

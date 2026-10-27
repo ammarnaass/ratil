@@ -1,0 +1,67 @@
+{
+  "id": 109,
+  "name_ar": "الكافرون",
+  "name_en": "Al-Kafirun",
+  "type": "مكية",
+  "ayahs_hafs": 6,
+  "ayahs_warsh": 6,
+  "page": 603,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 109,
+      "aya": 1,
+      "text_uthmani": "قُلْ يَٰٓأَيُّهَا اَ۬لْكَٰفِرُونَ",
+      "text_normalized": "قل ياايها الكافرون",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 603
+    },
+    {
+      "sura": 109,
+      "aya": 2,
+      "text_uthmani": "لَآ أَعْبُدُ مَا تَعْبُدُونَ",
+      "text_normalized": "لا اعبد ما تعبدون",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 603
+    },
+    {
+      "sura": 109,
+      "aya": 3,
+      "text_uthmani": "وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُۖ",
+      "text_normalized": "ولا انتم عابدون ما اعبد",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 603
+    },
+    {
+      "sura": 109,
+      "aya": 4,
+      "text_uthmani": "وَلَآ أَنَا عَابِدٞ مَّا عَبَدتُّمْ",
+      "text_normalized": "ولا انا عابد ما عبدتم",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 603
+    },
+    {
+      "sura": 109,
+      "aya": 5,
+      "text_uthmani": "وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُۖ",
+      "text_normalized": "ولا انتم عابدون ما اعبد",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 603
+    },
+    {
+      "sura": 109,
+      "aya": 6,
+      "text_uthmani": "لَكُمْ دِينُكُمْ وَلِيَ دِينِۖ",
+      "text_normalized": "لكم دينكم ولي دين",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 603
+    }
+  ]
+}

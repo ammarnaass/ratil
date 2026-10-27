@@ -1,0 +1,58 @@
+{
+  "id": 106,
+  "name_ar": "قريش",
+  "name_en": "Quraysh",
+  "type": "مكية",
+  "ayahs_hafs": 4,
+  "ayahs_warsh": 4,
+  "page": 602,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 106,
+      "aya": 1,
+      "text_uthmani": "لِّإِيلَٰفِ قُرَيْشٍ",
+      "text_normalized": "لايلاف قريش",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 602
+    },
+    {
+      "sura": 106,
+      "aya": 2,
+      "text_uthmani": "اِيلَٰفِهِمْ رِحْلَةَ اَ۬لشِّتَآءِ وَالصَّيْفِۖ",
+      "text_normalized": "ايلافهم رحله الشتاء والصيف",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 602
+    },
+    {
+      "sura": 106,
+      "aya": 3,
+      "text_uthmani": "فَلْيَعْبُدُواْ رَبَّ هَٰذَا اَ۬لْبَيْتِ",
+      "text_normalized": "فليعبدوا رب هذا البيت",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 602
+    },
+    {
+      "sura": 106,
+      "aya": 4,
+      "text_uthmani": "اِ۬لذِےٓ أَطْعَمَهُم مِّن جُوعٖ",
+      "text_normalized": "الذے اطعمهم من جوع",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 602
+    },
+    {
+      "sura": 106,
+      "aya": 5,
+      "text_uthmani": "وَءَامَنَهُم مِّنْ خَوْفٍۖ",
+      "text_normalized": "وءامنهم من خوف",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 602
+    }
+  ]
+}

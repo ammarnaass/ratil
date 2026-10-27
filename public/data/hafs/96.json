@@ -1,0 +1,146 @@
+{
+  "id": 96,
+  "name_ar": "العلق",
+  "name_en": "Al-'Alaq",
+  "type": "مكية",
+  "ayahs_hafs": 19,
+  "ayahs_warsh": 19,
+  "page": 597,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 96,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
+      "text_normalized": "بسم الله الرحمن الرحيم اقرا باسم ربك الذي خلق",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 96,
+      "aya": 2,
+      "text_uthmani": "خَلَقَ ٱلْإِنسَٰنَ مِنْ عَلَقٍ",
+      "text_normalized": "خلق الانسان من علق",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 96,
+      "aya": 3,
+      "text_uthmani": "ٱقْرَأْ وَرَبُّكَ ٱلْأَكْرَمُ",
+      "text_normalized": "اقرا وربك الاكرم",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 96,
+      "aya": 4,
+      "text_uthmani": "ٱلَّذِى عَلَّمَ بِٱلْقَلَمِ",
+      "text_normalized": "الذي علم بالقلم",
+      "aya_indic": "٤"
+    },
+    {
+      "sura": 96,
+      "aya": 5,
+      "text_uthmani": "عَلَّمَ ٱلْإِنسَٰنَ مَا لَمْ يَعْلَمْ",
+      "text_normalized": "علم الانسان ما لم يعلم",
+      "aya_indic": "٥"
+    },
+    {
+      "sura": 96,
+      "aya": 6,
+      "text_uthmani": "كَلَّآ إِنَّ ٱلْإِنسَٰنَ لَيَطْغَىٰٓ",
+      "text_normalized": "كلا ان الانسان ليطغيا",
+      "aya_indic": "٦"
+    },
+    {
+      "sura": 96,
+      "aya": 7,
+      "text_uthmani": "أَن رَّءَاهُ ٱسْتَغْنَىٰٓ",
+      "text_normalized": "ان رءاه استغنيا",
+      "aya_indic": "٧"
+    },
+    {
+      "sura": 96,
+      "aya": 8,
+      "text_uthmani": "إِنَّ إِلَىٰ رَبِّكَ ٱلرُّجْعَىٰٓ",
+      "text_normalized": "ان اليا ربك الرجعيا",
+      "aya_indic": "٨"
+    },
+    {
+      "sura": 96,
+      "aya": 9,
+      "text_uthmani": "أَرَءَيْتَ ٱلَّذِى يَنْهَىٰ",
+      "text_normalized": "ارءيت الذي ينهيا",
+      "aya_indic": "٩"
+    },
+    {
+      "sura": 96,
+      "aya": 10,
+      "text_uthmani": "عَبْدًا إِذَا صَلَّىٰٓ",
+      "text_normalized": "عبدا اذا صليا",
+      "aya_indic": "١٠"
+    },
+    {
+      "sura": 96,
+      "aya": 11,
+      "text_uthmani": "أَرَءَيْتَ إِن كَانَ عَلَى ٱلْهُدَىٰٓ",
+      "text_normalized": "ارءيت ان كان علي الهديا",
+      "aya_indic": "١١"
+    },
+    {
+      "sura": 96,
+      "aya": 12,
+      "text_uthmani": "أَوْ أَمَرَ بِٱلتَّقْوَىٰٓ",
+      "text_normalized": "او امر بالتقويا",
+      "aya_indic": "١٢"
+    },
+    {
+      "sura": 96,
+      "aya": 13,
+      "text_uthmani": "أَرَءَيْتَ إِن كَذَّبَ وَتَوَلَّىٰٓ",
+      "text_normalized": "ارءيت ان كذب وتوليا",
+      "aya_indic": "١٣"
+    },
+    {
+      "sura": 96,
+      "aya": 14,
+      "text_uthmani": "أَلَمْ يَعْلَم بِأَنَّ ٱللَّهَ يَرَىٰ",
+      "text_normalized": "الم يعلم بان الله يريا",
+      "aya_indic": "١٤"
+    },
+    {
+      "sura": 96,
+      "aya": 15,
+      "text_uthmani": "كَلَّا لَئِن لَّمْ يَنتَهِ لَنَسْفَعًۢا بِٱلنَّاصِيَةِ",
+      "text_normalized": "كلا لين لم ينته لنسفعا بالناصيه",
+      "aya_indic": "١٥"
+    },
+    {
+      "sura": 96,
+      "aya": 16,
+      "text_uthmani": "نَاصِيَةٍ كَٰذِبَةٍ خَاطِئَةٍ",
+      "text_normalized": "ناصيه كاذبه خاطيه",
+      "aya_indic": "١٦"
+    },
+    {
+      "sura": 96,
+      "aya": 17,
+      "text_uthmani": "فَلْيَدْعُ نَادِيَهُۥ",
+      "text_normalized": "فليدع ناديه",
+      "aya_indic": "١٧"
+    },
+    {
+      "sura": 96,
+      "aya": 18,
+      "text_uthmani": "سَنَدْعُ ٱلزَّبَانِيَةَ",
+      "text_normalized": "سندع الزبانيه",
+      "aya_indic": "١٨"
+    },
+    {
+      "sura": 96,
+      "aya": 19,
+      "text_uthmani": "كَلَّا لَا تُطِعْهُ وَٱسْجُدْ وَٱقْتَرِب ۩",
+      "text_normalized": "كلا لا تطعه واسجد واقترب",
+      "aya_indic": "١٩"
+    }
+  ]
+}

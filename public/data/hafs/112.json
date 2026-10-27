@@ -1,0 +1,41 @@
+{
+  "id": 112,
+  "name_ar": "الإخلاص",
+  "name_en": "Al-Ikhlas",
+  "type": "مكية",
+  "ayahs_hafs": 4,
+  "ayahs_warsh": 4,
+  "page": 604,
+  "narration": "hafs",
+  "narration_ar": "حفص عن عاصم",
+  "ayahs": [
+    {
+      "sura": 112,
+      "aya": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+      "text_normalized": "بسم الله الرحمن الرحيم قل هو الله احد",
+      "aya_indic": "١"
+    },
+    {
+      "sura": 112,
+      "aya": 2,
+      "text_uthmani": "ٱللَّهُ ٱلصَّمَدُ",
+      "text_normalized": "الله الصمد",
+      "aya_indic": "٢"
+    },
+    {
+      "sura": 112,
+      "aya": 3,
+      "text_uthmani": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      "text_normalized": "لم يلد ولم يولد",
+      "aya_indic": "٣"
+    },
+    {
+      "sura": 112,
+      "aya": 4,
+      "text_uthmani": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+      "text_normalized": "ولم يكن له كفوا احد",
+      "aya_indic": "٤"
+    }
+  ]
+}

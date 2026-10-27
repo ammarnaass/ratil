@@ -1,0 +1,391 @@
+{
+  "id": 80,
+  "name_ar": "عبس",
+  "name_en": "'Abasa",
+  "type": "مكية",
+  "ayahs_hafs": 42,
+  "ayahs_warsh": 41,
+  "page": 585,
+  "narration": "warsh",
+  "narration_ar": "ورش عن نافع",
+  "ayahs": [
+    {
+      "sura": 80,
+      "aya": 1,
+      "text_uthmani": "عَبَسَ وَتَوَلّ۪ىٰٓ",
+      "text_normalized": "عبس وتوليا",
+      "aya_indic": "١",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 2,
+      "text_uthmani": "أَن جَآءَهُ اُ۬لَاعْم۪ىٰۖ",
+      "text_normalized": "ان جاءه الاعميا",
+      "aya_indic": "٢",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 3,
+      "text_uthmani": "وَمَا يُدْرِيكَ لَعَلَّهُۥ يَزَّكّ۪ىٰٓ",
+      "text_normalized": "وما يدريك لعله يزكيا",
+      "aya_indic": "٣",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 4,
+      "text_uthmani": "أَوْ يَذَّكَّرُ فَتَنفَعُهُ اُ۬لذِّكْر۪ىٰٓۖ",
+      "text_normalized": "او يذكر فتنفعه الذكريا",
+      "aya_indic": "٤",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 5,
+      "text_uthmani": "أَمَّا مَنِ اِ۪سْتَغْن۪ىٰ",
+      "text_normalized": "اما من استغنيا",
+      "aya_indic": "٥",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 6,
+      "text_uthmani": "فَأَنتَ لَهُۥ تَصَّدّ۪ىٰ",
+      "text_normalized": "فانت له تصديا",
+      "aya_indic": "٦",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 7,
+      "text_uthmani": "وَمَا عَلَيْكَ أَلَّا يَزَّكّ۪ىٰۖ",
+      "text_normalized": "وما عليك الا يزكيا",
+      "aya_indic": "٧",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 8,
+      "text_uthmani": "وَأَمَّا مَن جَآءَكَ يَسْع۪ىٰ",
+      "text_normalized": "واما من جاءك يسعيا",
+      "aya_indic": "٨",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 9,
+      "text_uthmani": "وَهُوَ يَخْش۪ىٰ",
+      "text_normalized": "وهو يخشيا",
+      "aya_indic": "٩",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 10,
+      "text_uthmani": "فَأَنتَ عَنْهُ تَلَهّ۪ىٰ",
+      "text_normalized": "فانت عنه تلهيا",
+      "aya_indic": "١٠",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 11,
+      "text_uthmani": "كَلَّآۖ إِنَّهَا تَذْكِرَةٞۖ",
+      "text_normalized": "كلا انها تذكره",
+      "aya_indic": "١١",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 12,
+      "text_uthmani": "فَمَن شَآءَ ذَكَرَهُۥ",
+      "text_normalized": "فمن شاء ذكره",
+      "aya_indic": "١٢",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 13,
+      "text_uthmani": "فِے صُحُفٖ مُّكَرَّمَةٖ",
+      "text_normalized": "فے صحف مكرمه",
+      "aya_indic": "١٣",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 14,
+      "text_uthmani": "مَّرْفُوعَةٖ مُّطَهَّرَةِۢ",
+      "text_normalized": "مرفوعه مطهره",
+      "aya_indic": "١٤",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 15,
+      "text_uthmani": "بِأَيْدِے سَفَرَةٖ",
+      "text_normalized": "بايدے سفره",
+      "aya_indic": "١٥",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 16,
+      "text_uthmani": "كِرَامِۢ بَرَرَةٖۖ",
+      "text_normalized": "كرام برره",
+      "aya_indic": "١٦",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 17,
+      "text_uthmani": "قُتِلَ اَ۬لِانسَٰنُ مَآ أَكْفَرَهُۥۖ",
+      "text_normalized": "قتل الانسان ما اكفره",
+      "aya_indic": "١٧",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 18,
+      "text_uthmani": "مِنَ اَيِّ شَےْءٍ خَلَقَهُۥۖ",
+      "text_normalized": "من اي شےء خلقه",
+      "aya_indic": "١٨",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 19,
+      "text_uthmani": "مِن نُّطْفَةٍ خَلَقَهُۥ فَقَدَّرَهُۥ",
+      "text_normalized": "من نطفه خلقه فقدره",
+      "aya_indic": "١٩",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 20,
+      "text_uthmani": "ثُمَّ اَ۬لسَّبِيلَ يَسَّرَهُۥ",
+      "text_normalized": "ثم السبيل يسره",
+      "aya_indic": "٢٠",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 21,
+      "text_uthmani": "ثُمَّ أَمَاتَهُۥ فَأَقْبَرَهُۥۖ",
+      "text_normalized": "ثم اماته فاقبره",
+      "aya_indic": "٢١",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 22,
+      "text_uthmani": "ثُمَّ إِذَا شَآءَ انشَرَهُۥۖ",
+      "text_normalized": "ثم اذا شاء انشره",
+      "aya_indic": "٢٢",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 23,
+      "text_uthmani": "كَلَّا لَمَّا يَقْضِ مَآ أَمَرَهُۥۖ",
+      "text_normalized": "كلا لما يقض ما امره",
+      "aya_indic": "٢٣",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 24,
+      "text_uthmani": "فَلْيَنظُرِ اِ۬لِانسَٰنُ إِلَىٰ طَعَامِهِۦٓۖ",
+      "text_normalized": "فلينظر الانسان اليا طعامه",
+      "aya_indic": "٢٤",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 25,
+      "text_uthmani": "إِنَّا صَبَبْنَا اَ۬لْمَآءَ صَبّاٗ",
+      "text_normalized": "انا صببنا الماء صبا",
+      "aya_indic": "٢٥",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 26,
+      "text_uthmani": "ثُمَّ شَقَقْنَا اَ۬لَارْضَ شَقّاٗ",
+      "text_normalized": "ثم شققنا الارض شقا",
+      "aya_indic": "٢٦",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 27,
+      "text_uthmani": "فَأَنۢبَتْنَا فِيهَا حَبّاٗ",
+      "text_normalized": "فانبتنا فيها حبا",
+      "aya_indic": "٢٧",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 28,
+      "text_uthmani": "وَعِنَباٗ وَقَضْباٗ",
+      "text_normalized": "وعنبا وقضبا",
+      "aya_indic": "٢٨",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 29,
+      "text_uthmani": "وَزَيْتُوناٗ وَنَخْلاٗ",
+      "text_normalized": "وزيتونا ونخلا",
+      "aya_indic": "٢٩",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 30,
+      "text_uthmani": "وَحَدَآئِقَ غُلْباٗ",
+      "text_normalized": "وحدايق غلبا",
+      "aya_indic": "٣٠",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 31,
+      "text_uthmani": "وَفَٰكِهَةٗ وَأَبّاٗ",
+      "text_normalized": "وفاكهه وابا",
+      "aya_indic": "٣١",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 32,
+      "text_uthmani": "مَّتَٰعاٗ لَّكُمْ وَلِأَنْعَٰمِكُمْۖ",
+      "text_normalized": "متاعا لكم ولانعامكم",
+      "aya_indic": "٣٢",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 33,
+      "text_uthmani": "فَإِذَا جَآءَتِ اِ۬لصَّآخَّةُ",
+      "text_normalized": "فاذا جاءت الصاخه",
+      "aya_indic": "٣٣",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 34,
+      "text_uthmani": "يَوْمَ يَفِرُّ اُ۬لْمَرْءُ مِنَ اَخِيهِ",
+      "text_normalized": "يوم يفر المرء من اخيه",
+      "aya_indic": "٣٤",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 35,
+      "text_uthmani": "وَأُمِّهِۦ وَأَبِيهِ",
+      "text_normalized": "وامه وابيه",
+      "aya_indic": "٣٥",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 36,
+      "text_uthmani": "وَصَٰحِبَتِهِۦ وَبَنِيهِۖ",
+      "text_normalized": "وصاحبته وبنيه",
+      "aya_indic": "٣٦",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 37,
+      "text_uthmani": "لِكُلِّ اِ۪مْرِےٕٖ مِّنْهُمْ يَوْمَئِذٖ شَأْنٞ يُغْنِيهِۖ",
+      "text_normalized": "لكل امرے منهم يوميذ شان يغنيه",
+      "aya_indic": "٣٧",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 38,
+      "text_uthmani": "وُجُوهٞ يَوْمَئِذٖ مُّسْفِرَةٞ",
+      "text_normalized": "وجوه يوميذ مسفره",
+      "aya_indic": "٣٨",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 39,
+      "text_uthmani": "ضَاحِكَةٞ مُّسْتَبْشِرَةٞۖ",
+      "text_normalized": "ضاحكه مستبشره",
+      "aya_indic": "٣٩",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 40,
+      "text_uthmani": "وَوُجُوهٞ يَوْمَئِذٍ عَلَيْهَا غَبَرَةٞ",
+      "text_normalized": "ووجوه يوميذ عليها غبره",
+      "aya_indic": "٤٠",
+      "jozz": 30,
+      "page": 585
+    },
+    {
+      "sura": 80,
+      "aya": 41,
+      "text_uthmani": "تَرْهَقُهَا قَتَرَةٌۖ",
+      "text_normalized": "ترهقها قتره",
+      "aya_indic": "٤١",
+      "jozz": 30,
+      "page": 586
+    },
+    {
+      "sura": 80,
+      "aya": 42,
+      "text_uthmani": "ا۟وْلَٰٓئِكَ هُمُ اُ۬لْكَفَرَةُ اُ۬لْفَجَرَةُۖ",
+      "text_normalized": "اولايك هم الكفره الفجره",
+      "aya_indic": "٤٢",
+      "jozz": 30,
+      "page": 586
+    }
+  ]
+}
