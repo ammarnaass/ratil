@@ -119,7 +119,17 @@ fs.writeFileSync(
 const publicDataDir = path.join(ROOT_DIR, 'public/data');
 fs.mkdirSync(publicDataDir, { recursive: true });
 fs.copyFileSync(surahsFile, path.join(publicDataDir, 'surahs.json'));
+fs.copyFileSync(path.join(ROOT_DIR, 'data/quran-verses.json'), path.join(publicDataDir, 'quran-verses.json'));
+
+const publicSurahTextDir = path.join(publicDataDir, 'surahs-text');
+fs.mkdirSync(publicSurahTextDir, { recursive: true });
+for (let sId = 1; sId <= 114; sId++) {
+  fs.copyFileSync(
+    path.join(surahTextDir, `${sId}.json`),
+    path.join(publicSurahTextDir, `${sId}.json`)
+  );
+}
 
 console.log(`✅ تم بناء بيانات 114 سورة و ${lines.length} آية بنجاح.`);
-console.log('🎉 اكتمل إعداد البيانات الثابتة بنجاح.');
+console.log('🎉 اكتمل إعداد البيانات الثابتة وتزامنها مع public/data بنجاح.');
 process.exit(0);

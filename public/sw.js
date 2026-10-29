@@ -11,17 +11,13 @@ const AUDIO_CACHE_NAME = 'ratil-audio-cache-v1';
 // الأصول الأساسية الثابتة المخزنة مسبقاً
 const PRECACHE_ASSETS = [
   '/',
-  '/index.html',
   '/manifest.webmanifest',
   '/favicon.svg',
   '/favicon.ico',
-  '/icons/apple-touch-icon.png',
   '/fonts/hafs.woff2',
   '/fonts/warsh.woff2',
   '/data/surahs.json',
-  '/data/reciters.json',
-  '/styles/tokens.css',
-  '/styles/app.css'
+  '/search-index.json',
 ];
 
 self.addEventListener('install', (event) => {

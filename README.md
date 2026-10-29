@@ -17,60 +17,68 @@
 
 ---
 
-## هيكل المستودع (Repository Architecture)
+## المعمارية المعتمدة (Next.js 14 · Vercel · Neon · Archive.org)
 
 ```text
 ratil/
+├── app/                      # مسارات Next.js 14 App Router
+│   ├── page.tsx              # الصفحة الرئيسية (SSG)
+│   ├── surah/[id]/           # صفحات السور الـ 114 (SSG)
+│   ├── reciter/[id]/         # صفحات القرّاء وتلاواتهم (SSG)
+│   ├── bookmarks/            # صفحة المحفوظات
+│   ├── reciters/             # فهرس القرّاء
+│   ├── admin/                # لوحة الإدارة المركزية
+│   └── api/                  # خوادم Serverless (Neon + Integrity + Health)
+├── components/               # مكونات واجهة المستخدم والمشغّل الصوتي
+├── features/                 # ميزات نمطية (admin, auth)
+├── lib/                      # اتصال Neon DB (lib/db.ts) والاستعلامات
+├── scripts/                  # أدوات البناء التلقائي والتحقق من البصمات
+│   ├── verify-text.mjs       # التحقق الإلزامي من بصمات SHA-256
+│   ├── build-data.mjs        # بناء وتوزيع نصوص السور
+│   ├── build-search.mjs      # توليد فهرس البحث الفوري
+│   ├── init-db.mjs           # تهيئة وتغذية جداول Neon
+│   └── create-admin.mjs      # إنشاء مستخدمي الإدارة
 ├── data/
-│   ├── source/               # النصوص الخام من المصادر المعتمدة (للقراءة فقط)
-│   │   ├── quran-uthmani-hafs.txt     # نص حفص المعتمد (مشروع تنزيل Tanzil v1.1)
-│   │   └── quran-uthmani-warsh.json   # نص ورش المعتمد (مجمع الملك فهد KFGQPC v10)
-│   └── checksums.json        # البصمات المرجعية لجميع الملفات والخطوط
-├── docs/
-│   ├── NAMING_AND_DOMAIN.md  # ملف دراسة الاسم والنطاقات وحماية العلامة التجارية
-│   └── SOURCES.md            # سجل المصادر المعتمدة والتراخيص والروايات
-├── public/
-│   ├── audio-manifest/       # فهرس القرّاء والتراخيص
-│   │   └── reciters.json
-│   ├── data/                 # ملفات JSON المولدة والمفهرسة للويب
-│   │   ├── hafs/             # 114 سورة برواية حفص
-│   │   ├── warsh/            # 114 سورة برواية ورش
-│   │   ├── surahs.json       # فهرس السور الـ 114
-│   │   ├── search_index_hafs.json
-│   │   └── search_index_warsh.json
-│   └── fonts/                # الخطوط العثمانية المعتمدة بصيغة WOFF2
-│       ├── hafs.woff2        # خط مجمع الملك فهد لحفص
-│       └── warsh.woff2       # خط مجمع الملك فهد لورش
-├── scripts/
-│   ├── verify-text           # سكربت التحقق الصارم من البصمات (يفشل البناء فوراً عند أي اختلاف)
-│   ├── build-data            # معالجة النصوص وتوليد الفهارس
-│   └── normalize-text.js     # خوارزمية تطبيع البحث القرآني
-├── tests/
-│   └── test-suite.js         # حزمة الاختبارات الآلية الشاملة
-└── package.json
+│   ├── source/               # النصوص المصدرية المعتمدة (حفص وورش)
+│   ├── checksums.json        # البصمات المرجعية لجميع النصوص والخطوط
+│   └── surahs.json           # بيانات السور الـ 114
+├── db/                       # مخطط قاعدة البيانات (db/schema.sql)
+└── public/                   # الخطوط العثمانية، بيانات المتصفح، والـ Service Worker
 ```
 
 ---
 
 ## الأوامر الأساسية
 
-### 1. التحقق من البصمات الرقمية وسلامة النصوص:
+### 1. تشغيل بيئة التطوير المحلية:
 ```bash
-npm run verify-text
-# أو مباشرة
-./scripts/verify-text
+npm run dev
 ```
 
-### 2. إعادة بناء البيانات وفهارس البحث:
+### 2. التحقق من البصمات الرقمية وسلامة النصوص:
 ```bash
-npm run build-data
-# أو مباشرة
-./scripts/build-data
+npm run verify
 ```
 
-### 3. تشغيل حزمة الاختبارات الآلية:
+### 3. إعادة بناء البيانات وفهارس البحث:
 ```bash
-npm test
+npm run build:data
+npm run build:search
+```
+
+### 4. تهيئة قاعدة بيانات Neon وتغذيتها بالبيانات:
+```bash
+npm run db:init
+```
+
+### 5. إنشاء حساب مدير النظام:
+```bash
+npm run create:admin
+```
+
+### 6. بناء المشروع للإنتاج (Production Build):
+```bash
+npm run build
 ```
 
 ---
@@ -79,7 +87,7 @@ npm test
 
 | الملف | الوصف / المصدر | بصمة SHA-256 المرجعية |
 | :--- | :--- | :--- |
-| `data/source/quran-uthmani-hafs.txt` | تنزيل Tanzil v1.1 (حفص، 6236 آية) | `18c719bb3ba26d32ef457f40dad77cd28c4c5a34156833e26a8e5fcfdd246fb1` |
+| `data/source/quran-hafs.txt` | تنزيل Tanzil v1.1 (حفص، 6236 آية) | `18c719bb3ba26d32ef457f40dad77cd28c4c5a34156833e26a8e5fcfdd246fb1` |
 | `data/source/quran-uthmani-warsh.json` | مجمع الملك فهد KFGQPC (ورش، 6214 آية) | `f05d0dc652fd46b38563cacb13242f76f80db4cc64d25873da0bce157253872f` |
 | `public/fonts/hafs.woff2` | خط حفص العثماني (KFGQPC v18) | `8c00e7a7d5f773bcfb1642fdcfba505dbd81975fef39f14718827a32d075020c` |
 | `public/fonts/warsh.woff2` | خط ورش العثماني (KFGQPC v10) | `d6e21b46de4bc42dae9218749830cb4cb54ff815e67c66002001219a175b71d7` |

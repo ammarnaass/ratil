@@ -1,421 +1,276 @@
-# رتل — المعمارية الهندسية النهائية
+# رتل — Vercel + Neon + Archive.org
 
-**المبدأ الحاكم:** موقع ثابت أولاً (Static-first). كل ما يمكن توليده في وقت البناء يُولَّد، ولا شيء يمر بخادم في وقت التشغيل إلا لضرورة مثبتة.
+**Stack النهائي المعتمد:** Next.js 14 · Vercel · Neon PostgreSQL · Archive.org  
+**المبدأ الحاكم:** ثابت أولاً للمستخدم (Static-First)، ديناميكي فقط للمدير (Dynamic Admin Only).
 
 ---
 
-## 1. نظرة عامة على المعمارية
+## 1. لماذا هذا الثلاثي؟
+
+| الخدمة | الدور | المزايا والحدود المجانية |
+|---|---|---|
+| **Vercel** | استضافة + Serverless Functions + Global Edge CDN | 100 GB bandwidth/شهر + أداء استجابة فائق |
+| **Neon** | PostgreSQL serverless (يصفر التكلفة عند عدم الاستخدام) | 0.5 GB + 191 compute-hr/شهر (لا توقف للمشروع أبداً) |
+| **Archive.org** | تخزين صوت دائم بلا حدود + روابط مباشرة ثابتة | غير محدود + دعم أصيل لـ Range Requests و CORS |
+
+> [!NOTE]
+> **ميزة Neon التنافسية:** على عكس Supabase التي تُوقف المشاريع المجانية بعد 7 أيام خمول، Neon **تبقى شغّالة للأبد** وتُفوتر فقط على الاستخدام الفعلي للعمليات الحاسوبية.
+
+---
+
+## 2. نظرة عامة على المعمارية
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                     GitHub Repository                       │
-│  src/ + data/ + scripts/                                   │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ git push
+┌──────────────────────────────────────────────────────────────┐
+│                    GitHub Repository                         │
+│  Next.js 14 (App Router) + TypeScript                       │
+└──────────────────────────┬───────────────────────────────────┘
+                           │ git push → main
                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  GitHub Actions (CI/CD)                     │
-│  1. verify-text (checksum)  ← يفشل البناء إن اختلف        │
-│  2. build-data (JSON)       ← توليد بيانات وقت البناء     │
-│  3. build-search-index      ← فهرس بحث مُطبَّع            │
-│  4. astro build             ← توليد HTML ثابت             │
-│  5. deploy → Cloudflare Pages                              │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-              ┌────────────┴────────────┐
-              ▼                         ▼
-┌─────────────────────┐     ┌─────────────────────────────┐
-│  Cloudflare Pages   │     │      Cloudflare R2           │
-│  (HTML + JS + CSS)  │     │  (ملفات صوت + توقيت)        │
-│  CDN عالمي          │     │  صفر egress fees             │
-│  ratil.app          │     │  cdn.ratil.app               │
-└─────────────────────┘     └─────────────────────────────┘
-              │
-              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      المتصفح                               │
-│  Service Worker: cache الصوت + offline support             │
-│  localStorage: آخر موضع + إعدادات                         │
-│  Media Session API: تحكم شاشة القفل                       │
-│  Pagefind (WASM): بحث فوري بلا خادم                       │
-└─────────────────────────────────────────────────────────────┘
-              │
-              │ (فقط لوحة التحكم)
-              ▼
-┌─────────────────────────────────────────────────────────────┐
-│             Cloudflare Workers (Serverless)                 │
-│  - Presigned URLs لرفع الملفات                             │
-│  - فحص المدير (Basic Auth)                                 │
-│  - تفعيل إعادة البناء (webhook → GitHub Actions)          │
-│  يعيش ثوانٍ عند الطلب فقط — لا خادم دائم                 │
-└─────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                    Vercel Build                              │
+│  node scripts/verify-text.mjs   ← checksum النص القرآني    │
+│  node scripts/build-data.mjs    ← JSON ثابت                │
+│  node scripts/build-search.mjs  ← فهرس البحث               │
+│  next build                     ← SSG + Serverless          │
+└──────────┬───────────────────────────────────────────────────┘
+           │
+    ┌──────┴──────────────────────────────┐
+    ▼                                     ▼
+┌─────────────────────┐       ┌────────────────────────────┐
+│   Vercel Edge CDN   │       │   Neon PostgreSQL          │
+│                     │       │   (Serverless)             │
+│  /surah/[id]        │       │                            │
+│  /reciter/[id]      │ ←───→ │  reciters                  │
+│  /                  │       │  surah_audio               │
+│  (HTML ثابت SSG)    │       │  reports                   │
+│                     │       │  health_logs               │
+│  /api/reciters      │       │                            │
+│  /api/reports       │       │  تُستعلم فقط من API Routes │
+│  /api/health        │       │  لا تُلمس في صفحات SSG    │
+└─────────────────────┘       └────────────────────────────┘
+           │
+           ▼
+┌──────────────────────────────────────────────────────────────┐
+│                  Archive.org                                 │
+│  https://archive.org/download/ratil-{reciter}/{surah}.mp3   │
+│  روابط مباشرة ثابتة للأبد · Range Requests ✅ · CORS ✅    │
+└──────────────────────────────────────────────────────────────┘
+           │
+           ▼
+┌──────────────────────────────────────────────────────────────┐
+│                 Browser (Client)                             │
+│  Player.tsx       → React Client Component                  │
+│  SearchBox.tsx    → MiniSearch في المتصفح                  │
+│  Service Worker   → Audio cache + Offline                  │
+│  localStorage     → آخر موضع + إعدادات                    │
+│  Media Session    → تحكم شاشة القفل                       │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 2. التقنيات المختارة — مع السبب
-
-| الطبقة | التقنية | البديل المرفوض | سبب الاختيار |
-|---|---|---|---|
-| Framework | **Astro 4** | Next.js | صفر JS افتراضي، SSG أولاً، بناء سريع |
-| استضافة الموقع | **Cloudflare Pages** | Vercel | مجاني بلا حدود، CDN عالمي، atomic deploys |
-| تخزين الصوت | **Cloudflare R2** | AWS S3 | صفر egress fees، نفس نظام Cloudflare |
-| CDN | **Cloudflare** (مدمج) | CloudFront | لا تكاليف نقل، عقود 300+ مدينة |
-| قاعدة البيانات | **لا توجد** | PostgreSQL / Supabase | المحتوى ثابت، JSON في المستودع |
-| بحث | **Pagefind** + pre-index | Elasticsearch | يعمل في المتصفح، لا خادم، عربي مع تطبيع |
-| Serverless | **Cloudflare Workers** | Express / Railway | يعيش عند الطلب، لا تكلفة ثابتة |
-| PWA | **@vite-pwa/astro** | يدوي | Service Worker + Manifest تلقائي |
-| CI/CD | **GitHub Actions** | Jenkins | مجاني، متكامل مع المستودع |
-| إحصاءات | **Plausible** (self-hosted) | Google Analytics | خصوصية، لا تتبع شخصي |
-| تحقق النص | **سكربت Python (SHA-256)** | — | أمان النص القرآني |
-
----
-
-## 3. هيكل المستودع
+## 3. هيكل المستودع المنظّم (Clean Modular Structure)
 
 ```text
 ratil/
 │
-├── src/                          # كود الواجهة (Astro)
-│   ├── pages/
-│   │   ├── index.astro           # الصفحة الرئيسية
-│   │   ├── surah/
-│   │   │   └── [id].astro        # صفحة ديناميكية → HTML ثابت لكل سورة
-│   │   └── reciter/
-│   │       └── [id]/
-│   │           ├── index.astro   # ملف القارئ
-│   │           └── surah/
-│   │               └── [sid].astro
-│   ├── components/               # مكونات Astro + React (للمشغّل فقط)
-│   │   ├── Player.tsx            # المشغّل (React Island)
-│   │   ├── SearchBox.tsx         # البحث (React Island)
-│   │   └── SurahList.astro       # قائمة السور (ثابتة)
-│   └── layouts/
-│       └── Base.astro
+├── app/                              # Next.js App Router
+│   ├── layout.tsx                    # Root layout (RTL + IBM Plex Sans Arabic)
+│   ├── page.tsx                      # الصفحة الرئيسية (SSG)
+│   │
+│   ├── surah/
+│   │   └── [id]/
+│   │       └── page.tsx              # /surah/18 (SSG - 114 سورة)
+│   │
+│   ├── reciter/
+│   │   └── [id]/
+│   │       ├── page.tsx              # ملف القارئ (SSG)
+│   │       └── surah/
+│   │           └── [sid]/page.tsx    # /reciter/al-minshawy/surah/18
+│   │
+│   ├── bookmarks/page.tsx            # صفحة المحفوظات
+│   ├── reciters/page.tsx             # فهرس القرّاء
+│   ├── admin/page.tsx                # لوحة الإدارة المركزية (مربوطة بـ features/admin)
+│   │
+│   └── api/                          # Serverless Functions
+│       ├── reciters/
+│       │   ├── route.ts              # GET (قائمة) / POST (إضافة قارئ)
+│       │   └── [id]/route.ts         # GET / PUT / DELETE
+│       ├── audio/
+│       │   └── route.ts              # GET (استعلام) / POST (إضافة صوت)
+│       ├── reports/
+│       │   ├── route.ts              # POST (بلاغ مستخدم)
+│       │   └── [id]/route.ts         # PATCH / DELETE (إشراف)
+│       ├── integrity/
+│       │   └── route.ts              # GET (فحص تجزئة SHA-256 للنصوص)
+│       └── health/
+│           └── route.ts              # GET (فحص Archive.org و Range Requests)
 │
-├── data/                         # البيانات المصدر (لا تُعدَّل يدوياً)
+├── features/                         # معمارية الميزات النمطية (Modular Features)
+│   ├── admin/                        # لوحة الإدارة (Screens 11-15)
+│   │   ├── types/
+│   │   ├── constants/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   └── components/
+│   └── auth/                         # مصادقة المستخدمين وحسابات المدراء
+│
+├── components/                       # مكونات واجهة المستخدم العامة
+│   ├── Player.tsx                    # 'use client' — المشغّل المتقدم
+│   ├── SearchBox.tsx                 # 'use client' — البحث الفوري
+│   ├── OfflineButton.tsx             # 'use client' — التنزيل للاستماع دون إنترنت
+│   ├── SurahList.tsx                 # Server Component
+│   ├── ReciterCard.tsx               # Server Component
+│   ├── SurahText.tsx                 # عرض النص القرآني المعتمد
+│   ├── Navbar.tsx                    # الشريط العلوي
+│   ├── Footer.tsx                    # التذييل
+│   └── Logo.tsx                      # شعار منصة رتّل
+│
+├── lib/
+│   ├── db.ts                         # اتصال Neon serverless
+│   ├── queries/                      # دوال استعلام SQL لقاعدة البيانات
+│   │   ├── reciters.ts               # SQL للقرّاء
+│   │   ├── audio.ts                  # SQL للصوتيات
+│   │   └── reports.ts                # SQL للبلاغات
+│   ├── normalize.ts                  # خوارزمية تطبيع البحث القرآني
+│   ├── storage.ts                    # مساعدات localStorage
+│   ├── media-session.ts              # تحكم شاشة القفل والأجهزة
+│   └── types.ts                      # تعريفات TypeScript
+│
+├── scripts/                          # أدوات البناء والصيانة (Node.js ESM)
+│   ├── verify-text.mjs               # التحقق الإلزامي من بصمات SHA-256
+│   ├── build-data.mjs                # معالجة وتجهيز نصوص السور والآيات
+│   ├── build-search.mjs              # توليد فهرس البحث
+│   ├── init-db.mjs                   # تهيئة وتغذية جداول Neon
+│   └── create-admin.mjs              # إنشاء حسابات الإدارة الموثقة
+│
+├── data/                             # البيانات المصدرية في المستودع
 │   ├── source/
-│   │   ├── quran-hafs.txt        # النص المصدر (Tanzil / مجمع الملك فهد)
-│   │   └── quran-warsh.txt
-│   ├── checksums.json            # البصمات المرجعية
-│   ├── surahs.json               # أسماء + عدد الآيات (مُولَّد)
-│   ├── reciters.json             # بيانات القرّاء + تراخيصهم
-│   └── audio-manifest.json       # مسارات الصوت في R2
-│
-├── timings/                      # ملفات التوقيت
-│   └── al-minshawy/
-│       ├── 001.json
-│       └── 018.json
-│
-├── scripts/
-│   ├── verify-text.py            # يفشل إن تغيّر النص
-│   ├── build-data.py             # يُولّد JSON من المصدر
-│   └── build-search-index.py     # يُولّد فهرس بحث مُطبَّع
-│
-├── admin/                        # لوحة التحكم (SPA منفصل)
-│   └── src/
+│   │   ├── quran-hafs.txt            # نص حفص المعتمد (Tanzil v1.1)
+│   │   └── quran-uthmani-warsh.json  # نص ورش المعتمد (مجمع الملك فهد KFGQPC v10)
+│   ├── checksums.json                # البصمات المرجعية لجميع النصوص والخطوط
+│   └── surahs.json                   # بيانات السور الـ 114
 │
 ├── public/
-│   └── fonts/                    # خطوط مضمّنة (KFGQPC + IBM Plex Arabic)
+│   ├── fonts/
+│   │   ├── hafs.woff2                # خط مجمع الملك فهد لحفص
+│   │   └── warsh.woff2               # خط مجمع الملك فهد لورش
+│   ├── data/                         # بيانات ثابتة للمتصفح
+│   │   ├── surahs-text/              # 114 ملف JSON للآيات
+│   │   ├── hafs/ & warsh/            # النصوص المفهرسة للروايتين
+│   │   └── search-index.json         # فهرس البحث اللحظي
+│   └── sw.js                         # خادم الخدمة (PWA Service Worker)
 │
-├── .github/
-│   └── workflows/
-│       ├── deploy.yml            # بناء ونشر
-│       └── verify.yml           # فحص يومي للنص
-│
-└── astro.config.mjs
+├── db/
+│   └── schema.sql                    # مخطط قاعدة بيانات Neon PostgreSQL
+├── package.json
+├── next.config.mjs
+└── .env.local                        # متغيرات البيئة الآمنة (DATABASE_URL + ADMIN_SECRET)
 ```
 
 ---
 
-## 4. سكربت التحقق من النص (verify-text.py)
+## 4. قاعدة البيانات — Neon Schema
 
-```python
-import hashlib, json, sys
+```sql
+-- ─── 1. القرّاء ──────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS reciters (
+  id              VARCHAR(60)  PRIMARY KEY,  -- 'al-minshawy'
+  name            TEXT         NOT NULL,     -- 'الشيخ محمد صديق المنشاوي'
+  riwaya          VARCHAR(20)  NOT NULL,     -- 'hafs' | 'warsh' | 'qalon'
+  license         VARCHAR(50)  NOT NULL,     -- 'public-domain' | 'cc-by' | 'permission'
+  source_name     TEXT         NOT NULL,     -- 'Egyptian Radio Archive'
+  source_url      TEXT,
+  license_url     TEXT,
+  is_visible      BOOLEAN      DEFAULT FALSE,
+  notes           TEXT,                      -- ملاحظات داخلية للمدير
+  created_at      TIMESTAMPTZ  DEFAULT NOW(),
+  updated_at      TIMESTAMPTZ  DEFAULT NOW()
+);
 
-with open('data/source/quran-hafs.txt', 'rb') as f:
-    actual = hashlib.sha256(f.read()).hexdigest()
+-- ─── 2. الملفات الصوتية ──────────────────────────────────────
+CREATE TABLE IF NOT EXISTS surah_audio (
+  id               SERIAL      PRIMARY KEY,
+  reciter_id       VARCHAR(60) REFERENCES reciters(id) ON DELETE CASCADE,
+  surah_number     SMALLINT    NOT NULL CHECK (surah_number BETWEEN 1 AND 114),
+  audio_url        TEXT        NOT NULL,  -- archive.org/download/...
+  timings_url      TEXT,                  -- JSON توقيت الآيات
+  duration_seconds INTEGER,
+  size_mb          NUMERIC(6,2),
+  verified         BOOLEAN     DEFAULT FALSE,
+  created_at       TIMESTAMPTZ DEFAULT NOW(),
 
-with open('data/checksums.json') as f:
-    expected = json.load(f)['hafs']
+  UNIQUE (reciter_id, surah_number)
+);
 
-if actual != expected:
-    print(f"❌ CHECKSUM MISMATCH")
-    print(f"Expected: {expected}")
-    print(f"Actual:   {actual}")
-    sys.exit(1)          # يوقف البناء
+-- ─── 3. البلاغات ─────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS reports (
+  id           SERIAL      PRIMARY KEY,
+  type         VARCHAR(20) NOT NULL,       -- 'text' | 'audio' | 'request'
+  surah_number SMALLINT,
+  ayah_number  SMALLINT,
+  reciter_id   VARCHAR(60),
+  description  TEXT        NOT NULL,
+  status       VARCHAR(20) DEFAULT 'new',  -- 'new' | 'reviewed' | 'closed'
+  admin_notes  TEXT,
+  created_at   TIMESTAMPTZ DEFAULT NOW()
+);
 
-print(f"✅ Text verified: {actual}")
-```
+-- ─── 4. سجل فحص الصوت ───────────────────────────────────────
+CREATE TABLE IF NOT EXISTS health_logs (
+  id               SERIAL      PRIMARY KEY,
+  reciter_id       VARCHAR(60),
+  audio_url        TEXT,
+  http_status      SMALLINT,
+  supports_range   BOOLEAN,
+  response_ms      INTEGER,
+  error_msg        TEXT,
+  checked_at       TIMESTAMPTZ DEFAULT NOW()
+);
 
-يُشغَّل كأول خطوة في كل بناء. إن فشل، لا شيء يُنشر.
-
----
-
-## 5. ملف audio-manifest.json
-
-```json
-{
-  "reciters": {
-    "al-minshawy": {
-      "name": "الشيخ محمد صديق المنشاوي",
-      "riwaya": "hafs",
-      "base_url": "https://cdn.ratil.app/audio/al-minshawy/",
-      "license": "public-domain",
-      "source": "Egyptian Radio Archive",
-      "surahs": {
-        "1":  { "file": "001_al-fatiha.mp3",  "duration": 50  },
-        "2":  { "file": "002_al-baqara.mp3",  "duration": 8530 },
-        "18": { "file": "018_al-kahf.mp3",    "duration": 3510 }
-      }
-    },
-    "al-husary": {
-      "name": "الشيخ محمود خليل الحصري",
-      "riwaya": "warsh",
-      "base_url": "https://cdn.ratil.app/audio/al-husary-warsh/",
-      "license": "public-domain",
-      "source": "Egyptian Radio Archive",
-      "surahs": {}
-    }
-  }
-}
-```
-
-تغيير أي URL = تعديل هذا الملف فقط، لا إعادة كتابة كود.
-
----
-
-## 6. استراتيجية Service Worker
-
-```javascript
-// sw.js (مُولَّد بواسطة @vite-pwa/astro أو كود مخصص)
-
-// ما يُخزَّن تلقائياً (عند تثبيت PWA)
-const PRECACHE = [
-  '/',
-  '/surah/1',     // الفاتحة دائماً
-  '/fonts/hafs.woff2',
-  '/search-index.json'
-];
-
-// استراتيجية الصوت: Cache-First بطلب صريح من المستخدم
-self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-
-  // الصوت: فقط ما طلبه المستخدم صراحة يُخزَّن
-  if (url.hostname === 'cdn.ratil.app') {
-    event.respondWith(
-      caches.match(event.request).then(cached => {
-        return cached || fetch(event.request).then(response => {
-          // لا تخزين تلقائي — فقط ما اختاره المستخدم
-          return response;
-        });
-      })
-    );
-    return;
-  }
-
-  // الصفحات والأصول: Cache-First
-  event.respondWith(
-    caches.match(event.request).then(r => r || fetch(event.request))
-  );
-});
+-- ─── 5. فهارس الأداء ────────────────────────────────────────
+CREATE INDEX IF NOT EXISTS idx_audio_reciter   ON surah_audio (reciter_id);
+CREATE INDEX IF NOT EXISTS idx_audio_surah     ON surah_audio (surah_number);
+CREATE INDEX IF NOT EXISTS idx_reports_status  ON reports (status);
+CREATE INDEX IF NOT EXISTS idx_health_reciter  ON health_logs (reciter_id, checked_at DESC);
 ```
 
 ---
 
-## 7. البحث العربي المُطبَّع
+## 5. الاتصال والاستعلام — Neon Database
 
-```python
-# scripts/build-search-index.py
-import json, re, unicodedata
+```typescript
+// lib/db.ts
+import { neon } from '@neondatabase/serverless';
 
-def normalize_arabic(text):
-    # حذف التشكيل
-    text = re.sub(r'[\u064B-\u065F\u0670]', '', text)
-    # توحيد الهمزات
-    text = re.sub(r'[أإآٱ]', 'ا', text)
-    # توحيد الياء
-    text = re.sub(r'ى', 'ي', text)
-    # توحيد التاء المربوطة
-    text = re.sub(r'ة', 'ه', text)
-    return text.strip()
+// Neon serverless driver — يعمل في Vercel Edge + Node.js
+const sql = neon(process.env.DATABASE_URL!);
 
-# خريطة الأسماء اللاتينية
-LATIN_MAP = {
-    'fatiha': 1, 'baqara': 2, 'imran': 3, 'kahf': 18,
-    'yasin': 36, 'rahman': 55, 'mulk': 67, 'ikhlas': 112
-}
-
-with open('data/surahs.json') as f:
-    surahs = json.load(f)
-
-index = []
-for s in surahs:
-    index.append({
-        'id': s['id'],
-        'name': s['name'],
-        'name_normalized': normalize_arabic(s['name']),
-        'latin': [k for k, v in LATIN_MAP.items() if v == s['id']],
-        'num': s['id']
-    })
-
-with open('public/search-index.json', 'w', encoding='utf-8') as f:
-    json.dump(index, f, ensure_ascii=False)
+export default sql;
 ```
 
 ---
 
-## 8. رفع الملفات الصوتية (Presigned URL)
+## 6. رفع الصوتيات إلى Archive.org
 
-```javascript
-// Cloudflare Worker: admin-upload.js
-
-export default {
-  async fetch(request, env) {
-    // فحص المدير
-    const auth = request.headers.get('Authorization');
-    if (!isValidAdmin(auth, env.ADMIN_SECRET)) {
-      return new Response('Unauthorized', { status: 401 });
-    }
-
-    const { surahId, reciterId, filename } = await request.json();
-
-    // توليد رابط رفع مؤقت صالح 15 دقيقة
-    const key = `audio/${reciterId}/${filename}`;
-    const url = await env.R2.createMultipartUpload(key);
-
-    return Response.json({
-      upload_url: url.uploadId,
-      key: key,
-      expires_in: 900   // 15 دقيقة
-    });
-  }
-};
-
-// المدير يرفع من المتصفح مباشرة إلى R2
-// بلا مرور بالـ Worker — بلا حد حجم
-```
+1. تسجيل حساب موثق على [Archive.org](https://archive.org/).
+2. الرفع إلى قسم الصوتيات وتحديد المعرّف الفريد الثابت (Identifier):
+   `ratil-{reciter_id}-{riwaya}` (مثال: `ratil-al-minshawy-hafs`).
+3. تسمية السور بالتسلسل المعياري الثلاثي: `001.mp3`, `002.mp3`, ..., `114.mp3`.
+4. الحصول على الروابط المباشرة الثابتة:
+   `https://archive.org/download/ratil-{reciter_id}-{riwaya}/{surah_number_3_digits}.mp3`
+5. تسجيل الرابط في Neon عبر جدول `surah_audio`.
 
 ---
 
-## 9. GitHub Actions — Pipeline
+## 7. تكاليف التشغيل والحدود
 
-```yaml
-# .github/workflows/deploy.yml
-
-name: Build & Deploy
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with: { python-version: '3.11' }
-
-      - name: ✅ Verify Quran Text
-        run: python scripts/verify-text.py
-        # يوقف كل شيء إن فشل
-
-      - name: 📦 Build Data
-        run: python scripts/build-data.py
-
-      - name: 🔍 Build Search Index
-        run: python scripts/build-search-index.py
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with: { node-version: '20' }
-
-      - run: npm ci
-      - run: npm run build
-
-      - name: 🚀 Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: ratil
-          directory: dist
-```
-
-وقت البناء المتوقع: **45-90 ثانية** للدورة كاملة.
-
----
-
-## 10. التكاليف التشغيلية
-
-| الخدمة | الخطة | التكلفة الشهرية |
-|---|---|---|
-| Cloudflare Pages | Free | $0 |
-| Cloudflare R2 | 10GB مجاناً، ثم $0.015/GB | $0–3 |
-| Cloudflare Workers | 100,000 طلب/يوم مجاناً | $0 |
-| GitHub Actions | 2000 دقيقة/شهر مجاناً | $0 |
-| Plausible Analytics | Self-hosted على VPS صغير | $4–6 |
-| النطاق | ratil.app | $10/سنة |
-| **المجموع** | | **$4–10/شهر** |
-
-مقارنة بالبديل (Vercel + Railway + Supabase + AWS): **$50–150/شهر**.
-
----
-
-## 11. نقاط الفشل وخطط البديل
-
-| السيناريو | التأثير | الحل |
-|---|---|---|
-| Cloudflare Pages تنهار | الموقع لا يُفتح | النسخة الثابتة تُنشر على Netlify في < 5 دقائق |
-| Cloudflare R2 لا يستجيب | الصوت لا يشتغل | Service Worker يشغّل المخزَّن offline |
-| GitHub Actions معطّل | لا نشر جديد | يُشغَّل Wrangler يدوياً من المحلي |
-| سقوط الإنترنت عند المستخدم | — | PWA offline: السور المحمَّلة تشتغل |
-| خطأ في النص القرآني | — | checksum يكتشفه، البناء يتوقف، المدير يُبلَّغ |
-
----
-
-## 12. مسار التطوير المحلي
-
-```bash
-# إعداد المشروع
-git clone https://github.com/ratil/ratil
-npm install
-pip install -r scripts/requirements.txt
-
-# تشغيل السكربتات
-python scripts/verify-text.py     # فحص النص
-python scripts/build-data.py      # توليد البيانات
-python scripts/build-search-index.py
-
-# تشغيل محلي
-npm run dev      # http://localhost:4321
-
-# بناء واختبار
-npm run build
-npm run preview
-```
-
----
-
-## 13. قرارات مُعلَّقة (للإصدار 2.0 فقط)
-
-| القرار | الخيارات | المقياس |
-|---|---|---|
-| تعليقات وبلاغات مستخدمين | Cloudflare D1 (SQLite) أو Supabase | عدد البلاغات الشهري |
-| بحث نص الآيات كاملاً | Pagefind أو FlexSearch | جودة النتائج |
-| تطبيقات أصلية | Capacitor فوق Astro أو React Native | عدد طلبات المستخدمين |
-
----
-
-## الخطوات الصفرية (الحالة الحالية)
-
-1. تم تهيئة Astro مع مخرجات ثابتة (Static SSG) وتكامل React.
-2. نص حفص من Tanzil متوفر ومتحقق منه `data/source/quran-hafs.txt`.
-3. بصمات SHA-256 موثقة ومطابقة في `data/checksums.json`.
-4. سكربتات `verify-text.py` و `build-data.py` و `build-search-index.py` تعمل وتجتاز 100% من الاختبارات.
-5. خط سير GitHub Actions جاهز للنشر على Cloudflare Pages بمجرد ربط المتغيرات السرية.
+| الخدمة | الحد المجاني | الاستهلاك المتوقع | التكلفة |
+|---|---|---|---|
+| **Vercel** | 100 GB Bandwidth/شهر | 5-15 GB (صفحات و JS فقط) | **$0** |
+| **Neon** | 0.5 GB تخزين + 191 Compute-hr | ~10 MB بيانات | **$0** |
+| **Archive.org** | غير محدود | تخزين وبث الصوت بالكامل | **$0** |
+| **GitHub Actions** | 2000 دقيقة/شهر | فحص وبناء تلقائي | **$0** |
+| **النطاق ratil.app** | — | تجديد سنوي | ~$10/سنة |
+| **المجموع** | | | **~$0.85/شهر** |
