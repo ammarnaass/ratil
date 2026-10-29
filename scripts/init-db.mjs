@@ -16,8 +16,8 @@ const rootDir = path.resolve(__dirname, '..');
 const databaseUrl = process.env.DATABASE_URL;
 
 if (!databaseUrl) {
-  console.error('❌ خطأ: متغير البيئة DATABASE_URL غير موجود في .env.local');
-  process.exit(1);
+  console.log('ℹ️ DATABASE_URL غير محدد. يتم تخطي تهيئة قاعدة البيانات واستخدام البيانات الثابتة.');
+  process.exit(0);
 }
 
 const sql = neon(databaseUrl);
@@ -98,6 +98,7 @@ async function initDatabase() {
 }
 
 initDatabase().catch((err) => {
-  console.error('❌ حدث خطأ أثناء تهيئة قاعدة البيانات:', err);
-  process.exit(1);
+  console.warn('⚠️ ملاحظة: تعذر الاتصال بـ Neon أثناء البناء:', err.message);
+  console.warn('ℹ️ سيستمر البناء بالاعتماد على البيانات الثابتة (SSG Fallback).');
+  process.exit(0);
 });

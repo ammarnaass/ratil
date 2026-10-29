@@ -34,6 +34,20 @@ export async function generateMetadata({
       title: `سورة ${sName} — رتّل`,
       description: `استمع لسورة ${sName} (${sAyahs} آية) بصوت كبار القرّاء.`,
       siteName: 'رتّل',
+      images: [
+        {
+          url: '/icons/icon-512.png',
+          width: 512,
+          height: 512,
+          alt: `سورة ${sName} — رتّل`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary',
+      title: `سورة ${sName} — رتّل`,
+      description: `استمع لسورة ${sName} (${sAyahs} آية) بصوت كبار القرّاء.`,
+      images: ['/icons/icon-512.png'],
     },
   };
 }
