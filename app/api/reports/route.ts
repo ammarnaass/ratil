@@ -7,6 +7,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import sql from '@/lib/db';
 
+export const dynamic = 'force-dynamic';
+
 function isAdmin(req: NextRequest): boolean {
   const token = req.headers.get('Authorization')?.replace('Bearer ', '');
   const adminSecret = process.env.ADMIN_SECRET;

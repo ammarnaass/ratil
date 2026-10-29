@@ -13,6 +13,8 @@
     "verify": "node scripts/verify-text.mjs",
     "build:data": "node scripts/build-data.mjs",
     "build:search": "node scripts/build-search.mjs",
+    "db:init": "node --env-file=.env.local scripts/init-db.mjs",
+    "db:seed": "node --env-file=.env.local scripts/init-db.mjs",
     "lint": "next lint"
   },
   "keywords": [

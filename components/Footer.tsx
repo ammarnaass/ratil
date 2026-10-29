@@ -6,6 +6,7 @@
 
 import Link from 'next/link';
 import { ShieldCheck, Database, Cloud, Radio, Heart } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 export default function Footer() {
   return (
@@ -14,11 +15,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* العمود الأول: الهوية */}
           <div className="flex flex-col gap-3 md:col-span-2">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-primary font-arabic">رَتِّلْ</span>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
-                مشروع مستقل خادم لكتاب الله
-              </span>
+            <div className="flex items-center gap-3">
+              <Logo size={36} />
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-bold text-primary font-arabic">رَتِّلْ</span>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                  مشروع مستقل خادم لكتاب الله
+                </span>
+              </div>
             </div>
             <p className="text-sm text-on-surface-variant leading-relaxed max-w-lg">
               مشغّل تلاوات القرآن الكريم مع تتبع الآية وعرض النص القرآني المعتمد. الوعد الذي يحمله الاسم هو التأنّي والإتقان، لا السرعة والحشو. خالٍ تماماً من الإعلانات والتتبع.

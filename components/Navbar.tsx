@@ -9,6 +9,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Volume2, BookOpen, Users, Bookmark, Search, ShieldCheck } from 'lucide-react';
+import { UserNavMenu } from '@/features/auth';
+import Logo from '@/components/Logo';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -25,18 +27,8 @@ export default function Navbar() {
       <div className="h-16 md:h-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         {/* الشعار */}
         <div className="flex items-center gap-4 shrink-0">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 group-hover:bg-primary-container transition-all">
-              <Volume2 className="w-5 h-5 text-primary" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-on-surface tracking-wide leading-none group-hover:text-primary transition-colors">
-                رَتِّلْ
-              </span>
-              <span className="text-[11px] text-on-surface-variant mt-0.5">
-                الصوت هو البطل
-              </span>
-            </div>
+          <Link href="/" className="group focus:outline-none">
+            <Logo size={42} showText={true} />
           </Link>
 
           {/* شارة توثيق البصمة */}
@@ -68,7 +60,7 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* أزرار الإجراءات السريعة */}
+        {/* أزرار الإجراءات السريعة والمستخدم */}
         <div className="flex items-center gap-2">
           <Link
             href="/#search"
@@ -78,13 +70,7 @@ export default function Navbar() {
             <span className="hidden sm:inline">بحث في السور...</span>
           </Link>
 
-          <Link
-            href="/admin"
-            className="px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs text-on-surface-variant hover:text-primary transition-all border border-surface-container-high"
-            title="لوحة الإدارة والحوكمة"
-          >
-            الإدارة
-          </Link>
+          <UserNavMenu />
         </div>
       </div>
     </header>

@@ -8,17 +8,31 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Bookmark, ArrowRight, Trash2, BookOpen, Clock } from 'lucide-react';
+import { Bookmark, ArrowRight, Trash2, BookOpen, Clock, RefreshCw, LogIn, CheckCircle2 } from 'lucide-react';
 import { getBookmarks, removeBookmark } from '@/lib/storage';
+import { useAuth } from '@/features/auth';
 import type { Bookmark as BookmarkItem } from '@/lib/types';
 import { toArabicDigits } from '@/lib/normalize';
 
 export default function BookmarksPage() {
+  const { user, isAuthenticated, syncWithCloud } = useAuth();
   const [bookmarks, setBookmarks] = useState<BookmarkItem[]>([]);
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [syncDone, setSyncDone] = useState(false);
 
   useEffect(() => {
     setBookmarks(getBookmarks());
   }, []);
+
+  const handleSync = async () => {
+    setIsSyncing(true);
+    setSyncDone(false);
+    await syncWithCloud();
+    setBookmarks(getBookmarks());
+    setIsSyncing(false);
+    setSyncDone(true);
+    setTimeout(() => setSyncDone(false), 3000);
+  };
 
   const handleDelete = (surahId: number, ayahNumber: number) => {
     removeBookmark(surahId, ayahNumber);
@@ -49,17 +63,42 @@ export default function BookmarksPage() {
           <span>العودة للرئيسية</span>
         </Link>
 
-        <div className="flex items-center gap-3 mt-2">
-          <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary border border-surface-container-high">
-            <Bookmark className="w-6 h-6 fill-primary" />
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-surface-container flex items-center justify-center text-primary border border-surface-container-high">
+              <Bookmark className="w-6 h-6 fill-primary" />
+            </div>
+            <div className="flex flex-col">
+              <h1 className="text-2xl sm:text-3xl font-bold text-on-surface">
+                الآيات المحفوظة
+              </h1>
+              <p className="text-xs sm:text-sm text-on-surface-variant mt-0.5">
+                {isAuthenticated
+                  ? `مزامنة سحابية نشطة لحساب: ${user?.name}`
+                  : 'محفوظاتك مخزنة محلياً. سجّل دخولك لمزامنتها مع السحابة.'}
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <h1 className="text-2xl sm:text-3xl font-bold text-on-surface">
-              الآيات المحفوظة
-            </h1>
-            <p className="text-xs sm:text-sm text-on-surface-variant mt-0.5">
-              محفوظاتك الشخصية مخزنة محلياً على جهازك دون أي تتبع أو جمع للبيانات.
-            </p>
+
+          <div>
+            {isAuthenticated ? (
+              <button
+                onClick={handleSync}
+                disabled={isSyncing}
+                className="flex items-center gap-2 py-2 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-semibold text-primary border border-surface-container-high transition-all disabled:opacity-50"
+              >
+                <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin' : ''}`} />
+                <span>{syncDone ? 'تمت المزامنة بنجاح' : isSyncing ? 'جاري المزامنة...' : 'مزامنة مع السحابة'}</span>
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="flex items-center gap-1.5 py-2 px-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary text-xs font-bold transition-all shadow-md shadow-primary/20"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                <span>تسجيل الدخول للمزامنة</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
