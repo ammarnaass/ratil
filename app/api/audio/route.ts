@@ -15,6 +15,33 @@ function isAdmin(req: NextRequest): boolean {
   return !!adminSecret && token === adminSecret;
 }
 
+export async function GET(req: NextRequest) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const reciterId = searchParams.get('reciter_id');
+
+    const rows = reciterId
+      ? await sql`
+          SELECT sa.*, r.name as reciter_name
+          FROM surah_audio sa
+          LEFT JOIN reciters r ON r.id = sa.reciter_id
+          WHERE sa.reciter_id = ${reciterId}
+          ORDER BY sa.surah_number ASC
+        `
+      : await sql`
+          SELECT sa.*, r.name as reciter_name
+          FROM surah_audio sa
+          LEFT JOIN reciters r ON r.id = sa.reciter_id
+          ORDER BY sa.reciter_id, sa.surah_number ASC
+          LIMIT 342
+        `;
+
+    return NextResponse.json(rows);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}
+
 export async function POST(req: NextRequest) {
   if (!isAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

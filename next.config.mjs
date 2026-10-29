@@ -12,6 +12,15 @@ const nextConfig = {
     // تشغيل قواعد البيانات في Edge Runtime (أسرع)
     serverComponentsExternalPackages: ['@neondatabase/serverless'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/admin.html',
+        destination: '/admin',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
