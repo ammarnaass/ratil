@@ -1,0 +1,50 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './lib/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: '#111318',
+        surface: '#111318',
+        'surface-dim': '#111318',
+        'surface-bright': '#37393f',
+        'surface-container-lowest': '#0c0e13',
+        'surface-container-low': '#1a1b21',
+        'surface-container': '#1e2025',
+        'surface-container-high': '#282a2f',
+        'surface-container-highest': '#33353a',
+        'surface-variant': '#33353a',
+        primary: '#3ecfb2',
+        'primary-focus': '#61eccd',
+        'primary-container': '#134e44',
+        'on-primary': '#00382e',
+        'on-primary-container': '#70f9da',
+        secondary: '#67dac0',
+        'secondary-container': '#21a28b',
+        'on-secondary': '#00382e',
+        tertiary: '#cfd6e6',
+        'on-surface': '#e2e2e9',
+        'on-surface-variant': '#bbcac4',
+        outline: '#85948f',
+        'outline-variant': '#3c4a45',
+        error: '#ffb4ab',
+        'error-container': '#93000a',
+      },
+      fontFamily: {
+        sans: ['IBM Plex Sans', 'Cairo', 'sans-serif'],
+        quran: ['"KFGQPC Uthmanic Hafs"', 'Amiri', 'serif'],
+        arabic: ['IBM Plex Sans', 'Cairo', 'sans-serif'],
+      },
+      spacing: {
+        gutter: '1.5rem',
+        margin: '3rem',
+      },
+    },
+  },
+  plugins: [],
+};

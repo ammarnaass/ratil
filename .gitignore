@@ -8,6 +8,10 @@ yarn-error.log*
 dist/
 build/
 .output/
+.next/
+out/
+legacy-astro/
+*.tsbuildinfo
 
 # Logs & temp
 *.log
@@ -19,4 +23,5 @@ skills/
 .agents/mcp_config.json
 .env
 .env.*
+!.env.example
 

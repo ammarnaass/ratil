@@ -2,1197 +2,2057 @@
   {
     "id": 1,
     "name": "الفاتحة",
+    "name_ar": "الفاتحة",
     "name_normalized": "الفاتحه",
+    "name_en": "Al-Fatihah",
     "latin": [
       "fatiha"
     ],
     "num": 1,
+    "surah_number": 1,
+    "ayahs": 7,
     "ayahs_hafs": 7,
     "ayahs_warsh": 7,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 1,
+    "searchText": "1 الفاتحة الفاتحه Al-Fatihah fatiha"
   },
   {
     "id": 2,
     "name": "البقرة",
+    "name_ar": "البقرة",
     "name_normalized": "البقره",
+    "name_en": "Al-Baqarah",
     "latin": [
+      "baqarah",
       "baqara"
     ],
     "num": 2,
+    "surah_number": 2,
+    "ayahs": 286,
     "ayahs_hafs": 286,
     "ayahs_warsh": 285,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 2,
+    "searchText": "2 البقرة البقره Al-Baqarah baqarah baqara"
   },
   {
     "id": 3,
     "name": "آل عمران",
+    "name_ar": "آل عمران",
     "name_normalized": "ال عمران",
+    "name_en": "Ali 'Imran",
     "latin": [
       "imran"
     ],
     "num": 3,
+    "surah_number": 3,
+    "ayahs": 200,
     "ayahs_hafs": 200,
     "ayahs_warsh": 200,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 50,
+    "searchText": "3 آل عمران ال عمران Ali 'Imran imran"
   },
   {
     "id": 4,
     "name": "النساء",
+    "name_ar": "النساء",
     "name_normalized": "النساء",
+    "name_en": "An-Nisa'",
     "latin": [
       "nisa"
     ],
     "num": 4,
+    "surah_number": 4,
+    "ayahs": 176,
     "ayahs_hafs": 176,
     "ayahs_warsh": 175,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 77,
+    "searchText": "4 النساء النساء An-Nisa' nisa"
   },
   {
     "id": 5,
     "name": "المائدة",
+    "name_ar": "المائدة",
     "name_normalized": "المائده",
+    "name_en": "Al-Ma'idah",
     "latin": [
       "maidah"
     ],
     "num": 5,
+    "surah_number": 5,
+    "ayahs": 120,
     "ayahs_hafs": 120,
     "ayahs_warsh": 122,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 106,
+    "searchText": "5 المائدة المائده Al-Ma'idah maidah"
   },
   {
     "id": 6,
     "name": "الأنعام",
+    "name_ar": "الأنعام",
     "name_normalized": "الانعام",
+    "name_en": "Al-An'am",
     "latin": [
       "anam"
     ],
     "num": 6,
+    "surah_number": 6,
+    "ayahs": 165,
     "ayahs_hafs": 165,
     "ayahs_warsh": 167,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 128,
+    "searchText": "6 الأنعام الانعام Al-An'am anam"
   },
   {
     "id": 7,
     "name": "الأعراف",
+    "name_ar": "الأعراف",
     "name_normalized": "الاعراف",
+    "name_en": "Al-A'raf",
     "latin": [
       "araf"
     ],
     "num": 7,
+    "surah_number": 7,
+    "ayahs": 206,
     "ayahs_hafs": 206,
     "ayahs_warsh": 206,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 151,
+    "searchText": "7 الأعراف الاعراف Al-A'raf araf"
   },
   {
     "id": 8,
     "name": "الأنفال",
+    "name_ar": "الأنفال",
     "name_normalized": "الانفال",
+    "name_en": "Al-Anfal",
     "latin": [
       "anfal"
     ],
     "num": 8,
+    "surah_number": 8,
+    "ayahs": 75,
     "ayahs_hafs": 75,
     "ayahs_warsh": 76,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 177,
+    "searchText": "8 الأنفال الانفال Al-Anfal anfal"
   },
   {
     "id": 9,
     "name": "التوبة",
+    "name_ar": "التوبة",
     "name_normalized": "التوبه",
+    "name_en": "At-Tawbah",
     "latin": [
       "tawbah"
     ],
     "num": 9,
+    "surah_number": 9,
+    "ayahs": 129,
     "ayahs_hafs": 129,
     "ayahs_warsh": 130,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 187,
+    "searchText": "9 التوبة التوبه At-Tawbah tawbah"
   },
   {
     "id": 10,
     "name": "يونس",
+    "name_ar": "يونس",
     "name_normalized": "يونس",
+    "name_en": "Yunus",
     "latin": [
       "yunus"
     ],
     "num": 10,
+    "surah_number": 10,
+    "ayahs": 109,
     "ayahs_hafs": 109,
     "ayahs_warsh": 109,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 208,
+    "searchText": "10 يونس يونس Yunus yunus"
   },
   {
     "id": 11,
     "name": "هود",
+    "name_ar": "هود",
     "name_normalized": "هود",
+    "name_en": "Hud",
     "latin": [
       "hud"
     ],
     "num": 11,
+    "surah_number": 11,
+    "ayahs": 123,
     "ayahs_hafs": 123,
     "ayahs_warsh": 121,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 221,
+    "searchText": "11 هود هود Hud hud"
   },
   {
     "id": 12,
     "name": "يوسف",
+    "name_ar": "يوسف",
     "name_normalized": "يوسف",
+    "name_en": "Yusuf",
     "latin": [
       "yusuf"
     ],
     "num": 12,
+    "surah_number": 12,
+    "ayahs": 111,
     "ayahs_hafs": 111,
     "ayahs_warsh": 111,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 235,
+    "searchText": "12 يوسف يوسف Yusuf yusuf"
   },
   {
     "id": 13,
     "name": "الرعد",
+    "name_ar": "الرعد",
     "name_normalized": "الرعد",
+    "name_en": "Ar-Ra'd",
     "latin": [
       "rad"
     ],
     "num": 13,
+    "surah_number": 13,
+    "ayahs": 43,
     "ayahs_hafs": 43,
     "ayahs_warsh": 44,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 249,
+    "searchText": "13 الرعد الرعد Ar-Ra'd rad"
   },
   {
     "id": 14,
     "name": "إبراهيم",
+    "name_ar": "إبراهيم",
     "name_normalized": "ابراهيم",
+    "name_en": "Ibrahim",
     "latin": [
       "ibrahim"
     ],
     "num": 14,
+    "surah_number": 14,
+    "ayahs": 52,
     "ayahs_hafs": 52,
     "ayahs_warsh": 54,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 255,
+    "searchText": "14 إبراهيم ابراهيم Ibrahim ibrahim"
   },
   {
     "id": 15,
     "name": "الحجر",
+    "name_ar": "الحجر",
     "name_normalized": "الحجر",
+    "name_en": "Al-Hijr",
     "latin": [
       "hijr"
     ],
     "num": 15,
+    "surah_number": 15,
+    "ayahs": 99,
     "ayahs_hafs": 99,
     "ayahs_warsh": 99,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 262,
+    "searchText": "15 الحجر الحجر Al-Hijr hijr"
   },
   {
     "id": 16,
     "name": "النحل",
+    "name_ar": "النحل",
     "name_normalized": "النحل",
+    "name_en": "An-Nahl",
     "latin": [
       "nahl"
     ],
     "num": 16,
+    "surah_number": 16,
+    "ayahs": 128,
     "ayahs_hafs": 128,
     "ayahs_warsh": 128,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 267,
+    "searchText": "16 النحل النحل An-Nahl nahl"
   },
   {
     "id": 17,
     "name": "الإسراء",
+    "name_ar": "الإسراء",
     "name_normalized": "الاسراء",
+    "name_en": "Al-Isra'",
     "latin": [
       "isra"
     ],
     "num": 17,
+    "surah_number": 17,
+    "ayahs": 111,
     "ayahs_hafs": 111,
     "ayahs_warsh": 110,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 282,
+    "searchText": "17 الإسراء الاسراء Al-Isra' isra"
   },
   {
     "id": 18,
     "name": "الكهف",
+    "name_ar": "الكهف",
     "name_normalized": "الكهف",
+    "name_en": "Al-Kahf",
     "latin": [
       "kahf"
     ],
     "num": 18,
+    "surah_number": 18,
+    "ayahs": 110,
     "ayahs_hafs": 110,
     "ayahs_warsh": 105,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 293,
+    "searchText": "18 الكهف الكهف Al-Kahf kahf"
   },
   {
     "id": 19,
     "name": "مريم",
+    "name_ar": "مريم",
     "name_normalized": "مريم",
+    "name_en": "Maryam",
     "latin": [
       "maryam"
     ],
     "num": 19,
+    "surah_number": 19,
+    "ayahs": 98,
     "ayahs_hafs": 98,
     "ayahs_warsh": 99,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 305,
+    "searchText": "19 مريم مريم Maryam maryam"
   },
   {
     "id": 20,
     "name": "طه",
+    "name_ar": "طه",
     "name_normalized": "طه",
+    "name_en": "Ta-Ha",
     "latin": [
       "taha"
     ],
     "num": 20,
+    "surah_number": 20,
+    "ayahs": 135,
     "ayahs_hafs": 135,
     "ayahs_warsh": 134,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 312,
+    "searchText": "20 طه طه Ta-Ha taha"
   },
   {
     "id": 21,
     "name": "الأنبياء",
+    "name_ar": "الأنبياء",
     "name_normalized": "الانبياء",
-    "latin": [],
+    "name_en": "Al-Anbiya'",
+    "latin": [
+      "anbiya"
+    ],
     "num": 21,
+    "surah_number": 21,
+    "ayahs": 112,
     "ayahs_hafs": 112,
     "ayahs_warsh": 111,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 322,
+    "searchText": "21 الأنبياء الانبياء Al-Anbiya' anbiya"
   },
   {
     "id": 22,
     "name": "الحج",
+    "name_ar": "الحج",
     "name_normalized": "الحج",
-    "latin": [],
+    "name_en": "Al-Hajj",
+    "latin": [
+      "hajj"
+    ],
     "num": 22,
+    "surah_number": 22,
+    "ayahs": 78,
     "ayahs_hafs": 78,
     "ayahs_warsh": 76,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 332,
+    "searchText": "22 الحج الحج Al-Hajj hajj"
   },
   {
     "id": 23,
     "name": "المؤمنون",
+    "name_ar": "المؤمنون",
     "name_normalized": "المؤمنون",
-    "latin": [],
+    "name_en": "Al-Mu'minun",
+    "latin": [
+      "muminun"
+    ],
     "num": 23,
+    "surah_number": 23,
+    "ayahs": 118,
     "ayahs_hafs": 118,
     "ayahs_warsh": 119,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 342,
+    "searchText": "23 المؤمنون المؤمنون Al-Mu'minun muminun"
   },
   {
     "id": 24,
     "name": "النور",
+    "name_ar": "النور",
     "name_normalized": "النور",
-    "latin": [],
+    "name_en": "An-Nur",
+    "latin": [
+      "nur"
+    ],
     "num": 24,
+    "surah_number": 24,
+    "ayahs": 64,
     "ayahs_hafs": 64,
     "ayahs_warsh": 64,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 350,
+    "searchText": "24 النور النور An-Nur nur"
   },
   {
     "id": 25,
     "name": "الفرقان",
+    "name_ar": "الفرقان",
     "name_normalized": "الفرقان",
-    "latin": [],
+    "name_en": "Al-Furqan",
+    "latin": [
+      "furqan"
+    ],
     "num": 25,
+    "surah_number": 25,
+    "ayahs": 77,
     "ayahs_hafs": 77,
     "ayahs_warsh": 77,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 359,
+    "searchText": "25 الفرقان الفرقان Al-Furqan furqan"
   },
   {
     "id": 26,
     "name": "الشعراء",
+    "name_ar": "الشعراء",
     "name_normalized": "الشعراء",
-    "latin": [],
+    "name_en": "Ash-Shu'ara'",
+    "latin": [
+      "shuara"
+    ],
     "num": 26,
+    "surah_number": 26,
+    "ayahs": 227,
     "ayahs_hafs": 227,
     "ayahs_warsh": 226,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 367,
+    "searchText": "26 الشعراء الشعراء Ash-Shu'ara' shuara"
   },
   {
     "id": 27,
     "name": "النمل",
+    "name_ar": "النمل",
     "name_normalized": "النمل",
-    "latin": [],
+    "name_en": "An-Naml",
+    "latin": [
+      "naml"
+    ],
     "num": 27,
+    "surah_number": 27,
+    "ayahs": 93,
     "ayahs_hafs": 93,
     "ayahs_warsh": 95,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 377,
+    "searchText": "27 النمل النمل An-Naml naml"
   },
   {
     "id": 28,
     "name": "القصص",
+    "name_ar": "القصص",
     "name_normalized": "القصص",
-    "latin": [],
+    "name_en": "Al-Qasas",
+    "latin": [
+      "qasas"
+    ],
     "num": 28,
+    "surah_number": 28,
+    "ayahs": 88,
     "ayahs_hafs": 88,
     "ayahs_warsh": 87,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 385,
+    "searchText": "28 القصص القصص Al-Qasas qasas"
   },
   {
     "id": 29,
     "name": "العنكبوت",
+    "name_ar": "العنكبوت",
     "name_normalized": "العنكبوت",
-    "latin": [],
+    "name_en": "Al-'Ankabut",
+    "latin": [
+      "ankabut"
+    ],
     "num": 29,
+    "surah_number": 29,
+    "ayahs": 69,
     "ayahs_hafs": 69,
     "ayahs_warsh": 69,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 396,
+    "searchText": "29 العنكبوت العنكبوت Al-'Ankabut ankabut"
   },
   {
     "id": 30,
     "name": "الروم",
+    "name_ar": "الروم",
     "name_normalized": "الروم",
-    "latin": [],
+    "name_en": "Ar-Rum",
+    "latin": [
+      "rum"
+    ],
     "num": 30,
+    "surah_number": 30,
+    "ayahs": 60,
     "ayahs_hafs": 60,
     "ayahs_warsh": 59,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 404,
+    "searchText": "30 الروم الروم Ar-Rum rum"
   },
   {
     "id": 31,
     "name": "لقمان",
+    "name_ar": "لقمان",
     "name_normalized": "لقمان",
-    "latin": [],
+    "name_en": "Luqman",
+    "latin": [
+      "luqman"
+    ],
     "num": 31,
+    "surah_number": 31,
+    "ayahs": 34,
     "ayahs_hafs": 34,
     "ayahs_warsh": 33,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 411,
+    "searchText": "31 لقمان لقمان Luqman luqman"
   },
   {
     "id": 32,
     "name": "السجدة",
+    "name_ar": "السجدة",
     "name_normalized": "السجده",
-    "latin": [],
+    "name_en": "As-Sajdah",
+    "latin": [
+      "sajda",
+      "sajdah"
+    ],
     "num": 32,
+    "surah_number": 32,
+    "ayahs": 30,
     "ayahs_hafs": 30,
     "ayahs_warsh": 30,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 415,
+    "searchText": "32 السجدة السجده As-Sajdah sajda sajdah"
   },
   {
     "id": 33,
     "name": "الأحزاب",
+    "name_ar": "الأحزاب",
     "name_normalized": "الاحزاب",
-    "latin": [],
+    "name_en": "Al-Ahzab",
+    "latin": [
+      "ahzab"
+    ],
     "num": 33,
+    "surah_number": 33,
+    "ayahs": 73,
     "ayahs_hafs": 73,
     "ayahs_warsh": 73,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 418,
+    "searchText": "33 الأحزاب الاحزاب Al-Ahzab ahzab"
   },
   {
     "id": 34,
     "name": "سبأ",
+    "name_ar": "سبأ",
     "name_normalized": "سبا",
-    "latin": [],
+    "name_en": "Saba'",
+    "latin": [
+      "saba"
+    ],
     "num": 34,
+    "surah_number": 34,
+    "ayahs": 54,
     "ayahs_hafs": 54,
     "ayahs_warsh": 54,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 428,
+    "searchText": "34 سبأ سبا Saba' saba"
   },
   {
     "id": 35,
     "name": "فاطر",
+    "name_ar": "فاطر",
     "name_normalized": "فاطر",
-    "latin": [],
+    "name_en": "Fatir",
+    "latin": [
+      "fatir"
+    ],
     "num": 35,
+    "surah_number": 35,
+    "ayahs": 45,
     "ayahs_hafs": 45,
     "ayahs_warsh": 46,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 434,
+    "searchText": "35 فاطر فاطر Fatir fatir"
   },
   {
     "id": 36,
     "name": "يس",
+    "name_ar": "يس",
     "name_normalized": "يس",
+    "name_en": "Ya-Sin",
     "latin": [
-      "yasin"
+      "yasin",
+      "yaseen"
     ],
     "num": 36,
+    "surah_number": 36,
+    "ayahs": 83,
     "ayahs_hafs": 83,
     "ayahs_warsh": 82,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 440,
+    "searchText": "36 يس يس Ya-Sin yasin yaseen"
   },
   {
     "id": 37,
     "name": "الصافات",
+    "name_ar": "الصافات",
     "name_normalized": "الصافات",
-    "latin": [],
+    "name_en": "As-Saffat",
+    "latin": [
+      "saffat"
+    ],
     "num": 37,
+    "surah_number": 37,
+    "ayahs": 182,
     "ayahs_hafs": 182,
     "ayahs_warsh": 182,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 446,
+    "searchText": "37 الصافات الصافات As-Saffat saffat"
   },
   {
     "id": 38,
     "name": "ص",
+    "name_ar": "ص",
     "name_normalized": "ص",
-    "latin": [],
+    "name_en": "Sad",
+    "latin": [
+      "sad"
+    ],
     "num": 38,
+    "surah_number": 38,
+    "ayahs": 88,
     "ayahs_hafs": 88,
     "ayahs_warsh": 86,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 453,
+    "searchText": "38 ص ص Sad sad"
   },
   {
     "id": 39,
     "name": "الزمر",
+    "name_ar": "الزمر",
     "name_normalized": "الزمر",
-    "latin": [],
+    "name_en": "Az-Zumar",
+    "latin": [
+      "zumar"
+    ],
     "num": 39,
+    "surah_number": 39,
+    "ayahs": 75,
     "ayahs_hafs": 75,
     "ayahs_warsh": 75,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 458,
+    "searchText": "39 الزمر الزمر Az-Zumar zumar"
   },
   {
     "id": 40,
     "name": "غافر",
+    "name_ar": "غافر",
     "name_normalized": "غافر",
-    "latin": [],
+    "name_en": "Ghafir",
+    "latin": [
+      "ghafir"
+    ],
     "num": 40,
+    "surah_number": 40,
+    "ayahs": 85,
     "ayahs_hafs": 85,
     "ayahs_warsh": 84,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 467,
+    "searchText": "40 غافر غافر Ghafir ghafir"
   },
   {
     "id": 41,
     "name": "فصلت",
+    "name_ar": "فصلت",
     "name_normalized": "فصلت",
-    "latin": [],
+    "name_en": "Fussilat",
+    "latin": [
+      "fussilat"
+    ],
     "num": 41,
+    "surah_number": 41,
+    "ayahs": 54,
     "ayahs_hafs": 54,
     "ayahs_warsh": 53,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 477,
+    "searchText": "41 فصلت فصلت Fussilat fussilat"
   },
   {
     "id": 42,
     "name": "الشورى",
+    "name_ar": "الشورى",
     "name_normalized": "الشوري",
-    "latin": [],
+    "name_en": "Ash-Shura",
+    "latin": [
+      "shura"
+    ],
     "num": 42,
+    "surah_number": 42,
+    "ayahs": 53,
     "ayahs_hafs": 53,
     "ayahs_warsh": 50,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 483,
+    "searchText": "42 الشورى الشوري Ash-Shura shura"
   },
   {
     "id": 43,
     "name": "الزخرف",
+    "name_ar": "الزخرف",
     "name_normalized": "الزخرف",
-    "latin": [],
+    "name_en": "Az-Zukhruf",
+    "latin": [
+      "zukhruf"
+    ],
     "num": 43,
+    "surah_number": 43,
+    "ayahs": 89,
     "ayahs_hafs": 89,
     "ayahs_warsh": 89,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 489,
+    "searchText": "43 الزخرف الزخرف Az-Zukhruf zukhruf"
   },
   {
     "id": 44,
     "name": "الدخان",
+    "name_ar": "الدخان",
     "name_normalized": "الدخان",
-    "latin": [],
+    "name_en": "Ad-Dukhan",
+    "latin": [
+      "dukhan"
+    ],
     "num": 44,
+    "surah_number": 44,
+    "ayahs": 59,
     "ayahs_hafs": 59,
     "ayahs_warsh": 56,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 496,
+    "searchText": "44 الدخان الدخان Ad-Dukhan dukhan"
   },
   {
     "id": 45,
     "name": "الجاثية",
+    "name_ar": "الجاثية",
     "name_normalized": "الجاثيه",
-    "latin": [],
+    "name_en": "Al-Jathiyah",
+    "latin": [
+      "jathiya"
+    ],
     "num": 45,
+    "surah_number": 45,
+    "ayahs": 37,
     "ayahs_hafs": 37,
     "ayahs_warsh": 36,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 499,
+    "searchText": "45 الجاثية الجاثيه Al-Jathiyah jathiya"
   },
   {
     "id": 46,
     "name": "الأحقاف",
+    "name_ar": "الأحقاف",
     "name_normalized": "الاحقاف",
-    "latin": [],
+    "name_en": "Al-Ahqaf",
+    "latin": [
+      "ahqaf"
+    ],
     "num": 46,
+    "surah_number": 46,
+    "ayahs": 35,
     "ayahs_hafs": 35,
     "ayahs_warsh": 34,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 502,
+    "searchText": "46 الأحقاف الاحقاف Al-Ahqaf ahqaf"
   },
   {
     "id": 47,
     "name": "محمد",
+    "name_ar": "محمد",
     "name_normalized": "محمد",
-    "latin": [],
+    "name_en": "Muhammad",
+    "latin": [
+      "muhammad"
+    ],
     "num": 47,
+    "surah_number": 47,
+    "ayahs": 38,
     "ayahs_hafs": 38,
     "ayahs_warsh": 39,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 507,
+    "searchText": "47 محمد محمد Muhammad muhammad"
   },
   {
     "id": 48,
     "name": "الفتح",
+    "name_ar": "الفتح",
     "name_normalized": "الفتح",
-    "latin": [],
+    "name_en": "Al-Fath",
+    "latin": [
+      "fath"
+    ],
     "num": 48,
+    "surah_number": 48,
+    "ayahs": 29,
     "ayahs_hafs": 29,
     "ayahs_warsh": 29,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 511,
+    "searchText": "48 الفتح الفتح Al-Fath fath"
   },
   {
     "id": 49,
     "name": "الحجرات",
+    "name_ar": "الحجرات",
     "name_normalized": "الحجرات",
-    "latin": [],
+    "name_en": "Al-Hujurat",
+    "latin": [
+      "hujurat"
+    ],
     "num": 49,
+    "surah_number": 49,
+    "ayahs": 18,
     "ayahs_hafs": 18,
     "ayahs_warsh": 18,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 515,
+    "searchText": "49 الحجرات الحجرات Al-Hujurat hujurat"
   },
   {
     "id": 50,
     "name": "ق",
+    "name_ar": "ق",
     "name_normalized": "ق",
-    "latin": [],
+    "name_en": "Qaf",
+    "latin": [
+      "qaf"
+    ],
     "num": 50,
+    "surah_number": 50,
+    "ayahs": 45,
     "ayahs_hafs": 45,
     "ayahs_warsh": 45,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 518,
+    "searchText": "50 ق ق Qaf qaf"
   },
   {
     "id": 51,
     "name": "الذاريات",
+    "name_ar": "الذاريات",
     "name_normalized": "الذاريات",
-    "latin": [],
+    "name_en": "Adh-Dhariyat",
+    "latin": [
+      "dhariyat"
+    ],
     "num": 51,
+    "surah_number": 51,
+    "ayahs": 60,
     "ayahs_hafs": 60,
     "ayahs_warsh": 60,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 520,
+    "searchText": "51 الذاريات الذاريات Adh-Dhariyat dhariyat"
   },
   {
     "id": 52,
     "name": "الطور",
+    "name_ar": "الطور",
     "name_normalized": "الطور",
-    "latin": [],
+    "name_en": "At-Tur",
+    "latin": [
+      "tur"
+    ],
     "num": 52,
+    "surah_number": 52,
+    "ayahs": 49,
     "ayahs_hafs": 49,
     "ayahs_warsh": 48,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 523,
+    "searchText": "52 الطور الطور At-Tur tur"
   },
   {
     "id": 53,
     "name": "النجم",
+    "name_ar": "النجم",
     "name_normalized": "النجم",
-    "latin": [],
+    "name_en": "An-Najm",
+    "latin": [
+      "najm"
+    ],
     "num": 53,
+    "surah_number": 53,
+    "ayahs": 62,
     "ayahs_hafs": 62,
     "ayahs_warsh": 61,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 526,
+    "searchText": "53 النجم النجم An-Najm najm"
   },
   {
     "id": 54,
     "name": "القمر",
+    "name_ar": "القمر",
     "name_normalized": "القمر",
-    "latin": [],
+    "name_en": "Al-Qamar",
+    "latin": [
+      "qamar"
+    ],
     "num": 54,
+    "surah_number": 54,
+    "ayahs": 55,
     "ayahs_hafs": 55,
     "ayahs_warsh": 55,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 528,
+    "searchText": "54 القمر القمر Al-Qamar qamar"
   },
   {
     "id": 55,
     "name": "الرحمن",
+    "name_ar": "الرحمن",
     "name_normalized": "الرحمن",
+    "name_en": "Ar-Rahman",
     "latin": [
       "rahman"
     ],
     "num": 55,
+    "surah_number": 55,
+    "ayahs": 78,
     "ayahs_hafs": 78,
     "ayahs_warsh": 76,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 531,
+    "searchText": "55 الرحمن الرحمن Ar-Rahman rahman"
   },
   {
     "id": 56,
     "name": "الواقعة",
+    "name_ar": "الواقعة",
     "name_normalized": "الواقعه",
+    "name_en": "Al-Waqi'ah",
     "latin": [
-      "waqiah"
+      "waqiah",
+      "waqia"
     ],
     "num": 56,
+    "surah_number": 56,
+    "ayahs": 96,
     "ayahs_hafs": 96,
     "ayahs_warsh": 97,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 534,
+    "searchText": "56 الواقعة الواقعه Al-Waqi'ah waqiah waqia"
   },
   {
     "id": 57,
     "name": "الحديد",
+    "name_ar": "الحديد",
     "name_normalized": "الحديد",
-    "latin": [],
+    "name_en": "Al-Hadid",
+    "latin": [
+      "hadid"
+    ],
     "num": 57,
+    "surah_number": 57,
+    "ayahs": 29,
     "ayahs_hafs": 29,
     "ayahs_warsh": 28,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 537,
+    "searchText": "57 الحديد الحديد Al-Hadid hadid"
   },
   {
     "id": 58,
     "name": "المجادلة",
+    "name_ar": "المجادلة",
     "name_normalized": "المجادله",
-    "latin": [],
+    "name_en": "Al-Mujadilah",
+    "latin": [
+      "mujadila"
+    ],
     "num": 58,
+    "surah_number": 58,
+    "ayahs": 22,
     "ayahs_hafs": 22,
     "ayahs_warsh": 22,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 542,
+    "searchText": "58 المجادلة المجادله Al-Mujadilah mujadila"
   },
   {
     "id": 59,
     "name": "الحشر",
+    "name_ar": "الحشر",
     "name_normalized": "الحشر",
-    "latin": [],
+    "name_en": "Al-Hashr",
+    "latin": [
+      "hashr"
+    ],
     "num": 59,
+    "surah_number": 59,
+    "ayahs": 24,
     "ayahs_hafs": 24,
     "ayahs_warsh": 24,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 545,
+    "searchText": "59 الحشر الحشر Al-Hashr hashr"
   },
   {
     "id": 60,
     "name": "الممتحنة",
+    "name_ar": "الممتحنة",
     "name_normalized": "الممتحنه",
-    "latin": [],
+    "name_en": "Al-Mumtahanah",
+    "latin": [
+      "mumtahanah"
+    ],
     "num": 60,
+    "surah_number": 60,
+    "ayahs": 13,
     "ayahs_hafs": 13,
     "ayahs_warsh": 13,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 549,
+    "searchText": "60 الممتحنة الممتحنه Al-Mumtahanah mumtahanah"
   },
   {
     "id": 61,
     "name": "الصف",
+    "name_ar": "الصف",
     "name_normalized": "الصف",
-    "latin": [],
+    "name_en": "As-Saff",
+    "latin": [
+      "saff"
+    ],
     "num": 61,
+    "surah_number": 61,
+    "ayahs": 14,
     "ayahs_hafs": 14,
     "ayahs_warsh": 14,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 551,
+    "searchText": "61 الصف الصف As-Saff saff"
   },
   {
     "id": 62,
     "name": "الجمعة",
+    "name_ar": "الجمعة",
     "name_normalized": "الجمعه",
-    "latin": [],
+    "name_en": "Al-Jumu'ah",
+    "latin": [
+      "jumuah"
+    ],
     "num": 62,
+    "surah_number": 62,
+    "ayahs": 11,
     "ayahs_hafs": 11,
     "ayahs_warsh": 11,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 553,
+    "searchText": "62 الجمعة الجمعه Al-Jumu'ah jumuah"
   },
   {
     "id": 63,
     "name": "المنافقون",
+    "name_ar": "المنافقون",
     "name_normalized": "المنافقون",
-    "latin": [],
+    "name_en": "Al-Munafiqun",
+    "latin": [
+      "munafiqun"
+    ],
     "num": 63,
+    "surah_number": 63,
+    "ayahs": 11,
     "ayahs_hafs": 11,
     "ayahs_warsh": 11,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 554,
+    "searchText": "63 المنافقون المنافقون Al-Munafiqun munafiqun"
   },
   {
     "id": 64,
     "name": "التغابن",
+    "name_ar": "التغابن",
     "name_normalized": "التغابن",
-    "latin": [],
+    "name_en": "At-Taghabun",
+    "latin": [
+      "taghabun"
+    ],
     "num": 64,
+    "surah_number": 64,
+    "ayahs": 18,
     "ayahs_hafs": 18,
     "ayahs_warsh": 18,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 556,
+    "searchText": "64 التغابن التغابن At-Taghabun taghabun"
   },
   {
     "id": 65,
     "name": "الطلاق",
+    "name_ar": "الطلاق",
     "name_normalized": "الطلاق",
-    "latin": [],
+    "name_en": "At-Talaq",
+    "latin": [
+      "talaq"
+    ],
     "num": 65,
+    "surah_number": 65,
+    "ayahs": 12,
     "ayahs_hafs": 12,
     "ayahs_warsh": 12,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 558,
+    "searchText": "65 الطلاق الطلاق At-Talaq talaq"
   },
   {
     "id": 66,
     "name": "التحريم",
+    "name_ar": "التحريم",
     "name_normalized": "التحريم",
-    "latin": [],
+    "name_en": "At-Tahrim",
+    "latin": [
+      "tahrim"
+    ],
     "num": 66,
+    "surah_number": 66,
+    "ayahs": 12,
     "ayahs_hafs": 12,
     "ayahs_warsh": 12,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 560,
+    "searchText": "66 التحريم التحريم At-Tahrim tahrim"
   },
   {
     "id": 67,
     "name": "الملك",
+    "name_ar": "الملك",
     "name_normalized": "الملك",
+    "name_en": "Al-Mulk",
     "latin": [
       "mulk"
     ],
     "num": 67,
+    "surah_number": 67,
+    "ayahs": 30,
     "ayahs_hafs": 30,
     "ayahs_warsh": 31,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 562,
+    "searchText": "67 الملك الملك Al-Mulk mulk"
   },
   {
     "id": 68,
     "name": "القلم",
+    "name_ar": "القلم",
     "name_normalized": "القلم",
-    "latin": [],
+    "name_en": "Al-Qalam",
+    "latin": [
+      "qalam"
+    ],
     "num": 68,
+    "surah_number": 68,
+    "ayahs": 52,
     "ayahs_hafs": 52,
     "ayahs_warsh": 52,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 564,
+    "searchText": "68 القلم القلم Al-Qalam qalam"
   },
   {
     "id": 69,
     "name": "الحاقة",
+    "name_ar": "الحاقة",
     "name_normalized": "الحاقه",
-    "latin": [],
+    "name_en": "Al-Haqqah",
+    "latin": [
+      "haqqah"
+    ],
     "num": 69,
+    "surah_number": 69,
+    "ayahs": 52,
     "ayahs_hafs": 52,
     "ayahs_warsh": 51,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 566,
+    "searchText": "69 الحاقة الحاقه Al-Haqqah haqqah"
   },
   {
     "id": 70,
     "name": "المعارج",
+    "name_ar": "المعارج",
     "name_normalized": "المعارج",
-    "latin": [],
+    "name_en": "Al-Ma'arij",
+    "latin": [
+      "maarij"
+    ],
     "num": 70,
+    "surah_number": 70,
+    "ayahs": 44,
     "ayahs_hafs": 44,
     "ayahs_warsh": 44,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 568,
+    "searchText": "70 المعارج المعارج Al-Ma'arij maarij"
   },
   {
     "id": 71,
     "name": "نوح",
+    "name_ar": "نوح",
     "name_normalized": "نوح",
-    "latin": [],
+    "name_en": "Nuh",
+    "latin": [
+      "nuh"
+    ],
     "num": 71,
+    "surah_number": 71,
+    "ayahs": 28,
     "ayahs_hafs": 28,
     "ayahs_warsh": 29,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 570,
+    "searchText": "71 نوح نوح Nuh nuh"
   },
   {
     "id": 72,
     "name": "الجن",
+    "name_ar": "الجن",
     "name_normalized": "الجن",
-    "latin": [],
+    "name_en": "Al-Jinn",
+    "latin": [
+      "jinn"
+    ],
     "num": 72,
+    "surah_number": 72,
+    "ayahs": 28,
     "ayahs_hafs": 28,
     "ayahs_warsh": 28,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 572,
+    "searchText": "72 الجن الجن Al-Jinn jinn"
   },
   {
     "id": 73,
     "name": "المزمل",
+    "name_ar": "المزمل",
     "name_normalized": "المزمل",
-    "latin": [],
+    "name_en": "Al-Muzzammil",
+    "latin": [
+      "muzzammil"
+    ],
     "num": 73,
+    "surah_number": 73,
+    "ayahs": 20,
     "ayahs_hafs": 20,
     "ayahs_warsh": 19,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 574,
+    "searchText": "73 المزمل المزمل Al-Muzzammil muzzammil"
   },
   {
     "id": 74,
     "name": "المدثر",
+    "name_ar": "المدثر",
     "name_normalized": "المدثر",
-    "latin": [],
+    "name_en": "Al-Muddaththir",
+    "latin": [
+      "muddathir"
+    ],
     "num": 74,
+    "surah_number": 74,
+    "ayahs": 56,
     "ayahs_hafs": 56,
     "ayahs_warsh": 55,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 575,
+    "searchText": "74 المدثر المدثر Al-Muddaththir muddathir"
   },
   {
     "id": 75,
     "name": "القيامة",
+    "name_ar": "القيامة",
     "name_normalized": "القيامه",
-    "latin": [],
+    "name_en": "Al-Qiyamah",
+    "latin": [
+      "qiyamah"
+    ],
     "num": 75,
+    "surah_number": 75,
+    "ayahs": 40,
     "ayahs_hafs": 40,
     "ayahs_warsh": 39,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 577,
+    "searchText": "75 القيامة القيامه Al-Qiyamah qiyamah"
   },
   {
     "id": 76,
     "name": "الإنسان",
+    "name_ar": "الإنسان",
     "name_normalized": "الانسان",
-    "latin": [],
+    "name_en": "Al-Insan",
+    "latin": [
+      "insan"
+    ],
     "num": 76,
+    "surah_number": 76,
+    "ayahs": 31,
     "ayahs_hafs": 31,
     "ayahs_warsh": 31,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 578,
+    "searchText": "76 الإنسان الانسان Al-Insan insan"
   },
   {
     "id": 77,
     "name": "المرسلات",
+    "name_ar": "المرسلات",
     "name_normalized": "المرسلات",
-    "latin": [],
+    "name_en": "Al-Mursalat",
+    "latin": [
+      "mursalat"
+    ],
     "num": 77,
+    "surah_number": 77,
+    "ayahs": 50,
     "ayahs_hafs": 50,
     "ayahs_warsh": 50,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 580,
+    "searchText": "77 المرسلات المرسلات Al-Mursalat mursalat"
   },
   {
     "id": 78,
     "name": "النبأ",
+    "name_ar": "النبأ",
     "name_normalized": "النبا",
+    "name_en": "An-Naba'",
     "latin": [
       "naba"
     ],
     "num": 78,
+    "surah_number": 78,
+    "ayahs": 40,
     "ayahs_hafs": 40,
     "ayahs_warsh": 41,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 582,
+    "searchText": "78 النبأ النبا An-Naba' naba"
   },
   {
     "id": 79,
     "name": "النازعات",
+    "name_ar": "النازعات",
     "name_normalized": "النازعات",
-    "latin": [],
+    "name_en": "An-Nazi'at",
+    "latin": [
+      "naziat"
+    ],
     "num": 79,
+    "surah_number": 79,
+    "ayahs": 46,
     "ayahs_hafs": 46,
     "ayahs_warsh": 45,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 583,
+    "searchText": "79 النازعات النازعات An-Nazi'at naziat"
   },
   {
     "id": 80,
     "name": "عبس",
+    "name_ar": "عبس",
     "name_normalized": "عبس",
-    "latin": [],
+    "name_en": "'Abasa",
+    "latin": [
+      "abasa"
+    ],
     "num": 80,
+    "surah_number": 80,
+    "ayahs": 42,
     "ayahs_hafs": 42,
     "ayahs_warsh": 41,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 585,
+    "searchText": "80 عبس عبس 'Abasa abasa"
   },
   {
     "id": 81,
     "name": "التكوير",
+    "name_ar": "التكوير",
     "name_normalized": "التكوير",
-    "latin": [],
+    "name_en": "At-Takwir",
+    "latin": [
+      "takwir"
+    ],
     "num": 81,
+    "surah_number": 81,
+    "ayahs": 29,
     "ayahs_hafs": 29,
     "ayahs_warsh": 29,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 586,
+    "searchText": "81 التكوير التكوير At-Takwir takwir"
   },
   {
     "id": 82,
     "name": "الانفطار",
+    "name_ar": "الانفطار",
     "name_normalized": "الانفطار",
-    "latin": [],
+    "name_en": "Al-Infitar",
+    "latin": [
+      "infitar"
+    ],
     "num": 82,
+    "surah_number": 82,
+    "ayahs": 19,
     "ayahs_hafs": 19,
     "ayahs_warsh": 19,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 587,
+    "searchText": "82 الانفطار الانفطار Al-Infitar infitar"
   },
   {
     "id": 83,
     "name": "المطففين",
+    "name_ar": "المطففين",
     "name_normalized": "المطففين",
-    "latin": [],
+    "name_en": "Al-Mutaffifin",
+    "latin": [
+      "mutaffifin"
+    ],
     "num": 83,
+    "surah_number": 83,
+    "ayahs": 36,
     "ayahs_hafs": 36,
     "ayahs_warsh": 36,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 587,
+    "searchText": "83 المطففين المطففين Al-Mutaffifin mutaffifin"
   },
   {
     "id": 84,
     "name": "الانشقاق",
+    "name_ar": "الانشقاق",
     "name_normalized": "الانشقاق",
-    "latin": [],
+    "name_en": "Al-Inshiqaq",
+    "latin": [
+      "inshiqaq"
+    ],
     "num": 84,
+    "surah_number": 84,
+    "ayahs": 25,
     "ayahs_hafs": 25,
     "ayahs_warsh": 25,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 589,
+    "searchText": "84 الانشقاق الانشقاق Al-Inshiqaq inshiqaq"
   },
   {
     "id": 85,
     "name": "البروج",
+    "name_ar": "البروج",
     "name_normalized": "البروج",
-    "latin": [],
+    "name_en": "Al-Buruj",
+    "latin": [
+      "buruj"
+    ],
     "num": 85,
+    "surah_number": 85,
+    "ayahs": 22,
     "ayahs_hafs": 22,
     "ayahs_warsh": 22,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 590,
+    "searchText": "85 البروج البروج Al-Buruj buruj"
   },
   {
     "id": 86,
     "name": "الطارق",
+    "name_ar": "الطارق",
     "name_normalized": "الطارق",
-    "latin": [],
+    "name_en": "At-Tariq",
+    "latin": [
+      "tariq"
+    ],
     "num": 86,
+    "surah_number": 86,
+    "ayahs": 17,
     "ayahs_hafs": 17,
     "ayahs_warsh": 17,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 591,
+    "searchText": "86 الطارق الطارق At-Tariq tariq"
   },
   {
     "id": 87,
     "name": "الأعلى",
+    "name_ar": "الأعلى",
     "name_normalized": "الاعلي",
-    "latin": [],
+    "name_en": "Al-A'la",
+    "latin": [
+      "ala"
+    ],
     "num": 87,
+    "surah_number": 87,
+    "ayahs": 19,
     "ayahs_hafs": 19,
     "ayahs_warsh": 19,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 591,
+    "searchText": "87 الأعلى الاعلي Al-A'la ala"
   },
   {
     "id": 88,
     "name": "الغاشية",
+    "name_ar": "الغاشية",
     "name_normalized": "الغاشيه",
-    "latin": [],
+    "name_en": "Al-Ghashiyah",
+    "latin": [
+      "ghashiyah"
+    ],
     "num": 88,
+    "surah_number": 88,
+    "ayahs": 26,
     "ayahs_hafs": 26,
     "ayahs_warsh": 26,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 592,
+    "searchText": "88 الغاشية الغاشيه Al-Ghashiyah ghashiyah"
   },
   {
     "id": 89,
     "name": "الفجر",
+    "name_ar": "الفجر",
     "name_normalized": "الفجر",
-    "latin": [],
+    "name_en": "Al-Fajr",
+    "latin": [
+      "fajr"
+    ],
     "num": 89,
+    "surah_number": 89,
+    "ayahs": 30,
     "ayahs_hafs": 30,
     "ayahs_warsh": 32,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 593,
+    "searchText": "89 الفجر الفجر Al-Fajr fajr"
   },
   {
     "id": 90,
     "name": "البلد",
+    "name_ar": "البلد",
     "name_normalized": "البلد",
-    "latin": [],
+    "name_en": "Al-Balad",
+    "latin": [
+      "balad"
+    ],
     "num": 90,
+    "surah_number": 90,
+    "ayahs": 20,
     "ayahs_hafs": 20,
     "ayahs_warsh": 20,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 594,
+    "searchText": "90 البلد البلد Al-Balad balad"
   },
   {
     "id": 91,
     "name": "الشمس",
+    "name_ar": "الشمس",
     "name_normalized": "الشمس",
-    "latin": [],
+    "name_en": "Ash-Shams",
+    "latin": [
+      "shams"
+    ],
     "num": 91,
+    "surah_number": 91,
+    "ayahs": 15,
     "ayahs_hafs": 15,
     "ayahs_warsh": 15,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 595,
+    "searchText": "91 الشمس الشمس Ash-Shams shams"
   },
   {
     "id": 92,
     "name": "الليل",
+    "name_ar": "الليل",
     "name_normalized": "الليل",
-    "latin": [],
+    "name_en": "Al-Layl",
+    "latin": [
+      "layl"
+    ],
     "num": 92,
+    "surah_number": 92,
+    "ayahs": 21,
     "ayahs_hafs": 21,
     "ayahs_warsh": 21,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 595,
+    "searchText": "92 الليل الليل Al-Layl layl"
   },
   {
     "id": 93,
     "name": "الضحى",
+    "name_ar": "الضحى",
     "name_normalized": "الضحي",
-    "latin": [],
+    "name_en": "Ad-Duha",
+    "latin": [
+      "duha"
+    ],
     "num": 93,
+    "surah_number": 93,
+    "ayahs": 11,
     "ayahs_hafs": 11,
     "ayahs_warsh": 11,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 596,
+    "searchText": "93 الضحى الضحي Ad-Duha duha"
   },
   {
     "id": 94,
     "name": "الشرح",
+    "name_ar": "الشرح",
     "name_normalized": "الشرح",
-    "latin": [],
+    "name_en": "Ash-Sharh",
+    "latin": [
+      "sharh"
+    ],
     "num": 94,
+    "surah_number": 94,
+    "ayahs": 8,
     "ayahs_hafs": 8,
     "ayahs_warsh": 8,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 596,
+    "searchText": "94 الشرح الشرح Ash-Sharh sharh"
   },
   {
     "id": 95,
     "name": "التين",
+    "name_ar": "التين",
     "name_normalized": "التين",
-    "latin": [],
+    "name_en": "At-Tin",
+    "latin": [
+      "tin"
+    ],
     "num": 95,
+    "surah_number": 95,
+    "ayahs": 8,
     "ayahs_hafs": 8,
     "ayahs_warsh": 8,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 597,
+    "searchText": "95 التين التين At-Tin tin"
   },
   {
     "id": 96,
     "name": "العلق",
+    "name_ar": "العلق",
     "name_normalized": "العلق",
-    "latin": [],
+    "name_en": "Al-'Alaq",
+    "latin": [
+      "alaq"
+    ],
     "num": 96,
+    "surah_number": 96,
+    "ayahs": 19,
     "ayahs_hafs": 19,
     "ayahs_warsh": 19,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 597,
+    "searchText": "96 العلق العلق Al-'Alaq alaq"
   },
   {
     "id": 97,
     "name": "القدر",
+    "name_ar": "القدر",
     "name_normalized": "القدر",
-    "latin": [],
+    "name_en": "Al-Qadr",
+    "latin": [
+      "qadr"
+    ],
     "num": 97,
+    "surah_number": 97,
+    "ayahs": 5,
     "ayahs_hafs": 5,
     "ayahs_warsh": 5,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 598,
+    "searchText": "97 القدر القدر Al-Qadr qadr"
   },
   {
     "id": 98,
     "name": "البينة",
+    "name_ar": "البينة",
     "name_normalized": "البينه",
-    "latin": [],
+    "name_en": "Al-Bayyinah",
+    "latin": [
+      "bayyinah"
+    ],
     "num": 98,
+    "surah_number": 98,
+    "ayahs": 8,
     "ayahs_hafs": 8,
     "ayahs_warsh": 9,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 598,
+    "searchText": "98 البينة البينه Al-Bayyinah bayyinah"
   },
   {
     "id": 99,
     "name": "الزلزلة",
+    "name_ar": "الزلزلة",
     "name_normalized": "الزلزله",
-    "latin": [],
+    "name_en": "Az-Zalzalah",
+    "latin": [
+      "zalzalah"
+    ],
     "num": 99,
+    "surah_number": 99,
+    "ayahs": 8,
     "ayahs_hafs": 8,
     "ayahs_warsh": 9,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 599,
+    "searchText": "99 الزلزلة الزلزله Az-Zalzalah zalzalah"
   },
   {
     "id": 100,
     "name": "العاديات",
+    "name_ar": "العاديات",
     "name_normalized": "العاديات",
-    "latin": [],
+    "name_en": "Al-'Adiyat",
+    "latin": [
+      "adiyat"
+    ],
     "num": 100,
+    "surah_number": 100,
+    "ayahs": 11,
     "ayahs_hafs": 11,
     "ayahs_warsh": 11,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 599,
+    "searchText": "100 العاديات العاديات Al-'Adiyat adiyat"
   },
   {
     "id": 101,
     "name": "القارعة",
+    "name_ar": "القارعة",
     "name_normalized": "القارعه",
-    "latin": [],
+    "name_en": "Al-Qari'ah",
+    "latin": [
+      "qariah"
+    ],
     "num": 101,
+    "surah_number": 101,
+    "ayahs": 11,
     "ayahs_hafs": 11,
     "ayahs_warsh": 10,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 600,
+    "searchText": "101 القارعة القارعه Al-Qari'ah qariah"
   },
   {
     "id": 102,
     "name": "التكاثر",
+    "name_ar": "التكاثر",
     "name_normalized": "التكاثر",
-    "latin": [],
+    "name_en": "At-Takathur",
+    "latin": [
+      "takathur"
+    ],
     "num": 102,
+    "surah_number": 102,
+    "ayahs": 8,
     "ayahs_hafs": 8,
     "ayahs_warsh": 8,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 600,
+    "searchText": "102 التكاثر التكاثر At-Takathur takathur"
   },
   {
     "id": 103,
     "name": "العصر",
+    "name_ar": "العصر",
     "name_normalized": "العصر",
-    "latin": [],
+    "name_en": "Al-'Asr",
+    "latin": [
+      "asr"
+    ],
     "num": 103,
+    "surah_number": 103,
+    "ayahs": 3,
     "ayahs_hafs": 3,
     "ayahs_warsh": 3,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 601,
+    "searchText": "103 العصر العصر Al-'Asr asr"
   },
   {
     "id": 104,
     "name": "الهمزة",
+    "name_ar": "الهمزة",
     "name_normalized": "الهمزه",
-    "latin": [],
+    "name_en": "Al-Humazah",
+    "latin": [
+      "humazah"
+    ],
     "num": 104,
+    "surah_number": 104,
+    "ayahs": 9,
     "ayahs_hafs": 9,
     "ayahs_warsh": 9,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 601,
+    "searchText": "104 الهمزة الهمزه Al-Humazah humazah"
   },
   {
     "id": 105,
     "name": "الفيل",
+    "name_ar": "الفيل",
     "name_normalized": "الفيل",
-    "latin": [],
+    "name_en": "Al-Fil",
+    "latin": [
+      "fil"
+    ],
     "num": 105,
+    "surah_number": 105,
+    "ayahs": 5,
     "ayahs_hafs": 5,
     "ayahs_warsh": 5,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 601,
+    "searchText": "105 الفيل الفيل Al-Fil fil"
   },
   {
     "id": 106,
     "name": "قريش",
+    "name_ar": "قريش",
     "name_normalized": "قريش",
-    "latin": [],
+    "name_en": "Quraysh",
+    "latin": [
+      "quraysh"
+    ],
     "num": 106,
+    "surah_number": 106,
+    "ayahs": 4,
     "ayahs_hafs": 4,
     "ayahs_warsh": 4,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 602,
+    "searchText": "106 قريش قريش Quraysh quraysh"
   },
   {
     "id": 107,
     "name": "الماعون",
+    "name_ar": "الماعون",
     "name_normalized": "الماعون",
-    "latin": [],
+    "name_en": "Al-Ma'un",
+    "latin": [
+      "maun"
+    ],
     "num": 107,
+    "surah_number": 107,
+    "ayahs": 7,
     "ayahs_hafs": 7,
     "ayahs_warsh": 7,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 602,
+    "searchText": "107 الماعون الماعون Al-Ma'un maun"
   },
   {
     "id": 108,
     "name": "الكوثر",
+    "name_ar": "الكوثر",
     "name_normalized": "الكوثر",
-    "latin": [],
+    "name_en": "Al-Kawthar",
+    "latin": [
+      "kawthar"
+    ],
     "num": 108,
+    "surah_number": 108,
+    "ayahs": 3,
     "ayahs_hafs": 3,
     "ayahs_warsh": 3,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 602,
+    "searchText": "108 الكوثر الكوثر Al-Kawthar kawthar"
   },
   {
     "id": 109,
     "name": "الكافرون",
+    "name_ar": "الكافرون",
     "name_normalized": "الكافرون",
-    "latin": [],
+    "name_en": "Al-Kafirun",
+    "latin": [
+      "kafirun"
+    ],
     "num": 109,
+    "surah_number": 109,
+    "ayahs": 6,
     "ayahs_hafs": 6,
     "ayahs_warsh": 6,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 603,
+    "searchText": "109 الكافرون الكافرون Al-Kafirun kafirun"
   },
   {
     "id": 110,
     "name": "النصر",
+    "name_ar": "النصر",
     "name_normalized": "النصر",
-    "latin": [],
+    "name_en": "An-Nasr",
+    "latin": [
+      "nasr"
+    ],
     "num": 110,
+    "surah_number": 110,
+    "ayahs": 3,
     "ayahs_hafs": 3,
     "ayahs_warsh": 3,
-    "type": "مدنية"
+    "type": "مدنية",
+    "page": 603,
+    "searchText": "110 النصر النصر An-Nasr nasr"
   },
   {
     "id": 111,
     "name": "المسد",
+    "name_ar": "المسد",
     "name_normalized": "المسد",
-    "latin": [],
+    "name_en": "Al-Masad",
+    "latin": [
+      "masad"
+    ],
     "num": 111,
+    "surah_number": 111,
+    "ayahs": 5,
     "ayahs_hafs": 5,
     "ayahs_warsh": 5,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 603,
+    "searchText": "111 المسد المسد Al-Masad masad"
   },
   {
     "id": 112,
     "name": "الإخلاص",
+    "name_ar": "الإخلاص",
     "name_normalized": "الاخلاص",
+    "name_en": "Al-Ikhlas",
     "latin": [
       "ikhlas"
     ],
     "num": 112,
+    "surah_number": 112,
+    "ayahs": 4,
     "ayahs_hafs": 4,
     "ayahs_warsh": 4,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 604,
+    "searchText": "112 الإخلاص الاخلاص Al-Ikhlas ikhlas"
   },
   {
     "id": 113,
     "name": "الفلق",
+    "name_ar": "الفلق",
     "name_normalized": "الفلق",
+    "name_en": "Al-Falaq",
     "latin": [
       "falaq"
     ],
     "num": 113,
+    "surah_number": 113,
+    "ayahs": 5,
     "ayahs_hafs": 5,
     "ayahs_warsh": 5,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 604,
+    "searchText": "113 الفلق الفلق Al-Falaq falaq"
   },
   {
     "id": 114,
     "name": "الناس",
+    "name_ar": "الناس",
     "name_normalized": "الناس",
+    "name_en": "An-Nas",
     "latin": [
       "nas"
     ],
     "num": 114,
+    "surah_number": 114,
+    "ayahs": 6,
     "ayahs_hafs": 6,
     "ayahs_warsh": 6,
-    "type": "مكية"
+    "type": "مكية",
+    "page": 604,
+    "searchText": "114 الناس الناس An-Nas nas"
   }
 ]

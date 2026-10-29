@@ -1,61 +1,72 @@
--- رتل - Ratil
--- مخطط قاعدة بيانات الحوكمة والبلاغات العلمية وتوثيق البصمات والتراخيص والمستخدمين
--- db/schema.sql (Neon Serverless Postgres)
+-- ─── رتل — Ratil ──────────────────────────────────────────────
+-- مخطط قاعدة بيانات Neon PostgreSQL المعتمد
+-- db/schema.sql
 
--- 1. جدول البلاغات العلمية عن الأخطاء في التلاوة أو النص
-CREATE TABLE IF NOT EXISTS scientific_reports (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    surah_id INTEGER NOT NULL CHECK (surah_id BETWEEN 1 AND 114),
-    aya_number INTEGER NOT NULL,
-    riwaya VARCHAR(20) NOT NULL CHECK (riwaya IN ('hafs', 'warsh')),
-    reciter_id VARCHAR(50),
-    report_type VARCHAR(30) NOT NULL CHECK (report_type IN ('timing_mismatch', 'audio_quality', 'text_display', 'other')),
-    timestamp_ms INTEGER,
-    description TEXT NOT NULL,
-    reporter_contact VARCHAR(100),
-    status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending', 'under_review', 'verified_fixed', 'rejected')),
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    resolved_at TIMESTAMP WITH TIME ZONE
+-- ─── 1. القرّاء ──────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS reciters (
+  id              VARCHAR(60)  PRIMARY KEY,  -- 'al-minshawy'
+  name            TEXT         NOT NULL,     -- 'الشيخ محمد صديق المنشاوي'
+  riwaya          VARCHAR(20)  NOT NULL,     -- 'hafs' | 'warsh' | 'qalon'
+  license         VARCHAR(50)  NOT NULL,     -- 'public-domain' | 'cc-by' | 'permission'
+  source_name     TEXT         NOT NULL,     -- 'Egyptian Radio Archive'
+  source_url      TEXT,
+  license_url     TEXT,
+  is_visible      BOOLEAN      DEFAULT TRUE,
+  notes           TEXT,                      -- ملاحظات داخلية للمدير
+  created_at      TIMESTAMPTZ  DEFAULT NOW(),
+  updated_at      TIMESTAMPTZ  DEFAULT NOW()
 );
 
--- 2. جدول سجل تدقيق البصمات الرقمية وسلامة النصوص القرآنية
-CREATE TABLE IF NOT EXISTS text_integrity_audits (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    commit_hash VARCHAR(64) NOT NULL,
-    hafs_sha256 VARCHAR(64) NOT NULL,
-    warsh_sha256 VARCHAR(64) NOT NULL,
-    verified_by VARCHAR(50) DEFAULT 'CI/CD Automated Script',
-    status VARCHAR(20) NOT NULL,
-    audit_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+-- ─── 2. الملفات الصوتية ──────────────────────────────────────
+CREATE TABLE IF NOT EXISTS surah_audio (
+  id               SERIAL      PRIMARY KEY,
+  reciter_id       VARCHAR(60) REFERENCES reciters(id) ON DELETE CASCADE,
+  surah_number     SMALLINT    NOT NULL CHECK (surah_number BETWEEN 1 AND 114),
+  audio_url        TEXT        NOT NULL,  -- archive.org/download/...
+  timings_url      TEXT,                  -- JSON توقيت الآيات
+  duration_seconds INTEGER,
+  size_mb          NUMERIC(6,2),
+  verified         BOOLEAN     DEFAULT TRUE,
+  created_at       TIMESTAMPTZ DEFAULT NOW(),
+
+  UNIQUE (reciter_id, surah_number)
 );
 
--- 3. جدول توثيق تراخيص وأصول التلاوات الصوتية
-CREATE TABLE IF NOT EXISTS audio_licenses_registry (
-    reciter_id VARCHAR(50) PRIMARY KEY,
-    reciter_name VARCHAR(100) NOT NULL,
-    riwaya VARCHAR(20) NOT NULL,
-    license_type VARCHAR(50) NOT NULL,
-    archive_identifier VARCHAR(100) NOT NULL,
-    source_attribution TEXT NOT NULL,
-    verified_date DATE NOT NULL
+-- ─── 3. البلاغات ─────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS reports (
+  id           SERIAL      PRIMARY KEY,
+  type         VARCHAR(20) NOT NULL,       -- 'text' | 'audio' | 'request'
+  surah_number SMALLINT,
+  ayah_number  SMALLINT,
+  reciter_id   VARCHAR(60),
+  description  TEXT        NOT NULL,
+  status       VARCHAR(20) DEFAULT 'new',  -- 'new' | 'reviewed' | 'closed'
+  admin_notes  TEXT,
+  created_at   TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 4. جدول حسابات المستخدمين للمصادقة والمزامنة
-CREATE TABLE IF NOT EXISTS users (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    email VARCHAR(255) UNIQUE NOT NULL,
-    username VARCHAR(100),
-    display_name VARCHAR(100) NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    salt VARCHAR(64) NOT NULL,
-    role VARCHAR(20) DEFAULT 'user' CHECK (role IN ('user', 'auditor', 'admin')),
-    riwaya_preference VARCHAR(20) DEFAULT 'hafs' CHECK (riwaya_preference IN ('hafs', 'warsh', 'qalun')),
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    last_login TIMESTAMP WITH TIME ZONE
+-- ─── 4. سجل فحص الصوت ───────────────────────────────────────
+CREATE TABLE IF NOT EXISTS health_logs (
+  id               SERIAL      PRIMARY KEY,
+  reciter_id       VARCHAR(60),
+  audio_url        TEXT,
+  http_status      SMALLINT,
+  supports_range   BOOLEAN,
+  response_ms      INTEGER,
+  error_msg        TEXT,
+  checked_at       TIMESTAMPTZ DEFAULT NOW()
 );
 
--- فهارس تحسين أداء الاستعلامات
-CREATE INDEX IF NOT EXISTS idx_reports_surah ON scientific_reports(surah_id, aya_number);
-CREATE INDEX IF NOT EXISTS idx_reports_status ON scientific_reports(status);
-CREATE INDEX IF NOT EXISTS idx_audits_commit ON text_integrity_audits(commit_hash);
-CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
+-- ─── 5. الفهارس ────────────────────────────────────────────────
+CREATE INDEX IF NOT EXISTS idx_audio_reciter   ON surah_audio (reciter_id);
+CREATE INDEX IF NOT EXISTS idx_audio_surah     ON surah_audio (surah_number);
+CREATE INDEX IF NOT EXISTS idx_reports_status  ON reports (status);
+CREATE INDEX IF NOT EXISTS idx_health_reciter  ON health_logs (reciter_id, checked_at DESC);
+
+-- ─── 6. بذور البيانات الأولية (Initial Seed) ─────────────────
+INSERT INTO reciters (id, name, riwaya, license, source_name, source_url, is_visible)
+VALUES 
+  ('al-minshawy', 'الشيخ محمد صديق المنشاوي', 'hafs', 'public-domain', 'Egyptian Radio Archive', 'https://archive.org/details/ratil-al-minshawy-hafs', TRUE),
+  ('al-husary', 'الشيخ محمود خليل الحصري', 'warsh', 'public-domain', 'Egyptian Radio Archive', 'https://archive.org/details/ratil-al-husary-warsh', TRUE),
+  ('alafasy', 'الشيخ مشاري راشد العفاسي', 'hafs', 'public-domain', 'High Quality Studio Recording', 'https://archive.org/details/ratil-alafasy', TRUE)
+ON CONFLICT (id) DO NOTHING;

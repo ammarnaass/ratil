@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'KFGQPC Uthmanic Hafs';
+  src: url('/fonts/hafs.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KFGQPC Uthmanic Warsh';
+  src: url('/fonts/warsh.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #3ecfb2;
+  --color-primary-container: #134e44;
+  --color-background: #111318;
+  --color-surface: #111318;
+  --color-surface-container: #1e2025;
+}
+
+html {
+  direction: rtl;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  background-color: #111318;
+}
+
+body {
+  font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #111318;
+  color: #e2e2e9;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* التمرير الأنيق المخفي */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111318;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #282a2f;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3ecfb2;
+}
+
+/* تنسيق خط المصحف الشريف */
+.font-quran-hafs {
+  font-family: 'KFGQPC Uthmanic Hafs', 'Amiri', serif;
+  line-height: 2.4;
+}
+
+.font-quran-warsh {
+  font-family: 'KFGQPC Uthmanic Warsh', 'Amiri', serif;
+  line-height: 2.4;
+}
+
+/* علامة نهاية الآية */
+.ayah-number-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(62, 207, 178, 0.4);
+  color: #3ecfb2;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0 0.35rem;
+  background-color: rgba(62, 207, 178, 0.08);
+}
