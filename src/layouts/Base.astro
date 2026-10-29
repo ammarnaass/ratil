@@ -3,7 +3,7 @@ interface Props {
   title?: string;
   description?: string;
   canonicalUrl?: string;
-  activeNav?: 'home' | 'browse' | 'reciters' | 'bookmarks' | 'offline';
+  activeNav?: 'home' | 'browse' | 'reciters' | 'bookmarks' | 'offline' | 'sync' | 'login' | 'admin';
 }
 
 const {
@@ -82,10 +82,17 @@ import Player from '../components/Player.tsx';
         <a href="/sync" class={`nav-tab ${activeNav === 'sync' ? 'active' : ''}`}>
           المزامنة المشفرة 🔐
         </a>
+        <a href="/admin" class={`nav-tab ${activeNav === 'admin' ? 'active' : ''}`}>
+          لوحة التحكم ⚙️
+        </a>
       </nav>
 
-      <!-- شارة أمان النص القرآني -->
+      <!-- شارة أمان النص القرآني وإجراءات الحساب -->
       <div class="header-actions">
+        <a href="/login" class={`nav-tab ${activeNav === 'login' ? 'active' : ''}`} style="font-size: 0.8125rem; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <span class="material-symbols-outlined" style="font-size: 1.125rem;">account_circle</span>
+          <span>تسجيل الدخول</span>
+        </a>
         <div class="verified-badge-pill" title="نص قرآني معتمد ومفحوص رقمياً عبر SHA-256">
           <span class="pulse-dot"></span>
           <span>نص معتمد (حفص)</span>

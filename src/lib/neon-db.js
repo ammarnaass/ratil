@@ -131,3 +131,30 @@ export async function logIntegrityAudit(commitHash, hafsSha, warshSha, status = 
 
   return result[0];
 }
+
+/**
+ * استرجاع قائمة البلاغات العلمية للحوكمة والتدقيق
+ */
+export async function getScientificReports({ limit = 20, status = null } = {}) {
+  const sql = await getNeonClient();
+  if (!sql) {
+    return [];
+  }
+  try {
+    if (status) {
+      return await sql`
+        SELECT * FROM scientific_reports
+        WHERE status = ${status}
+        ORDER BY created_at DESC
+        LIMIT ${limit};
+      `;
+    }
+    return await sql`
+      SELECT * FROM scientific_reports
+      ORDER BY created_at DESC
+      LIMIT ${limit};
+    `;
+  } catch (err) {
+    return [];
+  }
+}

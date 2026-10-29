@@ -7,7 +7,7 @@
 import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { normalizeQuranSearchText, toIndicDigits } from '../src/lib/normalize.js';
 import { VerseSyncEngine } from '../src/features/verse-sync.js';
 import {
@@ -359,6 +359,86 @@ assert(reportResult && reportResult.status === 'pending', 'تسجيل البلا
 
 const auditResult = await logIntegrityAudit('test-commit-sha', 'test-hafs-sha', 'test-warsh-sha', 'VERIFIED');
 assert(auditResult && auditResult.status === 'VERIFIED', 'تسجيل فحص البصمة الرقمية بنجاح في سجل الحوكمة');
+
+// 12. اختبارات نظام المصادقة ولوحة التحكم (Auth & Admin Modular Features)
+console.log('\n12. اختبارات نظام المصادقة ولوحة التحكم (Auth & Admin Modular Features):');
+
+// فحص وجود الملفات المعيارية
+const authFiles = [
+  'src/features/auth/auth.constants.js',
+  'src/features/auth/auth.validator.js',
+  'src/features/auth/auth.service.js',
+  'src/features/auth/auth.ui.js',
+  'src/features/auth/index.js',
+  'src/features/auth.js'
+];
+for (const f of authFiles) {
+  assert(existsSync(resolve(ROOT_DIR, f)), `ملف المصادقة ${f} موجود`);
+}
+
+const adminFiles = [
+  'src/features/admin/admin.constants.js',
+  'src/features/admin/admin.guard.js',
+  'src/features/admin/admin.service.js',
+  'src/features/admin/admin.ui.js',
+  'src/features/admin/index.js',
+  'src/features/admin.js'
+];
+for (const f of adminFiles) {
+  assert(existsSync(resolve(ROOT_DIR, f)), `ملف لوحة التحكم ${f} موجود`);
+}
+
+// فحص صفحات Astro
+assert(existsSync(resolve(ROOT_DIR, 'src/pages/login.astro')), 'صفحة تسجيل الدخول src/pages/login.astro موجودة');
+assert(existsSync(resolve(ROOT_DIR, 'src/pages/admin.astro')), 'صفحة لوحة التحكم src/pages/admin.astro موجودة');
+
+// اختبار مدقق المصادقة (Auth Validator)
+const { validateIdentifier, validatePassword, validateSignupData } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/auth/auth.validator.js')).href);
+assert(!validateIdentifier('').valid, 'المدقق يرفض المعرف الفارغ');
+assert(!validateIdentifier('ab').valid, 'المدقق يرفض المعرف الأقل من 3 أحرف');
+assert(validateIdentifier('admin').valid, 'المدقق يقبل المعرف الصالح');
+
+assert(!validatePassword('123').valid, 'المدقق يرفض كلمة المرور الأقل من 6 أحرف');
+assert(validatePassword('secret123').valid, 'المدقق يقبل كلمة المرور الصالحة');
+
+assert(!validateSignupData({ name: 'أحمد', email: 'invalid-email', password: 'pass', confirmPassword: 'pass' }).valid, 'مدقق التسجيل يرفض البريد غير الصالح');
+assert(validateSignupData({ name: 'أحمد الصالح', email: 'ahmad@example.com', password: 'password123', confirmPassword: 'password123' }).valid, 'مدقق التسجيل يقبل البيانات الصحيحة');
+
+// اختبار خدمة المصادقة (Auth Service)
+const { AuthService } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/auth/auth.service.js')).href);
+const mockStorage = {
+  data: {},
+  getItem(k) { return this.data[k] || null; },
+  setItem(k, v) { this.data[k] = v; },
+  removeItem(k) { delete this.data[k]; }
+};
+const testAuth = new AuthService(mockStorage);
+
+const adminLogin = await testAuth.login('admin', 'adminPass');
+assert(adminLogin.success && adminLogin.session.role === 'admin', 'تسجيل دخول المدير يمنح صلاحية admin تلقائياً');
+assert(testAuth.isAuthenticated(), 'التحقق من جلسة المصادقة النشطة يعمل بنجاح');
+assert(testAuth.isAdmin(), 'التحقق من صلاحيات المدير يعمل بدقة');
+
+const userLogin = await testAuth.login('user@ratil.app', 'userPass');
+assert(userLogin.success && userLogin.session.role === 'user', 'تسجيل دخول المستخدم العادي يمنح صلاحية user');
+
+testAuth.logout();
+assert(!testAuth.isAuthenticated(), 'تسجيل الخروج يحذف الجلسة بنجاح');
+
+// اختبار خدمة لوحة التحكم (Admin Service)
+const { AdminService } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/admin/admin.service.js')).href);
+const testAdminService = new AdminService();
+const dashboardSummary = await testAdminService.getDashboardSummary();
+assert(dashboardSummary.totalSurahs === 114, 'ملخص لوحة التحكم يوثق 114 سورة');
+assert(dashboardSummary.audioReliability === 100, 'ملخص لوحة التحكم يوثق موثوقية بث 100%');
+assert(Array.isArray(dashboardSummary.storageTiers) && dashboardSummary.storageTiers.length === 2, 'مصفوفة التخزين الصوتي تحتوي على مسارين (CDN + Archive.org)');
+
+// فحص معيار الحجم الصارم للملفات (أقل من 250 سطراً)
+const allNewFiles = [...authFiles, ...adminFiles];
+for (const f of allNewFiles) {
+  const lineCount = readFileSync(resolve(ROOT_DIR, f), 'utf-8').split('\n').length;
+  assert(lineCount <= 250, `ملف ${f} يحقق معيار الحجم الصارم (${lineCount} سطر <= 250)`);
+}
 
 console.log(`\n🎉 اكتملت الاختبارات: نجح ${passedTests} من أصل ${totalTests} اختبار.`);
 if (process.exitCode === 1) {

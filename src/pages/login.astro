@@ -1,0 +1,513 @@
+---
+/**
+ * صفحة تسجيل الدخول — رتل
+ * src/pages/login.astro
+ */
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="تسجيل الدخول — رتل" description="تسجيل الدخول لمزامنة مواضع الختمات، المفضلة، وسجل الاستماع" activeNav="home">
+  <div class="login-wrapper">
+    <!-- هالات التوهج الخلفية -->
+    <div class="ambient-glow ambient-glow-top" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-bottom" aria-hidden="true"></div>
+
+    <div class="login-card">
+      <!-- الشعار والعنوان -->
+      <div class="login-header">
+        <div class="brand-avatar">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M2 10v4"></path>
+            <path d="M6 7v10"></path>
+            <path d="M10 4v16"></path>
+            <path d="M14 6v12"></path>
+            <path d="M18 9v6"></path>
+            <path d="M22 11v2"></path>
+          </svg>
+        </div>
+        <h1 class="login-title">تسجيل الدخول إلى رَتِّلْ</h1>
+        <p class="login-subtitle">
+          لمزامنة مواضع الختمات، الآيات المفضلة، وسجل الاستماع عبر أجهزتك في سكينة
+        </p>
+      </div>
+
+      <!-- صندوق التنبيهات والأخطاء -->
+      <div id="auth-error" class="auth-error-box hidden" role="alert"></div>
+
+      <!-- نموذج تسجيل الدخول -->
+      <form id="login-form" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="identifier" class="form-label">البريد الإلكتروني أو اسم المستخدم</label>
+          <div class="input-container">
+            <input 
+              type="text" 
+              id="identifier" 
+              name="identifier" 
+              class="form-input" 
+              placeholder="name@example.com أو admin" 
+              autocomplete="username" 
+              required 
+            />
+            <span class="material-symbols-outlined input-icon">alternate_email</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label-row">
+            <label for="password" class="form-label">كلمة المرور</label>
+            <a href="#" class="forgot-link">نسيت كلمة المرور؟</a>
+          </div>
+          <div class="input-container">
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              class="form-input pr-input" 
+              placeholder="••••••••" 
+              autocomplete="current-password" 
+              required 
+            />
+            <span class="material-symbols-outlined input-icon">lock</span>
+            <button type="button" id="togglePassword" class="password-toggle-btn" aria-label="إظهار أو إخفاء كلمة المرور">
+              <span class="material-symbols-outlined" id="passwordIcon">visibility_off</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="remember-row">
+          <label class="remember-label">
+            <input type="checkbox" id="remember" class="remember-checkbox" checked />
+            <span class="remember-text">تذكرني في هذه الجلسة</span>
+          </label>
+          <span class="admin-hint" title="حساب تجريبي للمدير: اسم المستخدم admin">💡 للمدير: admin</span>
+        </div>
+
+        <button type="submit" id="submit-btn" class="login-submit-btn">
+          <span>تسجيل الدخول</span>
+          <span class="material-symbols-outlined">login</span>
+        </button>
+      </form>
+
+      <!-- الفاصل -->
+      <div class="divider">
+        <span class="divider-text">أو المتابعة عبر</span>
+      </div>
+
+      <!-- المتابعة بالمصادقة الصفرية أو كزائر -->
+      <div class="secondary-actions">
+        <a href="/sync" class="zero-knowledge-sync-btn">
+          <span class="material-symbols-outlined">key</span>
+          <span>المزامنة المشفرة دون بريد (Zero-Knowledge)</span>
+        </a>
+
+        <div class="guest-banner">
+          <div class="guest-banner-header">
+            <span class="status-indicator-dot"></span>
+            <span class="guest-banner-title">الاستماع متاح للجميع دائماً</span>
+          </div>
+          <p class="guest-banner-desc">الاستماع والتلاوة متاحان مباشرة دون قيود أو حاجة للتسجيل.</p>
+          <a href="/" class="guest-continue-link">
+            <span>المتابعة كزائر دون تسجيل</span>
+            <span class="material-symbols-outlined">arrow_back</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- الآية والتطمين -->
+    <div class="login-footer-quote">
+      <div class="security-pill">
+        <span class="material-symbols-outlined">verified_user</span>
+        <span>بياناتك ومحفوظاتك محمية ولا نرسل أي تنبيهات مزعجة</span>
+      </div>
+      <p class="spiritual-quote">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .login-wrapper {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+    position: relative;
+  }
+
+  .login-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 480px;
+    background: rgba(26, 27, 33, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(62, 207, 178, 0.15);
+    border-radius: var(--radius-xl, 1rem);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+  }
+
+  .login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand-avatar {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    background: var(--color-surface-container, #1e2025);
+    color: var(--color-primary, #61eccd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(62, 207, 178, 0.2);
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary, #e2e2e9);
+    margin-bottom: 0.5rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #bbcac4);
+    line-height: 1.6;
+    max-width: 360px;
+  }
+
+  .auth-error-box {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fca5a5;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+    text-align: right;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    text-align: right;
+  }
+
+  .form-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-primary, #e2e2e9);
+  }
+
+  .forgot-link {
+    font-size: 0.75rem;
+    color: var(--color-primary, #61eccd);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .forgot-link:hover {
+    opacity: 0.8;
+  }
+
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 100%;
+    height: 2.75rem;
+    background: var(--color-surface-container, #1e2025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding: 0 2.75rem 0 1rem;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: var(--color-text-primary, #e2e2e9);
+    transition: all 0.2s;
+    outline: none;
+  }
+
+  .pr-input {
+    padding-left: 2.75rem;
+  }
+
+  .form-input:focus {
+    background: var(--color-surface-container-high, #282a2f);
+    border-color: var(--color-primary, #61eccd);
+    box-shadow: 0 0 0 2px rgba(97, 236, 205, 0.2);
+  }
+
+  .input-icon {
+    position: absolute;
+    right: 0.75rem;
+    color: #85948f;
+    font-size: 1.25rem;
+    pointer-events: none;
+  }
+
+  .password-toggle-btn {
+    position: absolute;
+    left: 0.75rem;
+    background: transparent;
+    border: none;
+    color: #85948f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    transition: color 0.2s;
+  }
+
+  .password-toggle-btn:hover {
+    color: var(--color-text-primary, #e2e2e9);
+  }
+
+  .remember-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.25rem;
+  }
+
+  .remember-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .remember-checkbox {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--color-primary, #61eccd);
+    cursor: pointer;
+  }
+
+  .remember-text {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #bbcac4);
+  }
+
+  .admin-hint {
+    font-size: 0.75rem;
+    color: var(--color-primary, #61eccd);
+    background: rgba(97, 236, 205, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .login-submit-btn {
+    width: 100%;
+    height: 3rem;
+    margin-top: 0.5rem;
+    background: var(--color-primary, #61eccd);
+    color: #00382e;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px rgba(97, 236, 205, 0.3);
+    transition: all 0.2s;
+  }
+
+  .login-submit-btn:hover {
+    background: #3ecfb2;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(97, 236, 205, 0.4);
+  }
+
+  .login-submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .divider {
+    position: relative;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .divider::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .divider-text {
+    position: relative;
+    background: #1a1b21;
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+    color: #85948f;
+  }
+
+  .secondary-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .zero-knowledge-sync-btn {
+    width: 100%;
+    height: 2.75rem;
+    background: var(--color-surface-container, #1e2025);
+    border: 1px solid rgba(97, 236, 205, 0.2);
+    border-radius: 0.5rem;
+    color: var(--color-primary, #61eccd);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .zero-knowledge-sync-btn:hover {
+    background: rgba(97, 236, 205, 0.1);
+  }
+
+  .guest-banner {
+    background: rgba(30, 32, 37, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    text-align: right;
+  }
+
+  .guest-banner-header {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .status-indicator-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: #67dac0;
+  }
+
+  .guest-banner-title {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text-primary, #e2e2e9);
+  }
+
+  .guest-banner-desc {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #bbcac4);
+    line-height: 1.5;
+  }
+
+  .guest-continue-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #67dac0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    transition: color 0.2s;
+  }
+
+  .guest-continue-link:hover {
+    color: var(--color-primary, #61eccd);
+  }
+
+  .login-footer-quote {
+    position: relative;
+    z-index: 10;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    max-width: 480px;
+  }
+
+  .security-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(40, 42, 48, 0.5);
+    color: var(--color-text-muted, #bbcac4);
+    font-size: 0.75rem;
+  }
+
+  .security-pill .material-symbols-outlined {
+    font-size: 1rem;
+    color: var(--color-primary, #61eccd);
+  }
+
+  .spiritual-quote {
+    font-size: 0.875rem;
+    color: #85948f;
+    letter-spacing: 0.025em;
+  }
+</style>
+
+<script>
+  import { setupPasswordToggle, setupLoginForm } from '../features/auth';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupPasswordToggle('togglePassword', 'password', 'passwordIcon');
+    setupLoginForm({
+      formId: 'login-form',
+      idInputId: 'identifier',
+      pwdInputId: 'password',
+      rememberId: 'remember',
+      errorBoxId: 'auth-error',
+      submitBtnId: 'submit-btn'
+    });
+  });
+</script>
