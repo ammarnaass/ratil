@@ -14,6 +14,8 @@ const {
 } = Astro.props;
 
 import Player from '../components/Player.tsx';
+import '../styles/tokens.css';
+import '../styles/app.css';
 ---
 
 <!DOCTYPE html>
@@ -49,10 +51,6 @@ import Player from '../components/Player.tsx';
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/src/styles/tokens.css" />
-  <link rel="stylesheet" href="/src/styles/app.css" />
 </head>
 <body class="theme-dark">
   <!-- هالات الإضاءة الروحانية الخلفية -->
