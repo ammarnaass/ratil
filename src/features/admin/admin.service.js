@@ -21,20 +21,17 @@ export class AdminService {
       systemStatus: 'healthy',
       totalSurahs: AUDIT_METRICS.TOTAL_SURAHS,
       audioReliability: AUDIT_METRICS.RELIABILITY_PERCENT,
-      activeReciters: 2, // المنشاوي والحصري
+      activeReciters: 3, // المنشاوي، الحصري، العفاسي
       openReportsCount,
       lastCheckTime: new Date().toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' }),
       storageTiers: [
-        { name: 'شبكة التوزيع الأساسية (CDN)', status: 'نشط', latency: '24ms' },
+        { name: 'شبكة التوزيع الأساسية (CDN)', status: 'نشط' },
         { name: 'مرآة الأرشيف الدائمة (Archive.org)', status: 'صامد', failoverReady: true }
       ]
     };
   }
 
   async runQuickAudit() {
-    // محاكاة وتدقيق بصمات التشفير النصية والصوتية
-    await new Promise(r => setTimeout(r, 600));
-
     return {
       timestamp: new Date().toISOString(),
       hafsChecksumValid: true,

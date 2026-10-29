@@ -4,6 +4,9 @@
  * src/pages/admin.astro
  */
 import Base from '../layouts/Base.astro';
+import checksums from '../../data/checksums.json';
+import reciters from '../../data/reciters.json';
+import audioManifest from '../../data/audio-manifest.json';
 ---
 
 <Base title="لوحة التحكم والحوكمة المركزية — رتل" description="إدارة المنصة، تدقيق البصمات النصية، مراقبة موثوقية التخزين الصوتي والبلاغات العلمية" activeNav="home">
@@ -151,10 +154,10 @@ import Base from '../layouts/Base.astro';
                 <span class="kpi-title">القرّاء المعتمدون</span>
                 <span class="material-symbols-outlined kpi-icon">record_voice_over</span>
               </div>
-              <div class="kpi-value">2</div>
+              <div class="kpi-value">{reciters.length}</div>
               <div class="kpi-status status-info">
                 <span class="material-symbols-outlined">library_music</span>
-                <span>المنشاوي (حفص) · الحصري (ورش)</span>
+                <span>{reciters.map(r => r.name_ar.split(' ').slice(0, 2).join(' ')).join(' · ')}</span>
               </div>
             </div>
 
@@ -178,9 +181,9 @@ import Base from '../layouts/Base.astro';
               <div class="tier-card primary-tier">
                 <div class="tier-badge">المسار الأول (Primary)</div>
                 <h4 class="tier-title">شبكة التوزيع السريع (cdn.ratil.app)</h4>
-                <p class="tier-desc">حافة سريعة جداً للمستمعين مع استجابة أقل من 30ms وتوافق كامل مع تقطيع Range.</p>
+                <p class="tier-desc">حافة سريعة جداً للمستمعين مع استجابة فورية وتوافق كامل مع تقطيع Range.</p>
                 <div class="tier-meta">
-                  <span>الاستجابة: ~22ms</span>
+                  <span>حافة التوزيع: نشطة</span>
                   <span class="status-tag-active">متصل</span>
                 </div>
               </div>
@@ -214,22 +217,20 @@ import Base from '../layouts/Base.astro';
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><code>al-minshawy</code></td>
-                  <td>محمد صديق المنشاوي (المصحف المرتل)</td>
-                  <td>حفص عن عاصم</td>
-                  <td>128 kbps MP3</td>
-                  <td><code>ratil-audio-al-minshawy-hafs</code></td>
-                  <td><span class="status-pill-verified">رخصة وقفية معتمدة</span></td>
-                </tr>
-                <tr>
-                  <td><code>al-husary-warsh</code></td>
-                  <td>محمود خليل الحصري (مرتل ورش)</td>
-                  <td>ورش عن نافع (الأزرق)</td>
-                  <td>128 kbps MP3</td>
-                  <td><code>ratil-audio-al-husary-warsh</code></td>
-                  <td><span class="status-pill-verified">رخصة وقفية معتمدة</span></td>
-                </tr>
+                {reciters.map(r => {
+                  const manifestItem = audioManifest.reciters[r.id];
+                  const archiveId = manifestItem?.archive_item || `ratil-quran-${r.riwaya}-${r.id}`;
+                  return (
+                    <tr>
+                      <td><code>{r.id}</code></td>
+                      <td>{r.name}</td>
+                      <td>{r.riwaya === 'hafs' ? 'حفص عن عاصم' : 'ورش عن نافع'}</td>
+                      <td>128 kbps MP3</td>
+                      <td><code>{archiveId}</code></td>
+                      <td><span class="status-pill-verified">رخصة وقفية معتمدة</span></td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -263,7 +264,7 @@ X-Synthesizer: Ratil-Safari-Probe-OK</code></pre>
                 <div>
                   <h4 class="integrity-title">رواية حفص عن عاصم (مصحف المدينة النبوية)</h4>
                   <p class="integrity-desc">6236 آية كاملة — مطابقة 100% لمشروع تنزيل ومجمع الملك فهد</p>
-                  <code class="hash-code">SHA256: 3c9b74d6c702ff673e48e89cfab947ff15b4936d5c567848f86f7f329976378e</code>
+                  <code class="hash-code">SHA256: {checksums.hafs}</code>
                 </div>
               </div>
 
@@ -272,7 +273,7 @@ X-Synthesizer: Ratil-Safari-Probe-OK</code></pre>
                 <div>
                   <h4 class="integrity-title">رواية ورش عن نافع من طريق الأزرق</h4>
                   <p class="integrity-desc">6214 آية كاملة (العد المدني الأخير) مع إثبات ياءات الإضافة والزوائد</p>
-                  <code class="hash-code">SHA256: 4fa205166f0ff229e612cbcdde0c598285574c82c6bb111f1807d48342ea3d2f</code>
+                  <code class="hash-code">SHA256: {checksums.warsh}</code>
                 </div>
               </div>
             </div>

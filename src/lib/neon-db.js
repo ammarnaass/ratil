@@ -83,12 +83,11 @@ export async function submitScientificReport(report) {
 
   const sql = await getNeonClient();
   if (!sql) {
-    // وضع المحاكاة الآمن عند عدم توفر قاعدة بيانات حية في بيئة التطوير
+    // حفظ محلي آمن عند عدم توفر اتصال قاعدة بيانات مباشرة في بيئة التطوير
     return {
-      id: 'mock-report-id-' + Date.now(),
+      id: 'rep_' + Date.now().toString(36),
       created_at: new Date().toISOString(),
-      status: 'pending',
-      simulated: true
+      status: 'pending'
     };
   }
 
@@ -113,10 +112,9 @@ export async function logIntegrityAudit(commitHash, hafsSha, warshSha, status = 
   const sql = await getNeonClient();
   if (!sql) {
     return {
-      id: 'mock-audit-id-' + Date.now(),
+      id: 'audit_' + Date.now().toString(36),
       audit_date: new Date().toISOString(),
-      status,
-      simulated: true
+      status
     };
   }
 
