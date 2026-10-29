@@ -1,6 +1,7 @@
 /**
  * رتل - Ratil
- * منظومة المتغيرات والهوية البصرية (Design Tokens)
+ * منظومة المتغيرات والهوية البصرية المعتمدة (Design Tokens)
+ * متوافقة 100% مع نظام تصميم Stitch
  * src/styles/tokens.css
  */
 
@@ -28,10 +29,16 @@
 }
 
 :root {
-  /* ألوان التمييز (ثابتة في الوضعين) */
-  --color-accent: #3ECFB2;          /* أخضر فيروزي */
-  --color-accent-dim: #2BA890;      /* للحالات المضغوطة */
-  --color-accent-glow: rgba(62, 207, 178, 0.25);
+  /* ألوان التمييز الأساسية - فيروزي روحاني (Stitch Tokens) */
+  --color-primary: #3ECFB2;          /* أخضر فيروزي ناصع */
+  --color-primary-bright: #61ECCD;   /* للتوهج وحالات التحويم */
+  --color-primary-dim: #2BA890;      /* للحالات المضغوطة والتفاعلية */
+  --color-primary-glow: rgba(62, 207, 178, 0.25);
+  
+  /* الحفاظ على التوافق مع الكود السابق */
+  --color-accent: var(--color-primary);
+  --color-accent-dim: var(--color-primary-dim);
+  --color-accent-glow: var(--color-primary-glow);
 
   /* الخطوط */
   --font-ui: 'IBM Plex Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -39,7 +46,7 @@
   --font-quran-warsh: 'KFGQPC Uthmanic Warsh', 'Uthmanic Warsh', serif;
   --font-quran: var(--font-quran-hafs);
 
-  /* أحجام الخطوط القرآني الافتراضية (متوسط) */
+  /* أحجام الخط القرآني الافتراضية (متوسط) */
   --font-size-quran: 22px;
   --line-height-quran: 2.2;
   --font-size-aya-num: 14px;
@@ -49,66 +56,96 @@
   --player-height-collapsed: 44px;
   --touch-target-min: 44px;
   --container-max-width: 840px;
+  --container-max-desktop: 1280px;
+  
+  /* نصف قطر الانحناء (Border Radius) */
+  --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 
   /* انتقالات الحركة */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-player: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), height 180ms cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ثيم افتراضي: الوضع الليلي (Dark Theme - Primary) */
+  /* الثيم الافتراضي: الوضع الليلي العميق (Stitch Dark Mode) */
   --color-bg: #111318;
-  --color-surface: #1C1F27;
+  --color-surface: #1A1C22;
   --color-surface-hover: #262A34;
-  --color-surface-card: #181B22;
-  --color-border: #2A2E39;
-  --color-text-primary: #F0F0F0;
-  --color-text-muted: #6B7280;
+  --color-surface-card: #1E2025;
+  --color-surface-high: #282A2F;
+  --color-surface-low: #14161B;
+  --color-surface-bright: #37393F;
+  --color-border: #2E333D;
+  --color-border-subtle: #21242C;
+  --color-text-primary: #E2E2E9;
+  --color-text-muted: #BBCAC4;
+  --color-text-subtle: #6B7280;
   --color-quran: #EAEAEA;
   --color-highlight: rgba(62, 207, 178, 0.12);
   --color-highlight-border: #3ECFB2;
+  
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-sheet: 0 -8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-sheet: 0 -8px 24px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 24px rgba(62, 207, 178, 0.25);
 }
 
-/* الوضع النهاري */
+/* الوضع النهاري الهادئ (Light Mode) */
 :root[data-theme="light"],
 body.theme-light {
-  --color-bg: #FAFAFA;
+  --color-bg: #F8F9FA;
   --color-surface: #FFFFFF;
-  --color-surface-hover: #F3F4F6;
+  --color-surface-hover: #F0F2F5;
   --color-surface-card: #FFFFFF;
+  --color-surface-high: #E9ECEF;
+  --color-surface-low: #F1F3F5;
+  --color-surface-bright: #FFFFFF;
   --color-border: #E5E7EB;
+  --color-border-subtle: #EEEEEE;
   --color-text-primary: #111318;
-  --color-text-muted: #9CA3AF;
+  --color-text-muted: #6B7280;
+  --color-text-subtle: #9CA3AF;
   --color-quran: #1A1A1A;
-  --color-highlight: rgba(62, 207, 178, 0.14);
+  --color-highlight: rgba(62, 207, 178, 0.16);
   --color-highlight-border: #2BA890;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
   --shadow-sheet: 0 -8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(43, 168, 144, 0.2);
 }
 
 /* تفعيل تفضيل النظام التلقائي إذا لم يُحدَّد يدوياً */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --color-bg: #FAFAFA;
+    --color-bg: #F8F9FA;
     --color-surface: #FFFFFF;
-    --color-surface-hover: #F3F4F6;
+    --color-surface-hover: #F0F2F5;
     --color-surface-card: #FFFFFF;
+    --color-surface-high: #E9ECEF;
+    --color-surface-low: #F1F3F5;
+    --color-surface-bright: #FFFFFF;
     --color-border: #E5E7EB;
+    --color-border-subtle: #EEEEEE;
     --color-text-primary: #111318;
-    --color-text-muted: #9CA3AF;
+    --color-text-muted: #6B7280;
+    --color-text-subtle: #9CA3AF;
     --color-quran: #1A1A1A;
-    --color-highlight: rgba(62, 207, 178, 0.14);
+    --color-highlight: rgba(62, 207, 178, 0.16);
     --color-highlight-border: #2BA890;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
     --shadow-sheet: 0 -8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 20px rgba(43, 168, 144, 0.2);
   }
 }
 
@@ -118,5 +155,6 @@ body.theme-light {
     --font-size-quran: 26px;
     --line-height-quran: 2.3;
     --font-size-aya-num: 16px;
+    --player-height-full: 88px;
   }
 }

@@ -1,208 +1,63 @@
-# Design System Master File
+# رتل — وثيقة نظام التصميم المرجعية (MASTER DESIGN SYSTEM)
 
-> **LOGIC:** When building a specific page, first check `design-system/pages/[page-name].md`.
+> **LOGIC:** When building a specific page, first check `design-system/ratil/pages/[page-name].md`.
 > If that file exists, its rules **override** this Master file.
 > If not, strictly follow the rules below.
 
 ---
 
-**Project:** Ratil
-**Generated:** 2026-10-27 08:27:43
-**Category:** Podcast Platform
+**المشروع:** رتل (Ratil) — مصحف مسموع  
+**الفئة:** منصة تلاوات القرآن الكريم التفاعلية (Quran Audio Platform)  
+**المبدأ الحاكم:** «الصوت هو البطل. الواجهة تختفي بعد الضغط على تشغيل.»  
+**المصدر المرجعي:** Stitch Project `339375098252776117` (Ratil Admin Quran Platform)
 
 ---
 
-## Global Rules
+## 1. الهوية البصرية والألوان (Design Tokens)
 
-### Color Palette
+### لوحة الألوان الرئيسية (Dark Spiritual Theme - Default)
 
-| Role | Hex | CSS Variable |
-|------|-----|--------------|
-| Primary | `#1E1B4B` | `--color-primary` |
-| On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#312E81` | `--color-secondary` |
-| Accent/CTA | `#F97316` | `--color-accent` |
-| Background | `#0F0F23` | `--color-background` |
-| Foreground | `#F8FAFC` | `--color-foreground` |
-| Muted | `#27273B` | `--color-muted` |
-| Border | `#4338CA` | `--color-border` |
-| Destructive | `#EF4444` | `--color-destructive` |
-| Ring | `#1E1B4B` | `--color-ring` |
-
-**Color Notes:** Dark audio + warm accent
-
-### Typography
-
-- **Heading Font:** Atkinson Hyperlegible
-- **Body Font:** Atkinson Hyperlegible
-- **Mood:** accessible, readable, inclusive, WCAG, dyslexia-friendly, clear
-- **Google Fonts:** [Atkinson Hyperlegible + Atkinson Hyperlegible](https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap)
-
-**CSS Import:**
-```css
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
-```
-
-### Spacing Variables
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-xs` | `4px` / `0.25rem` | Tight gaps |
-| `--space-sm` | `8px` / `0.5rem` | Icon gaps, inline spacing |
-| `--space-md` | `16px` / `1rem` | Standard padding |
-| `--space-lg` | `24px` / `1.5rem` | Section padding |
-| `--space-xl` | `32px` / `2rem` | Large gaps |
-| `--space-2xl` | `48px` / `3rem` | Section margins |
-| `--space-3xl` | `64px` / `4rem` | Hero padding |
-
-### Shadow Depths
-
-| Level | Value | Usage |
-|-------|-------|-------|
-| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | Subtle lift |
-| `--shadow-md` | `0 4px 6px rgba(0,0,0,0.1)` | Cards, buttons |
-| `--shadow-lg` | `0 10px 15px rgba(0,0,0,0.1)` | Modals, dropdowns |
-| `--shadow-xl` | `0 20px 25px rgba(0,0,0,0.15)` | Hero images, featured cards |
+| الدور | القيمة Hex | متغير CSS | الوصف والاستخدام |
+|---|---|---|---|
+| **Primary (Accent)** | `#3ECFB2` | `--color-primary` / `--color-accent` | أخضر فيروزي ناصع — لون التمييز الأوحد للأزرار والمشغل والآية النشطة |
+| **Primary Bright** | `#61ECCD` | `--color-primary-bright` | للتوهج وحالات التحويم (Hover) |
+| **Primary Dim** | `#2BA890` | `--color-primary-dim` | للحالات المضغوطة والتفاعلية الثانوية |
+| **Background** | `#111318` | `--color-bg` | الخلفية الروحانية الليلية العميقة |
+| **Surface** | `#1A1C22` | `--color-surface` | خلفيات الترويسة والشرائح السفلية والمشغل |
+| **Surface Card** | `#1E2025` | `--color-surface-card` | كروت السور وكروت الاستماع |
+| **Surface High** | `#282A2F` | `--color-surface-high` | أسطح الأزرار والعناصر التفاعلية البارزة |
+| **Surface Low** | `#14161B` | `--color-surface-low` | الحاويات الغائرة وحقول الإدخال |
+| **Border / Outline** | `#2E333D` | `--color-border` | حدود الكروت والفواصل الهادئة |
+| **Text Primary** | `#E2E2E9` | `--color-text-primary` | النصوص الأساسية وعناوين السور والواجهة |
+| **Text Muted** | `#BBCAC4` / `#6B7280` | `--color-text-muted` | المعلومات الإضافية، عدد الآيات، وأسماء القراء الفرعية |
+| **Quran Dark Text** | `#EAEAEA` | `--color-quran` | نص الآيات بالرسم العثماني ليلاً (تباين > 12:1) |
+| **Highlight Ayah** | `rgba(62, 207, 178, 0.12)` | `--color-highlight` | خلفية تظليل الآية قيد التلاوة |
+| **Highlight Border**| `#3ECFB2` | `--color-highlight-border` | الحد البارز (3px) لتمييز الآية الحالية |
 
 ---
 
-## Component Specs
+## 2. منظومة الخطوط والطباعة (Typography)
 
-### Buttons
-
-```css
-/* Primary Button */
-.btn-primary {
-  background: #F97316;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background: transparent;
-  color: #1E1B4B;
-  border: 2px solid #1E1B4B;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-```
-
-### Cards
-
-```css
-.card {
-  background: #0F0F23;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: var(--shadow-md);
-  transition: all 200ms ease;
-  cursor: pointer;
-}
-
-.card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-```
-
-### Inputs
-
-```css
-.input {
-  padding: 12px 16px;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 200ms ease;
-}
-
-.input:focus {
-  border-color: #1E1B4B;
-  outline: none;
-  box-shadow: 0 0 0 3px #1E1B4B20;
-}
-```
-
-### Modals
-
-```css
-.modal-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-
-.modal {
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: var(--shadow-xl);
-  max-width: 500px;
-  width: 90%;
-}
-```
+- **خط الواجهة والعناوين:** `IBM Plex Arabic` (الأوزان: 400، 500، 600، 700).
+- **خط النص القرآني المعتمد:**
+  - خط مصحف المدينة النبوية برواية حفص: `KFGQPC Uthmanic Hafs` (مجمع الملك فهد).
+  - خط مصحف المدينة النبوية برواية ورش: `KFGQPC Uthmanic Warsh` (مجمع الملك فهد).
+- **أحجام الخط القرآني:**
+  - الجوال: `22px` مع ارتفاع سطر `line-height: 2.2`.
+  - الكمبيوتر: `26px` مع ارتفاع سطر `line-height: 2.3`.
+  - خيارات التكبير والتصغير التفاعلية: صغير (20px/22px)، متوسط (22px/26px)، كبير (26px/32px).
 
 ---
 
-## Style Guidelines
+## 3. الشاشات المرجعية العشر (Stitch Screens)
 
-**Style:** Dark Mode (OLED)
-
-**Keywords:** Dark theme, low light, high contrast, deep black, midnight blue, eye-friendly, OLED, night mode, power efficient
-
-**Best For:** Night-mode apps, coding platforms, entertainment, eye-strain prevention, OLED devices, low-light
-
-**Key Effects:** Minimal glow (text-shadow: 0 0 10px), dark-to-light transitions, low white emission, high readability, visible focus
-
-### Page Pattern
-
-**Pattern Name:** Newsletter / Content First
-
-- **Conversion Strategy:** Single field form (Email only). Show 'Join X, 000 readers'. Read sample link.
-- **CTA Placement:** Hero inline form + Sticky header form
-- **Section Order:** 1. Hero (Value Prop + Form), 2. Recent Issues/Archives, 3. Social Proof (Subscriber count), 4. About Author
-
----
-
-## Anti-Patterns (Do NOT Use)
-
-- ❌ Poor audio player
-- ❌ Cluttered layout
-
-### Additional Forbidden Patterns
-
-- ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)
-- ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer
-- ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout
-- ❌ **Low contrast text** — Maintain 4.5:1 minimum contrast ratio
-- ❌ **Instant state changes** — Always use transitions (150-300ms)
-- ❌ **Invisible focus states** — Focus states must be visible for a11y
-
----
-
-## Pre-Delivery Checklist
-
-Before delivering any UI code, verify:
-
-- [ ] No emojis used as icons (use SVG instead)
-- [ ] All icons from consistent icon set (Heroicons/Lucide)
-- [ ] `cursor-pointer` on all clickable elements
-- [ ] Hover states with smooth transitions (150-300ms)
-- [ ] Light mode: text contrast 4.5:1 minimum
-- [ ] Focus states visible for keyboard navigation
-- [ ] `prefers-reduced-motion` respected
-- [ ] Responsive: 375px, 768px, 1024px, 1440px
-- [ ] No content hidden behind fixed navbars
-- [ ] No horizontal scroll on mobile
+1. **`01_signup` — إنشاء حساب:** بطاقة تسجيل تركيزية مع توهج خلفي ورمز الموجة الصوتية.
+2. **`02_login` — تسجيل الدخول:** واجهة دخول سريعة وآمنة للمستخدمين المسجلين.
+3. **`03_home_mobile` — الرئيسية (جوال):** بطاقة استئناف بارزة، بحث موحد، شرائح السور الأكثر طلباً، شبكة السور، وشريط مشغل مصغر.
+4. **`04_reciters_index` — فهرس القرّاء (جوال):** تصفية حسب الرواية (حفص / ورش)، بطاقات القرّاء مع عدد السور وعينات صوتية سريعة.
+5. **`05_home_desktop` — الرئيسية (كمبيوتر):** ترويسة عريضة مع تنقل تبويبي، بطاقة استئناف عملاقة (Spotlight Hero)، شريط تقدم صوتي ديناميكي، وشبكة سور ثلاثية الأعمدة.
+6. **`06_surah_kahf` — استماع وقراءة:** عرض النص القرآني المعتمد مع تتبع الآية المتزامنة، شريط أدوات التحكم في القراءة، والمشغل السفلي.
+7. **`07_reciter_minshawi` — ملف القارئ:** نبذة تعريفية، استماع فوري، وقائمة السور المتوفرة بالرواية المعتمدة للقارئ.
+8. **`08_browse_mushaf_desktop` — تصفح المصحف (كمبيوتر):** فهرس السور الـ 114 مع بحث سريع وتصنيف حسب النزول (مكية / مدنية) وأرقام الأجزاء والصفحات.
+9. **`09_choose_reciter` — اختيار القارئ:** لوحة سفلية منبثقة (Bottom Sheet / Modal) سهلة اللمس لاختيار القارئ فوراً وبدء الاستماع.
+10. **`10_browse_mushaf_mobile` — تصفح المصحف (جوال):** تصفح رشيق سريع وسلس لكافة سور القرآن الكريم محسّن للهواتف.

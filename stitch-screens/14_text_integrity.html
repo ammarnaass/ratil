@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed-dim": "#4fdcbf",
+          "secondary": "#67dac0",
+          "on-secondary-fixed": "#00201a",
+          "inverse-on-surface": "#2e3037",
+          "secondary-container": "#21a28b",
+          "on-error-container": "#ffdad6",
+          "on-primary-fixed": "#00201a",
+          "on-tertiary-fixed-variant": "#444750",
+          "on-secondary-fixed-variant": "#005143",
+          "surface-bright": "#373940",
+          "on-primary-container": "#005446",
+          "tertiary": "#d3d5e0",
+          "on-error": "#690005",
+          "outline-variant": "#3c4a45",
+          "primary-fixed": "#70f9da",
+          "secondary-fixed-dim": "#67dac0",
+          "tertiary-container": "#b7b9c4",
+          "primary-container": "#3ecfb2",
+          "surface-dim": "#111319",
+          "surface-container": "#1e1f26",
+          "on-primary-fixed-variant": "#005143",
+          "outline": "#85948f",
+          "tertiary-fixed-dim": "#c4c6d1",
+          "on-surface-variant": "#bbcac4",
+          "on-tertiary": "#2d3039",
+          "on-tertiary-fixed": "#181b23",
+          "background": "#111319",
+          "on-background": "#e2e2eb",
+          "secondary-fixed": "#85f6db",
+          "inverse-primary": "#006b5a",
+          "inverse-surface": "#e2e2eb",
+          "surface": "#111319",
+          "surface-variant": "#33343b",
+          "on-tertiary-container": "#474953",
+          "primary": "#61eccd",
+          "on-secondary": "#00382e",
+          "tertiary-fixed": "#e0e2ed",
+          "error": "#ffb4ab",
+          "surface-container-lowest": "#0c0e14",
+          "error-container": "#93000a",
+          "surface-container-high": "#282a30",
+          "surface-container-low": "#191b22",
+          "on-primary": "#00382e",
+          "on-secondary-container": "#003027",
+          "surface-container-highest": "#33343b",
+          "surface-tint": "#4fdcbf",
+          "on-surface": "#e2e2eb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-md": "1rem",
+          "gutter": "1.25rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2rem",
+          "margin": "2rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-xl": [
+            "IBM Plex Sans"
+          ],
+          "body-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-xl-mobile": [
+            "IBM Plex Sans"
+          ],
+          "body-lg": [
+            "IBM Plex Sans"
+          ],
+          "label-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-sm": [
+            "IBM Plex Sans"
+          ],
+          "headline-lg-mobile": [
+            "IBM Plex Sans"
+          ],
+          "headline-lg": [
+            "IBM Plex Sans"
+          ],
+          "body-sm": [
+            "IBM Plex Sans"
+          ],
+          "label-sm": [
+            "IBM Plex Sans"
+          ],
+          "label-lg": [
+            "IBM Plex Sans"
+          ]
+        },
+        "fontSize": {
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "48px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "38px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed right-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden"><span class="material-symbols-outlined text-primary text-headline-sm">auto_stories</span></div><div><span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">رتل</span><span class="font-label-sm text-label-sm text-on-surface-variant block">لوحة التحكم v1.0</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">نشط</span></div><nav class="px-space-sm py-space-sm space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">dashboard</span><span class="font-label-lg text-label-lg">نظرة عامة</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reciters" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">mic</span><span class="font-label-lg text-label-lg">القرّاء</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audio-files" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">volume_up</span><span class="font-label-lg text-label-lg">الملفات الصوتية</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="text-integrity" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">menu_book</span><span class="font-label-lg text-label-lg">سلامة النص</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">warning</span><span class="font-label-lg text-label-lg">البلاغات</span></div><span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">3</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">trending_up</span><span class="font-label-lg text-label-lg">الإحصاءات</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="licenses" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">description</span><span class="font-label-lg text-label-lg">التراخيص</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">settings</span><span class="font-label-lg text-label-lg">الإعدادات</span></div></a></nav></div><div class="p-space-md space-y-space-sm"><div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIAa4rmz8O9R6ewcoIYUX7vXFkPMmBLowNjq-tLPu476qR6WODJdeS5TPgaPf5ZiKEBdX4tNAdIG0TfJshzWkvoSR7e74mu3MHB1-iLRSwctRAcRVF0RJ4FCvE-p2iaYoB3q4SnlPPQU17Qo1bBF_Tw1u_-AsZ_FywOWYRZICXoqJUDbI8uMPdbShZEzFL_fIednNoOR07E1v8gSMyQak2T-5ce40AHK7fTIAVtuBSNNcE5i-SLI"/><div class="text-right"><div><span class="font-label-md text-label-md text-on-surface block leading-tight font-semibold">مدير النظام</span><span class="font-label-sm text-label-sm text-on-surface-variant block">مشرف المحتوى</span></div></div></div><button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="خيارات الحساب" type="button"><span class="material-symbols-outlined text-headline-sm">more_vert</span></button></div><a class="flex items-center justify-center gap-space-sm w-full py-space-sm px-space-md rounded-lg bg-surface-container-high text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-headline-sm">logout</span><span class="font-label-lg text-label-lg">تسجيل الخروج</span></a></div></aside><div class="pr-64"><header class="fixed top-0 right-64 left-0 h-16 bg-surface-container-low/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-headline-sm text-primary">dns</span><span>النظام:</span><span class="text-primary font-semibold">الخادم نشط</span><span class="text-on-surface-variant">·</span><span class="font-label-sm text-label-sm text-on-surface-variant">متصل بـ SHA-256</span></div><div class="h-4 w-[1px] bg-surface-container-highest"></div><div class="relative w-72"><span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-headline-sm pointer-events-none">search</span><input class="w-full pr-9 pl-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary shadow-none" placeholder="ابحث في اللوحة..." type="search"/></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container hover:bg-secondary-container hover:text-on-secondary transition-colors font-label-lg text-label-lg font-semibold" type="button"><span class="material-symbols-outlined text-headline-sm">bolt</span><span>فحص فوري</span></button><div class="h-4 w-[1px] bg-surface-container-highest"></div><button class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-1 left-1 w-2 h-2 rounded-full bg-error"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIAa4rmz8O9R6ewcoIYUX7vXFkPMmBLowNjq-tLPu476qR6WODJdeS5TPgaPf5ZiKEBdX4tNAdIG0TfJshzWkvoSR7e74mu3MHB1-iLRSwctRAcRVF0RJ4FCvE-p2iaYoB3q4SnlPPQU17Qo1bBF_Tw1u_-AsZ_FywOWYRZICXoqJUDbI8uMPdbShZEzFL_fIednNoOR07E1v8gSMyQak2T-5ce40AHK7fTIAVtuBSNNcE5i-SLI"/></div></header><main class="relative w-full pt-16 bg-background px-gutter py-space-xl"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Status Aura & Breadcrumb Header -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-xl shadow-xl">
+<div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-2 h-full bg-primary"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg relative z-10">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-headline-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>منظومة الحصانة والرقابة العُليا</span>
+<span>/</span>
+<span class="text-primary font-semibold">بروتوكول سلامة التنزيل الحكيم</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+          سلامة النص القرآني والمطابقة المرجعية
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          التحقق الرقمي فائق التشفير للرسم العثماني المعتمد، مطابق مع المصحف المرجعي الصادر عن مجمع الملك فهد الشريف بالمدينة المنورة حرفاً بحرف وحركة وضبطاً تاماً.
+        </p>
+</div>
+<!-- Hero KPI Badge -->
+<div class="flex items-center gap-space-lg bg-surface-container p-space-md rounded-xl shadow-md min-w-[340px]">
+<div class="relative flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="absolute inset-0 rounded-xl animate-ping bg-primary/20 pointer-events-none"></span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-primary font-bold">100% سليم وموثّق</span>
+<span class="px-space-xs py-0.5 bg-primary/20 text-primary rounded text-[10px] font-bold">نظام محصّن</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">
+            تم الفحص الأخير تلقائياً: <strong class="text-on-surface font-semibold">اليوم 06:00 ص</strong>
+</span>
+<span class="font-label-sm text-label-sm text-secondary block font-mono">
+            6,236 آية · 77,430 كلمة · صفر أخطاء
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid: Verification Core & Directives -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Cryptographic SHA-256 Checksum Card -->
+<div class="lg:col-span-8 bg-surface-container-low rounded-xl p-space-xl flex flex-col justify-between shadow-md relative overflow-hidden">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-sm">fingerprint</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">البصمة الرقمية التشفيرية المرجعية</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SHA-256 Cryptographic Hash Verification</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-space-md py-1 rounded-full bg-primary/15 text-primary font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>مطابقة ثنائية متزامنة</span>
+</div>
+</div>
+<!-- Hash Comparisons -->
+<div class="space-y-space-sm pt-space-xs">
+<!-- Live Hash -->
+<div class="p-space-md bg-surface-container rounded-lg space-y-1">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm text-primary">terminal</span>
+                البصمة الرقمية الحالية في خوادم التطبيق (Current Live Digest):
+              </span>
+<button class="hover:text-primary transition-colors text-[11px] flex items-center gap-0.5" onclick="navigator.clipboard.writeText('a3f9d2e1b4c803f7e912da77f8841029e26a7f2a1d940172bf4921ea0283c741')">
+<span class="material-symbols-outlined text-body-sm">content_copy</span>
+                نسخ الرمز
+              </button>
+</div>
+<div class="font-mono text-body-sm text-primary break-all bg-surface-container-lowest p-space-sm rounded select-all font-semibold">
+              a3f9d2e1b4c803f7e912da77f8841029e26a7f2a1d940172bf4921ea0283c741
+            </div>
+</div>
+<!-- Reference Hash -->
+<div class="p-space-md bg-surface-container rounded-lg space-y-1">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm text-secondary">verified</span>
+                بصمة المرجع المعتمد (مجمع الملك فهد لطباعة المصحف الشريف):
+              </span>
+<span class="text-[11px] text-secondary font-semibold">موثّق بسجل الأوقاف</span>
+</div>
+<div class="font-mono text-body-sm text-secondary break-all bg-surface-container-lowest p-space-sm rounded select-all font-semibold">
+              a3f9d2e1b4c803f7e912da77f8841029e26a7f2a1d940172bf4921ea0283c741
+            </div>
+</div>
+</div>
+<!-- Verification Detail Banner -->
+<div class="flex items-center gap-space-md p-space-md bg-surface-container-high/60 rounded-lg">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-headline-sm">spellcheck</span>
+</div>
+<div class="text-right">
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">
+              الحالة: متطابقة حرفاً، حركة، وضبطاً، وعلامات وقف.
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              المرجع الأساس: مجمع الملك فهد لطباعة المصحف الشريف بالمدينة المنورة — إصدار الرسم العثماني برواية حفص عن عاصم (1445هـ / 2024م).
+            </p>
+</div>
+</div>
+</div>
+<!-- Strict Security Admonition -->
+<div class="mt-space-md p-space-md bg-error-container/20 rounded-lg flex items-start gap-space-md">
+<span class="material-symbols-outlined text-error text-headline-md shrink-0">shield_lock</span>
+<div class="space-y-0.5">
+<h3 class="font-label-lg text-label-lg text-error font-bold">حظر تقني مُطلق وقفل سلامة لا يقبل التجاوز</h3>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+            تعديل النص القرآني من لوحة التحكم محظور تقنياً بصورة قطعية وغير متاح عبر أي واجهة مستخدم أو API لقواعد البيانات. أي تحديث مرجعي يستلزم استبدال الحزمة المصدريّة الموقعة بمفتاح GPG السيادي المشفر مسبقاً، وإعادة بناء النظام بالكامل (Deterministic Build) للتحقق من سلامة البصمة.
+          </p>
+</div>
+</div>
+</div>
+<!-- Admin Operational Control & Telemetry Panel -->
+<div class="lg:col-span-4 space-y-gutter flex flex-col justify-between">
+<!-- Instant Manual Scan Trigger -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md space-y-space-md">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-headline-sm">security_update_good</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold">أدوات الفحص والرقابة</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          يقوم هذا الإجراء بحساب البصمة الرقمية للكتلة الكاملة لآيات القرآن الكريم ومقارنتها عبر مسارات التجزئة متعددة الأنوية في أجزاء من الثانية.
+        </p>
+<button class="w-full py-space-md px-space-lg rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-sm hover:bg-secondary-container transition-all shadow-md active:scale-95 group" id="runCheckBtn">
+<span class="material-symbols-outlined text-headline-sm group-hover:rotate-180 transition-transform duration-500" id="btnIcon">search_check</span>
+<span id="btnText">تشغيل فحص يدوي شامل الآن (SHA-256)</span>
+</button>
+<div class="hidden p-space-sm rounded bg-surface-container text-center space-y-1" id="scanResult">
+<div class="flex items-center justify-center gap-1.5 text-primary font-bold font-label-md text-label-md">
+<span class="material-symbols-outlined text-body-sm">check</span>
+            تم التحقق من 114 سورة في 184ms
+          </div>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">Status: OK (Zero Discrepancies)</span>
+</div>
+</div>
+<!-- Realtime Guard & Alerts Settings -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-headline-sm">notifications_active</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">إشعارات الطوارئ الفورية</h3>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-primary/10 text-primary text-label-sm font-bold">24/7 نشط</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          إرسال تنبيه SMS عالي الأولوية وبريد إلكتروني مشفر للمدير واللجنة العلمية في حال رصد اختلاف بايت واحد فوراً.
+        </p>
+<div class="space-y-space-sm pt-space-xs">
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-body-lg">sms</span>
+<span class="font-label-md text-label-md text-on-surface">إشعار SMS طارئ (رقم المشرف)</span>
+</div>
+<input checked="" class="accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-body-lg">mail</span>
+<span class="font-label-md text-label-md text-on-surface">إشعار بريدي للجنة مراجعة المصاحف</span>
+</div>
+<input checked="" class="accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-body-lg">lock</span>
+<span class="font-label-md text-label-md text-on-surface">إيقاف التوزيع تلقائياً (Kill-switch)</span>
+</div>
+<input checked="" class="accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Historical Verification Ledger -->
+<div class="bg-surface-container-low rounded-xl p-space-xl shadow-md space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-headline-md">history_toggle_off</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">سجل الفحوصات الدورية وتاريخ المطابقة</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">سجل ثابت غير قابل للتعديل (Immutable Audit Trail)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-headline-sm text-secondary">update</span>
+<span>معدل الفحص المجدول: كل 24 ساعة</span>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-md text-label-md">
+<th class="py-space-md px-space-lg">التوقيت والتاريخ</th>
+<th class="py-space-md px-space-lg">نوع الفحص</th>
+<th class="py-space-md px-space-lg">بصمة المعاينة المختصرة</th>
+<th class="py-space-md px-space-lg">ملاحظات التحليل</th>
+<th class="py-space-md px-space-lg text-center">الحالة النهائية</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40 font-body-sm text-body-sm">
+<!-- Record 1 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-on-surface">
+              اليوم — 06:00 ص
+            </td>
+<td class="py-space-md px-space-lg text-on-surface-variant">
+              فحص تلقائي مجدول
+            </td>
+<td class="py-space-md px-space-lg font-mono text-primary font-semibold">
+              a3f9d2...c741
+            </td>
+<td class="py-space-md px-space-lg text-on-surface-variant">
+              تطابق تام ومطلق مع مجمع الملك فهد
+            </td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-space-md py-0.5 rounded-full bg-primary/10 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-body-sm">verified</span>
+                سليم 100%
+              </span>
+</td>
+</tr>
+<!-- Record 2 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-on-surface">
+              أمس — 06:00 ص
+            </td>
+<td class="py-space-md px-space-lg text-on-surface-variant">
+              فحص تلقائي مجدول
+            </td>
+<td class="py-space-md px-space-lg font-mono text-primary font-semibold">
+              a3f9d2...c741
+            </td>
+<td class="py-space-md px-space-lg text-on-surface-variant">
+              مطابقة ناجحة لكامل المصحف الشريف
+            </td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-space-md py-0.5 rounded-full bg-primary/10 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-body-sm">verified</span>
+                سليم 100%
+              </span>
+</td>
+</tr>
+<!-- Record 3 -->
+<tr class="hover:bg-surface-container/60 transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-on-surface">
+              2 يناير — 06:00 ص
+            </td>
+<td class="py-space-md px-space-lg text-on-surface-variant">
+              فحص تلقائي مجدول
+            </td>
+<td class="py-space-md px-space-lg font-mono text-primary font-semibold">
+              a3f9d2...c741
+            </td>
+<td class="py-space-md px-space-lg text-on-surface-variant">
+              تأكيد مطابقة الوقف والابتداء وحركات الإعراب
+            </td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-space-md py-0.5 rounded-full bg-primary/10 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-body-sm">verified</span>
+                سليم 100%
+              </span>
+</td>
+</tr>
+<!-- Record 4 (The incident) -->
+<tr class="bg-error-container/10 hover:bg-error-container/20 transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-on-surface">
+              1 يناير — 06:00 ص
+            </td>
+<td class="py-space-md px-space-lg text-on-surface-variant">
+              فحص دوري تنفيذي
+            </td>
+<td class="py-space-md px-space-lg font-mono text-error font-bold">
+              e71c9b...41bb
+            </td>
+<td class="py-space-md px-space-lg text-error">
+              كود غير متطابق (تعديل طرأ في ملف الآيات التجريبي) — تم إيقاف النشر فوراً وتصحيح الملف وإعادة التحقق
+            </td>
+<td class="py-space-md px-space-lg text-center">
+<span class="inline-flex items-center gap-1 px-space-md py-0.5 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-body-sm">warning</span>
+                معالج ومغلق
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive micro-state for the Scan Button
+  const scanBtn = document.getElementById('runCheckBtn');
+  const btnIcon = document.getElementById('btnIcon');
+  const btnText = document.getElementById('btnText');
+  const scanResult = document.getElementById('scanResult');
+
+  scanBtn.addEventListener('click', () => {
+    btnIcon.classList.add('animate-spin');
+    btnText.textContent = 'جارٍ تشفير وحساب بصمات الآيات...';
+    scanBtn.disabled = true;
+
+    setTimeout(() => {
+      btnIcon.classList.remove('animate-spin');
+      btnText.textContent = 'تشغيل فحص يدوي شامل الآن (SHA-256)';
+      scanBtn.disabled = false;
+      scanResult.classList.remove('hidden');
+    }, 1200);
+  });
+</script></main></div></body></html>

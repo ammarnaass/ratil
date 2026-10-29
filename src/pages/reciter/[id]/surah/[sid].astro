@@ -1,0 +1,293 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import reciters from '../../../../../data/reciters.json';
+import surahs from '../../../../../data/surahs.json';
+import audioManifest from '../../../../../data/audio-manifest.json';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  const paths = [];
+
+  for (const r of reciters) {
+    const manifestReciter = (audioManifest.reciters as any)[r.id] || {};
+    const surahsMap = manifestReciter.surahs || {};
+    const recordedIds = Object.keys(surahsMap).map(Number);
+    // إذا لم تكن هناك سور مسجلة في المانيفيست، نولد سورة الفاتحة (1) افتراضياً
+    const validIds = recordedIds.length > 0 ? recordedIds : [1];
+
+    for (const sid of validIds) {
+      const surahMeta = surahs.find((s) => s.id === sid);
+      paths.push({
+        params: { id: r.id, sid: String(sid) },
+        props: { reciter: r, surahMeta: surahMeta || { id: sid, name_ar: `السورة ${sid}` } }
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { id, sid } = Astro.params;
+const { reciter, surahMeta } = Astro.props;
+
+// قراءة نص السورة
+const isWarsh = reciter.riwaya === 'warsh';
+const dataFolder = isWarsh ? 'warsh' : 'hafs';
+const textPath = path.join(process.cwd(), `public/data/${dataFolder}/${sid}.json`);
+let surahData: any = null;
+if (fs.existsSync(textPath)) {
+  surahData = JSON.parse(fs.readFileSync(textPath, 'utf-8'));
+} else {
+  surahData = {
+    id: Number(sid),
+    name_ar: surahMeta.name_ar,
+    ayahs: []
+  };
+}
+
+// قراءة بيانات التوقيت الموثقة بالمللي ثانية إن وُجدت
+const timingPath = path.join(process.cwd(), `timings/${id}/${String(sid).padStart(3, '0')}.json`);
+let timingsData: any[] = [];
+if (fs.existsSync(timingPath)) {
+  try {
+    timingsData = JSON.parse(fs.readFileSync(timingPath, 'utf-8'));
+  } catch (e) {}
+}
+
+const surahNum = Number(sid);
+const showBasmalah = surahNum !== 9 && surahNum !== 1;
+---
+
+<Base
+  title={`سورة ${surahData.name_ar} — بصوت ${reciter.name} | رتل`}
+  description={`استمع لتلاوة سورة ${surahData.name_ar} بصوت ${reciter.name} برواية ${reciter.riwaya === 'hafs' ? 'حفص عن عاصم' : 'ورش عن نافع'} مع التتبع الآني للآيات.`}
+  activeNav="browse"
+>
+  <div class="sync-listening-container">
+    
+    <!-- بطاقة الترويسة والتفاعل -->
+    <header class="sync-header-card">
+      <div class="sync-header-breadcrumbs">
+        <a href={`/reciter/${id}`}>← تلاوات {reciter.name}</a>
+        <span class="riwaya-tag">رواية {isWarsh ? 'ورش عن نافع' : 'حفص عن عاصم'}</span>
+      </div>
+
+      <div class="sync-header-content">
+        <h1 class="sync-surah-title">سورة {surahData.name_ar}</h1>
+        <p class="sync-reciter-name">بصوت {reciter.name}</p>
+      </div>
+
+      <div class="sync-action-row">
+        <button 
+          id="sync-play-btn"
+          class="sync-big-play-btn"
+          data-surah-id={surahNum}
+          data-surah-name={surahData.name_ar}
+          data-reciter-id={id}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>بدء التلاوة مع التتبع المباشر</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- البسملة -->
+    {showBasmalah && (
+      <div class="sync-basmalah-wrapper">
+        <p class="sync-basmalah-text">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      </div>
+    )}
+
+    <!-- النص القرآني مع وسوم التزامن -->
+    <article class="sync-verses-sheet" id="sync-verses-sheet">
+      {surahData.ayahs.map((aya: any) => (
+        <span 
+          class="sync-verse-unit"
+          id={`sync-aya-${aya.aya}`}
+          data-aya={aya.aya}
+          tabindex="0"
+          role="button"
+          aria-label={`الآية ${aya.aya}`}
+        >
+          <span class="sync-verse-words">{aya.text_uthmani}</span>
+          <span class="sync-aya-ornament">
+            ﴿{aya.aya_indic || aya.aya}﴾
+          </span>
+        </span>
+      ))}
+    </article>
+
+  </div>
+
+  <!-- بيانات التوقيت المدمجة للعميل -->
+  <script is:inline define:vars={{ timingsData, surahNum, reciterId: id, surahName: surahData.name_ar }}>
+    window.__RATIL_TIMINGS__ = timingsData;
+
+    const playBtn = document.getElementById('sync-play-btn');
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        window.dispatchEvent(
+          new CustomEvent('ratil:play', {
+            detail: { surahId: surahNum, surahName: surahName, reciterId: reciterId }
+          })
+        );
+      });
+    }
+
+    // الاستماع لحدث تحديث الوقت لتظليل الآية النشطة
+    window.addEventListener('ratil:timeupdate', (e) => {
+      const ms = e.detail?.currentTimeMs || 0;
+      let activeAya = null;
+
+      if (window.__RATIL_TIMINGS__ && window.__RATIL_TIMINGS__.length > 0) {
+        for (const item of window.__RATIL_TIMINGS__) {
+          if (ms >= item.start_ms && ms < item.end_ms) {
+            activeAya = item.aya;
+            break;
+          }
+        }
+      }
+
+      if (activeAya) {
+        document.querySelectorAll('.sync-verse-unit').forEach(el => el.classList.remove('active-verse'));
+        const target = document.getElementById(`sync-aya-${activeAya}`);
+        if (target) {
+          target.classList.add('active-verse');
+        }
+      }
+    });
+  </script>
+</Base>
+
+<style>
+.sync-listening-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+}
+
+.sync-header-card {
+  background: var(--color-surface, #181B22);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.sync-header-breadcrumbs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sync-header-breadcrumbs a {
+  color: var(--color-primary, #3ECFB2);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.riwaya-tag {
+  font-size: 11px;
+  color: var(--color-text-secondary, #9EA3B0);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.sync-surah-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text-primary, #F3F4F6);
+  margin-bottom: 4px;
+}
+
+.sync-reciter-name {
+  font-size: 15px;
+  color: var(--color-text-secondary, #9EA3B0);
+  margin-bottom: 20px;
+}
+
+.sync-action-row {
+  display: flex;
+  justify-content: center;
+}
+
+.sync-big-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-primary, #3ECFB2);
+  color: #0E1015;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sync-big-play-btn:hover {
+  background: var(--color-primary-bright, #61ECCD);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px var(--color-primary-glow, rgba(62, 207, 178, 0.3));
+}
+
+.sync-basmalah-wrapper {
+  text-align: center;
+  margin: 20px 0 30px;
+}
+
+.sync-basmalah-text {
+  font-family: var(--font-quran, serif);
+  font-size: 26px;
+  color: var(--color-primary, #3ECFB2);
+}
+
+.sync-verses-sheet {
+  background: var(--color-surface, #181B22);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.06));
+  border-radius: 24px;
+  padding: 36px 30px;
+  line-height: var(--line-height-quran, 2.4);
+  text-align: justify;
+  text-align-last: center;
+}
+
+.sync-verse-unit {
+  display: inline;
+  font-family: var(--font-quran, serif);
+  font-size: var(--font-size-quran, 24px);
+  color: var(--color-text-primary, #F3F4F6);
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sync-verse-unit:hover {
+  background: rgba(62, 207, 178, 0.08);
+}
+
+.sync-verse-unit.active-verse {
+  background: rgba(62, 207, 178, 0.2);
+  color: var(--color-primary-bright, #61ECCD);
+  box-shadow: 0 0 16px rgba(62, 207, 178, 0.25);
+}
+
+.sync-aya-ornament {
+  display: inline-block;
+  margin: 0 6px;
+  color: var(--color-primary, #3ECFB2);
+  font-size: 19px;
+  font-weight: 400;
+  user-select: none;
+}
+</style>

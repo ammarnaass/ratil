@@ -1,0 +1,1198 @@
+[
+  {
+    "id": 1,
+    "name": "الفاتحة",
+    "name_normalized": "الفاتحه",
+    "latin": [
+      "fatiha"
+    ],
+    "num": 1,
+    "ayahs_hafs": 7,
+    "ayahs_warsh": 7,
+    "type": "مكية"
+  },
+  {
+    "id": 2,
+    "name": "البقرة",
+    "name_normalized": "البقره",
+    "latin": [
+      "baqara"
+    ],
+    "num": 2,
+    "ayahs_hafs": 286,
+    "ayahs_warsh": 285,
+    "type": "مدنية"
+  },
+  {
+    "id": 3,
+    "name": "آل عمران",
+    "name_normalized": "ال عمران",
+    "latin": [
+      "imran"
+    ],
+    "num": 3,
+    "ayahs_hafs": 200,
+    "ayahs_warsh": 200,
+    "type": "مدنية"
+  },
+  {
+    "id": 4,
+    "name": "النساء",
+    "name_normalized": "النساء",
+    "latin": [
+      "nisa"
+    ],
+    "num": 4,
+    "ayahs_hafs": 176,
+    "ayahs_warsh": 175,
+    "type": "مدنية"
+  },
+  {
+    "id": 5,
+    "name": "المائدة",
+    "name_normalized": "المائده",
+    "latin": [
+      "maidah"
+    ],
+    "num": 5,
+    "ayahs_hafs": 120,
+    "ayahs_warsh": 122,
+    "type": "مدنية"
+  },
+  {
+    "id": 6,
+    "name": "الأنعام",
+    "name_normalized": "الانعام",
+    "latin": [
+      "anam"
+    ],
+    "num": 6,
+    "ayahs_hafs": 165,
+    "ayahs_warsh": 167,
+    "type": "مكية"
+  },
+  {
+    "id": 7,
+    "name": "الأعراف",
+    "name_normalized": "الاعراف",
+    "latin": [
+      "araf"
+    ],
+    "num": 7,
+    "ayahs_hafs": 206,
+    "ayahs_warsh": 206,
+    "type": "مكية"
+  },
+  {
+    "id": 8,
+    "name": "الأنفال",
+    "name_normalized": "الانفال",
+    "latin": [
+      "anfal"
+    ],
+    "num": 8,
+    "ayahs_hafs": 75,
+    "ayahs_warsh": 76,
+    "type": "مدنية"
+  },
+  {
+    "id": 9,
+    "name": "التوبة",
+    "name_normalized": "التوبه",
+    "latin": [
+      "tawbah"
+    ],
+    "num": 9,
+    "ayahs_hafs": 129,
+    "ayahs_warsh": 130,
+    "type": "مدنية"
+  },
+  {
+    "id": 10,
+    "name": "يونس",
+    "name_normalized": "يونس",
+    "latin": [
+      "yunus"
+    ],
+    "num": 10,
+    "ayahs_hafs": 109,
+    "ayahs_warsh": 109,
+    "type": "مكية"
+  },
+  {
+    "id": 11,
+    "name": "هود",
+    "name_normalized": "هود",
+    "latin": [
+      "hud"
+    ],
+    "num": 11,
+    "ayahs_hafs": 123,
+    "ayahs_warsh": 121,
+    "type": "مكية"
+  },
+  {
+    "id": 12,
+    "name": "يوسف",
+    "name_normalized": "يوسف",
+    "latin": [
+      "yusuf"
+    ],
+    "num": 12,
+    "ayahs_hafs": 111,
+    "ayahs_warsh": 111,
+    "type": "مكية"
+  },
+  {
+    "id": 13,
+    "name": "الرعد",
+    "name_normalized": "الرعد",
+    "latin": [
+      "rad"
+    ],
+    "num": 13,
+    "ayahs_hafs": 43,
+    "ayahs_warsh": 44,
+    "type": "مدنية"
+  },
+  {
+    "id": 14,
+    "name": "إبراهيم",
+    "name_normalized": "ابراهيم",
+    "latin": [
+      "ibrahim"
+    ],
+    "num": 14,
+    "ayahs_hafs": 52,
+    "ayahs_warsh": 54,
+    "type": "مكية"
+  },
+  {
+    "id": 15,
+    "name": "الحجر",
+    "name_normalized": "الحجر",
+    "latin": [
+      "hijr"
+    ],
+    "num": 15,
+    "ayahs_hafs": 99,
+    "ayahs_warsh": 99,
+    "type": "مكية"
+  },
+  {
+    "id": 16,
+    "name": "النحل",
+    "name_normalized": "النحل",
+    "latin": [
+      "nahl"
+    ],
+    "num": 16,
+    "ayahs_hafs": 128,
+    "ayahs_warsh": 128,
+    "type": "مكية"
+  },
+  {
+    "id": 17,
+    "name": "الإسراء",
+    "name_normalized": "الاسراء",
+    "latin": [
+      "isra"
+    ],
+    "num": 17,
+    "ayahs_hafs": 111,
+    "ayahs_warsh": 110,
+    "type": "مكية"
+  },
+  {
+    "id": 18,
+    "name": "الكهف",
+    "name_normalized": "الكهف",
+    "latin": [
+      "kahf"
+    ],
+    "num": 18,
+    "ayahs_hafs": 110,
+    "ayahs_warsh": 105,
+    "type": "مكية"
+  },
+  {
+    "id": 19,
+    "name": "مريم",
+    "name_normalized": "مريم",
+    "latin": [
+      "maryam"
+    ],
+    "num": 19,
+    "ayahs_hafs": 98,
+    "ayahs_warsh": 99,
+    "type": "مكية"
+  },
+  {
+    "id": 20,
+    "name": "طه",
+    "name_normalized": "طه",
+    "latin": [
+      "taha"
+    ],
+    "num": 20,
+    "ayahs_hafs": 135,
+    "ayahs_warsh": 134,
+    "type": "مكية"
+  },
+  {
+    "id": 21,
+    "name": "الأنبياء",
+    "name_normalized": "الانبياء",
+    "latin": [],
+    "num": 21,
+    "ayahs_hafs": 112,
+    "ayahs_warsh": 111,
+    "type": "مكية"
+  },
+  {
+    "id": 22,
+    "name": "الحج",
+    "name_normalized": "الحج",
+    "latin": [],
+    "num": 22,
+    "ayahs_hafs": 78,
+    "ayahs_warsh": 76,
+    "type": "مدنية"
+  },
+  {
+    "id": 23,
+    "name": "المؤمنون",
+    "name_normalized": "المؤمنون",
+    "latin": [],
+    "num": 23,
+    "ayahs_hafs": 118,
+    "ayahs_warsh": 119,
+    "type": "مكية"
+  },
+  {
+    "id": 24,
+    "name": "النور",
+    "name_normalized": "النور",
+    "latin": [],
+    "num": 24,
+    "ayahs_hafs": 64,
+    "ayahs_warsh": 64,
+    "type": "مدنية"
+  },
+  {
+    "id": 25,
+    "name": "الفرقان",
+    "name_normalized": "الفرقان",
+    "latin": [],
+    "num": 25,
+    "ayahs_hafs": 77,
+    "ayahs_warsh": 77,
+    "type": "مكية"
+  },
+  {
+    "id": 26,
+    "name": "الشعراء",
+    "name_normalized": "الشعراء",
+    "latin": [],
+    "num": 26,
+    "ayahs_hafs": 227,
+    "ayahs_warsh": 226,
+    "type": "مكية"
+  },
+  {
+    "id": 27,
+    "name": "النمل",
+    "name_normalized": "النمل",
+    "latin": [],
+    "num": 27,
+    "ayahs_hafs": 93,
+    "ayahs_warsh": 95,
+    "type": "مكية"
+  },
+  {
+    "id": 28,
+    "name": "القصص",
+    "name_normalized": "القصص",
+    "latin": [],
+    "num": 28,
+    "ayahs_hafs": 88,
+    "ayahs_warsh": 87,
+    "type": "مكية"
+  },
+  {
+    "id": 29,
+    "name": "العنكبوت",
+    "name_normalized": "العنكبوت",
+    "latin": [],
+    "num": 29,
+    "ayahs_hafs": 69,
+    "ayahs_warsh": 69,
+    "type": "مكية"
+  },
+  {
+    "id": 30,
+    "name": "الروم",
+    "name_normalized": "الروم",
+    "latin": [],
+    "num": 30,
+    "ayahs_hafs": 60,
+    "ayahs_warsh": 59,
+    "type": "مكية"
+  },
+  {
+    "id": 31,
+    "name": "لقمان",
+    "name_normalized": "لقمان",
+    "latin": [],
+    "num": 31,
+    "ayahs_hafs": 34,
+    "ayahs_warsh": 33,
+    "type": "مكية"
+  },
+  {
+    "id": 32,
+    "name": "السجدة",
+    "name_normalized": "السجده",
+    "latin": [],
+    "num": 32,
+    "ayahs_hafs": 30,
+    "ayahs_warsh": 30,
+    "type": "مكية"
+  },
+  {
+    "id": 33,
+    "name": "الأحزاب",
+    "name_normalized": "الاحزاب",
+    "latin": [],
+    "num": 33,
+    "ayahs_hafs": 73,
+    "ayahs_warsh": 73,
+    "type": "مدنية"
+  },
+  {
+    "id": 34,
+    "name": "سبأ",
+    "name_normalized": "سبا",
+    "latin": [],
+    "num": 34,
+    "ayahs_hafs": 54,
+    "ayahs_warsh": 54,
+    "type": "مكية"
+  },
+  {
+    "id": 35,
+    "name": "فاطر",
+    "name_normalized": "فاطر",
+    "latin": [],
+    "num": 35,
+    "ayahs_hafs": 45,
+    "ayahs_warsh": 46,
+    "type": "مكية"
+  },
+  {
+    "id": 36,
+    "name": "يس",
+    "name_normalized": "يس",
+    "latin": [
+      "yasin"
+    ],
+    "num": 36,
+    "ayahs_hafs": 83,
+    "ayahs_warsh": 82,
+    "type": "مكية"
+  },
+  {
+    "id": 37,
+    "name": "الصافات",
+    "name_normalized": "الصافات",
+    "latin": [],
+    "num": 37,
+    "ayahs_hafs": 182,
+    "ayahs_warsh": 182,
+    "type": "مكية"
+  },
+  {
+    "id": 38,
+    "name": "ص",
+    "name_normalized": "ص",
+    "latin": [],
+    "num": 38,
+    "ayahs_hafs": 88,
+    "ayahs_warsh": 86,
+    "type": "مكية"
+  },
+  {
+    "id": 39,
+    "name": "الزمر",
+    "name_normalized": "الزمر",
+    "latin": [],
+    "num": 39,
+    "ayahs_hafs": 75,
+    "ayahs_warsh": 75,
+    "type": "مكية"
+  },
+  {
+    "id": 40,
+    "name": "غافر",
+    "name_normalized": "غافر",
+    "latin": [],
+    "num": 40,
+    "ayahs_hafs": 85,
+    "ayahs_warsh": 84,
+    "type": "مكية"
+  },
+  {
+    "id": 41,
+    "name": "فصلت",
+    "name_normalized": "فصلت",
+    "latin": [],
+    "num": 41,
+    "ayahs_hafs": 54,
+    "ayahs_warsh": 53,
+    "type": "مكية"
+  },
+  {
+    "id": 42,
+    "name": "الشورى",
+    "name_normalized": "الشوري",
+    "latin": [],
+    "num": 42,
+    "ayahs_hafs": 53,
+    "ayahs_warsh": 50,
+    "type": "مكية"
+  },
+  {
+    "id": 43,
+    "name": "الزخرف",
+    "name_normalized": "الزخرف",
+    "latin": [],
+    "num": 43,
+    "ayahs_hafs": 89,
+    "ayahs_warsh": 89,
+    "type": "مكية"
+  },
+  {
+    "id": 44,
+    "name": "الدخان",
+    "name_normalized": "الدخان",
+    "latin": [],
+    "num": 44,
+    "ayahs_hafs": 59,
+    "ayahs_warsh": 56,
+    "type": "مكية"
+  },
+  {
+    "id": 45,
+    "name": "الجاثية",
+    "name_normalized": "الجاثيه",
+    "latin": [],
+    "num": 45,
+    "ayahs_hafs": 37,
+    "ayahs_warsh": 36,
+    "type": "مكية"
+  },
+  {
+    "id": 46,
+    "name": "الأحقاف",
+    "name_normalized": "الاحقاف",
+    "latin": [],
+    "num": 46,
+    "ayahs_hafs": 35,
+    "ayahs_warsh": 34,
+    "type": "مكية"
+  },
+  {
+    "id": 47,
+    "name": "محمد",
+    "name_normalized": "محمد",
+    "latin": [],
+    "num": 47,
+    "ayahs_hafs": 38,
+    "ayahs_warsh": 39,
+    "type": "مدنية"
+  },
+  {
+    "id": 48,
+    "name": "الفتح",
+    "name_normalized": "الفتح",
+    "latin": [],
+    "num": 48,
+    "ayahs_hafs": 29,
+    "ayahs_warsh": 29,
+    "type": "مدنية"
+  },
+  {
+    "id": 49,
+    "name": "الحجرات",
+    "name_normalized": "الحجرات",
+    "latin": [],
+    "num": 49,
+    "ayahs_hafs": 18,
+    "ayahs_warsh": 18,
+    "type": "مدنية"
+  },
+  {
+    "id": 50,
+    "name": "ق",
+    "name_normalized": "ق",
+    "latin": [],
+    "num": 50,
+    "ayahs_hafs": 45,
+    "ayahs_warsh": 45,
+    "type": "مكية"
+  },
+  {
+    "id": 51,
+    "name": "الذاريات",
+    "name_normalized": "الذاريات",
+    "latin": [],
+    "num": 51,
+    "ayahs_hafs": 60,
+    "ayahs_warsh": 60,
+    "type": "مكية"
+  },
+  {
+    "id": 52,
+    "name": "الطور",
+    "name_normalized": "الطور",
+    "latin": [],
+    "num": 52,
+    "ayahs_hafs": 49,
+    "ayahs_warsh": 48,
+    "type": "مكية"
+  },
+  {
+    "id": 53,
+    "name": "النجم",
+    "name_normalized": "النجم",
+    "latin": [],
+    "num": 53,
+    "ayahs_hafs": 62,
+    "ayahs_warsh": 61,
+    "type": "مكية"
+  },
+  {
+    "id": 54,
+    "name": "القمر",
+    "name_normalized": "القمر",
+    "latin": [],
+    "num": 54,
+    "ayahs_hafs": 55,
+    "ayahs_warsh": 55,
+    "type": "مكية"
+  },
+  {
+    "id": 55,
+    "name": "الرحمن",
+    "name_normalized": "الرحمن",
+    "latin": [
+      "rahman"
+    ],
+    "num": 55,
+    "ayahs_hafs": 78,
+    "ayahs_warsh": 76,
+    "type": "مدنية"
+  },
+  {
+    "id": 56,
+    "name": "الواقعة",
+    "name_normalized": "الواقعه",
+    "latin": [
+      "waqiah"
+    ],
+    "num": 56,
+    "ayahs_hafs": 96,
+    "ayahs_warsh": 97,
+    "type": "مكية"
+  },
+  {
+    "id": 57,
+    "name": "الحديد",
+    "name_normalized": "الحديد",
+    "latin": [],
+    "num": 57,
+    "ayahs_hafs": 29,
+    "ayahs_warsh": 28,
+    "type": "مدنية"
+  },
+  {
+    "id": 58,
+    "name": "المجادلة",
+    "name_normalized": "المجادله",
+    "latin": [],
+    "num": 58,
+    "ayahs_hafs": 22,
+    "ayahs_warsh": 22,
+    "type": "مدنية"
+  },
+  {
+    "id": 59,
+    "name": "الحشر",
+    "name_normalized": "الحشر",
+    "latin": [],
+    "num": 59,
+    "ayahs_hafs": 24,
+    "ayahs_warsh": 24,
+    "type": "مدنية"
+  },
+  {
+    "id": 60,
+    "name": "الممتحنة",
+    "name_normalized": "الممتحنه",
+    "latin": [],
+    "num": 60,
+    "ayahs_hafs": 13,
+    "ayahs_warsh": 13,
+    "type": "مدنية"
+  },
+  {
+    "id": 61,
+    "name": "الصف",
+    "name_normalized": "الصف",
+    "latin": [],
+    "num": 61,
+    "ayahs_hafs": 14,
+    "ayahs_warsh": 14,
+    "type": "مدنية"
+  },
+  {
+    "id": 62,
+    "name": "الجمعة",
+    "name_normalized": "الجمعه",
+    "latin": [],
+    "num": 62,
+    "ayahs_hafs": 11,
+    "ayahs_warsh": 11,
+    "type": "مدنية"
+  },
+  {
+    "id": 63,
+    "name": "المنافقون",
+    "name_normalized": "المنافقون",
+    "latin": [],
+    "num": 63,
+    "ayahs_hafs": 11,
+    "ayahs_warsh": 11,
+    "type": "مدنية"
+  },
+  {
+    "id": 64,
+    "name": "التغابن",
+    "name_normalized": "التغابن",
+    "latin": [],
+    "num": 64,
+    "ayahs_hafs": 18,
+    "ayahs_warsh": 18,
+    "type": "مدنية"
+  },
+  {
+    "id": 65,
+    "name": "الطلاق",
+    "name_normalized": "الطلاق",
+    "latin": [],
+    "num": 65,
+    "ayahs_hafs": 12,
+    "ayahs_warsh": 12,
+    "type": "مدنية"
+  },
+  {
+    "id": 66,
+    "name": "التحريم",
+    "name_normalized": "التحريم",
+    "latin": [],
+    "num": 66,
+    "ayahs_hafs": 12,
+    "ayahs_warsh": 12,
+    "type": "مدنية"
+  },
+  {
+    "id": 67,
+    "name": "الملك",
+    "name_normalized": "الملك",
+    "latin": [
+      "mulk"
+    ],
+    "num": 67,
+    "ayahs_hafs": 30,
+    "ayahs_warsh": 31,
+    "type": "مكية"
+  },
+  {
+    "id": 68,
+    "name": "القلم",
+    "name_normalized": "القلم",
+    "latin": [],
+    "num": 68,
+    "ayahs_hafs": 52,
+    "ayahs_warsh": 52,
+    "type": "مكية"
+  },
+  {
+    "id": 69,
+    "name": "الحاقة",
+    "name_normalized": "الحاقه",
+    "latin": [],
+    "num": 69,
+    "ayahs_hafs": 52,
+    "ayahs_warsh": 51,
+    "type": "مكية"
+  },
+  {
+    "id": 70,
+    "name": "المعارج",
+    "name_normalized": "المعارج",
+    "latin": [],
+    "num": 70,
+    "ayahs_hafs": 44,
+    "ayahs_warsh": 44,
+    "type": "مكية"
+  },
+  {
+    "id": 71,
+    "name": "نوح",
+    "name_normalized": "نوح",
+    "latin": [],
+    "num": 71,
+    "ayahs_hafs": 28,
+    "ayahs_warsh": 29,
+    "type": "مكية"
+  },
+  {
+    "id": 72,
+    "name": "الجن",
+    "name_normalized": "الجن",
+    "latin": [],
+    "num": 72,
+    "ayahs_hafs": 28,
+    "ayahs_warsh": 28,
+    "type": "مكية"
+  },
+  {
+    "id": 73,
+    "name": "المزمل",
+    "name_normalized": "المزمل",
+    "latin": [],
+    "num": 73,
+    "ayahs_hafs": 20,
+    "ayahs_warsh": 19,
+    "type": "مكية"
+  },
+  {
+    "id": 74,
+    "name": "المدثر",
+    "name_normalized": "المدثر",
+    "latin": [],
+    "num": 74,
+    "ayahs_hafs": 56,
+    "ayahs_warsh": 55,
+    "type": "مكية"
+  },
+  {
+    "id": 75,
+    "name": "القيامة",
+    "name_normalized": "القيامه",
+    "latin": [],
+    "num": 75,
+    "ayahs_hafs": 40,
+    "ayahs_warsh": 39,
+    "type": "مكية"
+  },
+  {
+    "id": 76,
+    "name": "الإنسان",
+    "name_normalized": "الانسان",
+    "latin": [],
+    "num": 76,
+    "ayahs_hafs": 31,
+    "ayahs_warsh": 31,
+    "type": "مدنية"
+  },
+  {
+    "id": 77,
+    "name": "المرسلات",
+    "name_normalized": "المرسلات",
+    "latin": [],
+    "num": 77,
+    "ayahs_hafs": 50,
+    "ayahs_warsh": 50,
+    "type": "مكية"
+  },
+  {
+    "id": 78,
+    "name": "النبأ",
+    "name_normalized": "النبا",
+    "latin": [
+      "naba"
+    ],
+    "num": 78,
+    "ayahs_hafs": 40,
+    "ayahs_warsh": 41,
+    "type": "مكية"
+  },
+  {
+    "id": 79,
+    "name": "النازعات",
+    "name_normalized": "النازعات",
+    "latin": [],
+    "num": 79,
+    "ayahs_hafs": 46,
+    "ayahs_warsh": 45,
+    "type": "مكية"
+  },
+  {
+    "id": 80,
+    "name": "عبس",
+    "name_normalized": "عبس",
+    "latin": [],
+    "num": 80,
+    "ayahs_hafs": 42,
+    "ayahs_warsh": 41,
+    "type": "مكية"
+  },
+  {
+    "id": 81,
+    "name": "التكوير",
+    "name_normalized": "التكوير",
+    "latin": [],
+    "num": 81,
+    "ayahs_hafs": 29,
+    "ayahs_warsh": 29,
+    "type": "مكية"
+  },
+  {
+    "id": 82,
+    "name": "الانفطار",
+    "name_normalized": "الانفطار",
+    "latin": [],
+    "num": 82,
+    "ayahs_hafs": 19,
+    "ayahs_warsh": 19,
+    "type": "مكية"
+  },
+  {
+    "id": 83,
+    "name": "المطففين",
+    "name_normalized": "المطففين",
+    "latin": [],
+    "num": 83,
+    "ayahs_hafs": 36,
+    "ayahs_warsh": 36,
+    "type": "مكية"
+  },
+  {
+    "id": 84,
+    "name": "الانشقاق",
+    "name_normalized": "الانشقاق",
+    "latin": [],
+    "num": 84,
+    "ayahs_hafs": 25,
+    "ayahs_warsh": 25,
+    "type": "مكية"
+  },
+  {
+    "id": 85,
+    "name": "البروج",
+    "name_normalized": "البروج",
+    "latin": [],
+    "num": 85,
+    "ayahs_hafs": 22,
+    "ayahs_warsh": 22,
+    "type": "مكية"
+  },
+  {
+    "id": 86,
+    "name": "الطارق",
+    "name_normalized": "الطارق",
+    "latin": [],
+    "num": 86,
+    "ayahs_hafs": 17,
+    "ayahs_warsh": 17,
+    "type": "مكية"
+  },
+  {
+    "id": 87,
+    "name": "الأعلى",
+    "name_normalized": "الاعلي",
+    "latin": [],
+    "num": 87,
+    "ayahs_hafs": 19,
+    "ayahs_warsh": 19,
+    "type": "مكية"
+  },
+  {
+    "id": 88,
+    "name": "الغاشية",
+    "name_normalized": "الغاشيه",
+    "latin": [],
+    "num": 88,
+    "ayahs_hafs": 26,
+    "ayahs_warsh": 26,
+    "type": "مكية"
+  },
+  {
+    "id": 89,
+    "name": "الفجر",
+    "name_normalized": "الفجر",
+    "latin": [],
+    "num": 89,
+    "ayahs_hafs": 30,
+    "ayahs_warsh": 32,
+    "type": "مكية"
+  },
+  {
+    "id": 90,
+    "name": "البلد",
+    "name_normalized": "البلد",
+    "latin": [],
+    "num": 90,
+    "ayahs_hafs": 20,
+    "ayahs_warsh": 20,
+    "type": "مكية"
+  },
+  {
+    "id": 91,
+    "name": "الشمس",
+    "name_normalized": "الشمس",
+    "latin": [],
+    "num": 91,
+    "ayahs_hafs": 15,
+    "ayahs_warsh": 15,
+    "type": "مكية"
+  },
+  {
+    "id": 92,
+    "name": "الليل",
+    "name_normalized": "الليل",
+    "latin": [],
+    "num": 92,
+    "ayahs_hafs": 21,
+    "ayahs_warsh": 21,
+    "type": "مكية"
+  },
+  {
+    "id": 93,
+    "name": "الضحى",
+    "name_normalized": "الضحي",
+    "latin": [],
+    "num": 93,
+    "ayahs_hafs": 11,
+    "ayahs_warsh": 11,
+    "type": "مكية"
+  },
+  {
+    "id": 94,
+    "name": "الشرح",
+    "name_normalized": "الشرح",
+    "latin": [],
+    "num": 94,
+    "ayahs_hafs": 8,
+    "ayahs_warsh": 8,
+    "type": "مكية"
+  },
+  {
+    "id": 95,
+    "name": "التين",
+    "name_normalized": "التين",
+    "latin": [],
+    "num": 95,
+    "ayahs_hafs": 8,
+    "ayahs_warsh": 8,
+    "type": "مكية"
+  },
+  {
+    "id": 96,
+    "name": "العلق",
+    "name_normalized": "العلق",
+    "latin": [],
+    "num": 96,
+    "ayahs_hafs": 19,
+    "ayahs_warsh": 19,
+    "type": "مكية"
+  },
+  {
+    "id": 97,
+    "name": "القدر",
+    "name_normalized": "القدر",
+    "latin": [],
+    "num": 97,
+    "ayahs_hafs": 5,
+    "ayahs_warsh": 5,
+    "type": "مكية"
+  },
+  {
+    "id": 98,
+    "name": "البينة",
+    "name_normalized": "البينه",
+    "latin": [],
+    "num": 98,
+    "ayahs_hafs": 8,
+    "ayahs_warsh": 9,
+    "type": "مدنية"
+  },
+  {
+    "id": 99,
+    "name": "الزلزلة",
+    "name_normalized": "الزلزله",
+    "latin": [],
+    "num": 99,
+    "ayahs_hafs": 8,
+    "ayahs_warsh": 9,
+    "type": "مدنية"
+  },
+  {
+    "id": 100,
+    "name": "العاديات",
+    "name_normalized": "العاديات",
+    "latin": [],
+    "num": 100,
+    "ayahs_hafs": 11,
+    "ayahs_warsh": 11,
+    "type": "مكية"
+  },
+  {
+    "id": 101,
+    "name": "القارعة",
+    "name_normalized": "القارعه",
+    "latin": [],
+    "num": 101,
+    "ayahs_hafs": 11,
+    "ayahs_warsh": 10,
+    "type": "مكية"
+  },
+  {
+    "id": 102,
+    "name": "التكاثر",
+    "name_normalized": "التكاثر",
+    "latin": [],
+    "num": 102,
+    "ayahs_hafs": 8,
+    "ayahs_warsh": 8,
+    "type": "مكية"
+  },
+  {
+    "id": 103,
+    "name": "العصر",
+    "name_normalized": "العصر",
+    "latin": [],
+    "num": 103,
+    "ayahs_hafs": 3,
+    "ayahs_warsh": 3,
+    "type": "مكية"
+  },
+  {
+    "id": 104,
+    "name": "الهمزة",
+    "name_normalized": "الهمزه",
+    "latin": [],
+    "num": 104,
+    "ayahs_hafs": 9,
+    "ayahs_warsh": 9,
+    "type": "مكية"
+  },
+  {
+    "id": 105,
+    "name": "الفيل",
+    "name_normalized": "الفيل",
+    "latin": [],
+    "num": 105,
+    "ayahs_hafs": 5,
+    "ayahs_warsh": 5,
+    "type": "مكية"
+  },
+  {
+    "id": 106,
+    "name": "قريش",
+    "name_normalized": "قريش",
+    "latin": [],
+    "num": 106,
+    "ayahs_hafs": 4,
+    "ayahs_warsh": 4,
+    "type": "مكية"
+  },
+  {
+    "id": 107,
+    "name": "الماعون",
+    "name_normalized": "الماعون",
+    "latin": [],
+    "num": 107,
+    "ayahs_hafs": 7,
+    "ayahs_warsh": 7,
+    "type": "مكية"
+  },
+  {
+    "id": 108,
+    "name": "الكوثر",
+    "name_normalized": "الكوثر",
+    "latin": [],
+    "num": 108,
+    "ayahs_hafs": 3,
+    "ayahs_warsh": 3,
+    "type": "مكية"
+  },
+  {
+    "id": 109,
+    "name": "الكافرون",
+    "name_normalized": "الكافرون",
+    "latin": [],
+    "num": 109,
+    "ayahs_hafs": 6,
+    "ayahs_warsh": 6,
+    "type": "مكية"
+  },
+  {
+    "id": 110,
+    "name": "النصر",
+    "name_normalized": "النصر",
+    "latin": [],
+    "num": 110,
+    "ayahs_hafs": 3,
+    "ayahs_warsh": 3,
+    "type": "مدنية"
+  },
+  {
+    "id": 111,
+    "name": "المسد",
+    "name_normalized": "المسد",
+    "latin": [],
+    "num": 111,
+    "ayahs_hafs": 5,
+    "ayahs_warsh": 5,
+    "type": "مكية"
+  },
+  {
+    "id": 112,
+    "name": "الإخلاص",
+    "name_normalized": "الاخلاص",
+    "latin": [
+      "ikhlas"
+    ],
+    "num": 112,
+    "ayahs_hafs": 4,
+    "ayahs_warsh": 4,
+    "type": "مكية"
+  },
+  {
+    "id": 113,
+    "name": "الفلق",
+    "name_normalized": "الفلق",
+    "latin": [
+      "falaq"
+    ],
+    "num": 113,
+    "ayahs_hafs": 5,
+    "ayahs_warsh": 5,
+    "type": "مكية"
+  },
+  {
+    "id": 114,
+    "name": "الناس",
+    "name_normalized": "الناس",
+    "latin": [
+      "nas"
+    ],
+    "num": 114,
+    "ayahs_hafs": 6,
+    "ayahs_warsh": 6,
+    "type": "مكية"
+  }
+]

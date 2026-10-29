@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed-dim": "#4fdcbf",
+          "secondary": "#67dac0",
+          "on-secondary-fixed": "#00201a",
+          "inverse-on-surface": "#2e3037",
+          "secondary-container": "#21a28b",
+          "on-error-container": "#ffdad6",
+          "on-primary-fixed": "#00201a",
+          "on-tertiary-fixed-variant": "#444750",
+          "on-secondary-fixed-variant": "#005143",
+          "surface-bright": "#373940",
+          "on-primary-container": "#005446",
+          "tertiary": "#d3d5e0",
+          "on-error": "#690005",
+          "outline-variant": "#3c4a45",
+          "primary-fixed": "#70f9da",
+          "secondary-fixed-dim": "#67dac0",
+          "tertiary-container": "#b7b9c4",
+          "primary-container": "#3ecfb2",
+          "surface-dim": "#111319",
+          "surface-container": "#1e1f26",
+          "on-primary-fixed-variant": "#005143",
+          "outline": "#85948f",
+          "tertiary-fixed-dim": "#c4c6d1",
+          "on-surface-variant": "#bbcac4",
+          "on-tertiary": "#2d3039",
+          "on-tertiary-fixed": "#181b23",
+          "background": "#111319",
+          "on-background": "#e2e2eb",
+          "secondary-fixed": "#85f6db",
+          "inverse-primary": "#006b5a",
+          "inverse-surface": "#e2e2eb",
+          "surface": "#111319",
+          "surface-variant": "#33343b",
+          "on-tertiary-container": "#474953",
+          "primary": "#61eccd",
+          "on-secondary": "#00382e",
+          "tertiary-fixed": "#e0e2ed",
+          "error": "#ffb4ab",
+          "surface-container-lowest": "#0c0e14",
+          "error-container": "#93000a",
+          "surface-container-high": "#282a30",
+          "surface-container-low": "#191b22",
+          "on-primary": "#00382e",
+          "on-secondary-container": "#003027",
+          "surface-container-highest": "#33343b",
+          "surface-tint": "#4fdcbf",
+          "on-surface": "#e2e2eb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-md": "1rem",
+          "gutter": "1.25rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2rem",
+          "margin": "2rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-xl": [
+            "IBM Plex Sans"
+          ],
+          "body-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-xl-mobile": [
+            "IBM Plex Sans"
+          ],
+          "body-lg": [
+            "IBM Plex Sans"
+          ],
+          "label-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-sm": [
+            "IBM Plex Sans"
+          ],
+          "headline-lg-mobile": [
+            "IBM Plex Sans"
+          ],
+          "headline-lg": [
+            "IBM Plex Sans"
+          ],
+          "body-sm": [
+            "IBM Plex Sans"
+          ],
+          "label-sm": [
+            "IBM Plex Sans"
+          ],
+          "label-lg": [
+            "IBM Plex Sans"
+          ]
+        },
+        "fontSize": {
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "48px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "38px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed right-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden"><span class="material-symbols-outlined text-primary text-headline-sm">auto_stories</span></div><div><span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">رتل</span><span class="font-label-sm text-label-sm text-on-surface-variant block">لوحة التحكم v1.0</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">نشط</span></div><nav class="px-space-sm py-space-sm space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">dashboard</span><span class="font-label-lg text-label-lg">نظرة عامة</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reciters" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">mic</span><span class="font-label-lg text-label-lg">القرّاء</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="audio-files" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">volume_up</span><span class="font-label-lg text-label-lg">الملفات الصوتية</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="text-integrity" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">menu_book</span><span class="font-label-lg text-label-lg">سلامة النص</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">warning</span><span class="font-label-lg text-label-lg">البلاغات</span></div><span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">3</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">trending_up</span><span class="font-label-lg text-label-lg">الإحصاءات</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="licenses" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">description</span><span class="font-label-lg text-label-lg">التراخيص</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">settings</span><span class="font-label-lg text-label-lg">الإعدادات</span></div></a></nav></div><div class="p-space-md space-y-space-sm"><div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIAa4rmz8O9R6ewcoIYUX7vXFkPMmBLowNjq-tLPu476qR6WODJdeS5TPgaPf5ZiKEBdX4tNAdIG0TfJshzWkvoSR7e74mu3MHB1-iLRSwctRAcRVF0RJ4FCvE-p2iaYoB3q4SnlPPQU17Qo1bBF_Tw1u_-AsZ_FywOWYRZICXoqJUDbI8uMPdbShZEzFL_fIednNoOR07E1v8gSMyQak2T-5ce40AHK7fTIAVtuBSNNcE5i-SLI"/><div class="text-right"><div><span class="font-label-md text-label-md text-on-surface block leading-tight font-semibold">مدير النظام</span><span class="font-label-sm text-label-sm text-on-surface-variant block">مشرف المحتوى</span></div></div></div><button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="خيارات الحساب" type="button"><span class="material-symbols-outlined text-headline-sm">more_vert</span></button></div><a class="flex items-center justify-center gap-space-sm w-full py-space-sm px-space-md rounded-lg bg-surface-container-high text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-headline-sm">logout</span><span class="font-label-lg text-label-lg">تسجيل الخروج</span></a></div></aside><div class="pr-64"><header class="fixed top-0 right-64 left-0 h-16 bg-surface-container-low/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-headline-sm text-primary">dns</span><span>النظام:</span><span class="text-primary font-semibold">الخادم نشط</span><span class="text-on-surface-variant">·</span><span class="font-label-sm text-label-sm text-on-surface-variant">متصل بـ SHA-256</span></div><div class="h-4 w-[1px] bg-surface-container-highest"></div><div class="relative w-72"><span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-headline-sm pointer-events-none">search</span><input class="w-full pr-9 pl-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary shadow-none" placeholder="ابحث في اللوحة..." type="search"/></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container hover:bg-secondary-container hover:text-on-secondary transition-colors font-label-lg text-label-lg font-semibold" type="button"><span class="material-symbols-outlined text-headline-sm">bolt</span><span>فحص فوري</span></button><div class="h-4 w-[1px] bg-surface-container-highest"></div><button class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-1 left-1 w-2 h-2 rounded-full bg-error"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIAa4rmz8O9R6ewcoIYUX7vXFkPMmBLowNjq-tLPu476qR6WODJdeS5TPgaPf5ZiKEBdX4tNAdIG0TfJshzWkvoSR7e74mu3MHB1-iLRSwctRAcRVF0RJ4FCvE-p2iaYoB3q4SnlPPQU17Qo1bBF_Tw1u_-AsZ_FywOWYRZICXoqJUDbI8uMPdbShZEzFL_fIednNoOR07E1v8gSMyQak2T-5ce40AHK7fTIAVtuBSNNcE5i-SLI"/></div></header><main class="relative w-full pt-16 bg-background px-gutter py-space-xl"><div class="flex flex-col w-full gap-space-lg text-on-surface" dir="rtl">
+<!-- Top Command & Breadcrumb Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span>لوحة التحكم</span>
+<span class="material-symbols-outlined text-body-sm text-outline">chevron_left</span>
+<span class="text-primary font-semibold">إدارة الملفات الصوتية والتوقيت الزمني</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">إدارة الملفات الصوتية والتوقيت الزمني</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">مراقبة دقة التزامن الآي، سلامة التشفير، واعتماد حزم التوقيت للمصحف الرقمي</p>
+</div>
+<!-- Quick Actions Header -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-all duration-200 font-label-lg text-label-lg shadow-sm" id="btn-open-sync" type="button">
+<span class="material-symbols-outlined text-headline-sm text-primary">sync_saved_locally</span>
+<span>فحص سلامة التزامن الكل</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-all duration-200 font-label-lg text-label-lg shadow-sm" id="btn-open-timing-modal" type="button">
+<span class="material-symbols-outlined text-headline-sm text-secondary">data_object</span>
+<span>+ رفع ملف توقيت JSON</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-2 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary-container transition-all duration-200 font-label-lg text-label-lg font-semibold shadow-md" id="btn-open-upload-modal" type="button">
+<span class="material-symbols-outlined text-headline-sm">upload_file</span>
+<span>+ رفع ملفات صوتية</span>
+</button>
+</div>
+</div>
+<!-- Operational Telemetry / KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Storage Quota Metric -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-md text-label-md text-on-surface-variant block">استهلاك التخزين السحابي</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">12.4</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 50 GB</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">cloud_sync</span>
+</div>
+</div>
+<!-- Linear Storage Gauge -->
+<div class="mt-space-md space-y-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">مستخدم 24.8%</span>
+<span class="text-primary font-semibold">37.6 GB متاح</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full rounded-full bg-primary-container transition-all duration-500" style="width: 24.8%;"></div>
+</div>
+</div>
+</div>
+<!-- Total Audio Tracks -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-md text-label-md text-on-surface-variant block">الملفات الصوتية المرفوعة</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">305</span>
+<span class="font-label-md text-label-md text-on-surface-variant">سورة مسجلة</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">library_music</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center gap-space-xs text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-body-sm">check_circle</span>
+<span>تغطية 100% للمصحف المرتل برواية حفص</span>
+</div>
+</div>
+<!-- Timestamp Alignment Metric -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-md text-label-md text-on-surface-variant block">ملفات التوقيت الصوتي (Timestamps)</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">298</span>
+<span class="font-label-md text-label-md text-primary font-semibold">صالحة ومعتمدة</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">timer</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">تزامن الميلي ثانية</span>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+          7 بحاجة لمزامنة
+        </span>
+</div>
+</div>
+<!-- Reciter Selector Widget -->
+<div class="relative rounded-xl bg-surface-container p-space-md flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">القارئ المختار للمراجعة</span>
+<div class="relative mt-1">
+<button class="w-full flex items-center justify-between px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-right transition-colors group" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0 animate-pulse"></span>
+<div class="truncate">
+<p class="font-label-lg text-label-lg font-semibold text-on-surface truncate">الشيخ محمد صديق المنشاوي</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">المصحف المرتل — حفص عن عاصم</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-headline-sm text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+<span>معدل البت: 192 kbps VBR</span>
+<span class="text-secondary">مفحوص تقنياً</span>
+</div>
+</div>
+</div>
+<!-- Operational Filter / Quick Search Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-sm rounded-xl bg-surface-container">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-headline-sm pointer-events-none">search</span>
+<input class="w-full pr-9 pl-space-md py-2 rounded-lg bg-surface-container-high text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-none" placeholder="بحث برقم السورة، الاسم أو ملف mp3..." type="text"/>
+</div>
+<div class="hidden md:flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-body-md">filter_list</span>
+<span>تصفية:</span>
+</div>
+<select class="hidden md:block py-2 px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md focus:outline-none focus:ring-1 focus:ring-primary">
+<option>جميع الحالات</option>
+<option>سليم وجاهز</option>
+<option>بحاجة لمراجعة</option>
+<option>جاري المعالجة</option>
+</select>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end text-on-surface-variant font-label-md text-label-md">
+<span class="text-on-surface font-semibold">5 سور معروضة</span>
+<span>من إجمالي 114 سورة</span>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="تحديث القائمة">
+<span class="material-symbols-outlined text-body-md">refresh</span>
+</button>
+</div>
+</div>
+<!-- Audio Files Detailed Data Grid -->
+<div class="rounded-xl bg-surface-container overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+<th class="py-space-md px-space-lg font-semibold">السورة</th>
+<th class="py-space-md px-space-md font-semibold">اسم الملف الصوتي</th>
+<th class="py-space-md px-space-md font-semibold">الحجم</th>
+<th class="py-space-md px-space-md font-semibold">المدة الزمنية</th>
+<th class="py-space-md px-space-md font-semibold">حالة التوقيت والتزامن</th>
+<th class="py-space-md px-space-md font-semibold">حالة الملف</th>
+<th class="py-space-md px-space-lg font-semibold text-left">إجراءات التدقيق</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Al-Fatiha -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-sm text-label-sm text-primary font-bold">1</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">سورة الفاتحة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">مكية · 7 آيات</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono text-body-sm text-primary group-hover:underline cursor-pointer">001_al-fatiha.mp3</span>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-mono">0.4 MB</td>
+<td class="py-space-md px-space-md font-mono">0:50 دقيقة</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-secondary-container/20 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>معتمد ومطابق (7 آيات)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                سليم وجاهز
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-left">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-container hover:bg-secondary-container transition-colors font-label-md text-label-md font-semibold flex items-center gap-1" onclick="loadPlayerTrack('سورة الفاتحة', '001_al-fatiha.mp3', 'الشيخ محمد صديق المنشاوي', '0:50')" type="button">
+<span class="material-symbols-outlined text-body-md">play_arrow</span>
+<span>تشغيل</span>
+</button>
+<button class="px-space-md py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-md text-label-md" type="button">
+                  استبدال
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Al-Baqarah -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-sm text-label-sm text-primary font-bold">2</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">سورة البقرة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">مدنية · 286 آية</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono text-body-sm text-primary group-hover:underline cursor-pointer">002_al-baqara.mp3</span>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-mono">18.2 MB</td>
+<td class="py-space-md px-space-md font-mono">2:22:15 س</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-secondary-container/20 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>معتمد (286 آية)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                سليم وجاهز
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-left">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-container hover:bg-secondary-container transition-colors font-label-md text-label-md font-semibold flex items-center gap-1" onclick="loadPlayerTrack('سورة البقرة', '002_al-baqara.mp3', 'الشيخ محمد صديق المنشاوي', '2:22:15')" type="button">
+<span class="material-symbols-outlined text-body-md">play_arrow</span>
+<span>تشغيل</span>
+</button>
+<button class="px-space-md py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-md text-label-md" type="button">
+                  استبدال
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Al-Imran -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-sm text-label-sm text-primary font-bold">3</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">سورة آل عمران</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">مدنية · 200 آية</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono text-body-sm text-primary group-hover:underline cursor-pointer">003_al-imran.mp3</span>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-mono">12.1 MB</td>
+<td class="py-space-md px-space-md font-mono">1:24:10 س</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-secondary-container/20 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>معتمد (200 آية)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                سليم وجاهز
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-left">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-container hover:bg-secondary-container transition-colors font-label-md text-label-md font-semibold flex items-center gap-1" onclick="loadPlayerTrack('سورة آل عمران', '003_al-imran.mp3', 'الشيخ محمد صديق المنشاوي', '1:24:10')" type="button">
+<span class="material-symbols-outlined text-body-md">play_arrow</span>
+<span>تشغيل</span>
+</button>
+<button class="px-space-md py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-md text-label-md" type="button">
+                  استبدال
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Al-Anfal (Error / Desync State) -->
+<tr class="bg-error-container/10 hover:bg-error-container/20 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-sm text-label-sm text-error font-bold">8</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">سورة الأنفال</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">مدنية · 75 آية</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono text-body-sm text-on-surface group-hover:underline cursor-pointer">008_al-anfal.mp3</span>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-mono">7.3 MB</td>
+<td class="py-space-md px-space-md font-mono">0:58:30 س</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-error-container text-on-error-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>خلل في التزامن (الآية 45 غير مطابقة)</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-error/20 text-error font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                بحاجة لمراجعة
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-left">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-md py-1.5 rounded bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-body-md">build_circle</span>
+<span>فحص وتصحيح</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="مزيد من الخيارات" type="button">
+<span class="material-symbols-outlined text-headline-sm">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: At-Tawbah (Processing State) -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-sm text-label-sm text-on-surface font-bold">9</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">سورة التوبة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">مدنية · 129 آية</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-mono text-body-sm text-on-surface-variant">009_at-tawbah.mp3</span>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-mono">14.5 MB</td>
+<td class="py-space-md px-space-md font-mono">1:35:12 س</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-highest text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+<span>جاري المعالجة التلقائية...</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                معالجة
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-left">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-md py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-error transition-colors font-label-md text-label-md" type="button">
+                  إلغاء
+                </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Bulk Audit Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between p-space-md bg-surface-container-high/40 gap-space-md">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span>عرض الصفوف: 5 من أصل 114</span>
+<span class="text-surface-container-highest">•</span>
+<span>حالة الفحص الجماعي: آخر تشغيل قبل 12 دقيقة</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface-variant font-label-sm text-label-sm">السابق</button>
+<button class="px-space-sm py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">1</button>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface-variant font-label-sm text-label-sm">2</button>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface-variant font-label-sm text-label-sm">3</button>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface-variant font-label-sm text-label-sm">التالي</button>
+</div>
+</div>
+</div>
+<!-- Real-time Quran Audio Stream Player Bar (Admin Alignment Inspector) -->
+<div class="sticky bottom-0 z-30 rounded-xl bg-surface-container p-space-md shadow-2xl backdrop-blur-xl">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<!-- Currently Playing Metadata -->
+<div class="flex items-center gap-space-md w-full lg:w-1/4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary relative overflow-hidden flex-shrink-0">
+<span class="material-symbols-outlined text-headline-md">graphic_eq</span>
+</div>
+<div class="truncate">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate" id="player-surah-title">سورة الفاتحة (001)</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate" id="player-reciter-name">الشيخ محمد صديق المنشاوي — الآية الحالية: 3</p>
+</div>
+</div>
+<!-- Playback Controls & Waveform -->
+<div class="flex flex-col items-center gap-space-xs w-full lg:w-2/4">
+<div class="flex items-center gap-space-md">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="الآية السابقة" type="button">
+<span class="material-symbols-outlined text-headline-sm">skip_previous</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="إرجاع 5 ثواني" type="button">
+<span class="material-symbols-outlined text-headline-sm">replay_5</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-fixed-dim transition-transform active:scale-95 shadow-md" id="player-play-btn" type="button">
+<span class="material-symbols-outlined text-headline-md">play_arrow</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="تقديم 5 ثواني" type="button">
+<span class="material-symbols-outlined text-headline-sm">forward_5</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="الآية التالية" type="button">
+<span class="material-symbols-outlined text-headline-sm">skip_next</span>
+</button>
+</div>
+<!-- Waveform Simulation Scrub Bar -->
+<div class="w-full flex items-center gap-space-sm">
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant" id="player-current-time">00:14.320</span>
+<div class="relative flex-1 h-6 bg-surface-container-high rounded flex items-center px-1 cursor-pointer group">
+<!-- Simulated Waveform Bars -->
+<div class="absolute inset-0 flex items-center justify-between px-2 opacity-30 pointer-events-none">
+<span class="w-0.5 h-3 bg-primary rounded-full"></span>
+<span class="w-0.5 h-5 bg-primary rounded-full"></span>
+<span class="w-0.5 h-2 bg-primary rounded-full"></span>
+<span class="w-0.5 h-4 bg-primary rounded-full"></span>
+<span class="w-0.5 h-6 bg-primary rounded-full"></span>
+<span class="w-0.5 h-3 bg-primary rounded-full"></span>
+<span class="w-0.5 h-5 bg-primary rounded-full"></span>
+<span class="w-0.5 h-4 bg-primary rounded-full"></span>
+<span class="w-0.5 h-2 bg-primary rounded-full"></span>
+<span class="w-0.5 h-5 bg-primary rounded-full"></span>
+<span class="w-0.5 h-6 bg-primary rounded-full"></span>
+<span class="w-0.5 h-3 bg-primary rounded-full"></span>
+<span class="w-0.5 h-4 bg-primary rounded-full"></span>
+<span class="w-0.5 h-2 bg-primary rounded-full"></span>
+<span class="w-0.5 h-5 bg-primary rounded-full"></span>
+<span class="w-0.5 h-3 bg-primary rounded-full"></span>
+<span class="w-0.5 h-4 bg-primary rounded-full"></span>
+</div>
+<!-- Progress Bar Overlay -->
+<div class="h-1.5 bg-primary rounded-full relative z-10" style="width: 28%;">
+<span class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-on-primary ring-2 ring-primary shadow"></span>
+</div>
+</div>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant" id="player-total-time">00:50.000</span>
+</div>
+</div>
+<!-- Ayah Precision Marker Telemetry -->
+<div class="flex items-center justify-end gap-space-md w-full lg:w-1/4">
+<div class="text-left font-mono">
+<div class="font-label-sm text-label-sm text-secondary">JSON Ayah #3: [12.45s ➔ 18.20s]</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">تطابق التردد: 99.8% دقيق</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary transition-colors" title="إعدادات الصوت المتقدمة" type="button">
+<span class="material-symbols-outlined text-headline-sm">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal / Slide-over: Upload Audio & Timing Package -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-background/80 backdrop-blur-md hidden" id="upload-modal">
+<div class="relative w-full max-w-2xl bg-surface-container rounded-2xl shadow-2xl p-space-lg flex flex-col gap-space-md max-h-[921px] overflow-y-auto">
+<!-- Modal Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-sm">cloud_upload</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">رفع ملف صوتي وتوقيت زمني جديد</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">تغذية الخادم بالملف الصوتي وشفرة التزامن المعتمدة بصيغة JSON</p>
+</div>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" id="btn-close-modal" type="button">
+<span class="material-symbols-outlined text-headline-sm">close</span>
+</button>
+</div>
+<!-- Selector Meta: Surah & Reciter -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5">اختيار السورة المباركة</label>
+<select class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="1">001 - سورة الفاتحة</option>
+<option value="2">002 - سورة البقرة</option>
+<option value="3">003 - سورة آل عمران</option>
+<option value="8">008 - سورة الأنفال</option>
+<option value="9">009 - سورة التوبة</option>
+<option value="18">018 - سورة الكهف</option>
+<option value="36">036 - سورة يس</option>
+<option value="67">067 - سورة الملك</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5">القارئ والرواية</label>
+<select class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="minshawi">الشيخ محمد صديق المنشاوي (مرتل - حفص)</option>
+<option value="husary">الشيخ محمود خليل الحصري (مرتل - حفص)</option>
+<option value="abdulbasit">الشيخ عبد الباسط عبد الصمد (مرتل - حفص)</option>
+<option value="ghamdi">الشيخ سعد الغامدي (حفص)</option>
+</select>
+</div>
+</div>
+<!-- Drag & Drop Area 1: MP3 Audio -->
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface">1. الملف الصوتي (MP3 File)</label>
+<div class="relative rounded-xl bg-surface-container-low hover:bg-surface-container-high/50 p-space-lg text-center cursor-pointer transition-colors group">
+<input accept=".mp3,audio/mpeg" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file"/>
+<div class="flex flex-col items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-headline-xl text-primary group-hover:scale-110 transition-transform">audio_file</span>
+<p class="font-label-lg text-label-lg font-semibold text-on-surface">اسحب وأفلت ملف الـ MP3 هنا، أو اضغط للتصفح</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">التحقق التلقائي: سلامة تشفير MP3، معدل أخذ العينات 44.1kHz، والمدة &gt; 30 ثانية</p>
+</div>
+</div>
+</div>
+<!-- Drag & Drop Area 2: JSON Timings -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="block font-label-md text-label-md text-on-surface">2. ملف التوقيت الزمني (JSON Timestamps)</label>
+<span class="font-mono text-label-sm text-label-sm text-secondary">بنية المطابقة: {"1": 0.0, "2": 8.4, "3": 19.1}</span>
+</div>
+<div class="relative rounded-xl bg-surface-container-low hover:bg-surface-container-high/50 p-space-lg text-center cursor-pointer transition-colors group">
+<input accept=".json,application/json" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file"/>
+<div class="flex flex-col items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-headline-xl text-secondary group-hover:scale-110 transition-transform">code_blocks</span>
+<p class="font-label-lg text-label-lg font-semibold text-on-surface">اسحب ملف JSON الخاص بتوقيت الآيات</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">يتطابق تلقائياً مع تعداد آيات السورة المحددة ومفاتيح الآيات</p>
+</div>
+</div>
+</div>
+<!-- Realtime Validation Rule Pills -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-wrap items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>فحص توافق SHA-256</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>منع تداخل الثواني السالبة</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>مطابقة المصحف العثماني</span>
+</div>
+</div>
+<!-- Modal Action Buttons -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-lg py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-lg text-label-lg" id="btn-cancel-modal" type="button">
+          إلغاء
+        </button>
+<button class="flex items-center gap-space-xs px-space-xl py-2 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary-container transition-all font-label-lg text-label-lg font-semibold shadow-md" id="btn-submit-upload" type="button">
+<span class="material-symbols-outlined text-headline-sm">bolt</span>
+<span>رفع وفحص تلقائي فوراً</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // UI Interactions for Audio Management
+  const uploadModal = document.getElementById('upload-modal');
+  const btnOpenUpload = document.getElementById('btn-open-upload-modal');
+  const btnOpenTiming = document.getElementById('btn-open-timing-modal');
+  const btnCloseModal = document.getElementById('btn-close-modal');
+  const btnCancelModal = document.getElementById('btn-cancel-modal');
+  const btnSubmitUpload = document.getElementById('btn-submit-upload');
+  const playerPlayBtn = document.getElementById('player-play-btn');
+
+  function openModal() {
+    uploadModal.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    uploadModal.classList.add('hidden');
+  }
+
+  if (btnOpenUpload) btnOpenUpload.addEventListener('click', openModal);
+  if (btnOpenTiming) btnOpenTiming.addEventListener('click', openModal);
+  if (btnCloseModal) btnCloseModal.addEventListener('click', closeModal);
+  if (btnCancelModal) btnCancelModal.addEventListener('click', closeModal);
+
+  if (btnSubmitUpload) {
+    btnSubmitUpload.addEventListener('click', () => {
+      btnSubmitUpload.innerHTML = '<span class="material-symbols-outlined text-headline-sm animate-spin">refresh</span><span>جاري التحقق والمزامنة...</span>';
+      setTimeout(() => {
+        btnSubmitUpload.innerHTML = '<span class="material-symbols-outlined text-headline-sm">check</span><span>تم الرفع بنجاح!</span>';
+        setTimeout(() => {
+          closeModal();
+          btnSubmitUpload.innerHTML = '<span class="material-symbols-outlined text-headline-sm">bolt</span><span>رفع وفحص تلقائي فوراً</span>';
+        }, 800);
+      }, 1500);
+    });
+  }
+
+  // Interactive Player track switcher
+  window.loadPlayerTrack = function(surahName, filename, reciter, duration) {
+    const titleEl = document.getElementById('player-surah-title');
+    const reciterEl = document.getElementById('player-reciter-name');
+    const totalTimeEl = document.getElementById('player-total-time');
+    
+    if (titleEl) titleEl.innerText = surahName + ' (' + filename + ')';
+    if (reciterEl) reciterEl.innerText = reciter + ' — جاري التدقيق';
+    if (totalTimeEl) totalTimeEl.innerText = duration;
+
+    // Toggle play icon state
+    if (playerPlayBtn) {
+      playerPlayBtn.innerHTML = '<span class="material-symbols-outlined text-headline-md">pause</span>';
+    }
+  };
+
+  if (playerPlayBtn) {
+    let isPlaying = false;
+    playerPlayBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      playerPlayBtn.innerHTML = isPlaying 
+        ? '<span class="material-symbols-outlined text-headline-md">pause</span>' 
+        : '<span class="material-symbols-outlined text-headline-md">play_arrow</span>';
+    });
+  }
+</script></main></div></body></html>

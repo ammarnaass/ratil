@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -12,104 +12,459 @@
   <meta property="og:description" content="مشغّل تلاوات القرآن الكريم مع تتبع الآية وعرض النص القرآني المعتمد بروايتي حفص وورش">
   <meta property="og:type" content="website">
 
+  <!-- Web Manifest (PWA) -->
+  <link rel="manifest" href="/public/manifest.webmanifest">
+
+  <!-- Favicons & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/icons/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
   <!-- Preload Fonts -->
   <link rel="preload" href="/public/fonts/hafs.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/public/fonts/warsh.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Google Fonts: IBM Plex Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="./src/styles/tokens.css">
   <link rel="stylesheet" href="./src/styles/app.css">
 </head>
-<body>
+<body class="theme-dark">
 
   <!-- ==========================================================================
-       الترويسة الرئيسية
+       الترويسة الرئيسية المحدثة (Stitch Desktop & Mobile Header)
        ========================================================================== -->
   <header class="site-header" id="site-header">
-    <div class="container site-header-inner">
-      <a href="#" class="logo-link" id="logo-home-link">
-        <span>رتل</span>
-        <span class="logo-badge">مصحف مسموع</span>
-      </a>
+    <div class="header-container site-header-inner">
+      
+      <!-- الشعار والهوية الصوتية -->
+      <div class="brand-group">
+        <a href="#" class="logo-link" id="logo-home-link" aria-label="رتل — مصحف مسموع">
+          <!-- الشعار الرسمي والأيقونة الشاملة لمنصة رتل -->
+          <img src="/public/icons/logo.svg" onerror="this.onerror=null;this.src='./public/icons/logo.svg'" alt="رَتِّـلْ — مصحف مسموع · الصوت هو البطل" class="brand-logo-img" width="190" height="44">
+        </a>
+      </div>
+
+      <!-- تبويبات التنقل لسطح المكتب (Desktop Navigation Tabs) -->
+      <nav class="desktop-nav" id="desktop-nav" aria-label="التنقل الرئيسي">
+        <button class="nav-tab active" data-nav="home" id="nav-home-btn">
+          الرئيسية
+        </button>
+        <button class="nav-tab" data-nav="browse" id="nav-browse-btn">
+          تصفح المصحف
+        </button>
+        <button class="nav-tab" data-nav="reciters" id="nav-reciters-btn">
+          القرّاء
+        </button>
+        <button class="nav-tab" data-nav="bookmarks" id="nav-bookmarks-btn">
+          المحفوظات
+        </button>
+      </nav>
+
+      <!-- الإجراءات السريعة والحساب -->
       <div class="header-actions">
-        <button class="icon-btn" id="theme-toggle-btn" aria-label="تبديل الوضع الليلي">
-          <!-- يُملأ ديناميكياً بالأيقونة المناسبة -->
+        <!-- زر لوحة التحكم الإدارية (Stitch Admin Dashboard) -->
+        <a href="admin.html" class="icon-btn admin-link-btn" id="btn-admin-portal" aria-label="لوحة التحكم الإدارية" title="لوحة التحكم الإدارية (رتل الإدارية)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9"></rect>
+            <rect x="14" y="3" width="7" height="5"></rect>
+            <rect x="14" y="12" width="7" height="9"></rect>
+            <rect x="3" y="16" width="7" height="5"></rect>
+          </svg>
+        </a>
+
+        <!-- شارة الاستمرارية (Streak Badge) -->
+        <div class="streak-badge" title="سلسلة الاستماع اليومي">
+          <span class="streak-flame">🔥</span>
+          <span class="streak-text">٧ أيام</span>
+        </div>
+
+        <!-- زر تبديل الوضع الليلي / النهاري -->
+        <button class="icon-btn theme-toggle-btn" id="theme-toggle-btn" aria-label="تبديل الوضع الليلي" title="تبديل الوضع">
+          <!-- يُملأ ديناميكياً بالأيقونة المناسبة عبر JavaScript -->
+        </button>
+
+        <!-- زر الحساب الشخصي (يفتح نافذة التسجيل والدخول) -->
+        <button class="user-profile-btn" id="btn-auth-modal" aria-label="تسجيل الدخول / الحساب" title="تسجيل الدخول أو إنشاء حساب">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
         </button>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="main-content">
+    
     <!-- ==========================================================================
-         الشاشة 1: الصفحة الرئيسية (مستخدم جديد / مستخدم عائد)
+         الشاشة 1: الصفحة الرئيسية (Home View)
          ========================================================================== -->
-    <div id="home-view-page">
-      <!-- موضع بطاقة الاستئناف للمستخدم العائد (تُحقن تلقائياً عبر localStorage) -->
-      <div id="resume-card-container"></div>
+    <div id="home-view-page" class="view-page active">
+      
+      <!-- هالة التوهج الروحانية الخلفية (Spiritual Glow) -->
+      <div class="ambient-glow ambient-glow-top"></div>
+      <div class="ambient-glow ambient-glow-bottom"></div>
 
-      <!-- حقل البحث الموحد -->
-      <section class="search-section">
-        <div class="search-input-wrapper">
-          <span class="search-icon-inside">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </span>
-          <input type="search" id="search-input" class="search-input" 
-                 placeholder="ابحث عن سورة، رقمها (18)، أو اكتب نص آية..." 
-                 autocomplete="off" autocorrect="off" spellcheck="false">
-          <button class="search-clear-btn" id="search-clear-btn" aria-label="مسح البحث">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-            </svg>
-          </button>
-        </div>
-        <!-- نتائج البحث الفورية -->
-        <div class="search-results-dropdown" id="search-dropdown"></div>
-      </section>
+      <div class="container">
+        
+        <!-- موضع بطاقة الاستئناف البارزة (Spotlight Continue Listening Hero) -->
+        <div id="resume-card-container"></div>
 
-      <!-- السور الأكثر استماعاً -->
-      <section class="shortcuts-section">
-        <div class="section-label">السور الأكثر استماعاً</div>
-        <div class="shortcuts-row">
-          <button class="shortcut-chip" data-surah-id="18">الكهف</button>
-          <button class="shortcut-chip" data-surah-id="67">الملك</button>
-          <button class="shortcut-chip" data-surah-id="55">الرحمن</button>
-          <button class="shortcut-chip" data-surah-id="36">يس</button>
-          <button class="shortcut-chip" data-surah-id="2">البقرة</button>
-          <button class="shortcut-chip" data-surah-id="56">الواقعة</button>
-        </div>
-      </section>
+        <!-- حقل البحث المركزي الموحد -->
+        <section class="search-section">
+          <div class="search-input-wrapper">
+            <span class="search-icon-inside">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </span>
+            <input type="search" id="search-input" class="search-input" 
+                   placeholder="ابحث عن سورة، رقمها (18)، أو اكتب نص آية..." 
+                   autocomplete="off" autocorrect="off" spellcheck="false">
+            <div class="search-shortcut-badge">
+              <kbd>Ctrl + K</kbd>
+            </div>
+            <button class="search-clear-btn" id="search-clear-btn" aria-label="مسح البحث">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+          <!-- نتائج البحث الفورية المنسدلة -->
+          <div class="search-results-dropdown" id="search-dropdown"></div>
+        </section>
 
-      <!-- فهرس تصفح المصحف كاملاً -->
-      <section>
-        <div class="section-label">تصفح المصحف كاملاً (١١٤ سورة)</div>
-        <div class="surah-grid" id="surah-grid">
-          <!-- يُملأ ديناميكياً بالسور الـ 114 -->
-        </div>
-      </section>
+        <!-- شرائح السور الأكثر طلباً (Frequent Surah Quick Chips) -->
+        <section class="shortcuts-section">
+          <div class="shortcuts-label">الأكثر طلباً:</div>
+          <div class="shortcuts-row">
+            <button class="shortcut-chip active" data-surah-id="18">سورة الكهف</button>
+            <button class="shortcut-chip" data-surah-id="67">سورة الملك</button>
+            <button class="shortcut-chip" data-surah-id="55">سورة الرحمن</button>
+            <button class="shortcut-chip" data-surah-id="36">سورة يس</button>
+            <button class="shortcut-chip" data-surah-id="2">سورة البقرة</button>
+            <button class="shortcut-chip" data-surah-id="56">سورة الواقعة</button>
+          </div>
+        </section>
+
+        <!-- قسم السور المستمع إليها مؤخراً -->
+        <section class="recent-history-section" id="recent-history-section">
+          <div class="section-header-row">
+            <div class="section-title-with-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <h3 class="section-heading">استمعت إليها مؤخراً</h3>
+            </div>
+          </div>
+          <div class="recent-cards-grid" id="recent-cards-container">
+            <!-- تُحقن الكروت تلقائياً أو تظهر نماذج مرجعية -->
+          </div>
+        </section>
+
+        <!-- شبكة السور الرئيسية -->
+        <section class="surahs-directory-section">
+          <div class="section-header-row">
+            <div class="section-title-with-icon">
+              <h3 class="section-heading">تصفح المصحف كاملاً (١١٤ سورة)</h3>
+            </div>
+            <button class="view-all-link-btn" id="btn-goto-browse">عرض الفهرس التفصيلي ←</button>
+          </div>
+          <div class="surah-grid" id="surah-grid">
+            <!-- تُحقن ديناميكياً بالسور الـ 114 -->
+          </div>
+        </section>
+      </div>
     </div>
 
     <!-- ==========================================================================
-         الشاشة 3: صفحة السورة وعرض النص أثناء التشغيل
+         الشاشة 2: تصفح المصحف كاملاً (Browse Mushaf View)
          ========================================================================== -->
-    <div id="surah-view-page" class="surah-view-page">
+    <div id="browse-view-page" class="view-page">
+      <div class="container">
+        <div class="page-title-banner">
+          <h2 class="page-main-title">فهرس المصحف الشريف</h2>
+          <p class="page-main-desc">تصفح سور القرآن الكريم الـ ١١٤ مع التصفية بالنزول والبحث الفوري</p>
+        </div>
+
+        <!-- أزرار تصفية السور (مكية / مدنية / الكل) -->
+        <div class="mushaf-filter-tabs">
+          <button class="filter-tab-btn active" data-filter="all">جميع السور (١١٤)</button>
+          <button class="filter-tab-btn" data-filter="makki">السور المكية (٨٦)</button>
+          <button class="filter-tab-btn" data-filter="madani">السور المدنية (٢٨)</button>
+        </div>
+
+        <!-- شبكة السور الكاملة للتصفح -->
+        <div class="surah-grid browse-surah-grid" id="browse-surah-grid">
+          <!-- تُحقن السور المصفاة هنا -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         الشاشة 3: فهرس القرّاء (Reciters Directory View)
+         ========================================================================== -->
+    <div id="reciters-view-page" class="view-page">
+      <div class="container">
+        <div class="page-title-banner">
+          <h2 class="page-main-title">فهرس أئمة القرّاء</h2>
+          <p class="page-main-desc">تلاوات موثقة ومعتمدة بروايتي حفص عن عاصم وورش عن نافع</p>
+        </div>
+
+        <!-- تصفية الروايات -->
+        <div class="mushaf-filter-tabs">
+          <button class="reciter-filter-tab active" data-narration="all">كافة الروايات</button>
+          <button class="reciter-filter-tab" data-narration="hafs">رواية حفص عن عاصم</button>
+          <button class="reciter-filter-tab" data-narration="warsh">رواية ورش عن نافع</button>
+        </div>
+
+        <!-- بطاقة القارئ المميز (Featured Minshawi Card) -->
+        <div class="featured-reciter-card">
+          <div class="featured-reciter-glow"></div>
+          <div class="featured-reciter-content">
+            <div class="featured-avatar">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="featured-info">
+              <span class="featured-badge">القارئ المعتمد</span>
+              <h3 class="featured-name">الشيخ محمد صديق المنشاوي</h3>
+              <p class="featured-desc">صوت خاشع ومحكم، مسجل بالمصحف المرتل برواية ورش وحفص مع مطابقة تامة لنص مجمع الملك فهد.</p>
+              <div class="featured-tags">
+                <span class="tag-pill">رواية ورش عن نافع</span>
+                <span class="tag-pill">رواية حفص عن عاصم</span>
+                <span class="tag-pill">صوت نقي ١٢٨ ك.ب/ث</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- شبكة بطاقات القرّاء -->
+        <div class="reciters-full-grid" id="reciters-full-grid">
+          <!-- تُحقن بطاقات القرّاء هنا -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         الشاشة 4: المحفوظات والعلامات المرجعية (Bookmarks & Saved Verses - Screen 16)
+         ========================================================================== -->
+    <div id="bookmarks-view-page" class="view-page">
+      <div class="container">
+        
+        <!-- الهالة المتوهجة الخلفية للمحفوظات -->
+        <div class="bookmarks-ambient-glow"></div>
+
+        <!-- ترويسة المحفوظات وأزرار الإجراء السريع -->
+        <div class="bookmarks-header-section">
+          <div class="bookmarks-header-info">
+            <div class="bookmarks-live-badge">
+              <span class="live-dot-pulse"></span>
+              <span class="live-badge-title">السجل التفاعلي المباشر</span>
+              <span class="live-badge-sep">•</span>
+              <span class="live-badge-sub">مُزامَن سحابياً بحسابك</span>
+            </div>
+            <h2 class="page-main-title">المحفوظات والعلامات المرجعية</h2>
+            <p class="page-main-desc">مواضع توقفك في المصحف، الآيات المستقرة في قلبك، ومكتبة التسجيلات الصوتية المعدّة للاستماع الحضوري أو دون اتصال.</p>
+          </div>
+          <div class="bookmarks-header-actions">
+            <button class="btn-secondary-action group" id="btn-sync-bookmarks" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+                <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+              </svg>
+              <span>مزامنة سحابية هادئة</span>
+              <span class="badge-mini-safe">آمنة</span>
+            </button>
+            <button class="btn-secondary-action" id="btn-export-bookmarks" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                <polyline points="16 6 12 2 8 6"/>
+                <line x1="12" y1="2" x2="12" y2="15"/>
+              </svg>
+              <span>تصدير الحفظ</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- شريط القياسات السريعة (Quick Metrics Ribbon) -->
+        <div class="bookmarks-metrics-ribbon">
+          <div class="metric-card-ribbon">
+            <div class="metric-icon-box text-primary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="metric-info-box">
+              <span class="metric-label">مواضع الختمات النشطة</span>
+              <span class="metric-value">٣ خَتَمات</span>
+            </div>
+          </div>
+          <div class="metric-card-ribbon">
+            <div class="metric-icon-box text-secondary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div class="metric-info-box">
+              <span class="metric-label">الآيات المميزة بنجمة</span>
+              <span class="metric-value">١٢ آية</span>
+            </div>
+          </div>
+          <div class="metric-card-ribbon">
+            <div class="metric-icon-box text-primary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <div class="metric-info-box">
+              <span class="metric-label">تلاوات محفوظة (أوفلاين)</span>
+              <span class="metric-value" id="metric-offline-audio-count">٠ سور (٠ م.ب)</span>
+            </div>
+          </div>
+          <div class="metric-card-ribbon">
+            <div class="metric-icon-box text-tertiary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="metric-info-box">
+              <span class="metric-label">آخر تدبّر واستماع</span>
+              <span class="metric-value">اليوم • منذ ساعتين</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- تبويبات التصفية والتجزئة -->
+        <div class="bookmarks-filter-toolbar">
+          <div class="bookmarks-tab-group">
+            <button class="bm-tab-btn active" data-bm-type="all">الكل (١٩)</button>
+            <button class="bm-tab-btn" data-bm-type="khatmah">
+              <span>🔖 مواضع الختمات</span>
+              <span class="bm-count">٣</span>
+            </button>
+            <button class="bm-tab-btn" data-bm-type="starred">
+              <span>⭐ الآيات المفضلة</span>
+              <span class="bm-count">١٢</span>
+            </button>
+            <button class="bm-tab-btn" data-bm-type="audio">
+              <span>🎙️ التلاوات الصوتية</span>
+              <span class="bm-count">٤</span>
+            </button>
+          </div>
+          <div class="bookmarks-search-box">
+            <input type="text" id="bm-filter-input" placeholder="تصفية المحفوظات..." autocomplete="off">
+          </div>
+        </div>
+
+        <!-- بطاقة الختمة النشطة الرئيسية (Hero Active Khatmah Card) -->
+        <div class="hero-khatmah-card">
+          <div class="khatmah-accent-stripe"></div>
+          <div class="khatmah-card-head">
+            <div class="khatmah-title-group">
+              <div class="khatmah-badges">
+                <span class="badge-active-khatmah">العلامة النشطة الرئيسية</span>
+                <span class="badge-time-updated">تم التحديث اليوم ٠٢:١٥ م</span>
+              </div>
+              <h3 class="khatmah-name">ختمة شهر رمضان المبارك</h3>
+              <div class="khatmah-details-row">
+                <span class="khatmah-place">سورة الكهف • الآية ٤٥</span>
+                <span class="khatmah-divider">•</span>
+                <span>الجزء ١٥</span>
+                <span class="khatmah-divider">•</span>
+                <span>الحزب ٣٠</span>
+                <span class="khatmah-divider">•</span>
+                <span>صفحة ٢٩٨</span>
+                <span class="khatmah-divider">•</span>
+                <span class="khatmah-reciter">بصوت الشيخ محمد صديق المنشاوي</span>
+              </div>
+            </div>
+            <div class="khatmah-icon-badge">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--color-primary)">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- صندوق الآية الكريمة بالرسم العثماني الفاخر -->
+          <div class="khatmah-verse-box">
+            <span class="verse-label-hint">نص موضع التوقف الأخير:</span>
+            <p class="khatmah-verse-text" id="khatmah-verse-content">
+              وَٱضْرِبْ لَهُم مَّثَلَ ٱلْحَيَوٰةِ ٱلدُّنْيَا كَمَآءٍ أَنزَلْنَٰهُ مِنَ ٱلسَّمَآءِ فَٱخْتَلَطَ بِهِۦ نَبَاتُ ٱلْأَرْضِ فَأَصْبَحَ هَشِيمًا تَذْرُوهُ ٱلرِّيَٰحُ ۗ وَكَانَ ٱللَّهُ عَلَىٰ كُلِّ شَىْءٍ مُّقْتَدِرًا ﴿٤٥﴾
+            </p>
+          </div>
+
+          <!-- شريط الإجراءات لمتابعة الاستماع والتدبر -->
+          <div class="khatmah-actions-bar">
+            <button class="btn-khatmah-resume" id="btn-resume-khatmah" data-surah-id="18" data-ayah="45">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <span>متابعة التلاوة والاستماع الآن</span>
+            </button>
+            <button class="btn-khatmah-secondary" id="btn-share-verse">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+              <span>مشاركة الآية</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- قائمة المحفوظات والآيات المفضلة (Saved Verses & Surahs Grid) -->
+        <div class="bookmarks-list-section">
+          <div class="bookmarks-section-header">
+            <h3 class="section-sub-title">جميع الآيات والمواضع المحفوظة</h3>
+            <span class="section-count-badge" id="bm-count-display">عرض ٤ عناصر</span>
+          </div>
+          <div class="bookmarks-grid" id="bookmarks-grid-items">
+            <!-- تُحقن عناصر المحفوظات ديناميكياً هنا -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         الشاشة 5: صفحة السورة وعرض النص أثناء التشغيل (Reading & Audio Tracking)
+         ========================================================================== -->
+    <div id="surah-view-page" class="surah-view-page view-page">
       <div class="surah-view-header" id="surah-view-header">
         <div class="surah-view-header-inner">
           <div class="surah-header-left">
-            <button class="icon-btn" id="btn-back-home" aria-label="الرجوع للرئيسية">
+            <button class="icon-btn" id="btn-back-home" aria-label="الرجوع للرئيسية" title="الرجوع للرئيسية">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
               </svg>
             </button>
             <div class="surah-header-title-box">
-              <span class="surah-header-title" id="view-surah-title">سورة</span>
-              <span class="surah-header-sub" id="view-surah-sub"></span>
+              <span class="surah-header-title" id="view-surah-title">سورة الكهف</span>
+              <span class="surah-header-sub" id="view-surah-sub">مكية · ١١٠ آيات</span>
             </div>
           </div>
           <div class="surah-header-controls">
-            <button class="font-size-btn" id="btn-font-plus" title="تكبير الخط">أ↑</button>
-            <button class="font-size-btn" id="btn-font-minus" title="تصغير الخط">أ↓</button>
+            <!-- زر تنزيل التلاوة للاستماع دون اتصال (Offline Audio Download) -->
+            <button class="icon-btn audio-download-btn" id="btn-download-surah" title="تحميل التلاوة للاستماع دون اتصال" aria-label="تحميل التلاوة للاستماع دون اتصال">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </button>
+            <button class="font-size-btn" id="btn-font-plus" title="تكبير الخط القرآني">أ↑</button>
+            <button class="font-size-btn" id="btn-font-minus" title="تصغير الخط القرآني">أ↓</button>
             <button class="icon-btn reading-mode-btn" id="btn-reading-mode" title="وضع القراءة المجردة">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
@@ -124,17 +479,18 @@
         <!-- تُحقن آيات السورة المعتمدة هنا -->
       </div>
     </div>
+
   </main>
 
   <!-- ==========================================================================
-       الشاشة 2: لوحة اختيار القارئ (Bottom Sheet)
+       اللوحة السفلية لاختيار القارئ (Bottom Sheet Modal)
        ========================================================================== -->
   <div class="sheet-backdrop" id="sheet-backdrop"></div>
   <div class="bottom-sheet" id="reciter-sheet" role="dialog" aria-modal="true">
     <div class="sheet-header">
       <div class="sheet-title-box">
         <span class="sheet-title" id="sheet-surah-title">اختر القارئ</span>
-        <span class="sheet-subtitle">تلاوات موثقة مع تتبع وتزامن الآيات</span>
+        <span class="sheet-subtitle">تلاوات موثقة مع تتبع وتزامن الآيات بالمللي ثانية</span>
       </div>
       <button class="icon-btn" id="sheet-close-btn" aria-label="إغلاق">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -152,7 +508,87 @@
   </div>
 
   <!-- ==========================================================================
-       المشغل الصوتي التكيفي الثابت (Adaptive Player)
+       نافذة تسجيل الدخول وإنشاء الحساب (Auth Modal matching Stitch Screens 1 & 2)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="auth-modal-backdrop">
+    <div class="auth-modal" id="auth-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-corner-btn" id="auth-modal-close" aria-label="إغلاق">&times;</button>
+      
+      <!-- شعار رتل الروحاني المتوهج -->
+      <div class="auth-emblem-wrap">
+        <div class="auth-emblem-glow"></div>
+        <div class="auth-emblem-box" aria-hidden="true">
+          <svg class="auth-brand-icon" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="authBrandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#61ECCD"/>
+                <stop offset="50%" stop-color="#3ECFB2"/>
+                <stop offset="100%" stop-color="#2BA890"/>
+              </linearGradient>
+            </defs>
+            <!-- حامل المصحف (الرحلة الشريفة) -->
+            <path d="M22 47L32 39L42 47" stroke="url(#authBrandGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25 43L39 43" stroke="url(#authBrandGrad)" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+            <!-- صفحات المصحف المفتوح المنحنية بتناغم -->
+            <path d="M32 37V20C32 20 27 17 18 19V36C27 34 32 37 32 37Z" fill="url(#authBrandGrad)" fill-opacity="0.22" stroke="url(#authBrandGrad)" stroke-width="2.2" stroke-linejoin="round"/>
+            <path d="M32 37V20C32 20 37 17 46 19V36C37 34 32 37 32 37Z" fill="url(#authBrandGrad)" fill-opacity="0.22" stroke="url(#authBrandGrad)" stroke-width="2.2" stroke-linejoin="round"/>
+            <!-- خطوط تلاوة الآيات الهادئة -->
+            <path d="M22 24C26 23.5 28 24.5 29 25" stroke="#61ECCD" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M21 28C25 27.5 27 28.5 29 29" stroke="#61ECCD" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M42 24C38 23.5 36 24.5 35 25" stroke="#61ECCD" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M43 28C39 27.5 37 28.5 35 29" stroke="#61ECCD" stroke-width="1.6" stroke-linecap="round"/>
+            <!-- ذبذبات الترتيل الصوتية -->
+            <path d="M6 32H10M12 28V36M15 25V39" stroke="url(#authBrandGrad)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M49 25V39M52 28V36M54 32H58" stroke="url(#authBrandGrad)" stroke-width="2.2" stroke-linecap="round"/>
+            <!-- شعلة النور العلوية -->
+            <circle cx="32" cy="16" r="2" fill="#61ECCD"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="auth-tabs-row">
+        <button class="auth-tab active" id="auth-tab-login">تسجيل الدخول</button>
+        <button class="auth-tab" id="auth-tab-signup">إنشاء حساب جديد</button>
+      </div>
+
+      <!-- نموذج تسجيل الدخول -->
+      <form class="auth-form" id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="login-email">البريد الإلكتروني</label>
+          <input class="form-input" type="email" id="login-email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="login-password">كلمة المرور</label>
+          <input class="form-input" type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="auth-submit-btn">
+          دخول إلى رتل
+        </button>
+      </form>
+
+      <!-- نموذج إنشاء الحساب -->
+      <form class="auth-form hidden" id="signup-form">
+        <div class="form-group">
+          <label class="form-label" for="signup-name">الاسم الكامل</label>
+          <input class="form-input" type="text" id="signup-name" placeholder="عبد الله" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signup-email">البريد الإلكتروني</label>
+          <input class="form-input" type="email" id="signup-email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signup-password">كلمة المرور</label>
+          <input class="form-input" type="password" id="signup-password" placeholder="٨ أحرف على الأقل" required>
+        </div>
+        <button type="submit" class="auth-submit-btn">
+          إنشاء حساب في رتل
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       المشغل الصوتي التكيفي الثابت (Adaptive Audio Player matching Stitch)
        ========================================================================== -->
   <div class="audio-player-bar" id="audio-player-bar">
     <div class="player-inner">
@@ -162,14 +598,14 @@
           <span class="collapsed-pill">تلاوة</span>
           <span id="collapsed-surah-title">رتل — مشغل التلاوات</span>
         </div>
-        <button class="main-play-btn" id="collapsed-play-btn" style="width: 34px; height: 34px;" aria-label="تشغيل / إيقاف">
+        <button class="main-play-btn" id="collapsed-play-btn" style="width: 36px; height: 36px;" aria-label="تشغيل / إيقاف">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         </button>
       </div>
 
-      <!-- 2. العرض الكامل (80px) الثابت أو عند التوقف والتمرير لأعلى -->
+      <!-- 2. العرض الكامل (80-88px) الثابت أو عند التوقف والتمرير لأعلى -->
       <div class="player-full-view">
-        <!-- شريط التقدم الزمني -->
+        <!-- شريط التقدم الزمني الدقيق -->
         <div class="scrubber-container">
           <span class="time-label" id="time-current">0:00</span>
           <div class="scrubber-track" id="scrubber-track">
@@ -182,7 +618,10 @@
         <!-- أزرار التحكم والمسار -->
         <div class="player-controls-row">
           <div class="player-track-info">
-            <span class="track-surah-title" id="player-surah-title">رتل</span>
+            <div class="track-title-row">
+              <span class="soundwave-anim-bar"></span>
+              <span class="track-surah-title" id="player-surah-title">رتل</span>
+            </div>
             <span class="track-reciter-name" id="player-reciter-name">اختر سورة للبدء</span>
           </div>
 
@@ -195,7 +634,7 @@
             </button>
 
             <button class="main-play-btn" id="main-play-btn" aria-label="تشغيل / إيقاف">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </button>
 
             <button class="seek-btn" id="btn-seek-back" aria-label="تأخير 10 ثواني" title="-10 ثوانٍ">
@@ -230,7 +669,7 @@
   <div class="modal-backdrop" id="sleep-modal-backdrop">
     <div class="sleep-timer-modal">
       <div class="modal-title">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
         مؤقت النوم
@@ -275,10 +714,10 @@
     </button>
   </div>
 
-  <!-- إشعار Toast للنسخ -->
+  <!-- إشعار Toast للنسخ والتنبيهات -->
   <div class="toast-notice" id="toast-notice"></div>
 
-  <!-- التطبيق البرمجي -->
+  <!-- التطبيق البرمجي التفاعلي -->
   <script type="module" src="./src/app.js"></script>
 </body>
 </html>

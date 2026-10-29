@@ -1,0 +1,14 @@
+{
+  "index": 13,
+  "id": "52752d61920e4302994540a7636f53fb",
+  "title": "إدارة الملفات الصوتية — رتل",
+  "slug": "13_audio_files",
+  "folder": "13_audio_files",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "2100",
+  "htmlDownloadUrl": "https://stitch.googleapis.com/v1/projects/339375098252776117/files/52752d61920e4302994540a7636f53fb:download",
+  "screenshotDownloadUrl": "https://stitch.googleapis.com/v1/projects/339375098252776117/files/screenshot_00065ecdbbc83a0205fda721853ccaa9:download",
+  "htmlFile": "13_audio_files/index.html",
+  "screenshotFile": "13_audio_files/screenshot.png"
+}

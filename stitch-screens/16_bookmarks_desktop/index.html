@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-background":"#e2e2e9","surface-tint":"#4fdcbf","secondary-container":"#21a28b","error":"#ffb4ab","surface-container-low":"#1a1b21","tertiary-container":"#b3bac9","on-secondary":"#00382e","outline-variant":"#3c4a45","tertiary":"#cfd6e6","on-error":"#690005","on-tertiary-container":"#434a57","secondary-fixed-dim":"#67dac0","inverse-on-surface":"#2e3036","secondary":"#67dac0","on-primary-container":"#005446","on-error-container":"#ffdad6","on-secondary-fixed":"#00201a","on-tertiary-fixed-variant":"#404754","surface-bright":"#37393f","on-tertiary":"#2a313d","on-tertiary-fixed":"#151c27","outline":"#85948f","primary-container":"#3ecfb2","background":"#111318","on-secondary-fixed-variant":"#005143","tertiary-fixed":"#dce2f3","surface-container-lowest":"#0c0e13","surface-dim":"#111318","surface-container":"#1e2025","surface":"#111318","error-container":"#93000a","surface-container-highest":"#33353a","primary":"#61eccd","inverse-primary":"#006b5a","on-secondary-container":"#003027","primary-fixed-dim":"#4fdcbf","inverse-surface":"#e2e2e9","on-primary":"#00382e","secondary-fixed":"#85f6db","surface-variant":"#33353a","on-surface":"#e2e2e9","on-primary-fixed":"#00201a","surface-container-high":"#282a2f","on-primary-fixed-variant":"#005143","primary-fixed":"#70f9da","on-surface-variant":"#bbcac4","tertiary-fixed-dim":"#c0c7d6"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem","space-xs":"0.25rem","margin":"3rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","space-md":"1rem","space-lg":"1.5rem"},"fontFamily":{"headline-md":["IBM Plex Sans"],"label-md":["IBM Plex Sans"],"headline-lg-mobile":["IBM Plex Sans"],"quran-display":["\"KFGQPC Uthmanic Hafs, serif\""],"label-sm":["IBM Plex Sans"],"body-md":["IBM Plex Sans"],"quran-display-mobile":["\"KFGQPC Uthmanic Hafs, serif\""],"headline-lg":["IBM Plex Sans"],"body-lg":["IBM Plex Sans"]},"fontSize":{"headline-md":["22px",{"lineHeight":"32px","fontWeight":"500"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"34px","fontWeight":"600"}],"quran-display":["38px",{"lineHeight":"82px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"quran-display-mobile":["28px",{"lineHeight":"60px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"44px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-opacity duration-300"><div class="h-20 w-full max-w-[1440px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">graphic_eq</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold text-on-surface tracking-wide leading-none">رَتِّلْ</span><span class="font-label-sm text-label-sm text-on-surface-variant">الصوت هو البطل</span></div></div><div class="relative hidden xl:block w-72"><span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">search</span><input class="w-full bg-surface-container py-space-xs pr-9 pl-space-md rounded-xl text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary transition-all" placeholder="بحث عن سورة أو رقم (الكهف، 18)..." type="text"/></div></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-xl"><a class="px-space-md py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-xl transition-colors font-body-md text-body-md" data-path="home" href="#">الرئيسية</a><a class="px-space-md py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-xl transition-colors font-body-md text-body-md" data-path="browse-quran" href="#">تصفح المصحف</a><a class="px-space-md py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-xl transition-colors font-body-md text-body-md" data-path="reciters" href="#">القرّاء</a><a class="px-space-md py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-xl transition-colors font-body-md text-body-md" data-path="bookmarks" href="#">المحفوظات</a></nav><div class="flex items-center gap-space-sm shrink-0"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-primary text-[18px]">local_fire_department</span><span class="font-medium text-on-surface">٧ أيام</span></div><button aria-label="الوضع الليلي" class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button aria-label="الإعدادات" class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">settings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 pb-28 min-h-screen bg-background"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow -->
+<div class="relative w-full max-w-[1440px] mx-auto px-gutter py-space-lg flex flex-col gap-space-xl">
+<div class="absolute top-12 left-1/2 -translate-x-1/2 w-[700px] h-[340px] bg-primary/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<!-- Header & Hero Metric Banner -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-1.5 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-medium tracking-wide">السجل التفاعلي المباشر</span>
+<span class="text-outline/40 text-xs">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">مُزامَن سحابياً بحسابك</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">المحفوظات والعلامات المرجعية</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            مواضع توقفك في المصحف، الآيات المستقرة في قلبك، ومكتبة التسجيلات الصوتية المعدّة للاستماع الحضوري أو دون اتصال.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="group px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center gap-2 text-on-surface shadow-sm" type="button">
+<span class="material-symbols-outlined text-primary text-[20px] group-hover:rotate-180 transition-transform duration-500">sync</span>
+<span class="font-label-md text-label-md">مزامنة سحابية هادئة</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-1.5 py-0.5 rounded-md">آمنة</span>
+</button>
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center gap-2 text-on-surface-variant hover:text-on-surface shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+<span class="font-label-md text-label-md">تصدير الحفظ</span>
+</button>
+</div>
+</div>
+<!-- Quick Metrics Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container/70 backdrop-blur-md rounded-xl p-space-md flex items-center gap-space-md shadow-sm hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">bookmark</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">مواضع الختمات النشطة</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface leading-tight tabular-nums">٣ خَتَمات</span>
+</div>
+</div>
+<div class="bg-surface-container/70 backdrop-blur-md rounded-xl p-space-md flex items-center gap-space-md shadow-sm hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">الآيات المميزة بنجمة</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface leading-tight tabular-nums">١٢ آية</span>
+</div>
+</div>
+<div class="bg-surface-container/70 backdrop-blur-md rounded-xl p-space-md flex items-center gap-space-md shadow-sm hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[24px]">cloud_download</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">تلاوات محفوظة (أوفلاين)</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface leading-tight tabular-nums">٤ سور (٢٤٨ م.ب)</span>
+</div>
+</div>
+<div class="bg-surface-container/70 backdrop-blur-md rounded-xl p-space-md flex items-center gap-space-md shadow-sm hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[24px]">history_toggle_off</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">آخر تدبّر واستماع</span>
+<span class="font-body-md text-body-md font-medium text-on-surface leading-tight">اليوم • منذ ساعتين</span>
+</div>
+</div>
+</div>
+<!-- Segmented Tab Navigation -->
+<div class="flex items-center justify-between gap-space-md overflow-x-auto pb-1">
+<div class="inline-flex p-1 bg-surface-container-low rounded-xl gap-1">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-medium shadow-sm transition-all" type="button">الكل (١٩)</button>
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">bookmark</span>
+<span>مواضع الختمات</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant tabular-nums">٣</span>
+</button>
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">star</span>
+<span>الآيات المفضلة</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant tabular-nums">١٢</span>
+</button>
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">audio_file</span>
+<span>التلاوات الصوتية</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant tabular-nums">٤</span>
+</button>
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span>وقفات تدبرية</span>
+</button>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<div class="relative w-60">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">filter_list</span>
+<input class="w-full bg-surface-container-low pr-9 pl-3 py-1.5 rounded-xl text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="تصفية المحفوظات..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: Reading Bookmarks & Active Khatmahs -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">مواضع التوقف والختمات النشطة</h2>
+</div>
+<button class="text-primary hover:text-primary-fixed-dim font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span>إضافة ختمة جديدة</span>
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Hero Primary Bookmark Card -->
+<article class="lg:col-span-8 bg-surface-container-low rounded-2xl p-space-lg flex flex-col justify-between gap-space-md shadow-md relative overflow-hidden group">
+<!-- Ambient accent edge indicator (RTL right-side bar) -->
+<div class="absolute right-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">العلامة النشطة الرئيسية</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">تم التحديث اليوم ٠٢:١٥ م</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface">ختمة شهر رمضان المبارك</h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-label-md text-label-md">
+<span class="text-on-surface font-semibold">سورة الكهف • الآية ٤٥</span>
+<span>الجزء ١٥</span>
+<span>الحزب ٣٠</span>
+<span>صفحة ٢٩٨</span>
+<span class="text-primary">بصوت الشيخ محمد صديق المنشاوي</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+</div>
+<!-- Verse Box in Calligraphic Splendor -->
+<div class="bg-surface-container/60 rounded-xl p-space-md flex flex-col gap-space-sm relative">
+<span class="font-label-sm text-label-sm text-primary/80 font-medium">نص موضع التوقف الأخير:</span>
+<p class="font-quran-display text-quran-display text-on-surface text-center leading-[82px] select-text py-2">
+                وَٱضۡرِبۡ لَهُم مَّثَلَ ٱلۡحَيَوٰةِ ٱلدُّنۡيَا كَمَآءٍ أَنزَلۡنَٰهُ مِنَ ٱلسَّمَآءِ فَاخۡتَلَطَ بِهِۦ نَبَاتُ ٱلۡأَرۡضِ فَأَصۡبَحَ هَشِيمٗا تَذۡرُوهُ ٱلرِّيَٰحُۗ وَكَانَ ٱللَّهُ عَلَىٰ كُلِّ شَيۡءٖ مُّقۡتَدِرًا
+              </p>
+<div class="flex items-center justify-between text-outline text-xs pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">الآية الخامسة والأربعون</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">رواية حفص عن عاصم</span>
+</div>
+</div>
+</div>
+<!-- Progress and Action Strip -->
+<div class="flex flex-col gap-space-sm pt-2">
+<div class="flex items-center justify-between text-label-md font-label-md">
+<span class="text-on-surface-variant">نسبة الإنجاز في الختمة</span>
+<span class="text-primary font-bold tabular-nums">٦٥٪ (متبقي ١٠ أجزاء)</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-700 ease-out" style="width: 65%;"></div>
+</div>
+<div class="flex items-center justify-between gap-space-md pt-2">
+<div class="flex items-center gap-space-sm">
+<button class="px-space-lg py-2.5 rounded-xl bg-primary hover:bg-primary-fixed-dim text-on-primary font-body-md text-body-md font-semibold transition-all active:scale-95 shadow-md flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span>متابعة التلاوة والاستماع</span>
+</button>
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>تعديل الموضع</span>
+</button>
+</div>
+<button aria-label="مشاركة الموضع" class="w-10 h-10 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Secondary Active Khatmahs Cards -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Card 1 -->
+<article class="bg-surface-container-low rounded-2xl p-space-md flex-1 flex flex-col justify-between gap-space-sm shadow-sm hover:bg-surface-container/80 transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">ورد يوم الجمعة</span>
+<span class="material-symbols-outlined text-primary text-[20px]">bookmark</span>
+</div>
+<h3 class="font-headline-md text-body-lg font-bold text-on-surface">سورة الكهف • الورد الأسبوعي</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">موضع التوقف: الآية ١١٠ (نهاية السورة كاملة)</p>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden mt-1">
+<div class="h-full bg-secondary-fixed rounded-full" style="width: 100%;"></div>
+</div>
+<span class="text-left text-xs text-primary font-medium">مكتمل لهذا الأسبوع ✓</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xs text-on-surface-variant">قارئ الورد: عبد الباسط</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-label-md font-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">replay</span>
+<span>إعادة القراءة</span>
+</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-low rounded-2xl p-space-md flex-1 flex flex-col justify-between gap-space-sm shadow-sm hover:bg-surface-container/80 transition-colors">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">ورد السكينة والأذكار</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">bookmark</span>
+</div>
+<h3 class="font-headline-md text-body-lg font-bold text-on-surface">آيات الطمأنينة والشفاء</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">موضع التوقف: سورة الرعد • الآية ٢٨</p>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden mt-1">
+<div class="h-full bg-primary rounded-full" style="width: 40%;"></div>
+</div>
+<span class="text-left text-xs text-on-surface-variant">٤٠٪ من قائمة السكينة</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xs text-on-surface-variant">قارئ الورد: ماهر المعيقلي</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-label-md font-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">play_arrow</span>
+<span>استئناف الورد</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Starred & Highlighted Verses -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">الآيات المفضلة والوقفات التدبرية</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">آيات حفظتها للمراجعة أو استوقفتك أثناء السماع</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="ترتيب زمني" type="button">
+<span class="material-symbols-outlined text-[20px]">sort</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container text-primary hover:text-primary-fixed-dim transition-colors" title="عرض شبكي" type="button">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Verse Card 1 -->
+<article class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:shadow-md transition-all group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold text-xs">١٩</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">سورة مريم</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الآية ٩٦ • الجزء ١٦</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">الود والرحمة</span>
+<button aria-label="إزالة من المفضلة" class="text-secondary-fixed hover:text-error transition-colors p-1" title="محفوظة بنجمة" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container/50 rounded-xl p-space-md text-center">
+<p class="font-quran-display text-body-lg text-on-surface leading-[48px] select-text">
+                ﴿ إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ سَيَجْعَلُ لَهُمُ الرَّحْمَٰنُ وُدًّا ﴾
+              </p>
+</div>
+<!-- Reflection note snippet -->
+<div class="flex items-start gap-2 bg-surface-container-high/40 rounded-lg p-2.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">sticky_note_2</span>
+<span>«من أقبل بقلبه إلى الله أقبل الله بقلوب المؤمنين إليه». وقفة تدبرية مسجلة.</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+<span>الشيخ مشاري راشد العفاسي</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="استماع للآية" class="w-8 h-8 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed-dim flex items-center justify-center transition-all active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="نسخ الآية" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="مشاركة" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Verse Card 2 -->
+<article class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:shadow-md transition-all group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold text-xs">٢٠</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">سورة طه</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الآيات ٢٥-٢٨ • الجزء ١٦</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed font-label-sm text-label-sm">دعاء الشرح والتيسير</span>
+<button aria-label="إزالة من المفضلة" class="text-secondary-fixed hover:text-error transition-colors p-1" title="محفوظة بنجمة" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container/50 rounded-xl p-space-md text-center">
+<p class="font-quran-display text-body-lg text-on-surface leading-[48px] select-text">
+                ﴿ قَالَ رَبِّ اشْرَحْ لِي صَدْرِي * وَيَسِّرْ لِي أَمْرِي * وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي * يَفْقَهُوا قَوْلِي ﴾
+              </p>
+</div>
+<!-- Reflection note snippet -->
+<div class="flex items-start gap-2 bg-surface-container-high/40 rounded-lg p-2.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">favorite</span>
+<span>الدعاء المستحب في بداية كل حديث ومهمة علمية أو عملية.</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+<span>الشيخ ياسر الدوسري</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="استماع للآية" class="w-8 h-8 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed-dim flex items-center justify-center transition-all active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="نسخ الآية" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="مشاركة" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Verse Card 3 -->
+<article class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:shadow-md transition-all group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold text-xs">١٣</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">سورة الرعد</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الآية ٢٨ • الجزء ١٣</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">السكينة والقلوب</span>
+<button aria-label="إزالة من المفضلة" class="text-secondary-fixed hover:text-error transition-colors p-1" title="محفوظة بنجمة" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container/50 rounded-xl p-space-md text-center">
+<p class="font-quran-display text-body-lg text-on-surface leading-[48px] select-text">
+                ﴿ الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾
+              </p>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-high/40 rounded-lg p-2.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">spa</span>
+<span>راحة الفؤاد عند اشتداد المشاغل.</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+<span>الشيخ عبد الباسط عبد الصمد</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="استماع للآية" class="w-8 h-8 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed-dim flex items-center justify-center transition-all active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="نسخ الآية" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="مشاركة" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Verse Card 4 -->
+<article class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:shadow-md transition-all group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold text-xs">٩٣</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">سورة الضحى</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">الآية ٥ • الجزء ٣٠</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed font-label-sm text-label-sm">بشائر الرضا</span>
+<button aria-label="إزالة من المفضلة" class="text-secondary-fixed hover:text-error transition-colors p-1" title="محفوظة بنجمة" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container/50 rounded-xl p-space-md text-center">
+<p class="font-quran-display text-body-lg text-on-surface leading-[48px] select-text">
+                ﴿ وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ ﴾
+              </p>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-high/40 rounded-lg p-2.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">auto_awesome</span>
+<span>أرجى آية في القرآن لأهل الإيمان وحسن الظن بالله.</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+<span>الشيخ ناصر القطامي</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="استماع للآية" class="w-8 h-8 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed-dim flex items-center justify-center transition-all active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="نسخ الآية" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="مشاركة" class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<div class="flex justify-center pt-2">
+<button class="px-space-lg py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2" type="button">
+<span>عرض بقية الآيات المحفوظة (٨ آيات إضافية)</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</section>
+<!-- SECTION 3: Offline Recitations & Audio Playlists -->
+<section class="flex flex-col gap-space-md pb-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">التلاوات الصوتية المحفوظة (أوفلاين)</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">الملفات الصوتية المحملة بجودة استوديو للاستماع دون اتصال بالإنترنت</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-xl bg-primary hover:bg-primary-fixed-dim text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center gap-1.5 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">playlist_play</span>
+<span>تشغيل المحفوظات متتابعة</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="إدارة السعة التخزينية" type="button">
+<span class="material-symbols-outlined text-[20px]">storage</span>
+</button>
+</div>
+</div>
+<!-- Audio Table Component -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
+<div class="grid grid-cols-12 px-space-md py-3 text-on-surface-variant font-label-sm text-label-sm bg-surface-container/50">
+<div class="col-span-1 text-center">#</div>
+<div class="col-span-4">السورة والقارئ</div>
+<div class="col-span-3">الرواية ونوع التلاوة</div>
+<div class="col-span-2 text-center">المدة والحجم</div>
+<div class="col-span-2 text-left pl-2">إجراءات</div>
+</div>
+<!-- Row 1 (Currently Playing Candidate) -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 hover:bg-surface-container/60 transition-colors group cursor-pointer bg-primary/5">
+<div class="col-span-1 text-center flex items-center justify-center">
+<button aria-label="تشغيل السورة" class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center hover:scale-105 transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">سورة الكهف</span>
+<span class="font-label-sm text-label-sm text-primary truncate">الشيخ محمد صديق المنشاوي</span>
+</div>
+<div class="col-span-3 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">حفص عن عاصم</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm hidden md:inline">مرتل</span>
+</div>
+<div class="col-span-2 text-center flex flex-col">
+<span class="font-label-md text-label-md text-on-surface tabular-nums">٤٥:٢٠ دقيقة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums">٦٢.٤ م.ب</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1 pl-2">
+<button aria-label="تنزيل محفوظ" class="w-8 h-8 rounded-lg text-primary hover:bg-surface-container flex items-center justify-center transition-colors" title="محفوظ في جهازك" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button aria-label="قائمة الخيارات" class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 hover:bg-surface-container/60 transition-colors group cursor-pointer">
+<div class="col-span-1 text-center flex items-center justify-center">
+<button aria-label="تشغيل السورة" class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">سورة مريم</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">الشيخ علي عبد الله جابر</span>
+</div>
+<div class="col-span-3 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">حفص عن عاصم</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm hidden md:inline">الحرم المكي</span>
+</div>
+<div class="col-span-2 text-center flex flex-col">
+<span class="font-label-md text-label-md text-on-surface tabular-nums">٢٨:١٥ دقيقة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums">٣٨.٨ م.ب</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1 pl-2">
+<button aria-label="تنزيل محفوظ" class="w-8 h-8 rounded-lg text-primary hover:bg-surface-container flex items-center justify-center transition-colors" title="محفوظ في جهازك" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button aria-label="قائمة الخيارات" class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 hover:bg-surface-container/60 transition-colors group cursor-pointer">
+<div class="col-span-1 text-center flex items-center justify-center">
+<button aria-label="تشغيل السورة" class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">سورة طه</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">الشيخ مشاري راشد العفاسي</span>
+</div>
+<div class="col-span-3 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">حفص عن عاصم</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm hidden md:inline">مرتل</span>
+</div>
+<div class="col-span-2 text-center flex flex-col">
+<span class="font-label-md text-label-md text-on-surface tabular-nums">٣٤:٤٠ دقيقة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums">٤٧.٢ م.ب</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1 pl-2">
+<button aria-label="تنزيل محفوظ" class="w-8 h-8 rounded-lg text-primary hover:bg-surface-container flex items-center justify-center transition-colors" title="محفوظ في جهازك" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button aria-label="قائمة الخيارات" class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 hover:bg-surface-container/60 transition-colors group cursor-pointer">
+<div class="col-span-1 text-center flex items-center justify-center">
+<button aria-label="تشغيل السورة" class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<div class="col-span-4 flex flex-col min-w-0 pr-2">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">سورة يس</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">الشيخ ماهر المعيقلي</span>
+</div>
+<div class="col-span-3 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">حفص عن عاصم</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm hidden md:inline">مرتل</span>
+</div>
+<div class="col-span-2 text-center flex flex-col">
+<span class="font-label-md text-label-md text-on-surface tabular-nums">٢١:١٠ دقيقة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums">٢٩.١ م.ب</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-1 pl-2">
+<button aria-label="تنزيل محفوظ" class="w-8 h-8 rounded-lg text-primary hover:bg-surface-container flex items-center justify-center transition-colors" title="محفوظ في جهازك" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button aria-label="قائمة الخيارات" class="w-8 h-8 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function() {
+    // Highlight active link in header shell
+    const navBookmarksLink = document.querySelector('header nav a[data-path="bookmarks"]');
+    if (navBookmarksLink) {
+      navBookmarksLink.classList.remove('text-on-surface-variant');
+      navBookmarksLink.classList.add('bg-primary-container', 'text-on-primary-container', 'font-medium');
+    }
+
+    // Acoustic Solitude Interaction: fade interface non-essentials after idle audio playback
+    let idleTimer = null;
+    let isPlaying = true; // Simulating active recitation mode
+
+    function resetAcousticFocus() {
+      document.body.classList.remove('acoustic-dimmed');
+      clearTimeout(idleTimer);
+      if (isPlaying) {
+        idleTimer = setTimeout(() => {
+          document.body.classList.add('acoustic-dimmed');
+        }, 5000);
+      }
+    }
+
+    window.addEventListener('mousemove', resetAcousticFocus);
+    window.addEventListener('keydown', resetAcousticFocus);
+    window.addEventListener('scroll', resetAcousticFocus);
+    resetAcousticFocus();
+  })();
+</script></main><aside aria-label="مشغل التلاوة الصوتي" class="fixed bottom-0 inset-x-0 z-50 h-24 bg-surface-container-low shadow-[0_-2px_12px_rgba(0,0,0,0.3)] backdrop-blur-xl"><div class="h-full max-w-[1440px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md w-1/4 min-w-[220px]"><div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-[26px]">auto_stories</span></div><div class="flex flex-col truncate"><span class="font-headline-md text-body-lg text-on-surface truncate font-semibold leading-tight">سورة الفاتحة</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">مشاري بن راشد العفاسي • الآية ١</span></div></div><div class="flex flex-col items-center gap-1.5 flex-1 max-w-[620px]"><div class="flex items-center gap-space-md"><button aria-label="مؤقت النوم" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">bedtime</span></button><button aria-label="تقديم 10 ثوانٍ" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">forward_10</span></button><button aria-label="تشغيل" class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-fixed-dim transition-transform active:scale-95" type="button"><span class="material-symbols-outlined text-[24px]">play_arrow</span></button><button aria-label="تأخير 10 ثوانٍ" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">replay_10</span></button><button aria-label="تكرار" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">repeat</span></button></div><div class="w-full flex items-center gap-space-sm"><span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums">١٢:٤٥</span><div class="relative flex-1 h-1 bg-surface-container-highest rounded-full overflow-hidden cursor-pointer"><div class="absolute right-0 top-0 bottom-0 w-[28%] bg-primary rounded-full"></div></div><span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums">٤٥:٢٠</span></div></div><div class="flex items-center justify-end gap-space-md w-1/4 min-w-[200px]"><button aria-label="سرعة التلاوة" class="px-2 py-0.5 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">1.0x</button><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">volume_up</span><div class="w-20 h-1 bg-surface-container-highest rounded-full overflow-hidden cursor-pointer"><div class="w-[70%] h-full bg-on-surface-variant rounded-full"></div></div></div></div></div></aside><footer class="hidden"><p>© رتل - تجربة استماع قرآنية حديثة</p></footer></body></html>

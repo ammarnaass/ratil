@@ -1,0 +1,4 @@
+# رتل - متطلبات سكربتات المعالجة
+# scripts/requirements.txt
+# ملاحظة: السكربتات الأساسية (verify-text, build-data, build-search-index) تعتمد فقط على المكتبات القياسية لبايثون
+requests>=2.31.0

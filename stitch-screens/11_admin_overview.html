@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed-dim": "#4fdcbf",
+          "secondary": "#67dac0",
+          "on-secondary-fixed": "#00201a",
+          "inverse-on-surface": "#2e3037",
+          "secondary-container": "#21a28b",
+          "on-error-container": "#ffdad6",
+          "on-primary-fixed": "#00201a",
+          "on-tertiary-fixed-variant": "#444750",
+          "on-secondary-fixed-variant": "#005143",
+          "surface-bright": "#373940",
+          "on-primary-container": "#005446",
+          "tertiary": "#d3d5e0",
+          "on-error": "#690005",
+          "outline-variant": "#3c4a45",
+          "primary-fixed": "#70f9da",
+          "secondary-fixed-dim": "#67dac0",
+          "tertiary-container": "#b7b9c4",
+          "primary-container": "#3ecfb2",
+          "surface-dim": "#111319",
+          "surface-container": "#1e1f26",
+          "on-primary-fixed-variant": "#005143",
+          "outline": "#85948f",
+          "tertiary-fixed-dim": "#c4c6d1",
+          "on-surface-variant": "#bbcac4",
+          "on-tertiary": "#2d3039",
+          "on-tertiary-fixed": "#181b23",
+          "background": "#111319",
+          "on-background": "#e2e2eb",
+          "secondary-fixed": "#85f6db",
+          "inverse-primary": "#006b5a",
+          "inverse-surface": "#e2e2eb",
+          "surface": "#111319",
+          "surface-variant": "#33343b",
+          "on-tertiary-container": "#474953",
+          "primary": "#61eccd",
+          "on-secondary": "#00382e",
+          "tertiary-fixed": "#e0e2ed",
+          "error": "#ffb4ab",
+          "surface-container-lowest": "#0c0e14",
+          "error-container": "#93000a",
+          "surface-container-high": "#282a30",
+          "surface-container-low": "#191b22",
+          "on-primary": "#00382e",
+          "on-secondary-container": "#003027",
+          "surface-container-highest": "#33343b",
+          "surface-tint": "#4fdcbf",
+          "on-surface": "#e2e2eb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-md": "1rem",
+          "gutter": "1.25rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2rem",
+          "margin": "2rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-xl": [
+            "IBM Plex Sans"
+          ],
+          "body-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-xl-mobile": [
+            "IBM Plex Sans"
+          ],
+          "body-lg": [
+            "IBM Plex Sans"
+          ],
+          "label-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-md": [
+            "IBM Plex Sans"
+          ],
+          "headline-sm": [
+            "IBM Plex Sans"
+          ],
+          "headline-lg-mobile": [
+            "IBM Plex Sans"
+          ],
+          "headline-lg": [
+            "IBM Plex Sans"
+          ],
+          "body-sm": [
+            "IBM Plex Sans"
+          ],
+          "label-sm": [
+            "IBM Plex Sans"
+          ],
+          "label-lg": [
+            "IBM Plex Sans"
+          ]
+        },
+        "fontSize": {
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "48px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "38px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed right-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden"><span class="material-symbols-outlined text-primary text-headline-sm">auto_stories</span></div><div><span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">رتل</span><span class="font-label-sm text-label-sm text-on-surface-variant block">لوحة التحكم v1.0</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">نشط</span></div><nav class="px-space-sm py-space-sm space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">dashboard</span><span class="font-label-lg text-label-lg">نظرة عامة</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reciters" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">mic</span><span class="font-label-lg text-label-lg">القرّاء</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audio-files" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">volume_up</span><span class="font-label-lg text-label-lg">الملفات الصوتية</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="text-integrity" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">menu_book</span><span class="font-label-lg text-label-lg">سلامة النص</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">warning</span><span class="font-label-lg text-label-lg">البلاغات</span></div><span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">3</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">trending_up</span><span class="font-label-lg text-label-lg">الإحصاءات</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="licenses" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">description</span><span class="font-label-lg text-label-lg">التراخيص</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">settings</span><span class="font-label-lg text-label-lg">الإعدادات</span></div></a></nav></div><div class="p-space-md space-y-space-sm"><div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIAa4rmz8O9R6ewcoIYUX7vXFkPMmBLowNjq-tLPu476qR6WODJdeS5TPgaPf5ZiKEBdX4tNAdIG0TfJshzWkvoSR7e74mu3MHB1-iLRSwctRAcRVF0RJ4FCvE-p2iaYoB3q4SnlPPQU17Qo1bBF_Tw1u_-AsZ_FywOWYRZICXoqJUDbI8uMPdbShZEzFL_fIednNoOR07E1v8gSMyQak2T-5ce40AHK7fTIAVtuBSNNcE5i-SLI"/><div class="text-right"><div><span class="font-label-md text-label-md text-on-surface block leading-tight font-semibold">مدير النظام</span><span class="font-label-sm text-label-sm text-on-surface-variant block">مشرف المحتوى</span></div></div></div><button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="خيارات الحساب" type="button"><span class="material-symbols-outlined text-headline-sm">more_vert</span></button></div><a class="flex items-center justify-center gap-space-sm w-full py-space-sm px-space-md rounded-lg bg-surface-container-high text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-headline-sm">logout</span><span class="font-label-lg text-label-lg">تسجيل الخروج</span></a></div></aside><div class="pr-64"><header class="fixed top-0 right-64 left-0 h-16 bg-surface-container-low/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-headline-sm text-primary">dns</span><span>النظام:</span><span class="text-primary font-semibold">الخادم نشط</span><span class="text-on-surface-variant">·</span><span class="font-label-sm text-label-sm text-on-surface-variant">متصل بـ SHA-256</span></div><div class="h-4 w-[1px] bg-surface-container-highest"></div><div class="relative w-72"><span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-headline-sm pointer-events-none">search</span><input class="w-full pr-9 pl-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary shadow-none" placeholder="ابحث في اللوحة..." type="search"/></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container hover:bg-secondary-container hover:text-on-secondary transition-colors font-label-lg text-label-lg font-semibold" type="button"><span class="material-symbols-outlined text-headline-sm">bolt</span><span>فحص فوري</span></button><div class="h-4 w-[1px] bg-surface-container-highest"></div><button class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-1 left-1 w-2 h-2 rounded-full bg-error"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIAa4rmz8O9R6ewcoIYUX7vXFkPMmBLowNjq-tLPu476qR6WODJdeS5TPgaPf5ZiKEBdX4tNAdIG0TfJshzWkvoSR7e74mu3MHB1-iLRSwctRAcRVF0RJ4FCvE-p2iaYoB3q4SnlPPQU17Qo1bBF_Tw1u_-AsZ_FywOWYRZICXoqJUDbI8uMPdbShZEzFL_fIednNoOR07E1v8gSMyQak2T-5ce40AHK7fTIAVtuBSNNcE5i-SLI"/></div></header><main class="relative w-full pt-16 bg-background px-gutter py-space-xl"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Top Operational Banner & Greeting Header -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-md relative overflow-hidden">
+<div class="absolute -top-12 -left-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs relative z-10">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-lg text-headline-lg text-on-surface">لوحة المراقبة والحوكمة المركزية</span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+          جميع الأنظمة تعمل بكفاءة
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-label-lg text-outline">verified</span>
+<span>مرحباً بك مجدداً. تم تحديث القياسات الإحصائية وسجلات البث الصوتي تلقائياً.</span>
+<span class="text-outline">·</span>
+<span class="font-label-md text-label-md text-primary">آخر فحص تكاملي: منذ 4 دقائق (14:52 AST)</span>
+</p>
+</div>
+<!-- Quick Operations Tools -->
+<div class="flex items-center gap-space-sm relative z-10 shrink-0">
+<div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container font-label-md text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-headline-sm">database</span>
+<span>تخزين CDN: <strong>89.4%</strong> شاغر</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright transition-colors font-label-lg text-label-lg" type="button">
+<span class="material-symbols-outlined text-headline-sm">cached</span>
+<span>تحديث المؤشرات</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container hover:bg-secondary-container transition-colors font-label-lg text-label-lg font-semibold" type="button">
+<span class="material-symbols-outlined text-headline-sm">download</span>
+<span>تقرير اليوم</span>
+</button>
+</div>
+</section>
+<!-- 4 Vital KPI Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1: Active Listeners -->
+<div class="bg-surface-container p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-headline-sm text-primary">headphones</span>
+<span>المستمعون الآن</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-surface-container-highest font-label-sm text-label-sm text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          بث حي
+        </span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">1,240</span>
+<div class="flex items-center gap-1 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-label-sm">trending_up</span>
+<span>+8.4%</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>جلسات نشطة متزامنة</span>
+<span class="font-label-sm text-label-sm text-tertiary">34 خادم تتابع</span>
+</div>
+</div>
+<!-- Card 2: Today Sessions -->
+<div class="bg-surface-container p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-headline-sm text-secondary">graphic_eq</span>
+<span>جلسات اليوم</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">
+          مُحدث
+        </span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">8,340</span>
+<div class="flex items-center gap-1 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-label-sm">arrow_upward</span>
+<span>+12.0%</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>مقارنة بالأمس (7,446)</span>
+<span class="font-label-sm text-label-sm text-tertiary">ذروة 13:00 ظهرًا</span>
+</div>
+</div>
+<!-- Card 3: Text Integrity -->
+<div class="bg-surface-container p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-headline-sm text-primary">fact_check</span>
+<span>سلامة النص القرآني</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">
+          مطابقة 100%
+        </span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">سليم</span>
+<span class="material-symbols-outlined text-primary text-headline-md">check_circle</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">مجمع الملك فهد</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>آخر فحص: منذ ساعتين</span>
+<span class="font-label-sm text-label-sm text-primary">6,236 آية مدققة</span>
+</div>
+</div>
+<!-- Card 4: Actionable Reports -->
+<div class="bg-surface-container p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-headline-sm text-error">report_problem</span>
+<span>بلاغات جديدة</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+          تتطلب إجراء
+        </span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-error font-bold">3</span>
+<span class="font-body-md text-body-md text-on-surface-variant">تنتظر المراجعة</span>
+</div>
+<a class="px-space-sm py-1 rounded-lg bg-surface-container-highest hover:bg-error-container hover:text-on-error-container text-on-surface font-label-sm text-label-sm transition-colors flex items-center gap-1" href="#reports-section">
+<span>مراجعة</span>
+<span class="material-symbols-outlined text-body-sm">arrow_left</span>
+</a>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>متوسط سرعة الإنجاز</span>
+<span class="font-label-sm text-label-sm text-tertiary">26 دقيقة</span>
+</div>
+</div>
+</section>
+<!-- Interactive Dual Grid: Popular Surahs vs Audio Status -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Right: Most Listened Surahs (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-md">bar_chart</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">السور الأكثر استماعاً — اليوم</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">توزيع حركة الاستماع للمصاحف المرتلة حسب السورة</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-space-sm py-1 rounded-lg bg-surface-container-highest text-tertiary">إجمالي اليوم: 7,140</span>
+</div>
+<!-- Surah Bars List -->
+<div class="space-y-space-md">
+<!-- Surah 1: Al-Kahf -->
+<div class="space-y-space-xs p-space-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-label-sm text-label-sm font-semibold">١</span>
+<span class="text-on-surface font-semibold">سورة الكهف</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">١١٠ آيات</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="text-primary font-semibold">2,140</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">استماع</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim mr-2">(100%)</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-700" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Surah 2: Al-Mulk -->
+<div class="space-y-space-xs p-space-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-semibold">٢</span>
+<span class="text-on-surface font-semibold">سورة الملك</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">٣٠ آية</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface font-semibold">1,820</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">استماع</span>
+<span class="font-label-sm text-label-sm text-tertiary mr-2">(85%)</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full transition-all duration-700" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Surah 3: Al-Baqarah -->
+<div class="space-y-space-xs p-space-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-semibold">٣</span>
+<span class="text-on-surface font-semibold">سورة البقرة</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">٢٨٦ آية</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface font-semibold">1,340</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">استماع</span>
+<span class="font-label-sm text-label-sm text-tertiary mr-2">(62%)</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full transition-all duration-700" style="width: 62%;"></div>
+</div>
+</div>
+<!-- Surah 4: Ar-Rahman -->
+<div class="space-y-space-xs p-space-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-semibold">٤</span>
+<span class="text-on-surface font-semibold">سورة الرحمن</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">٧٨ آية</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface font-semibold">980</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">استماع</span>
+<span class="font-label-sm text-label-sm text-tertiary mr-2">(45%)</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-outline rounded-full transition-all duration-700" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Surah 5: Ya-Sin -->
+<div class="space-y-space-xs p-space-sm rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-semibold">٥</span>
+<span class="text-on-surface font-semibold">سورة يس</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">٨٣ آية</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface font-semibold">860</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">استماع</span>
+<span class="font-label-sm text-label-sm text-tertiary mr-2">(40%)</span>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-outline rounded-full transition-all duration-700" style="width: 40%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>ملاحظة: تُحسب المقاييس وفق معيار الاستماع المتواصل لأكثر من ٣٠ ثانية</span>
+<a class="text-primary hover:underline flex items-center gap-1 font-semibold" href="#">
+<span>تحليل متعمق لجميع السور (١١٤)</span>
+<span class="material-symbols-outlined text-label-sm">arrow_back</span>
+</a>
+</div>
+</div>
+<!-- Left: Reciters Audio Files Status (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-md">library_music</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">حالة الملفات الصوتية للقرّاء</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">نسبة اكتمال التسجيلات والمزامنة الصوتية</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-space-sm py-1 rounded-lg bg-surface-container-highest text-primary">4 مصاحف</span>
+</div>
+<!-- Reciter Status Cards -->
+<div class="space-y-space-sm">
+<!-- Reciter 1: Minshawi -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Portrait photo of a revered Quran reciter in traditional dark attire with respectful lighting on dark neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJfnKKY3eLI1jjBe7k_gLNSlVuAyvknrepDxD76meHaNE9fveDvn4ZwicxEniezp904f3nQsVEkzgHnT3-RM-JNbQt2ZL4hT2mqoeZLIrlVju8LV5a9skhY3BuN001i1pErWjmkoXKvvmiuR0nT3oKADS0MoSUlKofIqLEgN7BnbaKxdk402dnRU8KBdgOCp8deOi68A3hKrKOgv36BArll0DwahAC4FXkomd-AoFzvJJXW4gSQHM"/>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold block">الشيخ محمد صديق المنشاوي</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">رواية حفص عن عاصم</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                114 / 114
+              </span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm pt-space-xs">
+<span class="text-primary font-semibold">مكتمل بالكامل (100%)</span>
+<span class="text-on-surface-variant">صوت استوديو عالي النقاء</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Reciter 2: Hussary -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Portrait photo of an elderly Egyptian Quran scholar wearing traditional azhari headwear in a solemn dark studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2GyrvrH4cIXzOV5R9n8QYFUWLX0o9s_BN20Fp63NnOHcO90TLt9iSv30ZC8ef9F6eX0qnjGf6BVmyCsQloXc3C8qNlu-hjhYaGzN4XsYrHjTwxZYhk-DeJbdUpf_JG_vBLE9353A0CAHzcyX1pPaWJ2rIJzVfahgOOYvWfSWyabsFbh7Y7hWtfrh8lDzoRhoBdqSjGnd6_WHYv1NfcS7BFTBhCKRqpHM9SlXw35VJeSbdYKexkNc"/>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold block">الشيخ محمود خليل الحصري</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">رواية ورش عن نافع</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                114 / 114
+              </span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm pt-space-xs">
+<span class="text-primary font-semibold">مكتمل بالكامل (100%)</span>
+<span class="text-on-surface-variant">مفحوص ومُدقّق</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Reciter 3: Ajmi -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Studio portrait of contemporary Quran reciter wearing traditional white ghutra in professional gentle contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ-1ScCQuPljv356goZX9vpAfEimHwTBtvbJrHgwe6U4UeYaCie9tTB8n5a6fLwKYX9LLfCbswTTjTdtYsZYw9cqIHksc8tXF3ZVrtefAHG4ZduNNhIno4HLC7BbhTqip2wV5n8TYJLFsQ5lZGGJqzlIeVF_5UCanf7CuAKHJaZCGLSMi5mWSqUfV4kBUXdAI_i9JwszslpSVLb2Tyzj2o9ppEntwo_KYaGXROCIXDTLpM4UmjWsQ"/>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold block">الشيخ أحمد بن علي العجمي</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">رواية حفص عن عاصم</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                77 / 114
+              </span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm pt-space-xs">
+<span class="text-secondary font-semibold">اكتمال جزئي (67%)</span>
+<span class="text-on-surface-variant">المتبقي: ٣٧ سورة</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 67%;"></div>
+</div>
+</div>
+<!-- Reciter 4: Sudais -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-headline-sm">mic_off</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold block">الشيخ عبدالرحمن السديس</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">رواية حفص عن عاصم</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+                0 / 114
+              </span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm pt-space-xs">
+<span class="text-error font-semibold">لم يُضف بعد (0%)</span>
+<span class="text-on-surface-variant">جدولة رفع الملفات قيد الانتظار</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md">
+<button class="w-full py-space-sm px-space-md rounded-lg bg-surface-container-highest text-on-surface hover:text-primary hover:bg-surface-bright transition-colors font-label-lg text-label-lg flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-headline-sm">upload_file</span>
+<span>رفع ملفات سورة جديدة لقارئ</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Incoming Reports & Governance Moderation Queue -->
+<section class="bg-surface-container p-space-lg rounded-xl shadow-sm flex flex-col space-y-space-md" id="reports-section">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-headline-md">priority_high</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">آخر البلاغات الواردة</h2>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">3 جديدة</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ملاحظات مصادر المجتمع والمدققين اللغويين والصوتيين</p>
+</div>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg transition-colors self-start sm:self-auto" type="button">
+<span>عرض كافة البلاغات (28)</span>
+<span class="material-symbols-outlined text-headline-sm">chevron_left</span>
+</button>
+</div>
+<!-- Reports Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+<th class="py-space-sm px-space-md rounded-r-lg">النوع والرمز</th>
+<th class="py-space-sm px-space-md">التفاصيل والوصف</th>
+<th class="py-space-sm px-space-md">المصدر / السورة</th>
+<th class="py-space-sm px-space-md">الوقت</th>
+<th class="py-space-sm px-space-md">الحالة</th>
+<th class="py-space-sm px-space-md rounded-l-lg text-left">الإجراء</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest/40 font-body-md text-body-md">
+<!-- Report 1: Text Integrity Issue -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-semibold">بلاغ نص</span>
+<span class="font-label-sm text-label-sm text-tertiary">#REP-882</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div>
+<span class="text-on-surface font-semibold block">سورة البقرة — آية 255 (آية الكرسي)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">ملاحظة دقيقة بخصوص علامة ضبط تشكيل الضمة في النسخة الرقمية السريعة</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-tertiary">
+              مصحف المدينة الرقمي
+            </td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-on-surface-variant">
+              منذ 3 ساعات
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-highest text-error font-medium">
+                بانتظار التحقق
+              </span>
+</td>
+<td class="py-space-md px-space-md text-left">
+<button class="px-space-md py-1 rounded-lg bg-primary-container text-on-primary-container hover:bg-secondary-container transition-colors font-label-md text-label-md font-semibold" type="button">
+                مراجعة البلاغ
+              </button>
+</td>
+</tr>
+<!-- Report 2: Audio Broken Issue -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-semibold">بلاغ صوت</span>
+<span class="font-label-sm text-label-sm text-tertiary">#REP-881</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div>
+<span class="text-on-surface font-semibold block">صوت مقطوع عند الدقيقة 04:12 — المنشاوي</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">سورة الأنفال — هبوط طفيف بالموجة الصوتية وتوقف البث لبضع ثوانٍ</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-tertiary">
+              ملفات الاستوديو الخام
+            </td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-on-surface-variant">
+              منذ 5 ساعات
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-highest text-secondary font-medium">
+                تحت المراجعة
+              </span>
+</td>
+<td class="py-space-md px-space-md text-left">
+<button class="px-space-md py-1 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-md text-label-md font-semibold" type="button">
+                مراجعة الصوت
+              </button>
+</td>
+</tr>
+<!-- Report 3: Request for New Reciter -->
+<tr class="hover:bg-surface-container-high/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md px-space-xs py-0.5 rounded bg-surface-container-highest text-primary font-semibold">طلب إضافة</span>
+<span class="font-label-sm text-label-sm text-tertiary">#REP-880</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div>
+<span class="text-on-surface font-semibold block">طلب إضافة قارئ — الشيخ الزين محمد أحمد</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">المصحف المرتل برواية الدوري عن أبي عمرو مع ملفات مرخصة الجودة</span>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-tertiary">
+              طلب مستخدم موثق
+            </td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-on-surface-variant">
+              منذ يوم واحد
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-highest text-primary font-medium">
+                موافقة أولية
+              </span>
+</td>
+<td class="py-space-md px-space-md text-left">
+<button class="px-space-md py-1 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors font-label-md text-label-md font-semibold" type="button">
+                فحص الطلب
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bottom Audit Log Snippet -->
+<section class="bg-surface-container-low p-space-md rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-sm">history</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold block">سجل العمليات الأخير (Audit Log)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">توثيق الحركات الإدارية والأمنية للنظام</span>
+</div>
+</div>
+<!-- Log Items Horizontal Ribbon -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-label-md text-primary">cloud_upload</span>
+<span>اليوم <strong>14:45</strong></span>
+<span class="text-outline">|</span>
+<span class="text-on-surface">رفع صوت: المنشاوي - الأنفال</span>
+<span class="px-space-xs py-0.2 rounded bg-surface-container-highest font-label-sm text-label-sm text-tertiary">بواسطة admin</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-label-md text-secondary">task_alt</span>
+<span>اليوم <strong>12:30</strong></span>
+<span class="text-outline">|</span>
+<span class="text-on-surface">إغلاق بلاغ #001</span>
+<span class="px-space-xs py-0.2 rounded bg-surface-container-highest font-label-sm text-label-sm text-tertiary">بواسطة admin</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5 shrink-0 self-start sm:self-center font-semibold" href="#">
+<span>عرض السجل الكامل</span>
+<span class="material-symbols-outlined text-body-sm">arrow_left</span>
+</a>
+</div>
+</section>
+</div></main></div></body></html>

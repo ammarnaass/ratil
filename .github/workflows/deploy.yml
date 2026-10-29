@@ -1,0 +1,42 @@
+# .github/workflows/deploy.yml
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: { python-version: '3.11' }
+
+      - name: ✅ Verify Quran Text
+        run: python scripts/verify-text.py
+        # يوقف كل شيء إن فشل
+
+      - name: 📦 Build Data
+        run: python scripts/build-data.py
+
+      - name: 🔍 Build Search Index
+        run: python scripts/build-search-index.py
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: 🚀 Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          projectName: ratil
+          directory: dist

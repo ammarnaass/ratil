@@ -1,0 +1,32 @@
+[
+  {
+    "id": "al-minshawy",
+    "name": "الشيخ محمد صديق المنشاوي",
+    "name_ar": "محمد صديق المنشاوي",
+    "name_en": "Mohamed Siddiq El-Minshawi",
+    "riwaya": "hafs",
+    "license": "public-domain",
+    "source": "Egyptian Radio Archive",
+    "base_url": "https://cdn.ratil.app/audio/al-minshawy/"
+  },
+  {
+    "id": "al-husary",
+    "name": "الشيخ محمود خليل الحصري",
+    "name_ar": "محمود خليل الحصري",
+    "name_en": "Mahmoud Khalil Al-Husary",
+    "riwaya": "warsh",
+    "license": "public-domain",
+    "source": "Egyptian Radio Archive",
+    "base_url": "https://cdn.ratil.app/audio/al-husary-warsh/"
+  },
+  {
+    "id": "alafasy",
+    "name": "الشيخ مشاري راشد العفاسي",
+    "name_ar": "مشاري راشد العفاسي",
+    "name_en": "Mishari Rashid Alafasy",
+    "riwaya": "hafs",
+    "license": "public-domain",
+    "source": "High Quality Studio Recording",
+    "base_url": "https://cdn.ratil.app/audio/alafasy/"
+  }
+]

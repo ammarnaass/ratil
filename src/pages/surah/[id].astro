@@ -1,0 +1,300 @@
+---
+import Base from '../../layouts/Base.astro';
+import surahs from '../../../data/surahs.json';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  return surahs.map((s) => ({
+    params: { id: String(s.id) },
+    props: { surahMeta: s }
+  }));
+}
+
+const { id } = Astro.params;
+const { surahMeta } = Astro.props;
+
+// قراءة بيانات الآيات المحققة برواية حفص
+const filePath = path.join(process.cwd(), `public/data/hafs/${id}.json`);
+let surahData = null;
+if (fs.existsSync(filePath)) {
+  surahData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+} else {
+  surahData = {
+    id: Number(id),
+    name_ar: surahMeta.name_ar,
+    name_en: surahMeta.name_en,
+    type: surahMeta.type,
+    ayahs_hafs: surahMeta.ayahs_hafs,
+    ayahs: []
+  };
+}
+
+const surahNum = Number(id);
+const prevId = surahNum > 1 ? surahNum - 1 : null;
+const nextId = surahNum < 114 ? surahNum + 1 : null;
+
+// هل نعرض البسملة كترويسة مستقلة؟
+// سورة التوبة (9) لا بسملة فيها، وسورة الفاتحة (1) البسملة فيها هي الآية الأولى
+const showBasmalahHeader = surahNum !== 9 && surahNum !== 1;
+---
+
+<Base 
+  title={`سورة ${surahData.name_ar} — رتل | مصحف مسموع`}
+  description={`تلاوة وقراءة سورة ${surahData.name_ar} (${surahData.ayahs_hafs} آية - ${surahData.type}) بالنص العثماني المعتمد برواية حفص عن عاصم`}
+  activeNav="browse"
+>
+  <div class="surah-reading-container">
+
+    <!-- شريط التنقل بين السور ومعلومات الترويسة -->
+    <header class="surah-header-card">
+      <div class="surah-nav-bar">
+        {prevId ? (
+          <a href={`/surah/${prevId}`} class="surah-nav-link" aria-label="السورة السابقة">
+            → السابقة
+          </a>
+        ) : <span />}
+
+        <div class="surah-meta-center">
+          <span class="surah-order-badge">السورة {String(surahNum).padStart(3, '0')}</span>
+          <h1 class="surah-main-heading">سورة {surahData.name_ar}</h1>
+          <span class="surah-details-line">
+            {surahData.type} • {surahData.ayahs_hafs} آيات • صفحة {surahMeta.page || 1}
+          </span>
+        </div>
+
+        {nextId ? (
+          <a href={`/surah/${nextId}`} class="surah-nav-link" aria-label="السورة التالية">
+            التالية ←
+          </a>
+        ) : <span />}
+      </div>
+
+      <!-- زر الاستماع المباشر للسورة في المشغل -->
+      <div class="surah-listen-cta">
+        <button 
+          id="play-surah-btn"
+          class="surah-play-action-btn"
+          data-surah-id={surahNum}
+          data-surah-name={surahData.name_ar}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>استمع لتلاوة سورة {surahData.name_ar}</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- البسملة -->
+    {showBasmalahHeader && (
+      <div class="basmalah-container">
+        <p class="basmalah-text">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      </div>
+    )}
+
+    <!-- نص الآيات القرآني المعتمد -->
+    <article class="surah-verses-wrapper" id="surah-verses">
+      {surahData.ayahs.map((aya: any) => (
+        <span 
+          class="quran-verse-span" 
+          id={`aya-${aya.aya}`}
+          data-aya={aya.aya}
+          tabindex="0"
+          role="button"
+          aria-label={`الآية ${aya.aya}`}
+        >
+          <span class="verse-text">{aya.text_uthmani}</span>
+          <span class="verse-number-ornament">
+            <span class="ornament-inner">﴿{aya.aya_indic || aya.aya}﴾</span>
+          </span>
+        </span>
+      ))}
+    </article>
+
+  </div>
+
+  <!-- سكربت تتبع وتزامن الآيات التفاعلي -->
+  <script is:inline>
+    const playBtn = document.getElementById('play-surah-btn');
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        const sId = Number(playBtn.getAttribute('data-surah-id'));
+        const sName = playBtn.getAttribute('data-surah-name');
+        window.dispatchEvent(
+          new CustomEvent('ratil:play', {
+            detail: { surahId: sId, surahName: sName }
+          })
+        );
+      });
+    }
+
+    // النقر على أي آية للاستماع المباشر
+    const verseElements = document.querySelectorAll('.quran-verse-span');
+    verseElements.forEach(el => {
+      el.addEventListener('click', () => {
+        const ayaNum = el.getAttribute('data-aya');
+        verseElements.forEach(v => v.classList.remove('active-verse'));
+        el.classList.add('active-verse');
+      });
+    });
+  </script>
+</Base>
+
+<style>
+.surah-reading-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+}
+
+.surah-header-card {
+  background: var(--color-surface, #181B22);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.surah-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.surah-nav-link {
+  color: var(--color-text-secondary, #9EA3B0);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.surah-nav-link:hover {
+  color: var(--color-primary, #3ECFB2);
+  border-color: var(--color-primary, #3ECFB2);
+  background: rgba(62, 207, 178, 0.08);
+}
+
+.surah-meta-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.surah-order-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary, #3ECFB2);
+  background: rgba(62, 207, 178, 0.1);
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.surah-main-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text-primary, #F3F4F6);
+  margin-bottom: 6px;
+}
+
+.surah-details-line {
+  font-size: 13px;
+  color: var(--color-text-secondary, #9EA3B0);
+}
+
+.surah-listen-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.surah-play-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-primary, #3ECFB2);
+  color: #0E1015;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.surah-play-action-btn:hover {
+  background: var(--color-primary-bright, #61ECCD);
+  transform: translateY(-2px);
+}
+
+.basmalah-container {
+  text-align: center;
+  margin: 20px 0 35px;
+}
+
+.basmalah-text {
+  font-family: var(--font-quran, serif);
+  font-size: 28px;
+  color: var(--color-primary, #3ECFB2);
+  letter-spacing: 1px;
+}
+
+.surah-verses-wrapper {
+  background: var(--color-surface, #181B22);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.06));
+  border-radius: 24px;
+  padding: 40px 32px;
+  line-height: var(--line-height-quran, 2.4);
+  text-align: justify;
+  text-align-last: center;
+}
+
+.quran-verse-span {
+  display: inline;
+  font-family: var(--font-quran, serif);
+  font-size: var(--font-size-quran, 24px);
+  color: var(--color-text-primary, #F3F4F6);
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.quran-verse-span:hover {
+  background: rgba(62, 207, 178, 0.08);
+}
+
+.quran-verse-span.active-verse {
+  background: rgba(62, 207, 178, 0.18);
+  color: var(--color-primary-bright, #61ECCD);
+  box-shadow: 0 0 16px rgba(62, 207, 178, 0.2);
+}
+
+.verse-number-ornament {
+  display: inline-block;
+  margin: 0 6px;
+  color: var(--color-primary, #3ECFB2);
+  font-size: 19px;
+  font-weight: 400;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .surah-verses-wrapper {
+    padding: 24px 16px;
+  }
+  .quran-verse-span {
+    font-size: 21px;
+  }
+  .surah-main-heading {
+    font-size: 26px;
+  }
+}
+</style>

@@ -1,0 +1,215 @@
+---
+import Base from '../layouts/Base.astro';
+import SurahList from '../components/SurahList.astro';
+import SearchBox from '../components/SearchBox.tsx';
+import reciters from '../../data/reciters.json';
+---
+
+<Base title="رتل — مصحف مسموع | تلاوات القرآن الكريم مع تتبع الآية" activeNav="home">
+  <!-- البطل الروحاني (Hero Section) -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <span class="hero-kicker">﴿وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا﴾</span>
+      <h1 class="hero-title">رَتِّـلْ — مصحف مسموع</h1>
+      <p class="hero-subtitle">
+        تلاوات القرآن الكريم بأصوات كبار القرّاء، مع تتبع دقيق للآيات وعرض النص القرآني المعتمد بروايتي حفص وورش.
+      </p>
+
+      <!-- مربع البحث السريع الفوري (React Island) -->
+      <div class="hero-search-container">
+        <SearchBox client:visible />
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم القرّاء المعتمدين -->
+  <section class="section-container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">القرّاء المعتمدون</h2>
+        <p class="section-subtitle">تسجيلات أصلية موثقة برخص عامة وأرشيفات رسمية</p>
+      </div>
+    </div>
+
+    <div class="reciters-cards-grid">
+      {reciters.map((reciter) => (
+        <a href={`/reciter/${reciter.id}`} class="reciter-feature-card">
+          <div class="reciter-avatar-circle">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="22"></line>
+            </svg>
+          </div>
+          <div class="reciter-card-info">
+            <h3 class="reciter-name">{reciter.name}</h3>
+            <span class="reciter-riwaya-pill">
+              رواية {reciter.riwaya === 'hafs' ? 'حفص عن عاصم' : 'ورش عن نافع'}
+            </span>
+          </div>
+          <span class="reciter-card-arrow">←</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- فهرس السور الـ 114 (Pure SSG Static HTML) -->
+  <section class="section-container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">فهرس سور القرآن الكريم</h2>
+        <p class="section-subtitle">114 سورة مسبقة البناء والتوليد — استجابة فورية بدون خوادم</p>
+      </div>
+    </div>
+
+    <SurahList />
+  </section>
+</Base>
+
+<style>
+.hero-section {
+  padding: 60px 20px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-kicker {
+  font-family: var(--font-quran, serif);
+  font-size: 22px;
+  color: var(--color-primary, #3ECFB2);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--color-text-primary, #F3F4F6);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  color: var(--color-text-secondary, #9EA3B0);
+  line-height: 1.6;
+  max-width: 620px;
+  margin-bottom: 32px;
+}
+
+.hero-search-container {
+  width: 100%;
+  max-width: 540px;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-primary, #F3F4F6);
+  margin-bottom: 4px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary, #9EA3B0);
+}
+
+.reciters-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.reciter-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--color-surface, #181B22);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.reciter-feature-card:hover {
+  border-color: var(--color-primary, #3ECFB2);
+  transform: translateY(-2px);
+  background: var(--color-surface-hover, #1F232C);
+}
+
+.reciter-avatar-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(62, 207, 178, 0.1);
+  color: var(--color-primary, #3ECFB2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reciter-card-info {
+  flex: 1;
+}
+
+.reciter-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary, #F3F4F6);
+  margin-bottom: 4px;
+}
+
+.reciter-riwaya-pill {
+  font-size: 12px;
+  color: var(--color-primary, #3ECFB2);
+  background: rgba(62, 207, 178, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.reciter-card-arrow {
+  color: var(--color-text-secondary, #9EA3B0);
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.reciter-feature-card:hover .reciter-card-arrow {
+  color: var(--color-primary, #3ECFB2);
+  transform: translateX(-4px);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 30px;
+  }
+  .hero-section {
+    padding: 40px 16px 30px;
+  }
+}
+</style>

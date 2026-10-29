@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض شاشات رتل الشامل — Stitch Screens Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111318;
+      --surface: #1a1c22;
+      --surface-card: #21242c;
+      --border: #2e333d;
+      --primary: #3ecfb2;
+      --primary-hover: #5be3c8;
+      --text: #f0f2f5;
+      --text-muted: #9ba3af;
+      --badge-desktop: #2563eb;
+      --badge-mobile: #10b981;
+      --badge-admin: #8b5cf6;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem;
+    }
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .brand-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 16px var(--primary);
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-top: 0.5rem;
+    }
+    .meta-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .meta-badge {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .meta-badge strong {
+      color: var(--primary);
+      margin-left: 0.25rem;
+    }
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: #0c1815;
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .preview-box {
+      position: relative;
+      background: #000;
+      height: 380px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .preview-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .preview-box:hover .preview-img {
+      transform: scale(1.02);
+    }
+    .preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      gap: 0.5rem;
+    }
+    .preview-box:hover .preview-overlay {
+      opacity: 1;
+    }
+    .card-body {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .screen-number {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .badges-row {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .device-badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .device-badge.desktop {
+      background: rgba(37, 99, 235, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+    }
+    .device-badge.mobile {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .device-badge.admin {
+      background: rgba(139, 92, 246, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-family: monospace;
+      direction: ltr;
+      text-align: right;
+    }
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #0a1815;
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      background: #2b303c;
+    }
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .modal.open {
+      display: flex;
+    }
+    .modal-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 12px;
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1rem;
+    }
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <h1>معرض شاشات رتل الشامل — Stitch Screens</h1>
+      </div>
+      <p class="subtitle">المشروع: <strong>Ratil Admin Quran Platform</strong> (المعرف: <code>339375098252776117</code>)</p>
+      <div class="meta-badges">
+        <span class="meta-badge">إجمالي الشاشات: <strong>17 شاشة</strong></span>
+        <span class="meta-badge">شاشات كمبيوتر: <strong>11</strong></span>
+        <span class="meta-badge">شاشات جوال: <strong>6</strong></span>
+        <span class="meta-badge">لوحة الإدارة: <strong>5</strong></span>
+      </div>
+    </header>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterScreens('ALL')">الكل (17)</button>
+      <button class="filter-btn" onclick="filterScreens('DESKTOP')">كمبيوتر 💻 (11)</button>
+      <button class="filter-btn" onclick="filterScreens('MOBILE')">جوال 📱 (6)</button>
+      <button class="filter-btn" onclick="filterScreens('ADMIN')">لوحة الإدارة ⚙️ (5)</button>
+    </div>
+
+    <div class="grid" id="screensGrid">
+
+      <div class="card" data-device="DESKTOP" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('01_signup.png')">
+          <img class="preview-img" src="01_signup.png" alt="إنشاء حساب — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #01</span>
+            <div class="badges-row">
+              
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">إنشاء حساب — رتل</h2>
+          <div class="card-meta">
+            ID: 297ca81b260f... &bull; 2560×2674px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="01_signup.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="01_signup.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('02_login.png')">
+          <img class="preview-img" src="02_login.png" alt="تسجيل الدخول — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #02</span>
+            <div class="badges-row">
+              
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">تسجيل الدخول — رتل</h2>
+          <div class="card-meta">
+            ID: 6d0f7ed71029... &bull; 2560×2114px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="02_login.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="02_login.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="MOBILE" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('03_home_mobile.png')">
+          <img class="preview-img" src="03_home_mobile.png" alt="الرئيسية — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #03</span>
+            <div class="badges-row">
+              
+              <span class="device-badge mobile">جوال 📱</span>
+            </div>
+          </div>
+          <h2 class="card-title">الرئيسية — رتل</h2>
+          <div class="card-meta">
+            ID: 58d8e75a7879... &bull; 780×2272px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="03_home_mobile.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="03_home_mobile.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="MOBILE" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('04_reciters_index.png')">
+          <img class="preview-img" src="04_reciters_index.png" alt="فهرس القرّاء — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #04</span>
+            <div class="badges-row">
+              
+              <span class="device-badge mobile">جوال 📱</span>
+            </div>
+          </div>
+          <h2 class="card-title">فهرس القرّاء — رتل</h2>
+          <div class="card-meta">
+            ID: 7ec8c0dece52... &bull; 780×2282px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="04_reciters_index.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="04_reciters_index.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('05_home_desktop.png')">
+          <img class="preview-img" src="05_home_desktop.png" alt="الرئيسية — رتل (كمبيوتر)" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #05</span>
+            <div class="badges-row">
+              
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">الرئيسية — رتل (كمبيوتر)</h2>
+          <div class="card-meta">
+            ID: e016b21e00ad... &bull; 2560×2940px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="05_home_desktop.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="05_home_desktop.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="MOBILE" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('06_surah_kahf.png')">
+          <img class="preview-img" src="06_surah_kahf.png" alt="سورة الكهف — استماع وقراءة" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #06</span>
+            <div class="badges-row">
+              
+              <span class="device-badge mobile">جوال 📱</span>
+            </div>
+          </div>
+          <h2 class="card-title">سورة الكهف — استماع وقراءة</h2>
+          <div class="card-meta">
+            ID: 0983f1013d3b... &bull; 780×3522px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="06_surah_kahf.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="06_surah_kahf.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="MOBILE" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('07_reciter_minshawi.png')">
+          <img class="preview-img" src="07_reciter_minshawi.png" alt="ملف القارئ: المنشاوي — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #07</span>
+            <div class="badges-row">
+              
+              <span class="device-badge mobile">جوال 📱</span>
+            </div>
+          </div>
+          <h2 class="card-title">ملف القارئ: المنشاوي — رتل</h2>
+          <div class="card-meta">
+            ID: 4af62fa53874... &bull; 780×2116px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="07_reciter_minshawi.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="07_reciter_minshawi.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('08_browse_mushaf_desktop.png')">
+          <img class="preview-img" src="08_browse_mushaf_desktop.png" alt="تصفح المصحف — رتل (كمبيوتر)" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #08</span>
+            <div class="badges-row">
+              
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">تصفح المصحف — رتل (كمبيوتر)</h2>
+          <div class="card-meta">
+            ID: 2e71447593f2... &bull; 2560×5164px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="08_browse_mushaf_desktop.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="08_browse_mushaf_desktop.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="MOBILE" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('09_choose_reciter.png')">
+          <img class="preview-img" src="09_choose_reciter.png" alt="اختيار القارئ — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #09</span>
+            <div class="badges-row">
+              
+              <span class="device-badge mobile">جوال 📱</span>
+            </div>
+          </div>
+          <h2 class="card-title">اختيار القارئ — رتل</h2>
+          <div class="card-meta">
+            ID: 389713e03933... &bull; 780×1768px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="09_choose_reciter.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="09_choose_reciter.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="MOBILE" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('10_browse_mushaf_mobile.png')">
+          <img class="preview-img" src="10_browse_mushaf_mobile.png" alt="تصفح المصحف — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #10</span>
+            <div class="badges-row">
+              
+              <span class="device-badge mobile">جوال 📱</span>
+            </div>
+          </div>
+          <h2 class="card-title">تصفح المصحف — رتل</h2>
+          <div class="card-meta">
+            ID: 86dfd06aff33... &bull; 780×2900px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="10_browse_mushaf_mobile.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="10_browse_mushaf_mobile.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="true">
+        <div class="preview-box" onclick="openModal('11_admin_overview.png')">
+          <img class="preview-img" src="11_admin_overview.png" alt="رتل الإدارية — نظرة عامة" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #11</span>
+            <div class="badges-row">
+              <span class="device-badge admin">لوحة الإدارة</span>
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">رتل الإدارية — نظرة عامة</h2>
+          <div class="card-meta">
+            ID: 3a74510ff2bc... &bull; 2560×3128px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="11_admin_overview.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="11_admin_overview.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="true">
+        <div class="preview-box" onclick="openModal('12_reports_errors.png')">
+          <img class="preview-img" src="12_reports_errors.png" alt="البلاغات والأخطاء — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #12</span>
+            <div class="badges-row">
+              <span class="device-badge admin">لوحة الإدارة</span>
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">البلاغات والأخطاء — رتل</h2>
+          <div class="card-meta">
+            ID: 263d891d10c9... &bull; 2560×3144px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="12_reports_errors.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="12_reports_errors.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="true">
+        <div class="preview-box" onclick="openModal('13_audio_files.png')">
+          <img class="preview-img" src="13_audio_files.png" alt="إدارة الملفات الصوتية — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #13</span>
+            <div class="badges-row">
+              <span class="device-badge admin">لوحة الإدارة</span>
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">إدارة الملفات الصوتية — رتل</h2>
+          <div class="card-meta">
+            ID: 52752d61920e... &bull; 2560×2100px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="13_audio_files.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="13_audio_files.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="true">
+        <div class="preview-box" onclick="openModal('14_text_integrity.png')">
+          <img class="preview-img" src="14_text_integrity.png" alt="سلامة النص القرآني — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #14</span>
+            <div class="badges-row">
+              <span class="device-badge admin">لوحة الإدارة</span>
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">سلامة النص القرآني — رتل</h2>
+          <div class="card-meta">
+            ID: 1563636b6775... &bull; 2560×2744px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="14_text_integrity.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="14_text_integrity.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="true">
+        <div class="preview-box" onclick="openModal('15_reciters_admin.png')">
+          <img class="preview-img" src="15_reciters_admin.png" alt="إدارة القرّاء — رتل" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #15</span>
+            <div class="badges-row">
+              <span class="device-badge admin">لوحة الإدارة</span>
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">إدارة القرّاء — رتل</h2>
+          <div class="card-meta">
+            ID: d670546cc492... &bull; 2560×2432px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="15_reciters_admin.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="15_reciters_admin.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('16_bookmarks_desktop.png')">
+          <img class="preview-img" src="16_bookmarks_desktop.png" alt="المحفوظات — رتل (كمبيوتر)" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #16</span>
+            <div class="badges-row">
+              
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">المحفوظات — رتل (كمبيوتر)</h2>
+          <div class="card-meta">
+            ID: da974ce37d0e... &bull; 2560×4776px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="16_bookmarks_desktop.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="16_bookmarks_desktop.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-device="DESKTOP" data-is-admin="false">
+        <div class="preview-box" onclick="openModal('17_reciters_desktop.png')">
+          <img class="preview-img" src="17_reciters_desktop.png" alt="القرّاء — رتل (كمبيوتر)" loading="lazy">
+          <div class="preview-overlay">
+            <span>🔍 تكبير الصورة</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <span class="screen-number">الشاشة #17</span>
+            <div class="badges-row">
+              
+              <span class="device-badge desktop">كمبيوتر 💻</span>
+            </div>
+          </div>
+          <h2 class="card-title">القرّاء — رتل (كمبيوتر)</h2>
+          <div class="card-meta">
+            ID: 14bc4ed72f35... &bull; 2560×3594px
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="17_reciters_desktop.html" target="_blank">
+              ⚡ فتح صفحة HTML
+            </a>
+            <a class="btn btn-secondary" href="17_reciters_desktop.png" target="_blank">
+              🖼️ عرض الصورة
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal" id="imageModal" onclick="closeModal()">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="modalImg" src="" alt="معاينة الشاشة">
+    </div>
+  </div>
+
+  <script>
+    function filterScreens(type) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (type === 'ALL') {
+          card.style.display = 'flex';
+        } else if (type === 'ADMIN') {
+          card.style.display = card.dataset.isAdmin === 'true' ? 'flex' : 'none';
+        } else if (card.dataset.device === type) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(imgSrc) {
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('imageModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
