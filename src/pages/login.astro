@@ -85,6 +85,14 @@ import Base from '../layouts/Base.astro';
           <span>تسجيل الدخول</span>
           <span class="material-symbols-outlined">login</span>
         </button>
+
+        <div class="signup-redirect-row">
+          <span>ليس لديك حساب بعد؟</span>
+          <a href="/signup" class="signup-redirect-link">
+            <span>إنشاء حساب جديد</span>
+            <span class="material-symbols-outlined" style="font-size: 1rem;">person_add</span>
+          </a>
+        </div>
       </form>
 
       <!-- الفاصل -->
@@ -354,6 +362,31 @@ import Base from '../layouts/Base.astro';
 
   .login-submit-btn:active {
     transform: translateY(0);
+  }
+
+  .signup-redirect-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #bbcac4);
+    padding-top: 0.5rem;
+  }
+
+  .signup-redirect-link {
+    color: var(--color-primary, #61eccd);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: opacity 0.2s;
+  }
+
+  .signup-redirect-link:hover {
+    opacity: 0.85;
+    text-decoration: underline;
   }
 
   .divider {

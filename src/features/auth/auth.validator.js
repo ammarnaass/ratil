@@ -24,7 +24,31 @@ export function validatePassword(password) {
   return { valid: true };
 }
 
-export function validateSignupData({ name, email, password, confirmPassword }) {
+export function evaluatePasswordStrength(password) {
+  if (!password || typeof password !== 'string') {
+    return { score: 0, label: 'فارغة', color: 'text-outline', width: '0%' };
+  }
+  let score = 0;
+  if (password.length >= 6) score += 1;
+  if (password.length >= 8) score += 1;
+  if (/[A-Z]/.test(password) && /[a-z]/.test(password)) score += 1;
+  if (/[0-9]/.test(password) || /[^A-Za-z0-9]/.test(password)) score += 1;
+
+  const labels = [
+    { label: 'قصيرة جداً', color: 'text-error', width: '25%' },
+    { label: 'ضعيفة', color: 'text-error', width: '25%' },
+    { label: 'مقبولة', color: 'text-outline', width: '50%' },
+    { label: 'جيدة ومطمئنة', color: 'text-secondary', width: '75%' },
+    { label: 'قوية ومناسبة', color: 'text-primary', width: '100%' }
+  ];
+
+  return {
+    score,
+    ...labels[score]
+  };
+}
+
+export function validateSignupData({ name, email, password, confirmPassword, agreeTerms = true }) {
   if (!name || name.trim().length < 2) {
     return { valid: false, error: 'الاسم الكامل مطلوب (حرفان على الأقل)' };
   }
@@ -41,6 +65,10 @@ export function validateSignupData({ name, email, password, confirmPassword }) {
 
   if (password !== confirmPassword) {
     return { valid: false, error: 'كلمتا المرور غير متطابقتين' };
+  }
+
+  if (!agreeTerms) {
+    return { valid: false, error: 'يرجى الموافقة على شروط الاستخدام وسياسة الخصوصية' };
   }
 
   return { valid: true };

@@ -1,0 +1,661 @@
+---
+/**
+ * صفحة إنشاء حساب جديد — رتل
+ * src/pages/signup.astro
+ */
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="إنشاء حساب جديد — رتل" description="إنشاء حساب لمزامنة مواضع الختمات، المفضلة، وسجل الاستماع في سكينة تامة" activeNav="login">
+  <div class="signup-wrapper">
+    <!-- هالات التوهج الخلفية الروحانية -->
+    <div class="ambient-glow ambient-glow-top" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-bottom" aria-hidden="true"></div>
+
+    <div class="signup-card">
+      <!-- الشعار والأيقونة العلوية -->
+      <div class="signup-header">
+        <div class="brand-emblem">
+          <svg class="emblem-svg" fill="none" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 14C4 11.5 5 9 7 9C9 9 9.5 19 11.5 19C13.5 19 14 6 16.5 6C19 6 19.5 22 21.5 22C23.5 22 24 16.5 24 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+          </svg>
+        </div>
+        <h1 class="signup-title">إنشاء حساب في <span class="brand-name">رَتِّلْ</span></h1>
+        <p class="signup-subtitle">
+          لحفظ ختماتك، مزامنة آياتك المفضلة، ومتابعة وِردك اليومي أينما كنت في أجواء هادئة نقية.
+        </p>
+      </div>
+
+      <!-- صندوق التنبيهات والأخطاء -->
+      <div id="auth-error" class="auth-error-box hidden" role="alert"></div>
+
+      <!-- نموذج إنشاء الحساب -->
+      <form id="signup-form" class="signup-form" novalidate>
+        <!-- الاسم الكامل -->
+        <div class="form-group">
+          <label for="name" class="form-label">الاسم الكامل</label>
+          <div class="input-container">
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              class="form-input" 
+              placeholder="مثال: عبد الرحمن محمد" 
+              autocomplete="name" 
+              required 
+            />
+            <span class="material-symbols-outlined input-icon">person</span>
+          </div>
+        </div>
+
+        <!-- البريد الإلكتروني -->
+        <div class="form-group">
+          <label for="email" class="form-label">البريد الإلكتروني</label>
+          <div class="input-container">
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="name@example.com" 
+              autocomplete="email" 
+              required 
+            />
+            <span class="material-symbols-outlined input-icon">mail</span>
+          </div>
+        </div>
+
+        <!-- كلمة المرور -->
+        <div class="form-group">
+          <label for="password" class="form-label">كلمة المرور</label>
+          <div class="input-container">
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              class="form-input pr-input" 
+              placeholder="••••••••" 
+              autocomplete="new-password" 
+              required 
+            />
+            <span class="material-symbols-outlined input-icon">lock</span>
+            <button type="button" id="togglePassword" class="password-toggle-btn" aria-label="إظهار أو إخفاء كلمة المرور">
+              <span class="material-symbols-outlined" id="passwordIcon">visibility_off</span>
+            </button>
+          </div>
+
+          <!-- مؤشر قوة كلمة المرور -->
+          <div class="strength-container">
+            <div id="strength-meter" class="strength-meter-grid">
+              <div class="strength-bar-seg bg-surface-container-highest"></div>
+              <div class="strength-bar-seg bg-surface-container-highest"></div>
+              <div class="strength-bar-seg bg-surface-container-highest"></div>
+              <div class="strength-bar-seg bg-surface-container-highest"></div>
+            </div>
+            <div class="strength-labels-row">
+              <span id="strength-text" class="strength-indicator-text">قوة كلمة المرور: مقبولة</span>
+              <span class="strength-hint">6+ خانات ورموز</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- تأكيد كلمة المرور -->
+        <div class="form-group">
+          <label for="confirmPassword" class="form-label">تأكيد كلمة المرور</label>
+          <div class="input-container">
+            <input 
+              type="password" 
+              id="confirmPassword" 
+              name="confirmPassword" 
+              class="form-input" 
+              placeholder="••••••••" 
+              autocomplete="new-password" 
+              required 
+            />
+            <span class="material-symbols-outlined input-icon">verified_user</span>
+          </div>
+        </div>
+
+        <!-- اختيار الرواية المفضلة -->
+        <div class="form-group">
+          <div class="form-label-row">
+            <label class="form-label">الرواية الصوتية المعتمدة</label>
+            <span class="optional-tag">اختياري</span>
+          </div>
+          <div class="riwayah-grid">
+            <button type="button" class="riwayah-btn active" data-riwaya="hafs" data-active="true">
+              حفص عن عاصم
+            </button>
+            <button type="button" class="riwayah-btn" data-riwaya="warsh" data-active="false">
+              ورش عن نافع
+            </button>
+            <button type="button" class="riwayah-btn" data-riwaya="qalun" data-active="false">
+              قالون عن نافع
+            </button>
+          </div>
+        </div>
+
+        <!-- اتفاقية الخصوصية والشروط -->
+        <div class="terms-group">
+          <label class="terms-label">
+            <input type="checkbox" id="agreeTerms" class="terms-checkbox" checked />
+            <span class="terms-text">
+              أوافق على <a href="#" class="terms-link">شروط الاستخدام</a> و<a href="#" class="terms-link">سياسة الخصوصية الهادئة</a> (منصة بلا أي إعلانات، وبدون تتبع أو بيع للبيانات مطلقاً).
+            </span>
+          </label>
+        </div>
+
+        <!-- زر إنشاء الحساب -->
+        <button type="submit" id="submit-btn" class="signup-submit-btn">
+          <span>إنشاء الحساب والبدء</span>
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+
+        <!-- رابط العودة لتسجيل الدخول -->
+        <div class="login-redirect-row">
+          <span>لديك حساب بالفعل؟</span>
+          <a href="/login" class="login-redirect-link">
+            <span>تسجيل الدخول</span>
+            <span class="material-symbols-outlined" style="font-size: 1.125rem;">login</span>
+          </a>
+        </div>
+      </form>
+
+      <!-- الفاصل -->
+      <div class="divider">
+        <span class="divider-text">أو المتابعة المباشرة</span>
+      </div>
+
+      <!-- بانر وضع الزائر الهادئ -->
+      <div class="guest-banner">
+        <div class="guest-banner-header">
+          <span class="status-indicator-dot"></span>
+          <span class="guest-banner-title">الاستماع متاح دائماً بدون حساب</span>
+        </div>
+        <p class="guest-banner-desc">تصفح المصحف المرتل واستمع لأي سورة كزائر بدون أي قيود أو اشتراطات.</p>
+        <a href="/" class="guest-continue-link">
+          <span>المتابعة كزائر</span>
+          <span class="material-symbols-outlined">arrow_back</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- الآية القرآنية وشارة الأمان -->
+    <div class="signup-footer-quote">
+      <div class="spiritual-verse">﴿ وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا ﴾</div>
+      <div class="security-pill">
+        <span class="material-symbols-outlined">shield</span>
+        <span>بياناتك في أمان تام • بدون إعلانات • بدون أي تتبع تجاري</span>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .signup-wrapper {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+    position: relative;
+  }
+
+  .signup-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 520px;
+    background: rgba(26, 27, 33, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(62, 207, 178, 0.15);
+    border-radius: var(--radius-xl, 1rem);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    padding: 2.25rem 2rem;
+  }
+
+  .signup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand-emblem {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    background: var(--color-surface-container-high, #282a2f);
+    color: var(--color-primary, #61eccd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(62, 207, 178, 0.25);
+  }
+
+  .emblem-svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .signup-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary, #e2e2e9);
+    margin-bottom: 0.5rem;
+  }
+
+  .brand-name {
+    color: var(--color-primary, #61eccd);
+  }
+
+  .signup-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #bbcac4);
+    line-height: 1.6;
+    max-width: 420px;
+  }
+
+  .auth-error-box {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fca5a5;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+    text-align: right;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    text-align: right;
+  }
+
+  .form-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-primary, #e2e2e9);
+  }
+
+  .optional-tag {
+    font-size: 0.75rem;
+    color: #85948f;
+  }
+
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .form-input {
+    width: 100%;
+    height: 2.75rem;
+    background: var(--color-surface-container, #1e2025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding: 0 2.75rem 0 1rem;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: var(--color-text-primary, #e2e2e9);
+    transition: all 0.2s;
+    outline: none;
+  }
+
+  .pr-input {
+    padding-left: 2.75rem;
+  }
+
+  .form-input:focus {
+    background: var(--color-surface-container-high, #282a2f);
+    border-color: var(--color-primary, #61eccd);
+    box-shadow: 0 0 0 2px rgba(97, 236, 205, 0.2);
+  }
+
+  .input-icon {
+    position: absolute;
+    right: 0.75rem;
+    color: #85948f;
+    font-size: 1.25rem;
+    pointer-events: none;
+  }
+
+  .password-toggle-btn {
+    position: absolute;
+    left: 0.75rem;
+    background: transparent;
+    border: none;
+    color: #85948f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    transition: color 0.2s;
+  }
+
+  .password-toggle-btn:hover {
+    color: var(--color-text-primary, #e2e2e9);
+  }
+
+  .strength-container {
+    padding-top: 0.375rem;
+  }
+
+  .strength-meter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.375rem;
+    height: 0.25rem;
+    width: 100%;
+  }
+
+  .strength-bar-seg {
+    height: 100%;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+  }
+
+  .strength-bar-seg.bg-primary {
+    background: var(--color-primary, #61eccd);
+  }
+
+  .strength-bar-seg.bg-primary\/50 {
+    background: rgba(97, 236, 205, 0.5);
+  }
+
+  .strength-labels-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    padding-top: 0.375rem;
+  }
+
+  .strength-indicator-text {
+    color: var(--color-primary, #61eccd);
+    font-weight: 500;
+  }
+
+  .strength-hint {
+    color: #85948f;
+  }
+
+  .riwayah-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .riwayah-btn {
+    padding: 0.625rem 0.5rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    border: none;
+    cursor: pointer;
+    background: var(--color-surface-container, #1e2025);
+    color: var(--color-text-muted, #bbcac4);
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .riwayah-btn:hover {
+    background: var(--color-surface-container-high, #282a2f);
+    color: var(--color-text-primary, #e2e2e9);
+  }
+
+  .riwayah-btn.active, .riwayah-btn[data-active="true"] {
+    background: rgba(97, 236, 205, 0.15) !important;
+    color: var(--color-primary, #61eccd) !important;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .terms-group {
+    padding-top: 0.25rem;
+  }
+
+  .terms-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .terms-checkbox {
+    margin-top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--color-primary, #61eccd);
+    cursor: pointer;
+  }
+
+  .terms-text {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #bbcac4);
+    line-height: 1.5;
+  }
+
+  .terms-link {
+    color: var(--color-primary, #61eccd);
+    text-decoration: none;
+  }
+
+  .terms-link:hover {
+    text-decoration: underline;
+  }
+
+  .signup-submit-btn {
+    width: 100%;
+    height: 3rem;
+    margin-top: 0.5rem;
+    background: var(--color-primary, #61eccd);
+    color: #00382e;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    font-family: inherit;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px rgba(97, 236, 205, 0.3);
+    transition: all 0.2s;
+  }
+
+  .signup-submit-btn:hover {
+    background: #3ecfb2;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(97, 236, 205, 0.4);
+  }
+
+  .signup-submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .login-redirect-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #bbcac4);
+    padding-top: 0.5rem;
+  }
+
+  .login-redirect-link {
+    color: var(--color-primary, #61eccd);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: opacity 0.2s;
+  }
+
+  .login-redirect-link:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+  }
+
+  .divider {
+    position: relative;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .divider::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .divider-text {
+    position: relative;
+    background: #1a1b21;
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+    color: #85948f;
+  }
+
+  .guest-banner {
+    background: rgba(30, 32, 37, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    text-align: right;
+  }
+
+  .guest-banner-header {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .status-indicator-dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: #67dac0;
+  }
+
+  .guest-banner-title {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text-primary, #e2e2e9);
+  }
+
+  .guest-banner-desc {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #bbcac4);
+    line-height: 1.5;
+  }
+
+  .guest-continue-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #67dac0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    transition: color 0.2s;
+  }
+
+  .guest-continue-link:hover {
+    color: var(--color-primary, #61eccd);
+  }
+
+  .signup-footer-quote {
+    position: relative;
+    z-index: 10;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    max-width: 480px;
+  }
+
+  .spiritual-verse {
+    font-size: 1.25rem;
+    color: var(--color-primary, #61eccd);
+    font-family: var(--font-quran, serif);
+    letter-spacing: 0.05em;
+  }
+
+  .security-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(40, 42, 48, 0.5);
+    color: var(--color-text-muted, #bbcac4);
+    font-size: 0.75rem;
+  }
+
+  .security-pill .material-symbols-outlined {
+    font-size: 1rem;
+    color: var(--color-primary, #61eccd);
+  }
+</style>
+
+<script>
+  import { setupPasswordToggle, setupSignupForm } from '../features/auth';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupPasswordToggle('togglePassword', 'password', 'passwordIcon');
+    setupSignupForm({
+      formId: 'signup-form',
+      nameInputId: 'name',
+      emailInputId: 'email',
+      pwdInputId: 'password',
+      confirmPwdInputId: 'confirmPassword',
+      agreeTermsId: 'agreeTerms',
+      riwayahBtnClass: 'riwayah-btn',
+      strengthMeterId: 'strength-meter',
+      strengthTextId: 'strength-text',
+      errorBoxId: 'auth-error',
+      submitBtnId: 'submit-btn'
+    });
+  });
+</script>

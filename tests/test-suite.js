@@ -366,6 +366,7 @@ console.log('\n12. اختبارات نظام المصادقة ولوحة الت�
 // فحص وجود الملفات المعيارية
 const authFiles = [
   'src/features/auth/auth.constants.js',
+  'src/features/auth/auth.crypto.js',
   'src/features/auth/auth.validator.js',
   'src/features/auth/auth.service.js',
   'src/features/auth/auth.ui.js',
@@ -388,12 +389,22 @@ for (const f of adminFiles) {
   assert(existsSync(resolve(ROOT_DIR, f)), `ملف لوحة التحكم ${f} موجود`);
 }
 
-// فحص صفحات Astro
+// فحص صفحات Astro الخاصة بالمصادقة والإدارة
 assert(existsSync(resolve(ROOT_DIR, 'src/pages/login.astro')), 'صفحة تسجيل الدخول src/pages/login.astro موجودة');
+assert(existsSync(resolve(ROOT_DIR, 'src/pages/signup.astro')), 'صفحة إنشاء الحساب src/pages/signup.astro موجودة');
 assert(existsSync(resolve(ROOT_DIR, 'src/pages/admin.astro')), 'صفحة لوحة التحكم src/pages/admin.astro موجودة');
 
-// اختبار مدقق المصادقة (Auth Validator)
-const { validateIdentifier, validatePassword, validateSignupData } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/auth/auth.validator.js')).href);
+// اختبار دوال التشفير وتجزئة كلمات المرور (Auth Crypto)
+const { generateRandomSalt, hashPassword, verifyPassword } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/auth/auth.crypto.js')).href);
+const salt1 = generateRandomSalt(16);
+assert(salt1 && salt1.length >= 16, 'توليد الملح العشوائي المشفر يعمل بدقة');
+const hash1 = await hashPassword('MySecretPass#2026', salt1);
+assert(typeof hash1 === 'string' && hash1.length > 20, 'تجزئة كلمة المرور بتقنية PBKDF2 تعمل بنجاح');
+assert(await verifyPassword('MySecretPass#2026', hash1, salt1), 'التحقق من صحة كلمة المرور ينجح مع الكلمة الصحيحة');
+assert(!(await verifyPassword('WrongPassword', hash1, salt1)), 'التحقق من كلمة المرور يفشل تلقائياً مع الكلمة الخاطئة');
+
+// اختبار مدقق المصادقة وقوة كلمة المرور (Auth Validator)
+const { validateIdentifier, validatePassword, validateSignupData, evaluatePasswordStrength } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/auth/auth.validator.js')).href);
 assert(!validateIdentifier('').valid, 'المدقق يرفض المعرف الفارغ');
 assert(!validateIdentifier('ab').valid, 'المدقق يرفض المعرف الأقل من 3 أحرف');
 assert(validateIdentifier('admin').valid, 'المدقق يقبل المعرف الصالح');
@@ -401,10 +412,17 @@ assert(validateIdentifier('admin').valid, 'المدقق يقبل المعرف ا
 assert(!validatePassword('123').valid, 'المدقق يرفض كلمة المرور الأقل من 6 أحرف');
 assert(validatePassword('secret123').valid, 'المدقق يقبل كلمة المرور الصالحة');
 
-assert(!validateSignupData({ name: 'أحمد', email: 'invalid-email', password: 'pass', confirmPassword: 'pass' }).valid, 'مدقق التسجيل يرفض البريد غير الصالح');
-assert(validateSignupData({ name: 'أحمد الصالح', email: 'ahmad@example.com', password: 'password123', confirmPassword: 'password123' }).valid, 'مدقق التسجيل يقبل البيانات الصحيحة');
+const weakStrength = evaluatePasswordStrength('123');
+assert(weakStrength.score <= 1, 'مقياس القوة يصنف كلمات المرور القصيرة كضعيفة');
+const strongStrength = evaluatePasswordStrength('SuperSecure#Password2026');
+assert(strongStrength.score === 4, 'مقياس القوة يصنف كلمات المرور المتكاملة كقوية ومناسبة');
 
-// اختبار خدمة المصادقة (Auth Service)
+assert(!validateSignupData({ name: 'أحمد', email: 'invalid-email', password: 'pass', confirmPassword: 'pass' }).valid, 'مدقق التسجيل يرفض البريد غير الصالح');
+assert(!validateSignupData({ name: 'أحمد', email: 'ahmad@example.com', password: 'pass', confirmPassword: 'pass2' }).valid, 'مدقق التسجيل يرفض عدم تطابق كلمتي المرور');
+assert(!validateSignupData({ name: 'أحمد', email: 'ahmad@example.com', password: 'password123', confirmPassword: 'password123', agreeTerms: false }).valid, 'مدقق التسجيل يرفض عدم الموافقة على الشروط');
+assert(validateSignupData({ name: 'أحمد الصالح', email: 'ahmad@example.com', password: 'password123', confirmPassword: 'password123', agreeTerms: true }).valid, 'مدقق التسجيل يقبل البيانات الصحيحة');
+
+// اختبار خدمة المصادقة والتسجيل (Auth Service)
 const { AuthService } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/auth/auth.service.js')).href);
 const mockStorage = {
   data: {},
@@ -414,16 +432,45 @@ const mockStorage = {
 };
 const testAuth = new AuthService(mockStorage);
 
-const adminLogin = await testAuth.login('admin', 'adminPass');
-assert(adminLogin.success && adminLogin.session.role === 'admin', 'تسجيل دخول المدير يمنح صلاحية admin تلقائياً');
-assert(testAuth.isAuthenticated(), 'التحقق من جلسة المصادقة النشطة يعمل بنجاح');
-assert(testAuth.isAdmin(), 'التحقق من صلاحيات المدير يعمل بدقة');
+// 1. اختبار إنشاء حساب جديد (Signup)
+const signupRes = await testAuth.signup({
+  name: 'عبد الرحمن القحطاني',
+  email: 'abdulrahman@example.com',
+  password: 'SecurePassword#2026',
+  confirmPassword: 'SecurePassword#2026',
+  riwaya: 'hafs',
+  agreeTerms: true
+});
+assert(signupRes.success && signupRes.user.email === 'abdulrahman@example.com', 'إنشاء حساب جديد يكتمل بنجاح ويحفظ بيانات المستخدم');
+assert(signupRes.user.passwordHash !== 'SecurePassword#2026', 'كلمة المرور تُخزّن مشفرة بالكامل ولا تظهر كنص واضح');
+assert(testAuth.isAuthenticated(), 'تسجيل الحساب يُنشئ جلسة مصادقة فورية للمستخدم');
 
-const userLogin = await testAuth.login('user@ratil.app', 'userPass');
-assert(userLogin.success && userLogin.session.role === 'user', 'تسجيل دخول المستخدم العادي يمنح صلاحية user');
+// 2. اختبار رفض التسجيل المكرر بالبريد نفسه
+const dupSignupRes = await testAuth.signup({
+  name: 'مستخدم آخر',
+  email: 'abdulrahman@example.com',
+  password: 'OtherPassword#2026',
+  confirmPassword: 'OtherPassword#2026'
+});
+assert(!dupSignupRes.success && dupSignupRes.error.includes('مسجل بالفعل'), 'النظام يمنع تسجيل نفس البريد الإلكتروني مرتين');
 
+// 3. تسجيل الخروج ثم تسجيل الدخول بالحساب الجديد
 testAuth.logout();
 assert(!testAuth.isAuthenticated(), 'تسجيل الخروج يحذف الجلسة بنجاح');
+
+const wrongLogin = await testAuth.login('abdulrahman@example.com', 'WrongPass#123');
+assert(!wrongLogin.success && wrongLogin.error.includes('غير صحيحة'), 'تسجيل الدخول يرفض كلمة المرور غير المطابقة للهاش');
+
+const successLogin = await testAuth.login('abdulrahman@example.com', 'SecurePassword#2026');
+assert(successLogin.success && successLogin.session.role === 'user', 'تسجيل الدخول بكلمة المرور الصحيحة ينجح ويمنح دور user');
+
+// 4. اختبار تسجيل دخول المدير (Admin)
+const adminLogin = await testAuth.login('admin', 'adminPass');
+assert(adminLogin.success && adminLogin.session.role === 'admin', 'تسجيل دخول المدير يمنح صلاحية admin تلقائياً');
+assert(testAuth.isAdmin(), 'التحقق من صلاحيات المدير يعمل بدقة');
+
+testAuth.logout();
+assert(!testAuth.isAuthenticated(), 'تسجيل الخروج النهائي يعمل بنجاح');
 
 // اختبار خدمة لوحة التحكم (Admin Service)
 const { AdminService } = await import(pathToFileURL(resolve(ROOT_DIR, 'src/features/admin/admin.service.js')).href);

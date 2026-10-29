@@ -156,3 +156,68 @@ export async function getScientificReports({ limit = 20, status = null } = {}) {
     return [];
   }
 }
+
+/**
+ * تسجيل مستخدم جديد في قاعدة بيانات Neon
+ */
+export async function createUser({ email, username, displayName, passwordHash, salt, role = 'user', riwayaPreference = 'hafs' }) {
+  const sql = await getNeonClient();
+  if (!sql) {
+    return {
+      id: 'usr_' + Date.now().toString(36),
+      email,
+      displayName,
+      role,
+      created_at: new Date().toISOString()
+    };
+  }
+
+  const result = await sql`
+    INSERT INTO users (
+      email, username, display_name, password_hash, salt, role, riwaya_preference
+    ) VALUES (
+      ${email.toLowerCase()}, ${username || null}, ${displayName}, ${passwordHash}, ${salt}, ${role}, ${riwayaPreference}
+    )
+    RETURNING id, email, display_name, role, riwaya_preference, created_at;
+  `;
+
+  return result[0];
+}
+
+/**
+ * البحث عن مستخدم بالبريد الإلكتروني
+ */
+export async function getUserByEmail(email) {
+  const sql = await getNeonClient();
+  if (!sql || !email) return null;
+
+  try {
+    const result = await sql`
+      SELECT * FROM users
+      WHERE email = ${email.toLowerCase()}
+      LIMIT 1;
+    `;
+    return result[0] || null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * تحديث تاريخ آخر تسجيل دخول للمستخدم
+ */
+export async function updateUserLastLogin(userId) {
+  const sql = await getNeonClient();
+  if (!sql || !userId) return;
+
+  try {
+    await sql`
+      UPDATE users
+      SET last_login = CURRENT_TIMESTAMP
+      WHERE id = ${userId};
+    `;
+  } catch {
+    // تجاهل الأخطاء الصامتة
+  }
+}
+

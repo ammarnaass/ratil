@@ -1,5 +1,5 @@
 -- رتل - Ratil
--- مخطط قاعدة بيانات الحوكمة والبلاغات العلمية وتوثيق البصمات والتراخيص
+-- مخطط قاعدة بيانات الحوكمة والبلاغات العلمية وتوثيق البصمات والتراخيص والمستخدمين
 -- db/schema.sql (Neon Serverless Postgres)
 
 -- 1. جدول البلاغات العلمية عن الأخطاء في التلاوة أو النص
@@ -40,7 +40,22 @@ CREATE TABLE IF NOT EXISTS audio_licenses_registry (
     verified_date DATE NOT NULL
 );
 
--- فهارس تحسين أداء الاستعلامات الإدارية
+-- 4. جدول حسابات المستخدمين للمصادقة والمزامنة
+CREATE TABLE IF NOT EXISTS users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(100),
+    display_name VARCHAR(100) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    salt VARCHAR(64) NOT NULL,
+    role VARCHAR(20) DEFAULT 'user' CHECK (role IN ('user', 'auditor', 'admin')),
+    riwaya_preference VARCHAR(20) DEFAULT 'hafs' CHECK (riwaya_preference IN ('hafs', 'warsh', 'qalun')),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    last_login TIMESTAMP WITH TIME ZONE
+);
+
+-- فهارس تحسين أداء الاستعلامات
 CREATE INDEX IF NOT EXISTS idx_reports_surah ON scientific_reports(surah_id, aya_number);
 CREATE INDEX IF NOT EXISTS idx_reports_status ON scientific_reports(status);
 CREATE INDEX IF NOT EXISTS idx_audits_commit ON text_integrity_audits(commit_hash);
+CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
