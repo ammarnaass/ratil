@@ -4,7 +4,7 @@
  * components/admin/index.ts
  */
 
-export * from './types';
+export type * from './types';
 export * from './constants';
 export { useAdminDashboard } from './useAdminDashboard';
 export { default as AdminLogin } from './AdminLogin';

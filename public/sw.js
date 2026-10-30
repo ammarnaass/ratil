@@ -5,7 +5,7 @@
  * public/sw.js
  */
 
-const CACHE_NAME = 'ratil-cache-v3';
+const CACHE_NAME = 'ratil-cache-v4';
 const AUDIO_CACHE_NAME = 'ratil-audio-cache-v1';
 
 // الأصول الأساسية الثابتة المخزنة مسبقاً
@@ -159,7 +159,16 @@ async function handleAudioRequest(request) {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // اعتراض ومعالجة ملفات الصوت (MP3 أو Opus أو نطاقات الاستضافة الصوتية وأرشيف الإنترنت)
+  // 1. تجاوز حزم Next.js وتحديثات Webpack والـ API دون اعتراض لضمان سلامة الـ Chunks
+  if (
+    url.pathname.startsWith('/_next/') ||
+    url.pathname.startsWith('/api/') ||
+    url.pathname.includes('webpack')
+  ) {
+    return;
+  }
+
+  // 2. اعتراض ومعالجة ملفات الصوت (MP3 أو Opus أو نطاقات الاستضافة الصوتية وأرشيف الإنترنت)
   const isAudio = url.pathname.endsWith('.mp3') ||
                   url.pathname.endsWith('.opus') ||
                   url.hostname === 'cdn.ratil.app' ||
