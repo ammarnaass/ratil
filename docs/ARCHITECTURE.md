@@ -91,7 +91,7 @@ ratil/
 │   │
 │   ├── bookmarks/page.tsx            # صفحة المحفوظات
 │   ├── reciters/page.tsx             # فهرس القرّاء
-│   ├── admin/page.tsx                # لوحة الإدارة المركزية (مربوطة بـ features/admin)
+│   ├── admin/page.tsx                # لوحة الإدارة المباشرة (ADMIN_SECRET)
 │   │
 │   └── api/                          # Serverless Functions
 │       ├── reciters/
@@ -100,20 +100,10 @@ ratil/
 │       ├── audio/
 │       │   └── route.ts              # GET (استعلام) / POST (إضافة صوت)
 │       ├── reports/
-│       │   ├── route.ts              # POST (بلاغ مستخدم)
+│       │   ├── route.ts              # POST (بلاغ مستخدم) / GET (للمدير)
 │       │   └── [id]/route.ts         # PATCH / DELETE (إشراف)
-│       ├── integrity/
-│       │   └── route.ts              # GET (فحص تجزئة SHA-256 للنصوص)
 │       └── health/
 │           └── route.ts              # GET (فحص Archive.org و Range Requests)
-│
-├── features/                         # معمارية الميزات النمطية (Modular Features)
-│   └── admin/                        # لوحة الإدارة (Screens 11-15)
-│       ├── types/
-│       ├── constants/
-│       ├── services/
-│       ├── hooks/
-│       └── components/
 │
 ├── components/                       # مكونات واجهة المستخدم العامة
 │   ├── Player.tsx                    # 'use client' — المشغّل المتقدم

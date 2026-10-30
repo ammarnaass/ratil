@@ -30,7 +30,6 @@ ratil/
 │   ├── admin/                # لوحة الإدارة المركزية
 │   └── api/                  # خوادم Serverless (Neon + Integrity + Health)
 ├── components/               # مكونات واجهة المستخدم والمشغّل الصوتي
-├── features/                 # ميزات نمطية (admin)
 ├── lib/                      # اتصال Neon DB (lib/db.ts) والاستعلامات
 ├── scripts/                  # أدوات البناء التلقائي والتحقق من البصمات
 │   ├── verify-text.mjs       # التحقق الإلزامي من بصمات SHA-256
