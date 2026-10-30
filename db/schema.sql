@@ -57,54 +57,13 @@ CREATE TABLE IF NOT EXISTS health_logs (
   checked_at       TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ─── 5. المستخدمون والمصادقة (Auth & Users) ─────────────────
-CREATE TABLE IF NOT EXISTS users (
-  id              SERIAL       PRIMARY KEY,
-  name            TEXT         NOT NULL,
-  email           VARCHAR(255) UNIQUE NOT NULL,
-  password_hash   TEXT         NOT NULL,
-  role            VARCHAR(20)  DEFAULT 'user', -- 'user' | 'admin'
-  avatar_url      TEXT,
-  created_at      TIMESTAMPTZ  DEFAULT NOW(),
-  updated_at      TIMESTAMPTZ  DEFAULT NOW()
-);
-
--- ─── 6. محفوظات المستخدم السحابية (User Bookmarks) ───────────
-CREATE TABLE IF NOT EXISTS user_bookmarks (
-  id              SERIAL      PRIMARY KEY,
-  user_id         INTEGER     REFERENCES users(id) ON DELETE CASCADE,
-  surah_id        SMALLINT    NOT NULL CHECK (surah_id BETWEEN 1 AND 114),
-  ayah_number     SMALLINT    NOT NULL,
-  ayah_text       TEXT,
-  riwaya          VARCHAR(20) DEFAULT 'hafs',
-  created_at      TIMESTAMPTZ DEFAULT NOW(),
-
-  UNIQUE (user_id, surah_id, ayah_number)
-);
-
--- ─── 7. موضع الاستماع الأخير للمستخدم (Playback Progress) ────
-CREATE TABLE IF NOT EXISTS user_playback_progress (
-  id               SERIAL      PRIMARY KEY,
-  user_id          INTEGER     REFERENCES users(id) ON DELETE CASCADE,
-  reciter_id       VARCHAR(60) NOT NULL,
-  surah_number     SMALLINT    NOT NULL CHECK (surah_number BETWEEN 1 AND 114),
-  ayah_number      SMALLINT,
-  progress_seconds NUMERIC(8,2),
-  updated_at       TIMESTAMPTZ DEFAULT NOW(),
-
-  UNIQUE (user_id)
-);
-
--- ─── 8. الفهارس ────────────────────────────────────────────────
+-- ─── فهارس ────────────────────────────────────────────────
 CREATE INDEX IF NOT EXISTS idx_audio_reciter   ON surah_audio (reciter_id);
 CREATE INDEX IF NOT EXISTS idx_audio_surah     ON surah_audio (surah_number);
 CREATE INDEX IF NOT EXISTS idx_reports_status  ON reports (status);
 CREATE INDEX IF NOT EXISTS idx_health_reciter  ON health_logs (reciter_id, checked_at DESC);
-CREATE INDEX IF NOT EXISTS idx_users_email     ON users (email);
-CREATE INDEX IF NOT EXISTS idx_user_bookmarks  ON user_bookmarks (user_id);
-CREATE INDEX IF NOT EXISTS idx_user_progress   ON user_playback_progress (user_id);
 
--- ─── 6. بذور البيانات الأولية (Initial Seed) ─────────────────
+-- ─── بذور البيانات الأولية (Initial Seed) ─────────────────
 INSERT INTO reciters (id, name, riwaya, license, source_name, source_url, is_visible)
 VALUES 
   ('al-minshawy', 'الشيخ محمد صديق المنشاوي', 'hafs', 'public-domain', 'Egyptian Radio Archive', 'https://archive.org/details/ratil-al-minshawy-hafs', TRUE),

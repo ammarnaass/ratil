@@ -30,14 +30,13 @@ ratil/
 │   ├── admin/                # لوحة الإدارة المركزية
 │   └── api/                  # خوادم Serverless (Neon + Integrity + Health)
 ├── components/               # مكونات واجهة المستخدم والمشغّل الصوتي
-├── features/                 # ميزات نمطية (admin, auth)
+├── features/                 # ميزات نمطية (admin)
 ├── lib/                      # اتصال Neon DB (lib/db.ts) والاستعلامات
 ├── scripts/                  # أدوات البناء التلقائي والتحقق من البصمات
 │   ├── verify-text.mjs       # التحقق الإلزامي من بصمات SHA-256
 │   ├── build-data.mjs        # بناء وتوزيع نصوص السور
 │   ├── build-search.mjs      # توليد فهرس البحث الفوري
-│   ├── init-db.mjs           # تهيئة وتغذية جداول Neon
-│   └── create-admin.mjs      # إنشاء مستخدمي الإدارة
+│   └── init-db.mjs           # تهيئة وتغذية جداول Neon
 ├── data/
 │   ├── source/               # النصوص المصدرية المعتمدة (حفص وورش)
 │   ├── checksums.json        # البصمات المرجعية لجميع النصوص والخطوط
@@ -71,12 +70,7 @@ npm run build:search
 npm run db:init
 ```
 
-### 5. إنشاء حساب مدير النظام:
-```bash
-npm run create:admin
-```
-
-### 6. بناء المشروع للإنتاج (Production Build):
+### 5. بناء المشروع للإنتاج (Production Build):
 ```bash
 npm run build
 ```

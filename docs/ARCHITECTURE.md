@@ -108,13 +108,12 @@ ratil/
 │           └── route.ts              # GET (فحص Archive.org و Range Requests)
 │
 ├── features/                         # معمارية الميزات النمطية (Modular Features)
-│   ├── admin/                        # لوحة الإدارة (Screens 11-15)
-│   │   ├── types/
-│   │   ├── constants/
-│   │   ├── services/
-│   │   ├── hooks/
-│   │   └── components/
-│   └── auth/                         # مصادقة المستخدمين وحسابات المدراء
+│   └── admin/                        # لوحة الإدارة (Screens 11-15)
+│       ├── types/
+│       ├── constants/
+│       ├── services/
+│       ├── hooks/
+│       └── components/
 │
 ├── components/                       # مكونات واجهة المستخدم العامة
 │   ├── Player.tsx                    # 'use client' — المشغّل المتقدم
@@ -142,8 +141,7 @@ ratil/
 │   ├── verify-text.mjs               # التحقق الإلزامي من بصمات SHA-256
 │   ├── build-data.mjs                # معالجة وتجهيز نصوص السور والآيات
 │   ├── build-search.mjs              # توليد فهرس البحث
-│   ├── init-db.mjs                   # تهيئة وتغذية جداول Neon
-│   └── create-admin.mjs              # إنشاء حسابات الإدارة الموثقة
+│   └── init-db.mjs                   # تهيئة وتغذية جداول Neon
 │
 ├── data/                             # البيانات المصدرية في المستودع
 │   ├── source/

@@ -8,31 +8,17 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Bookmark, ArrowRight, Trash2, BookOpen, Clock, RefreshCw, LogIn, CheckCircle2 } from 'lucide-react';
+import { Bookmark, ArrowRight, Trash2, BookOpen, Clock, ShieldCheck } from 'lucide-react';
 import { getBookmarks, removeBookmark } from '@/lib/storage';
-import { useAuth } from '@/features/auth';
 import type { Bookmark as BookmarkItem } from '@/lib/types';
 import { toArabicDigits } from '@/lib/normalize';
 
 export default function BookmarksPage() {
-  const { user, isAuthenticated, syncWithCloud } = useAuth();
   const [bookmarks, setBookmarks] = useState<BookmarkItem[]>([]);
-  const [isSyncing, setIsSyncing] = useState(false);
-  const [syncDone, setSyncDone] = useState(false);
 
   useEffect(() => {
     setBookmarks(getBookmarks());
   }, []);
-
-  const handleSync = async () => {
-    setIsSyncing(true);
-    setSyncDone(false);
-    await syncWithCloud();
-    setBookmarks(getBookmarks());
-    setIsSyncing(false);
-    setSyncDone(true);
-    setTimeout(() => setSyncDone(false), 3000);
-  };
 
   const handleDelete = (surahId: number, ayahNumber: number) => {
     removeBookmark(surahId, ayahNumber);
@@ -73,32 +59,14 @@ export default function BookmarksPage() {
                 الآيات المحفوظة
               </h1>
               <p className="text-xs sm:text-sm text-on-surface-variant mt-0.5">
-                {isAuthenticated
-                  ? `مزامنة سحابية نشطة لحساب: ${user?.name}`
-                  : 'محفوظاتك مخزنة محلياً. سجّل دخولك لمزامنتها مع السحابة.'}
+                محفوظاتك مخزنة محلياً في جهازك بخصوصية تامة ودون تتبع.
               </p>
             </div>
           </div>
 
-          <div>
-            {isAuthenticated ? (
-              <button
-                onClick={handleSync}
-                disabled={isSyncing}
-                className="flex items-center gap-2 py-2 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-semibold text-primary border border-surface-container-high transition-all disabled:opacity-50"
-              >
-                <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin' : ''}`} />
-                <span>{syncDone ? 'تمت المزامنة بنجاح' : isSyncing ? 'جاري المزامنة...' : 'مزامنة مع السحابة'}</span>
-              </button>
-            ) : (
-              <Link
-                href="/login"
-                className="flex items-center gap-1.5 py-2 px-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary text-xs font-bold transition-all shadow-md shadow-primary/20"
-              >
-                <LogIn className="w-3.5 h-3.5" />
-                <span>تسجيل الدخول للمزامنة</span>
-              </Link>
-            )}
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container text-xs text-on-surface-variant border border-surface-container-high">
+            <ShieldCheck className="w-4 h-4 text-primary" />
+            <span>حفظ محلي آمن في المتصفح</span>
           </div>
         </div>
       </div>

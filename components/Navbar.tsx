@@ -9,7 +9,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Volume2, BookOpen, Users, Bookmark, Search, ShieldCheck } from 'lucide-react';
-import { UserNavMenu } from '@/features/auth';
 import Logo from '@/components/Logo';
 
 export default function Navbar() {
@@ -60,7 +59,7 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* أزرار الإجراءات السريعة والمستخدم */}
+        {/* أزرار الإجراءات السريعة */}
         <div className="flex items-center gap-2">
           <Link
             href="/#search"
@@ -69,8 +68,6 @@ export default function Navbar() {
             <Search className="w-4 h-4 text-primary" />
             <span className="hidden sm:inline">بحث في السور...</span>
           </Link>
-
-          <UserNavMenu />
         </div>
       </div>
     </header>

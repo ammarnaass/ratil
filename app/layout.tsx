@@ -8,7 +8,6 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { AuthProvider } from '@/features/auth';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ratil.app'),
@@ -47,13 +46,11 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className="dark">
       <body className="bg-background text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-primary">
-        <AuthProvider>
-          <Navbar />
-          <main className="flex-1 w-full pb-28">
-            {children}
-          </main>
-          <Footer />
-        </AuthProvider>
+        <Navbar />
+        <main className="flex-1 w-full pb-28">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
