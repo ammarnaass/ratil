@@ -1,3 +1,6 @@
+// منع فحص Next.js التلقائي لحزم SWC في lockfile أثناء البناء
+process.env.NEXT_IGNORE_INCORRECT_LOCKFILE = '1';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // لا output: 'export' هنا — next يُقرر تلقائياً
@@ -7,19 +10,10 @@ const nextConfig = {
     unoptimized: true, // لتجنب تكاليف Vercel Image Optimization
   },
   experimental: {
-    // تشغيل Webpack في العملية الرئيسية لتفادي أخطاء SIGBUS في بيئات الحاويات وWorker threads
+    // تشغيل Webpack في العملية الرئيسية لتفادي أخطاء DataCloneError مع Worker threads
     webpackBuildWorker: false,
     // تشغيل قواعد البيانات في Edge Runtime (أسرع)
     serverComponentsExternalPackages: ['@neondatabase/serverless'],
-  },
-  async redirects() {
-    return [
-      {
-        source: '/admin.html',
-        destination: '/admin',
-        permanent: true,
-      },
-    ];
   },
 };
 
