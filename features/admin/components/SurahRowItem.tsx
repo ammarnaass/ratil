@@ -2,7 +2,7 @@
 
 /**
  * رتل - Ratil
- * سطر السورة المفردة في العرض المجدول مع أزرار التحكم السريعة
+ * سطر السورة المفردة في العرض المجدول مع مسافات متوازنة وأزرار تحكم سريعة
  * features/admin/components/SurahRowItem.tsx
  */
 
@@ -53,13 +53,13 @@ export function SurahRowItem({
       }`}
     >
       {/* 1. رقم السورة */}
-      <td className="py-2.5 px-3 font-mono font-bold text-outline text-[11px] w-12 text-center">
+      <td className="py-3 px-3.5 font-mono font-bold text-outline text-[11px] w-14 text-center">
         #{surahNumber}
       </td>
 
       {/* 2. اسم السورة والنوع والآيات */}
-      <td className="py-2.5 px-3">
-        <div className="flex items-center gap-2">
+      <td className="py-3 px-3.5">
+        <div className="flex items-center gap-2.5">
           <button
             type="button"
             onClick={(e) => {
@@ -94,21 +94,21 @@ export function SurahRowItem({
       </td>
 
       {/* 3. اسم الملف ورابط البث المباشر */}
-      <td className="py-2.5 px-3 font-mono text-[11px] text-on-surface-variant hidden sm:table-cell">
+      <td className="py-3 px-3.5 font-mono text-[11px] text-on-surface-variant hidden sm:table-cell">
         <div className="flex items-center gap-2">
           <span className="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-semibold text-[10px]">
             {pad}.mp3
           </span>
-          <span className="truncate max-w-[200px] text-outline text-[10px]" dir="ltr">
+          <span className="truncate max-w-[220px] text-outline text-[10px]" dir="ltr">
             {audioUrl}
           </span>
         </div>
       </td>
 
       {/* 4. حالة المصدر */}
-      <td className="py-2.5 px-3 text-center hidden md:table-cell">
+      <td className="py-3 px-3.5 text-center hidden md:table-cell">
         <span
-          className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${
+          className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
             isRegistered
               ? 'bg-primary/10 text-primary border border-primary/20'
               : 'bg-surface-container-high text-on-surface-variant'
@@ -119,8 +119,8 @@ export function SurahRowItem({
       </td>
 
       {/* 5. إجراءات التعديل والنسخ */}
-      <td className="py-2.5 px-3 text-left w-28" onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-center justify-end gap-1">
+      <td className="py-3 px-3.5 text-left w-32" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-end gap-1.5">
           <button
             type="button"
             onClick={handleCopyUrl}

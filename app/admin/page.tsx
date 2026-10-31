@@ -56,7 +56,7 @@ export default function AdminPage() {
         onLogout={admin.handleLogout}
       />
 
-      <main className="flex-1 flex flex-col gap-6 bg-surface-container-lowest/50 border border-surface-container-high rounded-2xl p-6 shadow-sm">
+      <main className="flex-1 min-w-0 flex flex-col gap-5 sm:gap-6 bg-surface-container-lowest/50 border border-surface-container-high rounded-3xl p-4 sm:p-6 shadow-sm">
         <AdminHeader
           activeTab={admin.activeTab}
           statusMessage={admin.statusMessage}

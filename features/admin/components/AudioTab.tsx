@@ -7,6 +7,7 @@
  */
 
 import React, { useState, useMemo } from 'react';
+import { Search } from 'lucide-react';
 import type { Reciter } from '@/lib/types';
 import type { AudioFormData, ReciterFormData } from '../types/admin.types';
 import { extractArchiveItemId } from '@/features/audio';
@@ -81,8 +82,8 @@ export function AudioTab({
     : '';
 
   return (
-    <div className="flex flex-col gap-5 pb-20">
-      {/* 1. بطاقة القواعد المعمارية المصقولة */}
+    <div className="flex flex-col gap-4 sm:gap-5 pb-24">
+      {/* 1. بطاقة القواعد المعمارية */}
       <ArchiveRulesCard
         selectedReciter={selectedReciter}
         archiveId={archiveId}
@@ -93,7 +94,7 @@ export function AudioTab({
         }}
       />
 
-      {/* 2. شريط الأدوات والفلاتر ونمط العرض */}
+      {/* 2. شريط الأدوات والفلاتر */}
       <AudioToolbar
         reciters={reciters}
         selectedReciterId={selectedReciterId}
@@ -114,9 +115,26 @@ export function AudioTab({
         customCount={Object.keys(customAudioMap).length}
       />
 
-      {/* 3. شبكة البطاقات أو جدول السور */}
-      {viewMode === 'grid' ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+      {/* 3. العرض المختار: شبكة بطاقات متناسقة أو جدول منظم */}
+      {filteredSurahs.length === 0 ? (
+        <div className="p-10 rounded-3xl bg-surface-container border border-surface-container-high/80 text-center flex flex-col items-center justify-center gap-2.5 shadow-xs">
+          <div className="w-10 h-10 rounded-2xl bg-surface-container-high flex items-center justify-center text-outline">
+            <Search className="w-5 h-5" />
+          </div>
+          <p className="font-bold text-sm text-on-surface">لم يتم العثور على سور مطابقة</p>
+          <p className="text-xs text-on-surface-variant">جرب البحث بكلمات أخرى أو تغيير خيار الفلترة</p>
+          <button
+            onClick={() => {
+              setSearchQuery('');
+              setFilterType('all');
+            }}
+            className="mt-1 px-3 py-1.5 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 text-xs font-bold transition-all"
+          >
+            إعادة تعيين البحث
+          </button>
+        </div>
+      ) : viewMode === 'grid' ? (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
           {filteredSurahs.map((surah) => {
             const pad = String(surah.id).padStart(3, '0');
             const audioUrl = customAudioMap[surah.id] || `https://archive.org/download/${archiveId}/${pad}.mp3`;
@@ -142,11 +160,11 @@ export function AudioTab({
           <table className="w-full text-right border-collapse">
             <thead>
               <tr className="border-b border-surface-container-high text-on-surface-variant text-[11px] font-bold bg-surface-container-high/40">
-                <th className="py-3 px-3 text-center w-12">#</th>
-                <th className="py-3 px-3">السورة</th>
-                <th className="py-3 px-3 hidden sm:table-cell">اسم الملف والرابط</th>
-                <th className="py-3 px-3 text-center hidden md:table-cell">المصدر</th>
-                <th className="py-3 px-3 text-left w-28">الإجراءات</th>
+                <th className="py-3 px-3.5 text-center w-12">#</th>
+                <th className="py-3 px-3.5">السورة</th>
+                <th className="py-3 px-3.5 hidden sm:table-cell">اسم الملف والرابط المباشر</th>
+                <th className="py-3 px-3.5 text-center hidden md:table-cell">المصدر</th>
+                <th className="py-3 px-3.5 text-left w-28">الإجراءات</th>
               </tr>
             </thead>
             <tbody>

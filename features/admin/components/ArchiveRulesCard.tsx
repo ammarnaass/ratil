@@ -57,36 +57,37 @@ export function ArchiveRulesCard({
   const downloadSample = `https://archive.org/download/${archiveId || '{item_id}'}/001.mp3`;
 
   return (
-    <div className="rounded-3xl bg-surface-container border border-surface-container-high/80 overflow-hidden shadow-sm transition-all">
-      {/* الرأس الرئيسي المصقول */}
-      <div className="p-4 sm:p-5 flex items-center justify-between flex-wrap gap-3 bg-gradient-to-l from-primary/5 via-transparent to-transparent">
-        <div className="flex items-center gap-3">
+    <div className="rounded-3xl bg-surface-container border border-surface-container-high/80 overflow-hidden shadow-xs transition-all">
+      {/* 1. الترويسة الرئيسية مع المحاذاة والمسافات المتوازنة */}
+      <div className="p-4 sm:p-5 flex items-center justify-between flex-wrap gap-3.5 bg-gradient-to-l from-primary/5 via-transparent to-transparent">
+        <div className="flex items-center gap-3 min-w-0">
           <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 border border-primary/20 shadow-xs">
             <Radio className="w-5 h-5 animate-pulse" />
           </div>
-          <div>
+          <div className="flex flex-col min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <h2 className="text-sm sm:text-base font-bold text-on-surface">
-                معمارية التخزين الصوتي وتدفق السور (Archive.org)
+              <h2 className="text-sm sm:text-base font-bold text-on-surface truncate">
+                معمارية وتدفق السور (Archive.org)
               </h2>
-              <span className="text-[10px] sm:text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-bold border border-primary/25">
-                تطبيع آلي لكافة الصيغ
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/15 text-primary font-bold border border-primary/20 shrink-0">
+                تطبيع تلقائي
               </span>
             </div>
-            <p className="text-xs text-on-surface-variant mt-0.5 flex items-center gap-2">
+            <div className="flex items-center gap-1.5 mt-0.5 text-xs text-on-surface-variant">
               <span>المعرف النشط:</span>
-              <code className="px-2 py-0.5 rounded-lg bg-surface-container-high font-mono text-[11px] text-primary font-bold">
+              <code className="px-2 py-0.5 rounded-lg bg-surface-container-high font-mono text-[11px] text-primary font-bold truncate max-w-[200px]" dir="ltr">
                 {archiveId || 'غير محدد'}
               </code>
-            </p>
+            </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        {/* أزرار الإجراءات في الرأس */}
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-xs text-on-surface font-semibold border border-surface-container-highest transition-all"
-            title={isExpanded ? 'طي القواعد' : 'عرض القواعد التفصيلية'}
+            className="h-9 flex items-center gap-1.5 px-3 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-xs text-on-surface font-semibold border border-surface-container-highest transition-all"
+            title={isExpanded ? 'طي القواعد' : 'عرض القواعد المعمارية'}
           >
             <Layers className="w-3.5 h-3.5 text-primary" />
             <span className="hidden sm:inline">القواعد المعمارية</span>
@@ -95,7 +96,7 @@ export function ArchiveRulesCard({
 
           <button
             onClick={isEditing ? () => setIsEditing(false) : startEdit}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-xs font-bold text-primary border border-primary/30 transition-all shadow-xs"
+            className="h-9 flex items-center gap-1.5 px-3.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-xs font-bold text-primary border border-primary/30 transition-all shadow-xs"
           >
             {isEditing ? <X className="w-3.5 h-3.5 text-error" /> : <Edit3 className="w-3.5 h-3.5" />}
             <span>{isEditing ? 'إلغاء' : 'تحديث معرف الأرشيف'}</span>
@@ -103,7 +104,7 @@ export function ArchiveRulesCard({
         </div>
       </div>
 
-      {/* نموذج تعديل معرف الأرشيف */}
+      {/* 2. نموذج تعديل معرف الأرشيف المباشر */}
       {isEditing && (
         <div className="p-4 mx-4 mb-4 rounded-2xl bg-surface-container-high/60 border border-primary/30 flex flex-col gap-3 transition-all animate-fadeIn">
           <div className="flex items-center justify-between">
@@ -120,12 +121,12 @@ export function ArchiveRulesCard({
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               placeholder="مثال: ratil-al-minshawy-hafs أو https://archive.org/details/..."
-              className="flex-1 min-w-[260px] px-3.5 py-2.5 rounded-xl bg-surface-container text-on-surface border border-surface-container-highest font-mono text-xs focus:ring-1 focus:ring-primary outline-hidden"
+              className="flex-1 min-w-[260px] h-10 px-3.5 rounded-xl bg-surface-container text-on-surface border border-surface-container-highest font-mono text-xs focus:ring-1 focus:ring-primary outline-hidden"
             />
             <button
               onClick={handleSave}
               disabled={isSaving || !inputVal.trim()}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs hover:opacity-90 transition-all shadow-sm disabled:opacity-50"
+              className="h-10 flex items-center gap-1.5 px-4 rounded-xl bg-primary text-on-primary font-bold text-xs hover:opacity-90 transition-all shadow-sm disabled:opacity-50"
             >
               {isSaving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Check className="w-3.5 h-3.5" />}
               <span>حفظ التحديث</span>
@@ -134,11 +135,11 @@ export function ArchiveRulesCard({
         </div>
       )}
 
-      {/* لوحة القواعد المعمارية التفصيلية (قابلة للطي والتوسيع) */}
+      {/* 3. لوحة القواعد المعمارية التفصيلية المنظمة */}
       {isExpanded && (
         <div className="p-4 sm:p-5 pt-0 border-t border-surface-container-high/60 grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs animate-fadeIn">
           {/* القاعدة 1 */}
-          <div className="p-3.5 rounded-2xl bg-surface-container-high/50 border border-surface-container-highest/80 flex flex-col justify-between gap-2 hover:border-primary/40 transition-colors">
+          <div className="p-3.5 rounded-2xl bg-surface-container-high/40 border border-surface-container-highest/80 flex flex-col justify-between gap-2.5 hover:border-primary/40 transition-colors">
             <div className="flex items-center justify-between">
               <span className="font-bold text-primary flex items-center gap-1.5">
                 <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] flex items-center justify-center font-bold">1</span>
@@ -147,7 +148,7 @@ export function ArchiveRulesCard({
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => handleCopy(archiveId, 'itemId')}
-                  className="p-1 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors"
+                  className="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors"
                   title="نسخ المعرف"
                 >
                   {copiedKey === 'itemId' ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
@@ -156,21 +157,21 @@ export function ArchiveRulesCard({
                   href={`https://archive.org/details/${archiveId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1 rounded-md hover:bg-surface-container text-primary"
+                  className="p-1.5 rounded-lg hover:bg-surface-container text-primary"
                   title="فتح في Archive.org"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
-            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-lg font-mono text-[11px] truncate block" dir="ltr">
+            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1.5 rounded-xl font-mono text-[11px] truncate block" dir="ltr">
               {archiveId || 'غير محدد'}
             </code>
-            <span className="text-[10px] text-outline">المعرف الدائم للألبوم في السحابة</span>
+            <span className="text-[10px] text-outline">المعرف الدائم للمجموعة في السحابة</span>
           </div>
 
           {/* القاعدة 2 */}
-          <div className="p-3.5 rounded-2xl bg-surface-container-high/50 border border-surface-container-highest/80 flex flex-col justify-between gap-2 hover:border-primary/40 transition-colors">
+          <div className="p-3.5 rounded-2xl bg-surface-container-high/40 border border-surface-container-highest/80 flex flex-col justify-between gap-2.5 hover:border-primary/40 transition-colors">
             <div className="flex items-center justify-between">
               <span className="font-bold text-primary flex items-center gap-1.5">
                 <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] flex items-center justify-center font-bold">2</span>
@@ -178,31 +179,31 @@ export function ArchiveRulesCard({
               </span>
               <button
                 onClick={() => handleCopy(downloadSample, 'downloadUrl')}
-                className="p-1 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors"
+                className="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors"
                 title="نسخ نسق الرابط"
               >
                 {copiedKey === 'downloadUrl' ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
-            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-lg font-mono text-[11px] truncate block" dir="ltr" title={downloadSample}>
+            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1.5 rounded-xl font-mono text-[11px] truncate block" dir="ltr" title={downloadSample}>
               {downloadSample}
             </code>
             <span className="text-[10px] text-outline">تدعم البث المباشر (Range Requests)</span>
           </div>
 
           {/* القاعدة 3 */}
-          <div className="p-3.5 rounded-2xl bg-surface-container-high/50 border border-surface-container-highest/80 flex flex-col justify-between gap-2 hover:border-primary/40 transition-colors">
+          <div className="p-3.5 rounded-2xl bg-surface-container-high/40 border border-surface-container-highest/80 flex flex-col justify-between gap-2.5 hover:border-primary/40 transition-colors">
             <div className="flex items-center justify-between">
               <span className="font-bold text-primary flex items-center gap-1.5">
                 <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] flex items-center justify-center font-bold">3</span>
                 التضمين (Iframe / Embed)
               </span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-bold">تلقائي</span>
+              <span className="text-[10px] px-2 py-0.5 rounded-md bg-primary/10 text-primary font-bold">تلقائي</span>
             </div>
-            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-lg font-mono text-[11px] truncate block" dir="ltr">
+            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1.5 rounded-xl font-mono text-[11px] truncate block" dir="ltr">
               &lt;iframe src=".../embed/..."&gt;
             </code>
-            <span className="text-[10px] text-outline">استخراج الروابط الصوتي وتطهيره آلياً</span>
+            <span className="text-[10px] text-outline">استخراج الرابط الصوتي وتطهيره آلياً</span>
           </div>
         </div>
       )}

@@ -2,7 +2,7 @@
 
 /**
  * رتل - Ratil
- * شريط المعاينة الصوتية العائم أسفل لوحة التحكم
+ * شريط المعاينة الصوتية العائم المتناسق أسفل لوحة التحكم
  * features/admin/components/AudioPreviewBar.tsx
  */
 
@@ -33,12 +33,10 @@ export function AudioPreviewBar({
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
-  const [audioError, setAudioError] = useState(false);
 
   useEffect(() => {
     setIsPlaying(true);
     setCurrentTime(0);
-    setAudioError(false);
     if (audioRef.current) {
       audioRef.current.load();
       audioRef.current.play().catch(() => {
@@ -53,7 +51,7 @@ export function AudioPreviewBar({
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.play().catch(() => setAudioError(true));
+      audioRef.current.play().catch(() => setIsPlaying(false));
       setIsPlaying(true);
     }
   };
@@ -81,48 +79,47 @@ export function AudioPreviewBar({
   };
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 max-w-4xl mx-auto animate-slideUp">
-      <div className="p-3.5 sm:p-4 rounded-3xl bg-surface-container/95 backdrop-blur-xl border border-primary/40 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-3 text-on-surface">
+    <aside aria-label="شريط المعاينة الصوتية" className="fixed bottom-3 sm:bottom-4 left-3 right-3 sm:left-4 sm:right-4 z-50 max-w-4xl mx-auto animate-slideUp">
+      <div className="p-2.5 sm:p-3.5 rounded-3xl bg-surface-container/95 backdrop-blur-xl border border-primary/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3 text-on-surface">
         <audio
           ref={audioRef}
           src={audioUrl}
           onTimeUpdate={handleTimeUpdate}
           onEnded={() => setIsPlaying(false)}
-          onError={() => setAudioError(true)}
           muted={isMuted}
         />
 
-        {/* معلومات السورة والقارئ */}
-        <div className="flex items-center gap-3 w-full sm:w-auto">
-          <div className="w-10 h-10 rounded-2xl bg-primary/20 text-primary flex items-center justify-center shrink-0 border border-primary/30">
-            <Music2 className="w-5 h-5 animate-pulse" />
+        {/* 1. معلومات السورة والقارئ */}
+        <div className="flex items-center gap-2.5 w-full md:w-auto min-w-0">
+          <div className="w-9 h-9 rounded-xl bg-primary/20 text-primary flex items-center justify-center shrink-0 border border-primary/30">
+            <Music2 className="w-4 h-4 animate-pulse" />
           </div>
           <div className="flex flex-col min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-sm text-on-surface truncate">
+            <div className="flex items-center gap-1.5">
+              <span className="font-bold text-xs sm:text-sm text-on-surface truncate">
                 سورة {surahName} (#{surahNumber})
               </span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold">
-                معاينة مباشرة
+              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-primary/10 text-primary font-bold shrink-0">
+                بث مباشر
               </span>
             </div>
-            <span className="text-xs text-on-surface-variant truncate">
+            <span className="text-[11px] text-on-surface-variant truncate">
               {reciterName}
             </span>
           </div>
         </div>
 
-        {/* شريط التحكم بالتشغيل والزمن */}
-        <div className="flex-1 w-full max-w-md flex items-center gap-3">
+        {/* 2. شريط التحكم بالتشغيل والزمن */}
+        <div className="flex-1 w-full max-w-md flex items-center gap-2 sm:gap-3">
           <button
             onClick={togglePlay}
-            className="w-10 h-10 rounded-2xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-md hover:opacity-90 transition-all"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-xs hover:opacity-90 transition-all select-none"
             title={isPlaying ? 'إيقاف مؤقت' : 'تشغيل'}
           >
-            {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 translate-x-[-1px]" />}
+            {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 translate-x-[-1px]" />}
           </button>
 
-          <span className="text-[11px] font-mono text-outline shrink-0">
+          <span className="text-[10px] sm:text-[11px] font-mono text-outline shrink-0">
             {formatTime(currentTime)}
           </span>
 
@@ -135,34 +132,34 @@ export function AudioPreviewBar({
             className="flex-1 h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary"
           />
 
-          <span className="text-[11px] font-mono text-outline shrink-0">
+          <span className="text-[10px] sm:text-[11px] font-mono text-outline shrink-0">
             {formatTime(duration)}
           </span>
 
           <button
             onClick={() => setIsMuted(!isMuted)}
-            className="p-2 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"
+            className="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"
             title={isMuted ? 'إلغاء الكتم' : 'كتم'}
           >
             {isMuted ? <VolumeX className="w-4 h-4 text-error" /> : <Volume2 className="w-4 h-4" />}
           </button>
         </div>
 
-        {/* أزرار الإجراءات السريعة والإغلاق */}
-        <div className="flex items-center gap-2 shrink-0">
+        {/* 3. أزرار الإجراءات السريعة والإغلاق */}
+        <div className="flex items-center justify-end gap-1.5 w-full md:w-auto shrink-0 border-t md:border-t-0 pt-2 md:pt-0 border-surface-container-high">
           <button
             onClick={onEdit}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-xs font-bold text-primary border border-surface-container-highest transition-all"
+            className="h-8 flex items-center gap-1.5 px-3 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-xs font-bold text-primary border border-surface-container-highest transition-all"
           >
             <Edit3 className="w-3.5 h-3.5" />
-            <span>تعديل الرابط</span>
+            <span>تعديل</span>
           </button>
 
           <a
             href={`https://archive.org/details/${archiveId}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors"
+            className="p-1.5 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors"
             title="فتح في Archive.org"
           >
             <ExternalLink className="w-4 h-4" />
@@ -170,14 +167,14 @@ export function AudioPreviewBar({
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-colors"
+            className="p-1.5 rounded-xl hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-colors"
             title="إغلاق المعاينة"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }
 

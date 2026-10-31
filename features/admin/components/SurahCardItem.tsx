@@ -2,12 +2,12 @@
 
 /**
  * رتل - Ratil
- * بطاقة السورة المفردة في شبكة الصوتيات مع تصميم إسلامي حديث
+ * بطاقة السورة المفردة في شبكة الصوتيات مع تصميم إسلامي متناسق الأبعاد والمسافات
  * features/admin/components/SurahCardItem.tsx
  */
 
 import React from 'react';
-import { Play, Pause, Edit3, CheckCircle2, Music2 } from 'lucide-react';
+import { Play, Pause, Edit3, CheckCircle2 } from 'lucide-react';
 
 export interface SurahCardItemProps {
   surahNumber: number;
@@ -37,7 +37,7 @@ export function SurahCardItem({
   return (
     <div
       onClick={onTogglePreview}
-      className={`group relative p-3.5 rounded-2xl border cursor-pointer select-none transition-all duration-200 flex flex-col justify-between gap-3 ${
+      className={`group relative p-3 sm:p-3.5 rounded-2xl border cursor-pointer select-none transition-all duration-200 flex flex-col justify-between gap-2.5 min-h-[118px] ${
         isActivePreview
           ? 'bg-primary/10 border-primary ring-2 ring-primary/30 shadow-md shadow-primary/10'
           : 'bg-surface-container hover:bg-surface-container-high border-surface-container-high/80 hover:border-primary/40 hover:shadow-xs'
@@ -84,10 +84,10 @@ export function SurahCardItem({
         )}
       </div>
 
-      {/* 3. السطر السفلي: اسم الملف وأزرار الاستماع والتعديل السريع */}
-      <div className="flex items-center justify-between pt-1 border-t border-surface-container-high/50 text-[11px]">
+      {/* 3. السطر السفلي: اسم الملف وأزرار الاستماع والتعديل السريع مع محاذاة سفلية ثابتة */}
+      <div className="flex items-center justify-between pt-1.5 border-t border-surface-container-high/50 text-[11px] mt-auto">
         <span
-          className="font-mono text-[10px] text-outline group-hover:text-on-surface-variant transition-colors truncate max-w-[80px]"
+          className="font-mono text-[10px] text-outline group-hover:text-on-surface-variant transition-colors truncate max-w-[70px] sm:max-w-[90px]"
           title={audioUrl}
         >
           {pad}.mp3
