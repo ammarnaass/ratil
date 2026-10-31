@@ -6,25 +6,15 @@
 
 import { notFound } from 'next/navigation';
 import { getReciterWithSurahs, getAllReciterIds, getVisibleReciters } from '@/lib/queries/reciters';
-import SurahText from '@/components/SurahText';
-import Player from '@/components/Player';
+import { SurahText } from '@/features/quran';
+import Player from '@/features/player';
+import { SurahEmbedToggle, extractArchiveItemId } from '@/features/audio';
 import surahs from '@/data/surahs.json';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
-export async function generateStaticParams() {
-  const reciterIds = await getAllReciterIds();
-  const params: { id: string; sid: string }[] = [];
-
-  for (const id of reciterIds) {
-    for (const s of surahs) {
-      params.push({ id, sid: String(s.id) });
-    }
-  }
-
-  return params;
-}
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params,
@@ -81,7 +71,20 @@ export default async function ReciterSurahPage({
         riwaya={reciter.riwaya === 'warsh' ? 'warsh' : 'hafs'}
       />
 
-      {/* المشغل الصوتي */}
+      {/* مشغل التضمين التوثيقي من Archive.org (اختياري) */}
+      {(() => {
+        const archiveId = extractArchiveItemId(reciter.source_url, reciter.id);
+        const padSurah = String(surahId).padStart(3, '0');
+        return (
+          <SurahEmbedToggle
+            embedUrl={`https://archive.org/embed/${archiveId}/${padSurah}.mp3`}
+            detailsUrl={`https://archive.org/details/${archiveId}`}
+            surahName={surahName}
+          />
+        );
+      })()}
+
+      {/* المشغل الصوتي المعتمد */}
       <Player
         surahId={surahId}
         surahName={surahName}

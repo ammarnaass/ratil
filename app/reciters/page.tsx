@@ -5,10 +5,12 @@
  */
 
 import { getVisibleReciters } from '@/lib/queries/reciters';
-import ReciterCard from '@/components/ReciterCard';
+import { ReciterCard } from '@/features/quran';
 import Link from 'next/link';
 import { Users, ArrowRight, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'القرّاء المعتمدون — رتّل',

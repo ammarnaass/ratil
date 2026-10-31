@@ -7,18 +7,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import sql from '@/lib/db';
 
-export const dynamic = 'force-dynamic';
+import { isRequestAdmin } from '@/features/admin/server';
 
-function isAdmin(req: NextRequest): boolean {
-  const token = req.headers.get('Authorization')?.replace('Bearer ', '');
-  const adminSecret = process.env.ADMIN_SECRET;
-  return !!adminSecret && token === adminSecret;
-}
+export const dynamic = 'force-dynamic';
 
 // ─── GET: قائمة القرّاء (للمدير مع تفاصيل الحوكمة أو عامة) ──
 export async function GET(req: NextRequest) {
   try {
-    const adminMode = isAdmin(req);
+    const adminMode = isRequestAdmin(req);
 
     if (adminMode) {
       // للمدير: كل القرّاء بما في ذلك غير المرئيين
@@ -49,7 +45,7 @@ export async function GET(req: NextRequest) {
 
 // ─── POST: إضافة قارئ جديد (محمي برمز المدير) ───────────────
 export async function POST(req: NextRequest) {
-  if (!isAdmin(req)) {
+  if (!isRequestAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized — يتطلب تصريح المدير' }, { status: 401 });
   }
 
@@ -66,6 +62,38 @@ export async function POST(req: NextRequest) {
       VALUES (${id}, ${name}, ${riwaya}, ${license}, ${source_name}, ${source_url || null}, ${notes || null}, true)
       RETURNING *
     `;
+
+    // مزامنة الملف الاحتياطي المحلي
+    try {
+      const fs = await import('fs');
+      const path = await import('path');
+      const filePath = path.join(process.cwd(), 'data', 'reciters.json');
+      if (fs.existsSync(filePath)) {
+        const localList = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        if (!localList.some((r: any) => r.id === id)) {
+          localList.push({
+            id,
+            name,
+            name_ar: name,
+            riwaya,
+            license,
+            source: source_name,
+            base_url: source_url || '',
+          });
+          fs.writeFileSync(filePath, JSON.stringify(localList, null, 2), 'utf8');
+        }
+      }
+    } catch (syncErr) {
+      console.warn('Could not sync reciters.json:', syncErr);
+    }
+
+    // إعادة التحقق من الكاش الفوري لصفحات القرّاء والرئيسية
+    try {
+      const { revalidatePath } = await import('next/cache');
+      revalidatePath('/');
+      revalidatePath('/reciters');
+      revalidatePath(`/reciter/${id}`);
+    } catch {}
 
     return NextResponse.json(reciter, { status: 201 });
   } catch (err: any) {

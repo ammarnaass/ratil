@@ -6,18 +6,13 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import sql from '@/lib/db';
+import { isRequestAdmin } from '@/features/admin/server';
 
 export const dynamic = 'force-dynamic';
 
-function isAdmin(req: NextRequest): boolean {
-  const token = req.headers.get('Authorization')?.replace('Bearer ', '');
-  const adminSecret = process.env.ADMIN_SECRET;
-  return !!adminSecret && token === adminSecret;
-}
-
 // ─── GET: فحص مصادر Archive.org وتسجيل صحتها ───────────────
 export async function GET(req: NextRequest) {
-  if (!isAdmin(req)) {
+  if (!isRequestAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

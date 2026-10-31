@@ -6,17 +6,14 @@
 
 import { notFound } from 'next/navigation';
 import { getVisibleReciters } from '@/lib/queries/reciters';
-import SurahText from '@/components/SurahText';
-import Player from '@/components/Player';
+import { SurahText } from '@/features/quran';
+import Player from '@/features/player';
 import surahs from '@/data/surahs.json';
 import Link from 'next/link';
 import { ChevronRight, ChevronLeft, ArrowRight, BookOpen } from 'lucide-react';
 import type { Metadata } from 'next';
 
-// ─── SSG: توليد جميع صفحات السور في وقت البناء ───────────
-export async function generateStaticParams() {
-  return surahs.map((s) => ({ id: String(s.id) }));
-}
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params,

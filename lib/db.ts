@@ -6,6 +6,14 @@
 
 import { neon } from '@neondatabase/serverless';
 
+// ضمان توجيه اتصالات DNS إلى IPv4 أولاً في بيئة Node لتجنب مشاكل مهلة وسقوط اتصالات IPv6
+if (typeof process !== 'undefined' && process.versions?.node) {
+  try {
+    const dns = require('node:dns');
+    dns.setDefaultResultOrder?.('ipv4first');
+  } catch {}
+}
+
 const databaseUrl = process.env.DATABASE_URL;
 
 // Neon serverless driver — يعمل في بيئة Vercel Edge و Node.js

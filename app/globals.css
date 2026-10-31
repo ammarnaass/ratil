@@ -21,29 +21,88 @@
   font-display: swap;
 }
 
-:root {
-  --color-primary: #3ecfb2;
-  --color-primary-container: #134e44;
-  --color-background: #111318;
-  --color-surface: #111318;
-  --color-surface-container: #1e2025;
+:root,
+html.dark {
+  color-scheme: dark;
+  --color-background-rgb: 17 19 24;
+  --color-surface-rgb: 17 19 24;
+  --color-surface-dim-rgb: 17 19 24;
+  --color-surface-bright-rgb: 55 57 63;
+  --color-surface-container-lowest-rgb: 12 14 19;
+  --color-surface-container-low-rgb: 26 27 33;
+  --color-surface-container-rgb: 30 32 37;
+  --color-surface-container-high-rgb: 40 42 47;
+  --color-surface-container-highest-rgb: 51 53 58;
+  --color-surface-variant-rgb: 51 53 58;
+  --color-primary-rgb: 62 207 178;
+  --color-primary-focus-rgb: 97 236 205;
+  --color-primary-container-rgb: 19 78 68;
+  --color-on-primary-rgb: 0 56 46;
+  --color-on-primary-container-rgb: 112 249 218;
+  --color-secondary-rgb: 103 218 192;
+  --color-secondary-container-rgb: 33 162 139;
+  --color-on-secondary-rgb: 0 56 46;
+  --color-tertiary-rgb: 207 214 230;
+  --color-on-surface-rgb: 226 226 233;
+  --color-on-surface-variant-rgb: 187 202 196;
+  --color-outline-rgb: 133 148 143;
+  --color-outline-variant-rgb: 60 74 69;
+  --color-error-rgb: 255 180 171;
+  --color-error-container-rgb: 147 0 10;
+}
+
+html.light {
+  color-scheme: light;
+  --color-background-rgb: 248 250 252;
+  --color-surface-rgb: 255 255 255;
+  --color-surface-dim-rgb: 241 245 249;
+  --color-surface-bright-rgb: 255 255 255;
+  --color-surface-container-lowest-rgb: 255 255 255;
+  --color-surface-container-low-rgb: 248 250 252;
+  --color-surface-container-rgb: 241 245 249;
+  --color-surface-container-high-rgb: 226 232 240;
+  --color-surface-container-highest-rgb: 203 213 225;
+  --color-surface-variant-rgb: 241 245 249;
+  --color-primary-rgb: 13 148 136;
+  --color-primary-focus-rgb: 15 118 110;
+  --color-primary-container-rgb: 204 251 241;
+  --color-on-primary-rgb: 255 255 255;
+  --color-on-primary-container-rgb: 17 94 89;
+  --color-secondary-rgb: 15 118 110;
+  --color-secondary-container-rgb: 153 246 228;
+  --color-on-secondary-rgb: 255 255 255;
+  --color-tertiary-rgb: 51 65 85;
+  --color-on-surface-rgb: 15 23 42;
+  --color-on-surface-variant-rgb: 71 85 105;
+  --color-outline-rgb: 148 163 184;
+  --color-outline-variant-rgb: 203 213 225;
+  --color-error-rgb: 220 38 38;
+  --color-error-container-rgb: 254 226 226;
 }
 
 html {
   direction: rtl;
-  color-scheme: dark;
   scroll-behavior: smooth;
-  background-color: #111318;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+html.dark {
+  background-color: rgb(var(--color-background-rgb));
+}
+
+html.light {
+  background-color: rgb(var(--color-background-rgb));
 }
 
 body {
   font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #111318;
-  color: #e2e2e9;
+  background-color: rgb(var(--color-background-rgb));
+  color: rgb(var(--color-on-surface-rgb));
   min-height: 100vh;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 /* التمرير الأنيق المخفي */

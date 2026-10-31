@@ -7,13 +7,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import sql from '@/lib/db';
 
-export const dynamic = 'force-dynamic';
+import { isRequestAdmin } from '@/features/admin/server';
 
-function isAdmin(req: NextRequest): boolean {
-  const token = req.headers.get('Authorization')?.replace('Bearer ', '');
-  const adminSecret = process.env.ADMIN_SECRET;
-  return !!adminSecret && token === adminSecret;
-}
+export const dynamic = 'force-dynamic';
 
 export async function GET(
   req: NextRequest,
@@ -36,7 +32,7 @@ export async function PUT(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  if (!isAdmin(req)) {
+  if (!isRequestAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -59,6 +55,13 @@ export async function PUT(
       RETURNING *
     `;
 
+    try {
+      const { revalidatePath } = await import('next/cache');
+      revalidatePath('/');
+      revalidatePath('/reciters');
+      revalidatePath(`/reciter/${params.id}`);
+    } catch {}
+
     return NextResponse.json(updated);
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
@@ -69,7 +72,7 @@ export async function DELETE(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  if (!isAdmin(req)) {
+  if (!isRequestAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -77,6 +80,14 @@ export async function DELETE(
     await sql`
       DELETE FROM reciters WHERE id = ${params.id}
     `;
+
+    try {
+      const { revalidatePath } = await import('next/cache');
+      revalidatePath('/');
+      revalidatePath('/reciters');
+      revalidatePath(`/reciter/${params.id}`);
+    } catch {}
+
     return NextResponse.json({ success: true, deleted: params.id });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });

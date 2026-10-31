@@ -6,16 +6,13 @@
 
 import { notFound } from 'next/navigation';
 import { getReciterWithSurahs, getAllReciterIds, getVisibleReciters } from '@/lib/queries/reciters';
-import Player from '@/components/Player';
+import Player from '@/features/player';
 import surahs from '@/data/surahs.json';
 import Link from 'next/link';
 import { Mic, ShieldCheck, CheckCircle2, Play, ArrowRight, ExternalLink } from 'lucide-react';
 import type { Metadata } from 'next';
 
-export async function generateStaticParams() {
-  const ids = await getAllReciterIds();
-  return ids.map((id) => ({ id }));
-}
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params,

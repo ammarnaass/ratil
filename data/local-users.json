@@ -1,0 +1,19 @@
+{
+  "ammar@example.com": {
+    "id": "usr_58a96428f2104844",
+    "name": "عمار ناصف",
+    "email": "ammar@example.com",
+    "password_hash": "c99a73b636d4c230833c0b0445e4d08d:79257fa66cfc5ef46832259adc8ec66d50742037c647476eb3e6faa59273e293075cf52edeb7ca09c20120daac823abb9f6e5cbbf55db809e3d975a4bbec7b7b",
+    "avatar": null,
+    "created_at": "2026-10-30T19:36:12.923Z"
+  },
+  "admin@dante.com": {
+    "id": "2",
+    "name": "مدير النظام",
+    "email": "admin@dante.com",
+    "role": "admin",
+    "password_hash": "bcab56fd21acd58459d909aa9a1e0697:30393fa38e58b57c6e96d6b6c31111df714ccba707f29ba2408861e1fe61ced9ba37b84eb87f6af72dc785a2efc5c129014ef6b65098ed07b8e1ea41e3e0fe28",
+    "avatar": null,
+    "created_at": "2026-10-31T05:01:41.805Z"
+  }
+}

@@ -28,5 +28,14 @@
     "license": "public-domain",
     "source": "High Quality Studio Recording",
     "base_url": "https://cdn.ratil.app/audio/alafasy/"
+  },
+  {
+    "id": "fares_abed",
+    "name": "فارس عباد",
+    "name_ar": "فارس عباد",
+    "riwaya": "hafs",
+    "license": "public-domain",
+    "source": "archive.org",
+    "base_url": "https://archive.org/details/483568356837_gmail_001"
   }
 ]

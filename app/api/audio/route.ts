@@ -6,14 +6,9 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import sql from '@/lib/db';
+import { isRequestAdmin } from '@/features/admin/server';
 
 export const dynamic = 'force-dynamic';
-
-function isAdmin(req: NextRequest): boolean {
-  const token = req.headers.get('Authorization')?.replace('Bearer ', '');
-  const adminSecret = process.env.ADMIN_SECRET;
-  return !!adminSecret && token === adminSecret;
-}
 
 export async function GET(req: NextRequest) {
   try {
@@ -43,7 +38,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  if (!isAdmin(req)) {
+  if (!isRequestAdmin(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -74,6 +69,14 @@ export async function POST(req: NextRequest) {
         verified = EXCLUDED.verified
       RETURNING *
     `;
+
+    try {
+      const { revalidatePath } = await import('next/cache');
+      revalidatePath('/');
+      revalidatePath('/reciters');
+      revalidatePath(`/reciter/${reciter_id}`);
+      revalidatePath(`/surah/${surah_number}`);
+    } catch {}
 
     return NextResponse.json(row, { status: 201 });
   } catch (err: any) {

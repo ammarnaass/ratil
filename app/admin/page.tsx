@@ -3,24 +3,33 @@
 /**
  * رتل - Ratil
  * صفحة لوحة الإدارة والحوكمة المركزية (Next.js 14 App Router)
- * معمارية معيارية نظيفة تعتمد على components/admin
+ * معمارية معيارية موجهة بالميزات (Feature-Driven Architecture)
  * app/admin/page.tsx
  */
 
 import React from 'react';
 import {
   useAdminDashboard,
+  useAdminUsers,
+  useAdminAnalytics,
+  useAdminAudit,
   AdminLogin,
   AdminSidebar,
   AdminHeader,
   RecitersTab,
   AudioTab,
+  UsersTab,
+  AnalyticsTab,
+  AuditLogsTab,
   ReportsTab,
   HealthTab,
-} from '@/components/admin';
+} from '@/features/admin';
 
 export default function AdminPage() {
   const admin = useAdminDashboard();
+  const usersHook = useAdminUsers(admin.adminSecret, admin.isAuthenticated);
+  const analyticsHook = useAdminAnalytics(admin.adminSecret, admin.isAuthenticated);
+  const auditHook = useAdminAudit(admin.adminSecret, admin.isAuthenticated);
 
   if (!admin.isAuthenticated) {
     return (
@@ -30,6 +39,9 @@ export default function AdminPage() {
         authError={admin.authError}
         isLoading={admin.isLoading}
         onLogin={admin.handleLogin}
+        isUserAdmin={admin.isUserAdmin}
+        currentUser={admin.currentUser}
+        onAdminDirectEnter={() => admin.loadData(admin.adminSecret)}
       />
     );
   }
@@ -60,6 +72,7 @@ export default function AdminPage() {
             form={admin.reciterForm}
             setForm={admin.setReciterForm}
             onCreate={admin.handleCreateReciter}
+            onUpdate={admin.handleUpdateReciter}
             onToggleVisibility={admin.handleToggleVisibility}
             onDelete={admin.handleDeleteReciter}
           />
@@ -75,6 +88,33 @@ export default function AdminPage() {
             form={admin.audioForm}
             setForm={admin.setAudioForm}
             onSave={admin.handleSaveAudio}
+            onSeedSurahs={admin.handleSeedSurahs}
+            onUpdateReciter={admin.handleUpdateReciter}
+          />
+        )}
+
+        {admin.activeTab === 'users' && (
+          <UsersTab
+            users={usersHook.users}
+            isLoading={usersHook.isLoading}
+            onUpdateUser={usersHook.handleUpdateUser}
+            onDeleteUser={usersHook.handleDeleteUser}
+          />
+        )}
+
+        {admin.activeTab === 'analytics' && (
+          <AnalyticsTab
+            analytics={analyticsHook.analytics}
+            isLoading={analyticsHook.isLoading}
+            onRefresh={analyticsHook.loadAnalytics}
+          />
+        )}
+
+        {admin.activeTab === 'audit' && (
+          <AuditLogsTab
+            logs={auditHook.logs}
+            isLoading={auditHook.isLoading}
+            onRefresh={auditHook.loadAuditLogs}
           />
         )}
 

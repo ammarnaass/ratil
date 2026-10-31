@@ -57,11 +57,54 @@ CREATE TABLE IF NOT EXISTS health_logs (
   checked_at       TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- ─── 5. المستخدمون والحسابات ────────────────────────────────
+CREATE TABLE IF NOT EXISTS users (
+  id              VARCHAR(60)  PRIMARY KEY,
+  name            VARCHAR(100) NOT NULL,
+  email           VARCHAR(255) UNIQUE NOT NULL,
+  password_hash   TEXT         NOT NULL,
+  avatar          VARCHAR(255),
+  role            VARCHAR(20)  DEFAULT 'user',      -- 'admin' | 'moderator' | 'user'
+  status          VARCHAR(20)  DEFAULT 'active',    -- 'active' | 'suspended'
+  last_login_at   TIMESTAMPTZ,
+  login_count     INTEGER      DEFAULT 0,
+  created_at      TIMESTAMPTZ  DEFAULT NOW(),
+  updated_at      TIMESTAMPTZ  DEFAULT NOW()
+);
+
+-- ─── 6. أحداث الاستماع والتنزيل (Analytics) ──────────────────
+CREATE TABLE IF NOT EXISTS audio_events (
+  id              BIGSERIAL    PRIMARY KEY,
+  event_type      VARCHAR(20)  NOT NULL, -- 'play' | 'complete' | 'download'
+  reciter_id      VARCHAR(60)  NOT NULL,
+  surah_number    SMALLINT     NOT NULL,
+  duration_played INTEGER      DEFAULT 0,
+  device_type     VARCHAR(20),           -- 'mobile' | 'desktop' | 'tablet'
+  created_at      TIMESTAMPTZ  DEFAULT NOW()
+);
+
+-- ─── 7. سجل التدقيق الإداري (Audit Logs) ────────────────────
+CREATE TABLE IF NOT EXISTS admin_audit_logs (
+  id          BIGSERIAL    PRIMARY KEY,
+  admin_id    VARCHAR(60)  NOT NULL,
+  admin_name  VARCHAR(100),
+  action      VARCHAR(50)  NOT NULL, -- 'create_reciter' | 'update_audio' | 'seed_surahs' | 'ban_user'
+  target_type VARCHAR(30)  NOT NULL, -- 'reciter' | 'surah' | 'user' | 'report'
+  target_id   VARCHAR(100) NOT NULL,
+  details     JSONB,
+  created_at  TIMESTAMPTZ  DEFAULT NOW()
+);
+
 -- ─── فهارس ────────────────────────────────────────────────
 CREATE INDEX IF NOT EXISTS idx_audio_reciter   ON surah_audio (reciter_id);
 CREATE INDEX IF NOT EXISTS idx_audio_surah     ON surah_audio (surah_number);
 CREATE INDEX IF NOT EXISTS idx_reports_status  ON reports (status);
 CREATE INDEX IF NOT EXISTS idx_health_reciter  ON health_logs (reciter_id, checked_at DESC);
+CREATE INDEX IF NOT EXISTS idx_users_email     ON users (email);
+CREATE INDEX IF NOT EXISTS idx_events_type_date ON audio_events (event_type, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_events_reciter  ON audio_events (reciter_id);
+CREATE INDEX IF NOT EXISTS idx_events_surah    ON audio_events (surah_number);
+CREATE INDEX IF NOT EXISTS idx_audit_date      ON admin_audit_logs (action, created_at DESC);
 
 -- ─── بذور البيانات الأولية (Initial Seed) ─────────────────
 INSERT INTO reciters (id, name, riwaya, license, source_name, source_url, is_visible)
