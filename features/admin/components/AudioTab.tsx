@@ -6,16 +6,19 @@
  * features/admin/components/AudioTab.tsx
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import type { Reciter } from '@/lib/types';
 import type { AudioFormData, ReciterFormData } from '../types/admin.types';
-import { extractArchiveItemId, ArchiveEmbedPreview } from '@/features/audio';
+import { extractArchiveItemId } from '@/features/audio';
 import surahsRaw from '@/data/surahs.json';
 import { ArchiveRulesCard } from './ArchiveRulesCard';
-import { AudioToolbar } from './AudioToolbar';
+import { AudioToolbar, type SurahFilterType } from './AudioToolbar';
 import { SurahCardItem } from './SurahCardItem';
+import { SurahRowItem } from './SurahRowItem';
+import { AudioPreviewBar } from './AudioPreviewBar';
 import { SurahQuickEditModal } from './SurahQuickEditModal';
 import { BulkSeedModal } from './BulkSeedModal';
+import { useReciterAudioMap } from '../hooks/useReciterAudioMap';
 
 export interface AudioTabProps {
   reciters: Reciter[];
@@ -39,74 +42,58 @@ export function AudioTab({
   onUpdateReciter,
 }: AudioTabProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
+  const [filterType, setFilterType] = useState<SurahFilterType>('all');
   const [activePreviewSurah, setActivePreviewSurah] = useState<number | null>(null);
   const [editingSurah, setEditingSurah] = useState<{ number: number; name: string } | null>(null);
   const [isBulkSeedOpen, setIsBulkSeedOpen] = useState(false);
-  const [customAudioMap, setCustomAudioMap] = useState<Record<number, string>>({});
 
   const selectedReciter = reciters.find((r) => r.id === selectedReciterId);
   const archiveId = extractArchiveItemId(selectedReciter?.source_url, selectedReciterId);
-
-  // جلب روابط السور المسجلة فعلياً في قاعدة البيانات للقارئ
-  useEffect(() => {
-    let isCancelled = false;
-    async function loadAudio() {
-      if (!selectedReciterId) return;
-      try {
-        const res = await fetch(`/api/audio?reciter_id=${selectedReciterId}`);
-        if (res.ok) {
-          const list: any[] = await res.json();
-          if (!isCancelled && Array.isArray(list)) {
-            const map: Record<number, string> = {};
-            list.forEach((item) => {
-              map[item.surah_number] = item.audio_url;
-            });
-            setCustomAudioMap(map);
-          }
-        }
-      } catch {}
-    }
-    loadAudio();
-    return () => { isCancelled = true; };
-  }, [selectedReciterId]);
+  const { customAudioMap, updateSurahUrl } = useReciterAudioMap(selectedReciterId);
 
   const surahs = useMemo(() => {
     return (surahsRaw as any[]).map((s) => ({
       id: Number(s.id),
       name: s.ar || s.name_ar || `سورة #${s.id}`,
+      type: s.type || 'مكية',
       ayahs: s.ayahs || 0,
     }));
   }, []);
 
   const filteredSurahs = useMemo(() => {
-    if (!searchQuery.trim()) return surahs;
-    const q = searchQuery.trim().toLowerCase();
-    return surahs.filter(
-      (s) => s.name.includes(q) || String(s.id).includes(q)
-    );
-  }, [surahs, searchQuery]);
+    let list = surahs;
+    if (filterType === 'meccan') list = list.filter((s) => s.type === 'مكية');
+    else if (filterType === 'medinan') list = list.filter((s) => s.type === 'مدنية');
+    else if (filterType === 'neon') list = list.filter((s) => Boolean(customAudioMap[s.id]));
 
-  const handleUpdateSourceUrl = async (newUrl: string) => {
-    if (onUpdateReciter && selectedReciter) {
-      await onUpdateReciter(selectedReciter.id, { source_url: newUrl });
+    if (searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      list = list.filter((s) => s.name.includes(q) || String(s.id).includes(q));
     }
-  };
+    return list;
+  }, [surahs, filterType, searchQuery, customAudioMap]);
 
-  const handleModalSave = async (data: AudioFormData) => {
-    await onSave(data);
-    setCustomAudioMap((prev) => ({ ...prev, [data.surah_number]: data.audio_url }));
-  };
+  const activeSurahObj = surahs.find((s) => s.id === activePreviewSurah);
+  const activePad = activePreviewSurah ? String(activePreviewSurah).padStart(3, '0') : '001';
+  const activeAudioUrl = activePreviewSurah
+    ? customAudioMap[activePreviewSurah] || `https://archive.org/download/${archiveId}/${activePad}.mp3`
+    : '';
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* 1. بطاقة القواعد وتحديث المعرف */}
+    <div className="flex flex-col gap-5 pb-20">
+      {/* 1. بطاقة القواعد المعمارية المصقولة */}
       <ArchiveRulesCard
         selectedReciter={selectedReciter}
         archiveId={archiveId}
-        onUpdateSourceUrl={handleUpdateSourceUrl}
+        onUpdateSourceUrl={async (newUrl) => {
+          if (onUpdateReciter && selectedReciter) {
+            await onUpdateReciter(selectedReciter.id, { source_url: newUrl });
+          }
+        }}
       />
 
-      {/* 2. شريط الأدوات والبحث والقرّاء */}
+      {/* 2. شريط الأدوات والفلاتر ونمط العرض */}
       <AudioToolbar
         reciters={reciters}
         selectedReciterId={selectedReciterId}
@@ -119,59 +106,88 @@ export function AudioTab({
         archiveId={archiveId}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        viewMode={viewMode}
+        setViewMode={setViewMode}
+        filterType={filterType}
+        setFilterType={setFilterType}
         totalSurahs={114}
         customCount={Object.keys(customAudioMap).length}
       />
 
-      {/* 3. مشغل المعاينة المباشرة إن وجد */}
-      {activePreviewSurah && (
-        <div className="p-4 rounded-2xl bg-surface-container border border-primary/30 flex flex-col gap-2 shadow-sm">
-          <div className="flex items-center justify-between text-xs">
-            <span className="font-bold text-primary">
-              مشغل معاينة سورة {surahs.find((s) => s.id === activePreviewSurah)?.name} (#{activePreviewSurah})
-            </span>
-            <button
-              onClick={() => setEditingSurah({
-                number: activePreviewSurah,
-                name: surahs.find((s) => s.id === activePreviewSurah)?.name || '',
+      {/* 3. شبكة البطاقات أو جدول السور */}
+      {viewMode === 'grid' ? (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {filteredSurahs.map((surah) => {
+            const pad = String(surah.id).padStart(3, '0');
+            const audioUrl = customAudioMap[surah.id] || `https://archive.org/download/${archiveId}/${pad}.mp3`;
+            return (
+              <SurahCardItem
+                key={surah.id}
+                surahNumber={surah.id}
+                surahName={surah.name}
+                surahType={surah.type}
+                ayahs={surah.ayahs}
+                pad={pad}
+                audioUrl={audioUrl}
+                isRegistered={Boolean(customAudioMap[surah.id])}
+                isActivePreview={activePreviewSurah === surah.id}
+                onTogglePreview={() => setActivePreviewSurah(activePreviewSurah === surah.id ? null : surah.id)}
+                onOpenEdit={() => setEditingSurah({ number: surah.id, name: surah.name })}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <div className="rounded-3xl border border-surface-container-high/80 bg-surface-container overflow-hidden shadow-xs">
+          <table className="w-full text-right border-collapse">
+            <thead>
+              <tr className="border-b border-surface-container-high text-on-surface-variant text-[11px] font-bold bg-surface-container-high/40">
+                <th className="py-3 px-3 text-center w-12">#</th>
+                <th className="py-3 px-3">السورة</th>
+                <th className="py-3 px-3 hidden sm:table-cell">اسم الملف والرابط</th>
+                <th className="py-3 px-3 text-center hidden md:table-cell">المصدر</th>
+                <th className="py-3 px-3 text-left w-28">الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredSurahs.map((surah) => {
+                const pad = String(surah.id).padStart(3, '0');
+                const audioUrl = customAudioMap[surah.id] || `https://archive.org/download/${archiveId}/${pad}.mp3`;
+                return (
+                  <SurahRowItem
+                    key={surah.id}
+                    surahNumber={surah.id}
+                    surahName={surah.name}
+                    surahType={surah.type}
+                    ayahs={surah.ayahs}
+                    pad={pad}
+                    audioUrl={audioUrl}
+                    isRegistered={Boolean(customAudioMap[surah.id])}
+                    isActivePreview={activePreviewSurah === surah.id}
+                    onTogglePreview={() => setActivePreviewSurah(activePreviewSurah === surah.id ? null : surah.id)}
+                    onOpenEdit={() => setEditingSurah({ number: surah.id, name: surah.name })}
+                  />
+                );
               })}
-              className="text-primary hover:underline text-[11px] font-bold"
-            >
-              تعديل رابط هذه السورة
-            </button>
-          </div>
-          <ArchiveEmbedPreview
-            embedUrl={`https://archive.org/embed/${archiveId}/${String(activePreviewSurah).padStart(3, '0')}.mp3`}
-            detailsUrl={`https://archive.org/details/${archiveId}`}
-            title={`مشغل التضمين لسورة #${activePreviewSurah}`}
-          />
+            </tbody>
+          </table>
         </div>
       )}
 
-      {/* 4. شبكة السور الـ 114 التفاعلية */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5">
-        {filteredSurahs.map((surah) => {
-          const pad = String(surah.id).padStart(3, '0');
-          const audioUrl = customAudioMap[surah.id] || `https://archive.org/download/${archiveId}/${pad}.mp3`;
-          const isActive = activePreviewSurah === surah.id;
+      {/* 4. شريط المعاينة الصوتية العائم */}
+      {activePreviewSurah && activeSurahObj && (
+        <AudioPreviewBar
+          surahNumber={activePreviewSurah}
+          surahName={activeSurahObj.name}
+          reciterName={selectedReciter?.name || selectedReciterId}
+          audioUrl={activeAudioUrl}
+          archiveId={archiveId}
+          onClose={() => setActivePreviewSurah(null)}
+          onEdit={() => setEditingSurah({ number: activePreviewSurah, name: activeSurahObj.name })}
+        />
+      )}
 
-          return (
-            <SurahCardItem
-              key={surah.id}
-              surahNumber={surah.id}
-              surahName={surah.name}
-              pad={pad}
-              audioUrl={audioUrl}
-              isRegistered={Boolean(customAudioMap[surah.id])}
-              isActivePreview={isActive}
-              onTogglePreview={() => setActivePreviewSurah(isActive ? null : surah.id)}
-              onOpenEdit={() => setEditingSurah({ number: surah.id, name: surah.name })}
-            />
-          );
-        })}
-      </div>
-
-      {/* 5. النوافذ التفاعلية المنبثقة */}
+      {/* 5. النوافذ المنبثقة */}
       {editingSurah && (
         <SurahQuickEditModal
           isOpen={Boolean(editingSurah)}
@@ -182,7 +198,10 @@ export function AudioTab({
           archiveId={archiveId}
           currentUrl={customAudioMap[editingSurah.number] || ''}
           onClose={() => setEditingSurah(null)}
-          onSave={handleModalSave}
+          onSave={async (data) => {
+            await onSave(data);
+            updateSurahUrl(data.surah_number, data.audio_url);
+          }}
         />
       )}
 
@@ -194,9 +213,7 @@ export function AudioTab({
           reciterName={selectedReciter?.name || selectedReciterId}
           defaultArchiveId={archiveId}
           onSeed={async (rId, itmId) => {
-            if (onSeedSurahs) {
-              await onSeedSurahs(rId, itmId);
-            }
+            if (onSeedSurahs) await onSeedSurahs(rId, itmId);
           }}
         />
       )}

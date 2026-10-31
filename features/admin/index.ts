@@ -20,6 +20,7 @@ export * from './hooks/useAdminDashboard';
 export * from './hooks/useAdminUsers';
 export * from './hooks/useAdminAnalytics';
 export * from './hooks/useAdminAudit';
+export * from './hooks/useReciterAudioMap';
 
 // المكونات البصرية (Components)
 export * from './components/AdminHeader';
@@ -29,6 +30,8 @@ export * from './components/AudioTab';
 export * from './components/AudioToolbar';
 export * from './components/ArchiveRulesCard';
 export * from './components/SurahCardItem';
+export * from './components/SurahRowItem';
+export * from './components/AudioPreviewBar';
 export * from './components/SurahQuickEditModal';
 export * from './components/BulkSeedModal';
 export * from './components/CreateReciterForm';

@@ -7,7 +7,7 @@
  */
 
 import React, { useState } from 'react';
-import { Radio, ExternalLink, Edit3, Check, X, Loader2 } from 'lucide-react';
+import { Radio, ExternalLink, Edit3, Check, X, Loader2, Copy, ChevronDown, ChevronUp, Sparkles, Layers } from 'lucide-react';
 import type { Reciter } from '@/lib/types';
 import { parseArchiveAudioInput } from '@/features/audio';
 
@@ -23,12 +23,20 @@ export function ArchiveRulesCard({
   onUpdateSourceUrl,
 }: ArchiveRulesCardProps) {
   const [isEditing, setIsEditing] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [inputVal, setInputVal] = useState('');
   const [isSaving, setIsSaving] = useState(false);
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
   const startEdit = () => {
     setInputVal(selectedReciter?.source_url || archiveId || '');
     setIsEditing(true);
+  };
+
+  const handleCopy = (text: string, key: string) => {
+    navigator.clipboard?.writeText(text);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 2000);
   };
 
   const handleSave = async () => {
@@ -46,39 +54,64 @@ export function ArchiveRulesCard({
     }
   };
 
+  const downloadSample = `https://archive.org/download/${archiveId || '{item_id}'}/001.mp3`;
+
   return (
-    <div className="p-6 rounded-2xl bg-surface-container border border-surface-container-high flex flex-col gap-4 shadow-sm">
-      <div className="flex items-center justify-between flex-wrap gap-2">
-        <div className="flex items-center gap-2">
-          <Radio className="w-5 h-5 text-primary" />
-          <h2 className="text-base font-bold text-on-surface">
-            قواعد معمارية التخزين الصوتي وتطبيع Archive.org
-          </h2>
+    <div className="rounded-3xl bg-surface-container border border-surface-container-high/80 overflow-hidden shadow-sm transition-all">
+      {/* الرأس الرئيسي المصقول */}
+      <div className="p-4 sm:p-5 flex items-center justify-between flex-wrap gap-3 bg-gradient-to-l from-primary/5 via-transparent to-transparent">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 border border-primary/20 shadow-xs">
+            <Radio className="w-5 h-5 animate-pulse" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <h2 className="text-sm sm:text-base font-bold text-on-surface">
+                معمارية التخزين الصوتي وتدفق السور (Archive.org)
+              </h2>
+              <span className="text-[10px] sm:text-[11px] px-2.5 py-0.5 rounded-full bg-primary/15 text-primary font-bold border border-primary/25">
+                تطبيع آلي لكافة الصيغ
+              </span>
+            </div>
+            <p className="text-xs text-on-surface-variant mt-0.5 flex items-center gap-2">
+              <span>المعرف النشط:</span>
+              <code className="px-2 py-0.5 rounded-lg bg-surface-container-high font-mono text-[11px] text-primary font-bold">
+                {archiveId || 'غير محدد'}
+              </code>
+            </p>
+          </div>
         </div>
+
         <div className="flex items-center gap-2">
-          <span className="text-[11px] px-2.5 py-1 rounded-full bg-primary/10 text-primary font-bold">
-            دعم تلقائي لـ Iframe & EMBED & Direct MP3
-          </span>
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-xs text-on-surface font-semibold border border-surface-container-highest transition-all"
+            title={isExpanded ? 'طي القواعد' : 'عرض القواعد التفصيلية'}
+          >
+            <Layers className="w-3.5 h-3.5 text-primary" />
+            <span className="hidden sm:inline">القواعد المعمارية</span>
+            {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+          </button>
+
           <button
             onClick={isEditing ? () => setIsEditing(false) : startEdit}
-            className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-xs font-semibold text-on-surface transition-all border border-surface-container-highest"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-xs font-bold text-primary border border-primary/30 transition-all shadow-xs"
           >
-            {isEditing ? <X className="w-3.5 h-3.5 text-error" /> : <Edit3 className="w-3.5 h-3.5 text-primary" />}
+            {isEditing ? <X className="w-3.5 h-3.5 text-error" /> : <Edit3 className="w-3.5 h-3.5" />}
             <span>{isEditing ? 'إلغاء' : 'تحديث معرف الأرشيف'}</span>
           </button>
         </div>
       </div>
 
-      {/* نموذج تعديل معرف الأرشيف المباشر */}
+      {/* نموذج تعديل معرف الأرشيف */}
       {isEditing && (
-        <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 flex flex-col gap-3">
-          <div className="flex flex-col gap-1">
-            <span className="text-xs font-bold text-primary">
+        <div className="p-4 mx-4 mb-4 rounded-2xl bg-surface-container-high/60 border border-primary/30 flex flex-col gap-3 transition-all animate-fadeIn">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-primary flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5" />
               تحديث معرف مجموعة Archive.org للقارئ ({selectedReciter?.name})
             </span>
-            <span className="text-[11px] text-on-surface-variant">
-              يمكنك إدخال المعرف المباشر (مثل: 483568356837_gmail_001 أو al-minshawy-hafs) أو رابط المجموعة كاملاً:
-            </span>
+            <span className="text-[11px] text-on-surface-variant">حفظ فوري في قاعدة البيانات</span>
           </div>
 
           <div className="flex items-center gap-2 flex-wrap">
@@ -86,8 +119,8 @@ export function ArchiveRulesCard({
               type="text"
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
-              placeholder="مثال: 483568356837_gmail_001 أو https://archive.org/details/..."
-              className="flex-1 min-w-[240px] p-2.5 rounded-xl bg-surface-container-high text-on-surface border border-surface-container-highest font-mono text-xs"
+              placeholder="مثال: ratil-al-minshawy-hafs أو https://archive.org/details/..."
+              className="flex-1 min-w-[260px] px-3.5 py-2.5 rounded-xl bg-surface-container text-on-surface border border-surface-container-highest font-mono text-xs focus:ring-1 focus:ring-primary outline-hidden"
             />
             <button
               onClick={handleSave}
@@ -95,49 +128,84 @@ export function ArchiveRulesCard({
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs hover:opacity-90 transition-all shadow-sm disabled:opacity-50"
             >
               {isSaving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Check className="w-3.5 h-3.5" />}
-              <span>حفظ وتحديث في Neon</span>
+              <span>حفظ التحديث</span>
             </button>
           </div>
         </div>
       )}
 
-      {/* بطاقات المعمارية الثلاث */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-        <div className="p-4 rounded-xl bg-surface-container-high border border-surface-container-highest flex flex-col gap-1.5">
-          <div className="flex items-center justify-between">
-            <span className="font-bold text-primary">1. المعرف الثابت (Item ID)</span>
-            <a
-              href={`https://archive.org/details/${archiveId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:opacity-80"
-              title="فتح في Archive.org"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+      {/* لوحة القواعد المعمارية التفصيلية (قابلة للطي والتوسيع) */}
+      {isExpanded && (
+        <div className="p-4 sm:p-5 pt-0 border-t border-surface-container-high/60 grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs animate-fadeIn">
+          {/* القاعدة 1 */}
+          <div className="p-3.5 rounded-2xl bg-surface-container-high/50 border border-surface-container-highest/80 flex flex-col justify-between gap-2 hover:border-primary/40 transition-colors">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-primary flex items-center gap-1.5">
+                <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] flex items-center justify-center font-bold">1</span>
+                المعرف الثابت (Item ID)
+              </span>
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => handleCopy(archiveId, 'itemId')}
+                  className="p-1 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors"
+                  title="نسخ المعرف"
+                >
+                  {copiedKey === 'itemId' ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
+                </button>
+                <a
+                  href={`https://archive.org/details/${archiveId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1 rounded-md hover:bg-surface-container text-primary"
+                  title="فتح في Archive.org"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-lg font-mono text-[11px] truncate block" dir="ltr">
+              {archiveId || 'غير محدد'}
+            </code>
+            <span className="text-[10px] text-outline">المعرف الدائم للألبوم في السحابة</span>
           </div>
-          <p className="text-on-surface-variant leading-relaxed font-mono text-[11px] truncate" title={archiveId}>
-            {archiveId || `ratil-${selectedReciter?.id}`}
-          </p>
-          <span className="text-[10px] text-outline">المعرف الدائم للمجموعة في الأرشيف</span>
-        </div>
 
-        <div className="p-4 rounded-xl bg-surface-container-high border border-surface-container-highest flex flex-col gap-1.5">
-          <span className="font-bold text-primary">2. نسق الروابط المباشرة</span>
-          <p className="text-on-surface-variant leading-relaxed font-mono text-[11px] truncate">
-            https://archive.org/download/{archiveId || `{id}`}/001.mp3
-          </p>
-          <span className="text-[10px] text-outline">تدعم Range Requests وتزامن الآيات والكاش</span>
-        </div>
+          {/* القاعدة 2 */}
+          <div className="p-3.5 rounded-2xl bg-surface-container-high/50 border border-surface-container-highest/80 flex flex-col justify-between gap-2 hover:border-primary/40 transition-colors">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-primary flex items-center gap-1.5">
+                <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] flex items-center justify-center font-bold">2</span>
+                الروابط المباشرة (Direct MP3)
+              </span>
+              <button
+                onClick={() => handleCopy(downloadSample, 'downloadUrl')}
+                className="p-1 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors"
+                title="نسخ نسق الرابط"
+              >
+                {copiedKey === 'downloadUrl' ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
+              </button>
+            </div>
+            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-lg font-mono text-[11px] truncate block" dir="ltr" title={downloadSample}>
+              {downloadSample}
+            </code>
+            <span className="text-[10px] text-outline">تدعم البث المباشر (Range Requests)</span>
+          </div>
 
-        <div className="p-4 rounded-xl bg-surface-container-high border border-surface-container-highest flex flex-col gap-1.5">
-          <span className="font-bold text-primary">3. كود التضمين ووسم الوصف</span>
-          <p className="text-on-surface-variant leading-relaxed text-[11px] font-mono truncate">
-            &lt;iframe src=".../embed/..."&gt; أو [archiveorg ...]
-          </p>
-          <span className="text-[10px] text-outline">يتم تطبيعها واستخراج الرابط الصوتي آلياً</span>
+          {/* القاعدة 3 */}
+          <div className="p-3.5 rounded-2xl bg-surface-container-high/50 border border-surface-container-highest/80 flex flex-col justify-between gap-2 hover:border-primary/40 transition-colors">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-primary flex items-center gap-1.5">
+                <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-[10px] flex items-center justify-center font-bold">3</span>
+                التضمين (Iframe / Embed)
+              </span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-bold">تلقائي</span>
+            </div>
+            <code className="text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-lg font-mono text-[11px] truncate block" dir="ltr">
+              &lt;iframe src=".../embed/..."&gt;
+            </code>
+            <span className="text-[10px] text-outline">استخراج الروابط الصوتي وتطهيره آلياً</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
